@@ -12,15 +12,15 @@ enum TabBarItem: CaseIterable {
     case todo
     case timer
     case group
-    case setting
+//    case setting
     
     var title: String {
         switch self {
-        case .home: return "Home"
-        case .todo: return  "ToDo"
-        case .timer: return "Timer"
-        case .group: return "Group"
-        case .setting: return "Setting"
+        case .home: return ""
+        case .todo: return  ""
+        case .timer: return ""
+        case .group: return ""
+//        case .setting: return ""
         }
     }
     
@@ -49,11 +49,11 @@ enum TabBarItem: CaseIterable {
                 UIImage(systemName: "person.3"),
                 UIImage(systemName: "person.3.fill")
             )
-        case .setting:
-            return (
-                UIImage(systemName: "gearshape"),
-                UIImage(systemName: "gearshape.fill")
-            )
+//        case .setting:
+//            return (
+//                UIImage(systemName: "gearshape"),
+//                UIImage(systemName: "gearshape.fill")
+//            )
         }
     }
     
@@ -67,8 +67,8 @@ enum TabBarItem: CaseIterable {
             return UINavigationController(rootViewController: UIViewController())
         case .group:
             return UINavigationController(rootViewController: UIViewController())
-        case .setting:
-            return UINavigationController(rootViewController: UIViewController())
+//        case .setting:
+//            return UINavigationController(rootViewController: UIViewController())
         }
     }
 }

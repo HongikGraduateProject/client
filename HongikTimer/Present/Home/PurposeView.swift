@@ -18,8 +18,8 @@ final class PurposeView: UIView {
     }
     
     private lazy var purposeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 16.0, weight: .bold)
-        $0.textColor = .label
+        $0.font = .systemFont(ofSize: 14.0, weight: .bold)
+        $0.textColor = .black
         $0.textAlignment = .center
         $0.text = purpose
     }

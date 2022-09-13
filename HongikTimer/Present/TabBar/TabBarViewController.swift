@@ -17,8 +17,6 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
-
-
 // MARK: - Private
 
 private extension TabBarViewController {
@@ -32,11 +30,10 @@ private extension TabBarViewController {
                     image: tabCase.icon.default,
                     selectedImage: tabCase.icon.selected
                 )
+            
                 return viewController
             }
-        
         viewControllers = tabBarViewControllers
-        tabBar.tintColor = .label
         tabBar.backgroundColor = .systemGray6
     }
 }

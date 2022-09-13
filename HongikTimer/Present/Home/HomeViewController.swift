@@ -67,11 +67,31 @@ extension HomeViewController: SavePurposeDelegate {
 private extension HomeViewController {
     func setNavigationbar() {
         navigationItem.title = "Home"
-//        let appearance = UINavigationBarAppearance()
-//        appearance.backgroundColor = .systemBackground.withAlphaComponent(1.0)
-//
-//        navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        let settingBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "gearshape.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(tapSettingButton)
+        )
+        
+        navigationItem.leftBarButtonItem = settingBarButton
+        
+        let notificationBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "bell.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(tapNotificationButton)
+        )
+        
+        let itemBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "paintpalette.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(tapItemButton)
+        )
+
+        navigationItem.rightBarButtonItems = [itemBarButton, notificationBarButton]
     }
     
     func setupLayout() {
@@ -110,6 +130,24 @@ private extension HomeViewController {
         
         nv.modalPresentationStyle = .overCurrentContext
         present(nv, animated: true)
-        
+    }
+    
+    @objc func tapSettingButton() {
+        let vc = SettingViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func tapNotificationButton() {
+        let vc = NotificationViewController(
+            collectionViewLayout: UICollectionViewFlowLayout()
+        )
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func tapItemButton() {
+        let vc = ItemViewController(
+            collectionViewLayout: UICollectionViewFlowLayout()
+        )
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
