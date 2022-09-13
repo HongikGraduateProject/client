@@ -9,11 +9,17 @@ import UIKit
 
 final class TabBarViewController: UITabBarController {
     
+// MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBar()
     }
 }
+
+
+
+// MARK: - Private
 
 private extension TabBarViewController {
     
@@ -31,5 +37,6 @@ private extension TabBarViewController {
         
         viewControllers = tabBarViewControllers
         tabBar.tintColor = .label
+        tabBar.backgroundColor = .systemGray6
     }
 }

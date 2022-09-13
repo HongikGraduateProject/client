@@ -25,6 +25,8 @@
 		2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2750A44C28D032A2000EE24D /* .swiftlint.yml */; };
 		2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A44E28D0340F000EE24D /* TabBarViewModel.swift */; };
 		2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45128D0386A000EE24D /* HomeViewController.swift */; };
+		2750A45428D04C95000EE24D /* PurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45328D04C95000EE24D /* PurposeView.swift */; };
+		2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45528D051D3000EE24D /* SetPurposeViewController.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
@@ -64,6 +66,8 @@
 		2750A44C28D032A2000EE24D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2750A44E28D0340F000EE24D /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		2750A45128D0386A000EE24D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2750A45328D04C95000EE24D /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
+		2750A45528D051D3000EE24D /* SetPurposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeViewController.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,8 +188,18 @@
 			isa = PBXGroup;
 			children = (
 				2750A45128D0386A000EE24D /* HomeViewController.swift */,
+				2750A45328D04C95000EE24D /* PurposeView.swift */,
+				2750A45728D05586000EE24D /* SetPurpose */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2750A45728D05586000EE24D /* SetPurpose */ = {
+			isa = PBXGroup;
+			children = (
+				2750A45528D051D3000EE24D /* SetPurposeViewController.swift */,
+			);
+			path = SetPurpose;
 			sourceTree = "<group>";
 		};
 		DC59D37AD871089D6B979296 /* Pods */ = {
@@ -448,9 +462,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
+				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 			);
