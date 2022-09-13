@@ -1,0 +1,868 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		381A95C50B37492E7DCB7DFD401C9E25 /* Pods-HongikTimer-HongikTimerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42302F65888B9BA6DDC2F5B594487622 /* Pods-HongikTimer-HongikTimerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44C1D7AB0B76C1CF20B0734885614ABF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		48ABCCEC7A5861DD0BDBB7B0A3D058C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		78FB0DD582398BF1316D333E40F67E77 /* Pods-HongikTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A20524865E33F1605951AA34CB224 /* Pods-HongikTimer-dummy.m */; };
+		9F9D87615D01D27BDC5BD5505BEA91ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A1EF62EFB1203E98CA7A3DDC58714328 /* Pods-HongikTimer-HongikTimerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BD7C7FEF719163F126AA7FFDA08AEB /* Pods-HongikTimer-HongikTimerUITests-dummy.m */; };
+		ACF33DA1FB8A424CB29C20F37D7F2664 /* Pods-HongikTimer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB277488CF5FDD2C24A91430CE4476B /* Pods-HongikTimer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04CD3DFD68A1CE51F798E1C1AA69B7F /* Pods-HongikTimerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A13D51844A57ECDB79F9316886489297 /* Pods-HongikTimerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD98941442A94D9C533C954677C1DE24 /* Pods-HongikTimerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3092A7A5440BB53CF4F134160D6BF670 /* Pods-HongikTimerTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ACA4EDADEDAB793E6B2E01D9647FEF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		4874A7B380AFFD9815BAFB76EAAFD604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		DDA5697747DF613683555D533A68652A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D585BA4CC5DDEBA95681B4D5BC29EBA;
+			remoteInfo = "Pods-HongikTimer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18C12BA70DF0EBBB3EDA3DD8F6042850 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimer-HongikTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		195821AB994F7217215C83CBC3C76FB4 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
+		1C7E9C4C6BB480FCFE0EF2E5D3BBB1ED /* Pods-HongikTimer-HongikTimerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimer-HongikTimerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2E3556D5354E373EAC4BEBA8E0CE6672 /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimer-HongikTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3092A7A5440BB53CF4F134160D6BF670 /* Pods-HongikTimerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HongikTimerTests-dummy.m"; sourceTree = "<group>"; };
+		3A36B18FE87014F37767C0F875DACE12 /* Pods-HongikTimer-HongikTimerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HongikTimer-HongikTimerUITests.modulemap"; sourceTree = "<group>"; };
+		3C8F12982613679090352AA263548718 /* Pods-HongikTimer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HongikTimer.modulemap"; sourceTree = "<group>"; };
+		3CE21E9C8C7C6D601642EBE6735C43D8 /* Pods-HongikTimer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HongikTimer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		42302F65888B9BA6DDC2F5B594487622 /* Pods-HongikTimer-HongikTimerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HongikTimer-HongikTimerUITests-umbrella.h"; sourceTree = "<group>"; };
+		4453E65B47F1E6B907A57D572FC94C1F /* Pods-HongikTimerTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HongikTimerTests"; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC17AB9A92E67FCEA170BFE638A994F /* Pods-HongikTimerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HongikTimerTests.modulemap"; sourceTree = "<group>"; };
+		5B2A20524865E33F1605951AA34CB224 /* Pods-HongikTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HongikTimer-dummy.m"; sourceTree = "<group>"; };
+		6CBBD8D7FF2C178A4EECD0C85EAB5016 /* Pods-HongikTimer-HongikTimerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimer-HongikTimerUITests-Info.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HongikTimer"; path = Pods_HongikTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCADD648CB0169635988A3CB80E645A /* Pods-HongikTimer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimer-Info.plist"; sourceTree = "<group>"; };
+		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		804031BEDE0959157A67C9DC11B8DB70 /* Pods-HongikTimerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimerTests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A13D51844A57ECDB79F9316886489297 /* Pods-HongikTimerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HongikTimerTests-umbrella.h"; sourceTree = "<group>"; };
+		B052861FC8FBC5D52B8D21980D501932 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B21E6FE1268A50285CDFD4F5169A7870 /* Pods-HongikTimer-HongikTimerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HongikTimer-HongikTimerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA961BFA5982BF87B82C39CAD1FEDB34 /* Pods-HongikTimerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BFB277488CF5FDD2C24A91430CE4476B /* Pods-HongikTimer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HongikTimer-umbrella.h"; sourceTree = "<group>"; };
+		C3A0F61906DAE71A13749B24C6C051D1 /* Pods-HongikTimer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HongikTimer-acknowledgements.plist"; sourceTree = "<group>"; };
+		C536D1BA673BF4E3DCEFDBB3F273696D /* Pods-HongikTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		CEC681591518888A9172B89FF6B69863 /* Pods-HongikTimerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HongikTimerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E42F4CBE998F1304CF2CCF513A1EBBB3 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0BD7C7FEF719163F126AA7FFDA08AEB /* Pods-HongikTimer-HongikTimerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HongikTimer-HongikTimerUITests-dummy.m"; sourceTree = "<group>"; };
+		FFAD2470387FD02F94127E81212F9BB7 /* Pods-HongikTimer-HongikTimerUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HongikTimer-HongikTimerUITests"; path = Pods_HongikTimer_HongikTimerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		399A016DC834D15AE755FE04C8C00EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C1D7AB0B76C1CF20B0734885614ABF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5860CE5D935AFF5E60AAEF420D1051FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F9D87615D01D27BDC5BD5505BEA91ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD107515F8C7ADF6EAA5AB0EE5E3FE4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48ABCCEC7A5861DD0BDBB7B0A3D058C9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5A19E4ECFD780F0B1BD05D571C3C6212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */,
+				FFAD2470387FD02F94127E81212F9BB7 /* Pods-HongikTimer-HongikTimerUITests */,
+				4453E65B47F1E6B907A57D572FC94C1F /* Pods-HongikTimerTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3FD80D58B3B3E2768FB0CC1BA29243 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA0C2FB4D324CFC55285DB3DE46C5C /* Pods-HongikTimer */,
+				D8BF33F515079E054AF8B333F6612B89 /* Pods-HongikTimer-HongikTimerUITests */,
+				8255691A6DBE69F9BC8A1E6B17BDDA44 /* Pods-HongikTimerTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
+				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		8255691A6DBE69F9BC8A1E6B17BDDA44 /* Pods-HongikTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BC17AB9A92E67FCEA170BFE638A994F /* Pods-HongikTimerTests.modulemap */,
+				CEC681591518888A9172B89FF6B69863 /* Pods-HongikTimerTests-acknowledgements.markdown */,
+				BA961BFA5982BF87B82C39CAD1FEDB34 /* Pods-HongikTimerTests-acknowledgements.plist */,
+				3092A7A5440BB53CF4F134160D6BF670 /* Pods-HongikTimerTests-dummy.m */,
+				804031BEDE0959157A67C9DC11B8DB70 /* Pods-HongikTimerTests-Info.plist */,
+				A13D51844A57ECDB79F9316886489297 /* Pods-HongikTimerTests-umbrella.h */,
+				B052861FC8FBC5D52B8D21980D501932 /* Pods-HongikTimerTests.debug.xcconfig */,
+				E42F4CBE998F1304CF2CCF513A1EBBB3 /* Pods-HongikTimerTests.release.xcconfig */,
+			);
+			name = "Pods-HongikTimerTests";
+			path = "Target Support Files/Pods-HongikTimerTests";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9ADA0C2FB4D324CFC55285DB3DE46C5C /* Pods-HongikTimer */ = {
+			isa = PBXGroup;
+			children = (
+				3C8F12982613679090352AA263548718 /* Pods-HongikTimer.modulemap */,
+				3CE21E9C8C7C6D601642EBE6735C43D8 /* Pods-HongikTimer-acknowledgements.markdown */,
+				C3A0F61906DAE71A13749B24C6C051D1 /* Pods-HongikTimer-acknowledgements.plist */,
+				5B2A20524865E33F1605951AA34CB224 /* Pods-HongikTimer-dummy.m */,
+				7DCADD648CB0169635988A3CB80E645A /* Pods-HongikTimer-Info.plist */,
+				BFB277488CF5FDD2C24A91430CE4476B /* Pods-HongikTimer-umbrella.h */,
+				C536D1BA673BF4E3DCEFDBB3F273696D /* Pods-HongikTimer.debug.xcconfig */,
+				195821AB994F7217215C83CBC3C76FB4 /* Pods-HongikTimer.release.xcconfig */,
+			);
+			name = "Pods-HongikTimer";
+			path = "Target Support Files/Pods-HongikTimer";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				5A19E4ECFD780F0B1BD05D571C3C6212 /* Products */,
+				7E3FD80D58B3B3E2768FB0CC1BA29243 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8BF33F515079E054AF8B333F6612B89 /* Pods-HongikTimer-HongikTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A36B18FE87014F37767C0F875DACE12 /* Pods-HongikTimer-HongikTimerUITests.modulemap */,
+				B21E6FE1268A50285CDFD4F5169A7870 /* Pods-HongikTimer-HongikTimerUITests-acknowledgements.markdown */,
+				1C7E9C4C6BB480FCFE0EF2E5D3BBB1ED /* Pods-HongikTimer-HongikTimerUITests-acknowledgements.plist */,
+				F0BD7C7FEF719163F126AA7FFDA08AEB /* Pods-HongikTimer-HongikTimerUITests-dummy.m */,
+				6CBBD8D7FF2C178A4EECD0C85EAB5016 /* Pods-HongikTimer-HongikTimerUITests-Info.plist */,
+				42302F65888B9BA6DDC2F5B594487622 /* Pods-HongikTimer-HongikTimerUITests-umbrella.h */,
+				2E3556D5354E373EAC4BEBA8E0CE6672 /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */,
+				18C12BA70DF0EBBB3EDA3DD8F6042850 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */,
+			);
+			name = "Pods-HongikTimer-HongikTimerUITests";
+			path = "Target Support Files/Pods-HongikTimer-HongikTimerUITests";
+			sourceTree = "<group>";
+		};
+		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+			);
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		39E24B2DD799D03CA43ED2302ADF49D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381A95C50B37492E7DCB7DFD401C9E25 /* Pods-HongikTimer-HongikTimerUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44619D24F86A3161D77969DCA241E48D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B04CD3DFD68A1CE51F798E1C1AA69B7F /* Pods-HongikTimerTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		908DFF5D1EBC3F437073927DD2B49D8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF33DA1FB8A424CB29C20F37D7F2664 /* Pods-HongikTimer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		253816F4F4C7B6963E90565871096D60 /* Pods-HongikTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51DBD862B102FB38EA30A6F856CE8B92 /* Build configuration list for PBXNativeTarget "Pods-HongikTimerTests" */;
+			buildPhases = (
+				44619D24F86A3161D77969DCA241E48D /* Headers */,
+				60DF17A9CC25738CF4CF615D32DABA16 /* Sources */,
+				5860CE5D935AFF5E60AAEF420D1051FB /* Frameworks */,
+				2F06B7F3A17A8DAE8DD2FDED2D5A9ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5152C559B5A9658A8743774239AB7A68 /* PBXTargetDependency */,
+			);
+			name = "Pods-HongikTimerTests";
+			productName = Pods_HongikTimerTests;
+			productReference = 4453E65B47F1E6B907A57D572FC94C1F /* Pods-HongikTimerTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		3D585BA4CC5DDEBA95681B4D5BC29EBA /* Pods-HongikTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E099DE4EBFFF0BC431A48DE1CDED35F /* Build configuration list for PBXNativeTarget "Pods-HongikTimer" */;
+			buildPhases = (
+				908DFF5D1EBC3F437073927DD2B49D8C /* Headers */,
+				1B8105A43F73D1E097F3741BBF05D581 /* Sources */,
+				399A016DC834D15AE755FE04C8C00EC2 /* Frameworks */,
+				5E321EE89315B0F4B1D43EC0F976FE72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F632B332D2D39C813CBF9CB5BBF2878 /* PBXTargetDependency */,
+			);
+			name = "Pods-HongikTimer";
+			productName = Pods_HongikTimer;
+			productReference = 75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B4C5D1606A707FCD56DB9FEB84C3A5C /* Pods-HongikTimer-HongikTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D18933FD283987F397E0247AEC8D85F2 /* Build configuration list for PBXNativeTarget "Pods-HongikTimer-HongikTimerUITests" */;
+			buildPhases = (
+				39E24B2DD799D03CA43ED2302ADF49D3 /* Headers */,
+				DF91CA3327951EF0AD66D8D25E7268AA /* Sources */,
+				CD107515F8C7ADF6EAA5AB0EE5E3FE4B /* Frameworks */,
+				071D89EB8745D17F76FBCB2738E24CF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCECDC4821A6112B1C1181112782EF20 /* PBXTargetDependency */,
+			);
+			name = "Pods-HongikTimer-HongikTimerUITests";
+			productName = Pods_HongikTimer_HongikTimerUITests;
+			productReference = FFAD2470387FD02F94127E81212F9BB7 /* Pods-HongikTimer-HongikTimerUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1340;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5A19E4ECFD780F0B1BD05D571C3C6212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D585BA4CC5DDEBA95681B4D5BC29EBA /* Pods-HongikTimer */,
+				9B4C5D1606A707FCD56DB9FEB84C3A5C /* Pods-HongikTimer-HongikTimerUITests */,
+				253816F4F4C7B6963E90565871096D60 /* Pods-HongikTimerTests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		071D89EB8745D17F76FBCB2738E24CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F06B7F3A17A8DAE8DD2FDED2D5A9ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E321EE89315B0F4B1D43EC0F976FE72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B8105A43F73D1E097F3741BBF05D581 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FB0DD582398BF1316D333E40F67E77 /* Pods-HongikTimer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60DF17A9CC25738CF4CF615D32DABA16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD98941442A94D9C533C954677C1DE24 /* Pods-HongikTimerTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF91CA3327951EF0AD66D8D25E7268AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1EF62EFB1203E98CA7A3DDC58714328 /* Pods-HongikTimer-HongikTimerUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5152C559B5A9658A8743774239AB7A68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-HongikTimer";
+			target = 3D585BA4CC5DDEBA95681B4D5BC29EBA /* Pods-HongikTimer */;
+			targetProxy = DDA5697747DF613683555D533A68652A /* PBXContainerItemProxy */;
+		};
+		7F632B332D2D39C813CBF9CB5BBF2878 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 4874A7B380AFFD9815BAFB76EAAFD604 /* PBXContainerItemProxy */;
+		};
+		CCECDC4821A6112B1C1181112782EF20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 3ACA4EDADEDAB793E6B2E01D9647FEF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2DE0D8898245310716431F92FA4989FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		529DF1CD86D04CEA6B779B64EC54670B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B052861FC8FBC5D52B8D21980D501932 /* Pods-HongikTimerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0C5ABC76BAA2199FC60EA8B3B628E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E3556D5354E373EAC4BEBA8E0CE6672 /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D12E03EEFA9DA805E5EACE0E2E352833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C12BA70DF0EBBB3EDA3DD8F6042850 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D73BEDFA41B19064F319DF7F5946F40D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 195821AB994F7217215C83CBC3C76FB4 /* Pods-HongikTimer.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF247D066920805C24EAD4DF2B4AEE81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C536D1BA673BF4E3DCEFDBB3F273696D /* Pods-HongikTimer.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9AEFC6B6A254E88F15B12E7572ED924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E42F4CBE998F1304CF2CCF513A1EBBB3 /* Pods-HongikTimerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E099DE4EBFFF0BC431A48DE1CDED35F /* Build configuration list for PBXNativeTarget "Pods-HongikTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF247D066920805C24EAD4DF2B4AEE81 /* Debug */,
+				D73BEDFA41B19064F319DF7F5946F40D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09909ECBA13E8F70A928465E7F7A9A92 /* Debug */,
+				2DE0D8898245310716431F92FA4989FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51DBD862B102FB38EA30A6F856CE8B92 /* Build configuration list for PBXNativeTarget "Pods-HongikTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529DF1CD86D04CEA6B779B64EC54670B /* Debug */,
+				F9AEFC6B6A254E88F15B12E7572ED924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
+				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D18933FD283987F397E0247AEC8D85F2 /* Build configuration list for PBXNativeTarget "Pods-HongikTimer-HongikTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0C5ABC76BAA2199FC60EA8B3B628E9E /* Debug */,
+				D12E03EEFA9DA805E5EACE0E2E352833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
