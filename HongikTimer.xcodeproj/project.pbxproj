@@ -32,6 +32,13 @@
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
 		27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B928D0ACC700805F79 /* NotificationCell.swift */; };
 		27B471BD28D0ACF100805F79 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471BC28D0ACF100805F79 /* Notification.swift */; };
+		27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27B471BF28D1968500805F79 /* GoogleService-Info.plist */; };
+		27B471C228D19ADA00805F79 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C128D19ADA00805F79 /* LoginViewController.swift */; };
+		27B471C528D19B2400805F79 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C428D19B2400805F79 /* UIColor+.swift */; };
+		27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C628D1AF1700805F79 /* RegisterViewController.swift */; };
+		27B471C928D1BAC300805F79 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */; };
+		27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471CA28D2070700805F79 /* TextFieldView.swift */; };
+		27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471CE28D20DAF00805F79 /* ButtonConfig.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
@@ -78,6 +85,13 @@
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		27B471B928D0ACC700805F79 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		27B471BC28D0ACF100805F79 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		27B471BF28D1968500805F79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27B471C128D19ADA00805F79 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27B471C428D19B2400805F79 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		27B471C628D1AF1700805F79 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
+		27B471CA28D2070700805F79 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		27B471CE28D20DAF00805F79 /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,11 +165,13 @@
 			children = (
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
+				27B471C328D19B1800805F79 /* Plus */,
 				27B471BB28D0ACDC00805F79 /* Models */,
 				2750A43428D02F89000EE24D /* Present */,
 				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
 				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
 				2750A41228D02BEB000EE24D /* Info.plist */,
+				27B471BF28D1968500805F79 /* GoogleService-Info.plist */,
 			);
 			path = HongikTimer;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 		2750A43428D02F89000EE24D /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				27B471BE28D194B000805F79 /* Authentication */,
 				2750A43528D030AD000EE24D /* TabBar */,
 				2750A45028D0384D000EE24D /* Home */,
 			);
@@ -199,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				2750A45128D0386A000EE24D /* HomeViewController.swift */,
-				2750A45328D04C95000EE24D /* PurposeView.swift */,
+				27B471CD28D2082F00805F79 /* SubViews */,
 				2750A45728D05586000EE24D /* SetPurpose */,
 				27B471AF28D0A14E00805F79 /* Setting */,
 				27B471B428D0A97200805F79 /* Alarm */,
@@ -249,6 +266,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		27B471BE28D194B000805F79 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				27B471C628D1AF1700805F79 /* RegisterViewController.swift */,
+				27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */,
+				27B471C128D19ADA00805F79 /* LoginViewController.swift */,
+				27B471CC28D2081900805F79 /* SubViews */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		27B471C328D19B1800805F79 /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				27B471C428D19B2400805F79 /* UIColor+.swift */,
+				27B471CE28D20DAF00805F79 /* ButtonConfig.swift */,
+			);
+			path = Plus;
+			sourceTree = "<group>";
+		};
+		27B471CC28D2081900805F79 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				27B471CA28D2070700805F79 /* TextFieldView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		27B471CD28D2082F00805F79 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				2750A45328D04C95000EE24D /* PurposeView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		DC59D37AD871089D6B979296 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +337,7 @@
 				2750A3FE28D02BE9000EE24D /* Frameworks */,
 				2750A3FF28D02BE9000EE24D /* Resources */,
 				2750A44B28D03265000EE24D /* Swift Lint */,
+				F3BA941283028D3AA9064F00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,6 +384,7 @@
 				2750A41D28D02BEB000EE24D /* Sources */,
 				2750A41E28D02BEB000EE24D /* Frameworks */,
 				2750A41F28D02BEB000EE24D /* Resources */,
+				7A7442AC16A0D28AE6B91515 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -398,6 +453,7 @@
 				2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */,
 				2750A41128D02BEB000EE24D /* LaunchScreen.storyboard in Resources */,
 				2750A40E28D02BEB000EE24D /* Assets.xcassets in Resources */,
+				27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +514,23 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		7A7442AC16A0D28AE6B91515 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94542DB5EAC0A9C1E6A1D76C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +575,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3BA941283028D3AA9064F00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongikTimer/Pods-HongikTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongikTimer/Pods-HongikTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HongikTimer/Pods-HongikTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -515,12 +605,18 @@
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
+				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
+				27B471C928D1BAC300805F79 /* EmailRegisterViewController.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
+				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
+				27B471C228D19ADA00805F79 /* LoginViewController.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
+				27B471C528D19B2400805F79 /* UIColor+.swift in Sources */,
+				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -672,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

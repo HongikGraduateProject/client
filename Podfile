@@ -6,6 +6,10 @@ target 'HongikTimer' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
 
   # Pods for HongikTimer
 

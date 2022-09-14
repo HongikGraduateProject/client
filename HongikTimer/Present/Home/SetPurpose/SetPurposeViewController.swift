@@ -22,7 +22,7 @@ final class SetPurposeViewController: UIViewController {
     
     private lazy var textField = UITextField().then {
         $0.textColor = .white
-        $0.tintColor = .white
+        $0.tintColor = .defaultTintColor
         $0.font = .systemFont(ofSize: 16.0, weight: .medium)
         $0.textAlignment = .center
         $0.becomeFirstResponder()
@@ -132,7 +132,7 @@ private extension SetPurposeViewController {
         }
     }
     
-    func textHandler(_ a: UIAction) {
+    func textHandler(_: UIAction) {
         if self.textField.text?.isEmpty == true {
             self.rightBarButton.isEnabled = false
         } else {

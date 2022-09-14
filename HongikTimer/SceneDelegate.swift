@@ -20,7 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
         window?.tintColor = .label
-        window?.rootViewController = TabBarViewController()
+//        window?.rootViewController = TabBarViewController()
+        window?.rootViewController = UINavigationController(
+            rootViewController: RegisterViewController()
+        )
         window?.makeKeyAndVisible()
     }
 }
