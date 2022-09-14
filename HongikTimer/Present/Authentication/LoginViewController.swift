@@ -16,7 +16,6 @@ final class LoginViewController: UIViewController {
     
     private lazy var emailTextField = TextFieldView(with: "이메일").then {
         $0.textField.becomeFirstResponder()
-        $0.textField.returnKeyType = .next
         $0.textField.delegate = self
     }
     
@@ -75,14 +74,14 @@ private extension LoginViewController {
         
         emailTextField.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200.0)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(16.0)
+            $0.leading.trailing.equalToSuperview().offset(24.0)
+            $0.height.equalTo(textFieldHeight)
         }
         
         passwordTextField.snp.makeConstraints {
             $0.top.equalTo(emailTextField.snp.bottom).offset(48.0)
             $0.leading.trailing.equalTo(emailTextField)
-            $0.height.equalTo(16.0)
+            $0.height.equalTo(textFieldHeight)
         }
         
         loginButton.snp.makeConstraints {

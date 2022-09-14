@@ -15,6 +15,8 @@ final class TextFieldView: UIView {
     
     lazy var textField = UITextField().then {
         $0.placeholder = placeHolder
+        $0.tintColor = .defaultTintColor
+        $0.returnKeyType = .next
     }
     
     private lazy var seperatorView = UIView().then {
@@ -49,7 +51,7 @@ private extension TextFieldView {
         ].forEach { addSubview($0) }
         
         textField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(24.0)
+            $0.leading.trailing.equalToSuperview()
         }
         
         seperatorView.snp.makeConstraints {

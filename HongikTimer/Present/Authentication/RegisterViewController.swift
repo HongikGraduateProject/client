@@ -10,9 +10,7 @@ import Then
 import UIKit
 
 final class RegisterViewController: UIViewController {
-    
-    private var labelConfig = ButtonConfig(buttonConfig: .label).getConfig()
-    
+        
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true

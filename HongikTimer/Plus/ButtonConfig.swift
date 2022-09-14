@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 enum Config {
     case white
     case label
@@ -38,3 +40,5 @@ struct ButtonConfig {
         return buttonConfig.config
     }
 }
+
+let labelConfig = ButtonConfig(buttonConfig: .label).getConfig()
