@@ -22,11 +22,13 @@ final class EmailRegisterViewController: UIViewController {
     }
     private lazy var passwordTextField = TextFieldView(with: "비밀번호").then {
         $0.textField.delegate = self
+        $0.textField.isSecureTextEntry = true
     }
     
     private lazy var passwordCheckTextField = TextFieldView(with: "비밀번호 확인").then {
         $0.textField.delegate = self
         $0.textField.returnKeyType = .done
+        $0.textField.isSecureTextEntry = true
     }
     
     private lazy var registerButton = UIButton(configuration: labelConfig).then {
@@ -70,6 +72,7 @@ extension EmailRegisterViewController: UITextFieldDelegate {
 private extension EmailRegisterViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
+        navigationItem.title = "회원가입"
     }
     
     func setupLayout() {
@@ -109,6 +112,47 @@ private extension EmailRegisterViewController {
     // MARK: - Selector
     
     @objc func tapRegisterButton() {
+        guard let email = emailTextField.textField.text else { return }
+        guard let nickname = nicknameTextField.textField.text else { return }
+        guard let password = passwordTextField.textField.text else { return }
+        guard let passwordCheck = passwordCheckTextField.textField.text else { return }
         
+        if password != passwordCheck {
+            view.makeToast("비밀번호와 비밀번호 확인이 일치하지 않습니다", position: .top)
+        }
+        
+        let authCredentials = AuthCredentials(
+            email: email,
+            nickname: nickname,
+            password: password
+        )
+        AuthService.shared.registerUser(
+            credentials: authCredentials
+        ) { result, error in
+            if let rror = error {
+                print("DEBUG Error is \(error)")
+                return
+            }
+            
+            guard let uid = result?.user.uid else { return }
+            
+            let values = [
+                "email": email,
+                "nickname": nickname
+            ]
+            
+            refUSERS.child(uid).updateChildValues(values) { error, ref in
+                if let error = error {
+                    print(error)
+                }
+                
+                let window = (
+                    UIApplication
+                    .shared
+                    .connectedScenes
+                    .first as? UIWindowScene
+                )?.keyWindow
+            }
+        }
     }
 }

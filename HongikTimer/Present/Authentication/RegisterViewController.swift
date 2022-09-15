@@ -6,6 +6,7 @@
 //
 
 import SnapKit
+import Toast_Swift
 import Then
 import UIKit
 
@@ -40,7 +41,7 @@ final class RegisterViewController: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 14.0, weight: .medium)
         $0.addTarget(
             self,
-            action: #selector(tapLoginButton),
+            action: #selector(tapMoveToLoginButton),
             for: .touchUpInside
         )
     }
@@ -99,7 +100,7 @@ private extension RegisterViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func tapLoginButton() {
+    @objc func tapMoveToLoginButton() {
         let vc = UINavigationController(
             rootViewController: LoginViewController()
         )

@@ -40,6 +40,8 @@
 		27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471CA28D2070700805F79 /* TextFieldView.swift */; };
 		27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471CE28D20DAF00805F79 /* ButtonConfig.swift */; };
 		27B471D328D22E6900805F79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D228D22E6900805F79 /* Constant.swift */; };
+		27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D428D236D900805F79 /* AuthCredentials.swift */; };
+		27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* AuthorService.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
@@ -94,6 +96,8 @@
 		27B471CA28D2070700805F79 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		27B471CE28D20DAF00805F79 /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		27B471D228D22E6900805F79 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		27B471D428D236D900805F79 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
+		27B471D728D2CA2700805F79 /* AuthorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorService.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,7 +172,8 @@
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
 				27B471C328D19B1800805F79 /* Plus */,
-				27B471BB28D0ACDC00805F79 /* Models */,
+				27B471D628D2C9F000805F79 /* Service */,
+				27B471BB28D0ACDC00805F79 /* Model */,
 				2750A43428D02F89000EE24D /* Present */,
 				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
 				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
@@ -260,12 +265,13 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
-		27B471BB28D0ACDC00805F79 /* Models */ = {
+		27B471BB28D0ACDC00805F79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				27B471BC28D0ACF100805F79 /* Notification.swift */,
+				27B471D428D236D900805F79 /* AuthCredentials.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		27B471BE28D194B000805F79 /* Authentication */ = {
@@ -303,6 +309,14 @@
 				2750A45328D04C95000EE24D /* PurposeView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		27B471D628D2C9F000805F79 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				27B471D728D2CA2700805F79 /* AuthorService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		DC59D37AD871089D6B979296 /* Pods */ = {
@@ -607,6 +621,7 @@
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
+				27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
@@ -618,6 +633,7 @@
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
 				27B471C228D19ADA00805F79 /* LoginViewController.swift in Sources */,
+				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,

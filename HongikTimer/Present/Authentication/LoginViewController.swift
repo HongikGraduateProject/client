@@ -21,7 +21,9 @@ final class LoginViewController: UIViewController {
     
     private lazy var passwordTextField = TextFieldView(with: "비밀번호").then {
         $0.textField.returnKeyType = .done
-//        $0.textField.delegate = self
+        $0.textField.isSecureTextEntry = true
+        $0.textField.delegate = self
+        
     }
     
     private lazy var loginButton = UIButton(configuration: labelConfig).then {
