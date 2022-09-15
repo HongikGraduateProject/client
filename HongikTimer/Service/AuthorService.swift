@@ -25,11 +25,10 @@ struct AuthService {
     
     func registerUser(
         credentials: AuthCredentials,
-        completion: ((AuthDataResult?, Error?) ->Void)?
+        completion: ((AuthDataResult?, Error?) -> Void)?
     ) {
-        
         let email = credentials.email
-        let nickname = credentials.nickname
+//        let nickname = credentials.nickname
         let password = credentials.password
         
         Auth.auth().createUser(

@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  EmailLoginViewController.swift
 //  HongikTimer
 //
 //  Created by JongHoon on 2022/09/14.
@@ -9,7 +9,7 @@ import SnapKit
 import Then
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class EmailLoginViewController: UIViewController {
     // MARK: - Lifecycle
     
     private var labelConfig = ButtonConfig(buttonConfig: .label).getConfig()
@@ -27,9 +27,23 @@ final class LoginViewController: UIViewController {
     }
     
     private lazy var loginButton = UIButton(configuration: labelConfig).then {
-        $0.setTitle("로그인", for: .normal)
-        $0.setTitleColor(.systemBackground, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .bold)
+        $0.setTitle(
+            "로그인",
+            for: .normal
+        )
+        $0.setTitleColor(
+            .systemBackground,
+            for: .normal
+        )
+        $0.titleLabel?.font = .systemFont(
+            ofSize: 16.0,
+            weight: .bold
+        )
+        $0.addTarget(
+            self,
+            action: #selector(tapLoginButton),
+            for: .touchUpInside
+        )
     }
     
     override func viewDidLoad() {
@@ -40,7 +54,7 @@ final class LoginViewController: UIViewController {
 
 // MARK: - TextField
 
-extension LoginViewController: UITextFieldDelegate {
+extension EmailLoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField.textField {
@@ -53,7 +67,7 @@ extension LoginViewController: UITextFieldDelegate {
 
 // MARK: - Private
 
-private extension LoginViewController {
+private extension EmailLoginViewController {
     
     func setupNavigationBar() {
         
@@ -96,5 +110,28 @@ private extension LoginViewController {
     
     @objc func tapLeftBarButton() {
         dismiss(animated: true)
+    }
+    
+    @objc func tapLoginButton() {
+        guard let email = emailTextField.textField.text else { return }
+        guard let password = passwordTextField.textField.text else { return }
+        
+        AuthService.shared.loginUser(
+            email: email,
+            password: password
+        ) { [weak self] result, error in
+            if let error = error {
+                print("DEBUG Error logging in \(error)")
+                return
+            }
+            
+//            DispatchQueue.main.async {
+//                let nv = UINavigationController(rootViewController: TabBarViewController())
+//                self?.navigationController?.pushViewController(nv, animated: true)
+//            }
+            let vc = TabBarViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self?.present(vc, animated: true)
+        }
     }
 }

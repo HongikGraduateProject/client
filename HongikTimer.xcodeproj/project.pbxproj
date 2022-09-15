@@ -33,7 +33,7 @@
 		27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B928D0ACC700805F79 /* NotificationCell.swift */; };
 		27B471BD28D0ACF100805F79 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471BC28D0ACF100805F79 /* Notification.swift */; };
 		27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27B471BF28D1968500805F79 /* GoogleService-Info.plist */; };
-		27B471C228D19ADA00805F79 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C128D19ADA00805F79 /* LoginViewController.swift */; };
+		27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C128D19ADA00805F79 /* EmailLoginViewController.swift */; };
 		27B471C528D19B2400805F79 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C428D19B2400805F79 /* UIColor+.swift */; };
 		27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C628D1AF1700805F79 /* RegisterViewController.swift */; };
 		27B471C928D1BAC300805F79 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */; };
@@ -89,7 +89,7 @@
 		27B471B928D0ACC700805F79 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		27B471BC28D0ACF100805F79 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		27B471BF28D1968500805F79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		27B471C128D19ADA00805F79 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27B471C128D19ADA00805F79 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		27B471C428D19B2400805F79 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		27B471C628D1AF1700805F79 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			children = (
 				27B471C628D1AF1700805F79 /* RegisterViewController.swift */,
 				27B471C828D1BAC300805F79 /* EmailRegisterViewController.swift */,
-				27B471C128D19ADA00805F79 /* LoginViewController.swift */,
+				27B471C128D19ADA00805F79 /* EmailLoginViewController.swift */,
 				27B471CC28D2081900805F79 /* SubViews */,
 			);
 			path = Authentication;
@@ -632,7 +632,7 @@
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
-				27B471C228D19ADA00805F79 /* LoginViewController.swift in Sources */,
+				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+.swift in Sources */,

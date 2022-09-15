@@ -10,6 +10,8 @@ import Toast_Swift
 import Then
 import UIKit
 
+import Firebase
+
 final class RegisterViewController: UIViewController {
         
     private lazy var logoImageView = UIImageView().then {
@@ -51,6 +53,8 @@ final class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        
+        try? Auth.auth().signOut()
     }
 }
 
@@ -102,7 +106,7 @@ private extension RegisterViewController {
     
     @objc func tapMoveToLoginButton() {
         let vc = UINavigationController(
-            rootViewController: LoginViewController()
+            rootViewController: EmailLoginViewController()
         )
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
