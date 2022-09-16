@@ -90,7 +90,7 @@ private extension EmailLoginViewController {
         
         emailTextField.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200.0)
-            $0.leading.trailing.equalToSuperview().offset(24.0)
+            $0.leading.trailing.equalToSuperview().offset(authDefaultInset)
             $0.height.equalTo(textFieldHeight)
         }
         
@@ -102,7 +102,7 @@ private extension EmailLoginViewController {
         
         loginButton.snp.makeConstraints {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(48.0)
-            $0.leading.trailing.equalToSuperview().inset(24.0)
+            $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
         }
     }
     
@@ -125,10 +125,6 @@ private extension EmailLoginViewController {
                 return
             }
             
-//            DispatchQueue.main.async {
-//                let nv = UINavigationController(rootViewController: TabBarViewController())
-//                self?.navigationController?.pushViewController(nv, animated: true)
-//            }
             let vc = TabBarViewController()
             vc.modalPresentationStyle = .fullScreen
             self?.present(vc, animated: true)

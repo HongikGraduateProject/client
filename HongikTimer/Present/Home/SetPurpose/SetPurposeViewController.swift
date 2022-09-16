@@ -22,7 +22,6 @@ final class SetPurposeViewController: UIViewController {
     
     private lazy var textField = UITextField().then {
         $0.textColor = .white
-        $0.tintColor = .defaultTintColor
         $0.font = .systemFont(ofSize: 16.0, weight: .medium)
         $0.textAlignment = .center
         $0.becomeFirstResponder()
@@ -55,7 +54,7 @@ final class SetPurposeViewController: UIViewController {
         $0.isEnabled = false
     }
         
-    private lazy var seperatorView = UIView().then {
+    private lazy var separatorView = UIView().then {
         $0.backgroundColor = .separator
     }
 
@@ -102,7 +101,6 @@ extension SetPurposeViewController: UITextFieldDelegate {
 private extension SetPurposeViewController {
     
     func setNavigationBar() {
-
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
         
@@ -111,7 +109,7 @@ private extension SetPurposeViewController {
     func setupLayout() {
         [
             textField,
-            seperatorView,
+            separatorView,
             countLabel
         ].forEach { view.addSubview($0) }
         
@@ -120,7 +118,7 @@ private extension SetPurposeViewController {
             $0.top.equalTo(view.keyboardLayoutGuide).offset(-218)
         }
         
-        seperatorView.snp.makeConstraints {
+        separatorView.snp.makeConstraints {
             $0.height.equalTo(1.0)
             $0.leading.trailing.equalToSuperview().inset(16.0)
             $0.top.equalTo(textField.snp.bottom)
@@ -128,7 +126,7 @@ private extension SetPurposeViewController {
         
         countLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(seperatorView.snp.bottom).offset(4.0)
+            $0.top.equalTo(separatorView.snp.bottom).offset(4.0)
         }
     }
     

@@ -5,19 +5,72 @@
 //  Created by JongHoon on 2022/09/14.
 //
 
+import AuthenticationServices
 import SnapKit
 import Toast_Swift
 import Then
 import UIKit
+import CryptoKit
 
 import Firebase
 
 final class RegisterViewController: UIViewController {
-        
+    
+    var window: UIWindow?
+    private var currentNonce: String?
+    
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.image = UIImage(systemName: "timer")
+    }
+    
+    private lazy var appleLoginButton = UIButton(configuration: snsLoginConfig).then {
+        var title = AttributedString("Apple로 계속하기")
+        title.font = .systemFont(ofSize: 19)
+        title.foregroundColor = .systemBackground
+        $0.configuration?.attributedTitle = title
+        var logo = UIImage(systemName: "applelogo")?.withTintColor(
+            .systemBackground,
+            renderingMode: .alwaysOriginal
+        )
+        $0.configuration?.image = logo
+        $0.addTarget(self, action: #selector(tapAppleLogin), for: .touchUpInside)
+    }
+    
+    private lazy var googleLoginButton = UIButton(configuration: snsLoginConfig).then {
+        var title = AttributedString("Google로 계속하기")
+        title.font = .systemFont(ofSize: 19)
+        $0.configuration?.baseForegroundColor = .black
+        $0.configuration?.attributedTitle = title
+        $0.configuration?.baseBackgroundColor = .white
+        var logo = UIImage(named: "googleLogo")
+        $0.configuration?.image = logo
+        $0.configuration?.background.strokeColor = .separator
+        $0.configuration?.background.strokeWidth = 0.5
+        $0.addTarget(self, action: #selector(tapGoogleLogin), for: .touchUpInside)
+    }
+    
+    private lazy var kakaoLoginButton = UIButton(configuration: snsLoginConfig).then {
+        var title = AttributedString("Kakao로 계속하기")
+        title.font = .systemFont(ofSize: 19)
+        $0.configuration?.baseForegroundColor = .black.withAlphaComponent(0.85)
+        $0.configuration?.attributedTitle = title
+        $0.configuration?.baseBackgroundColor = .Social.kakaoYellow
+        var logo = UIImage(named: "kakaoLogo")
+        $0.configuration?.image = logo
+        $0.addTarget(self, action: #selector(tapKakaoLogin), for: .touchUpInside)
+    }
+    
+    private lazy var naverLoginButton = UIButton(configuration: snsLoginConfig).then {
+        var title = AttributedString("Naver로 계속하기")
+        title.font = .systemFont(ofSize: 19)
+        $0.configuration?.baseForegroundColor = .white
+        $0.configuration?.attributedTitle = title
+        $0.configuration?.baseBackgroundColor = .Social.naverGreen
+        var logo = UIImage(named: "naverLogo")
+        $0.configuration?.image = logo
+        $0.addTarget(self, action: #selector(tapNaverLogin), for: .touchUpInside)
     }
     
     private lazy var registerButton = UIButton(configuration: labelConfig).then {
@@ -30,6 +83,8 @@ final class RegisterViewController: UIViewController {
             for: .touchUpInside
         )
     }
+    
+    private lazy var separatorView = SeparatorView()
     
     private lazy var moveToLoginLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 14.0, weight: .medium)
@@ -62,7 +117,23 @@ final class RegisterViewController: UIViewController {
 
 private extension RegisterViewController {
     func setupLayout() {
-        
+        view.backgroundColor = .systemBackground
+        let snsStackView = UIStackView().then { sv in
+            sv.axis = .vertical
+            sv.distribution = .equalSpacing
+            sv.spacing = 16.0
+            [
+                appleLoginButton,
+                googleLoginButton,
+                kakaoLoginButton,
+                naverLoginButton
+            ].forEach {
+                sv.addArrangedSubview($0)
+                $0.snp.makeConstraints {
+                    $0.height.equalTo(snsButtonHeight)
+                }
+            }
+        }
         let stackView = UIStackView(
             arrangedSubviews: [moveToLoginLabel, moveToLoginButton]
         ).then {
@@ -70,9 +141,10 @@ private extension RegisterViewController {
             $0.distribution = .fill
             $0.spacing = 4.0
         }
-        
         [
             logoImageView,
+            snsStackView,
+            separatorView,
             registerButton,
             stackView
         ].forEach { view.addSubview($0) }
@@ -83,21 +155,53 @@ private extension RegisterViewController {
             $0.height.width.equalTo(150.0)
         }
         
+        snsStackView.snp.makeConstraints {
+            $0.top.equalTo(logoImageView.snp.bottom).offset(48.0)
+            $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
+        }
+        
+        separatorView.snp.makeConstraints {
+            $0.top.equalTo(snsStackView.snp.bottom).offset(16.0)
+            $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
+            $0.height.equalTo(24.0)
+        }
+                
         registerButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(24.0)
+            $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(52.0)
-            $0.bottom.equalToSuperview().inset(200.0)
+            $0.top.equalTo(separatorView.snp.bottom).offset(4.0)
         }
         
         stackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(24.0)
+            $0.leading.equalToSuperview().inset(authDefaultInset)
             $0.bottom.equalToSuperview().inset(36.0)
             $0.height.equalTo(16.0)
         }
     }
     
     // MARK: - Selector
+    
+    @objc func tapAppleLogin() {
+        guard let window = view.window else { return }
+        AppleLoginService.shared.signInWithApple(window: window) {
+            let vc = TabBarViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
+    }
+    
+    @objc func tapGoogleLogin() {
+        
+    }
+    
+    @objc func tapKakaoLogin() {
+        
+    }
+    
+    @objc func tapNaverLogin() {
+        
+    }
     
     @objc func tapRegisterButton() {
         let vc = EmailRegisterViewController()

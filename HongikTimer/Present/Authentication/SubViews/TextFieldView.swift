@@ -15,11 +15,10 @@ final class TextFieldView: UIView {
     
     lazy var textField = UITextField().then {
         $0.placeholder = placeHolder
-        $0.tintColor = .defaultTintColor
         $0.returnKeyType = .next
     }
     
-    private lazy var seperatorView = UIView().then {
+    private lazy var separatorView = UIView().then {
         $0.backgroundColor = .separator
     }
     
@@ -47,14 +46,14 @@ private extension TextFieldView {
     func setupLayout() {
         [
             textField,
-            seperatorView
+            separatorView
         ].forEach { addSubview($0) }
         
         textField.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
         }
         
-        seperatorView.snp.makeConstraints {
+        separatorView.snp.makeConstraints {
             $0.top.equalTo(textField.snp.bottom).offset(4.0)
             $0.leading.trailing.equalTo(textField)
             $0.height.equalTo(0.5)

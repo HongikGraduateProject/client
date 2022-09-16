@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
-
+import Then
 
 enum Config {
     case white
     case label
+    case snsLogin
 
     var config: UIButton.Configuration {
         var filledConfig = UIButton.Configuration.filled()
@@ -24,6 +24,11 @@ enum Config {
         case .label:
             filledConfig.cornerStyle = .capsule
             filledConfig.baseBackgroundColor = .label
+            return filledConfig
+        case .snsLogin:
+            filledConfig.cornerStyle = .capsule
+            filledConfig.baseBackgroundColor = .label
+            filledConfig.imagePadding = 16.0
             return filledConfig
         }
     }
@@ -42,3 +47,4 @@ struct ButtonConfig {
 }
 
 let labelConfig = ButtonConfig(buttonConfig: .label).getConfig()
+let snsLoginConfig = ButtonConfig(buttonConfig: .snsLogin).getConfig()

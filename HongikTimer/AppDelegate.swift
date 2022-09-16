@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         FirebaseApp.configure()
+        
+        if let user = Auth.auth().currentUser {
+            print("You're sign in as \(user.uid), email: \(user.email ?? "")")
+        }
+                 
         return true
     }
 

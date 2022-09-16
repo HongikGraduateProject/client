@@ -8,6 +8,8 @@
 import Firebase
 
 let textFieldHeight: CGFloat = 16.0
+let snsButtonHeight: CGFloat = 44.0
+let authDefaultInset: CGFloat = 24.0
 
 // MARK: - Firebase REF
 

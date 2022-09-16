@@ -67,9 +67,9 @@ extension HomeViewController: SavePurposeDelegate {
 private extension HomeViewController {
     func setNavigationbar() {
         navigationItem.title = "Home"
-
+        
         let settingBarButton = UIBarButtonItem(
-            image: UIImage(systemName: "gearshape.fill"),
+            image: UIImage(systemName: "gearshape"),
             style: .plain,
             target: self,
             action: #selector(tapSettingButton)
@@ -78,14 +78,14 @@ private extension HomeViewController {
         navigationItem.leftBarButtonItem = settingBarButton
         
         let notificationBarButton = UIBarButtonItem(
-            image: UIImage(systemName: "bell.fill"),
+            image: UIImage(systemName: "bell"),
             style: .plain,
             target: self,
             action: #selector(tapNotificationButton)
         )
         
         let itemBarButton = UIBarButtonItem(
-            image: UIImage(systemName: "paintpalette.fill"),
+            image: UIImage(systemName: "paintpalette"),
             style: .plain,
             target: self,
             action: #selector(tapItemButton)

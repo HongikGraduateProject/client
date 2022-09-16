@@ -42,7 +42,7 @@ final class NotificationCell: UICollectionViewCell {
         $0.textColor = .secondaryLabel
     }
     
-    private lazy var seperatorView = UIView().then {
+    private lazy var separatorView = UIView().then {
         $0.backgroundColor = .separator
         $0.snp.makeConstraints {
             $0.height.equalTo(0.5)
@@ -79,7 +79,7 @@ final class NotificationCell: UICollectionViewCell {
         [
             iconImageView,
             stackView,
-            seperatorView
+            separatorView
         ].forEach { addSubview($0) }
         
         iconImageView.snp.makeConstraints {
@@ -96,7 +96,7 @@ final class NotificationCell: UICollectionViewCell {
 
         }
         
-        seperatorView.snp.makeConstraints {
+        separatorView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }

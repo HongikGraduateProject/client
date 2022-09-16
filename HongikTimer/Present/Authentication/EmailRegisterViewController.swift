@@ -105,7 +105,7 @@ private extension EmailRegisterViewController {
         
         stackView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(150.0)
-            $0.leading.trailing.equalToSuperview().inset(24.0)
+            $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
         }
     }
     
@@ -129,7 +129,7 @@ private extension EmailRegisterViewController {
         AuthService.shared.registerUser(
             credentials: authCredentials
         ) { result, error in
-            if let rror = error {
+            if let error = error {
                 print("DEBUG Error is \(error)")
                 return
             }
@@ -152,6 +152,10 @@ private extension EmailRegisterViewController {
                     .connectedScenes
                     .first as? UIWindowScene
                 )?.keyWindow
+                
+                let vc = TabBarViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
         }
     }

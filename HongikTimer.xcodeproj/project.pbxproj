@@ -15,9 +15,7 @@
 		2750A41C28D02BEB000EE24D /* HongikTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A41B28D02BEB000EE24D /* HongikTimerTests.swift */; };
 		2750A42628D02BEB000EE24D /* HongikTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42528D02BEB000EE24D /* HongikTimerUITests.swift */; };
 		2750A42828D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42728D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift */; };
-		2750A43828D03160000EE24D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A43728D03160000EE24D /* Then */; };
 		2750A43B28D03171000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A43A28D03171000EE24D /* Alamofire */; };
-		2750A43E28D03189000EE24D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A43D28D03189000EE24D /* Then */; };
 		2750A44128D0319E000EE24D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44028D0319E000EE24D /* SnapKit */; };
 		2750A44428D031AD000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44328D031AD000EE24D /* Alamofire */; };
 		2750A44728D031BE000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44628D031BE000EE24D /* Alamofire */; };
@@ -27,6 +25,8 @@
 		2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45128D0386A000EE24D /* HomeViewController.swift */; };
 		2750A45428D04C95000EE24D /* PurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45328D04C95000EE24D /* PurposeView.swift */; };
 		2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45528D051D3000EE24D /* SetPurposeViewController.swift */; };
+		27615A8128D44F590099DB00 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 27615A8028D44F590099DB00 /* Then */; };
+		27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8228D450B80099DB00 /* SeparatorView.swift */; };
 		27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B028D0A16F00805F79 /* SettingViewController.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
@@ -42,6 +42,7 @@
 		27B471D328D22E6900805F79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D228D22E6900805F79 /* Constant.swift */; };
 		27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D428D236D900805F79 /* AuthCredentials.swift */; };
 		27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* AuthorService.swift */; };
+		27B471DB28D36BD100805F79 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471DA28D36BD100805F79 /* AppleLoginService.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
@@ -83,6 +84,7 @@
 		2750A45128D0386A000EE24D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2750A45328D04C95000EE24D /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
 		2750A45528D051D3000EE24D /* SetPurposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeViewController.swift; sourceTree = "<group>"; };
+		27615A8228D450B80099DB00 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,8 @@
 		27B471D228D22E6900805F79 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		27B471D428D236D900805F79 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
 		27B471D728D2CA2700805F79 /* AuthorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorService.swift; sourceTree = "<group>"; };
+		27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HongikTimer.entitlements; sourceTree = "<group>"; };
+		27B471DA28D36BD100805F79 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,11 +118,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750A44428D031AD000EE24D /* Alamofire in Frameworks */,
-				2750A43828D03160000EE24D /* Then in Frameworks */,
 				2750A44A28D031D8000EE24D /* Kingfisher in Frameworks */,
 				2750A44128D0319E000EE24D /* SnapKit in Frameworks */,
+				27615A8128D44F590099DB00 /* Then in Frameworks */,
 				2750A44728D031BE000EE24D /* Alamofire in Frameworks */,
-				2750A43E28D03189000EE24D /* Then in Frameworks */,
 				2750A43B28D03171000EE24D /* Alamofire in Frameworks */,
 				BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */,
 			);
@@ -169,6 +172,7 @@
 		2750A40328D02BE9000EE24D /* HongikTimer */ = {
 			isa = PBXGroup;
 			children = (
+				27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */,
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
 				27B471C328D19B1800805F79 /* Plus */,
@@ -299,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				27B471CA28D2070700805F79 /* TextFieldView.swift */,
+				27615A8228D450B80099DB00 /* SeparatorView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				27B471D728D2CA2700805F79 /* AuthorService.swift */,
+				27B471DA28D36BD100805F79 /* AppleLoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -362,13 +368,12 @@
 			);
 			name = HongikTimer;
 			packageProductDependencies = (
-				2750A43728D03160000EE24D /* Then */,
 				2750A43A28D03171000EE24D /* Alamofire */,
-				2750A43D28D03189000EE24D /* Then */,
 				2750A44028D0319E000EE24D /* SnapKit */,
 				2750A44328D031AD000EE24D /* Alamofire */,
 				2750A44628D031BE000EE24D /* Alamofire */,
 				2750A44928D031D8000EE24D /* Kingfisher */,
+				27615A8028D44F590099DB00 /* Then */,
 			);
 			productName = HongikTimer;
 			productReference = 2750A40128D02BE9000EE24D /* HongikTimer.app */;
@@ -446,10 +451,10 @@
 			);
 			mainGroup = 2750A3F828D02BE9000EE24D;
 			packageReferences = (
-				2750A43628D03160000EE24D /* XCRemoteSwiftPackageReference "Then" */,
 				2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2750A43F28D0319E000EE24D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2750A44828D031D8000EE24D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 2750A40228D02BE9000EE24D /* Products */;
 			projectDirPath = "";
@@ -619,6 +624,7 @@
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
+				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */,
@@ -632,6 +638,7 @@
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
+				27B471DB28D36BD100805F79 /* AppleLoginService.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
@@ -804,6 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HongikTimer/HongikTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
@@ -832,6 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HongikTimer/HongikTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
@@ -976,14 +985,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2750A43628D03160000EE24D /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1008,23 +1009,21 @@
 				minimumVersion = 7.3.0;
 			};
 		};
+		27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2750A43728D03160000EE24D /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2750A43628D03160000EE24D /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
 		2750A43A28D03171000EE24D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		2750A43D28D03189000EE24D /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2750A43628D03160000EE24D /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 		2750A44028D0319E000EE24D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1045,6 +1044,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2750A44828D031D8000EE24D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		27615A8028D44F590099DB00 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
