@@ -13,7 +13,8 @@ extension UIColor {
     
     struct Social {
         static let naverGreen = UIColor(red: 3, green: 199, blue: 90)
-        static let kakaoYellow = UIColor(red: 254, green: 299, blue: 0)
+        static let kakaoYellow = UIColor(red: 247, green: 230, blue: 0)
+        static let kakaoBrown = UIColor(red: 58, green: 29, blue: 29)
     }
 }
 

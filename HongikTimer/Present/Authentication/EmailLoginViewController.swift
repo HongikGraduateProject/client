@@ -116,7 +116,7 @@ private extension EmailLoginViewController {
         guard let email = emailTextField.textField.text else { return }
         guard let password = passwordTextField.textField.text else { return }
         
-        AuthService.shared.loginUser(
+        EmailAuthService.shared.loginUser(
             email: email,
             password: password
         ) { [weak self] result, error in

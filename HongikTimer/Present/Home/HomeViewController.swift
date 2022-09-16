@@ -54,14 +54,6 @@ final class HomeViewController: UIViewController {
     }
 }
 
-// MARK: - SavePurposeDelegate
-
-extension HomeViewController: SavePurposeDelegate {
-    func savePurpose(with purpose: String) {
-        self.purpose = purpose
-    }
-}
-
 // MARK: - Private
 
 private extension HomeViewController {
@@ -124,10 +116,12 @@ private extension HomeViewController {
     // MARK: - Selector
     
     @objc func tapPurposeView() {
-        let nv = UINavigationController(
-            rootViewController: SetPurposeViewController(delegate: self)
-        )
+        let vc = SetPurposeViewController()
+        vc.textCompletion = { purpose in
+            self.purpose = purpose
+        }
         
+        let nv = UINavigationController(rootViewController: vc)
         nv.modalPresentationStyle = .overCurrentContext
         present(nv, animated: true)
     }

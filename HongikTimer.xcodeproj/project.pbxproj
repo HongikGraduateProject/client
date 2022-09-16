@@ -27,6 +27,9 @@
 		2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45528D051D3000EE24D /* SetPurposeViewController.swift */; };
 		27615A8128D44F590099DB00 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 27615A8028D44F590099DB00 /* Then */; };
 		27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8228D450B80099DB00 /* SeparatorView.swift */; };
+		27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8428D4B86A0099DB00 /* AppleAuthService.swift */; };
+		27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */; };
+		27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */; };
 		27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B028D0A16F00805F79 /* SettingViewController.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
@@ -41,8 +44,7 @@
 		27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471CE28D20DAF00805F79 /* ButtonConfig.swift */; };
 		27B471D328D22E6900805F79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D228D22E6900805F79 /* Constant.swift */; };
 		27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D428D236D900805F79 /* AuthCredentials.swift */; };
-		27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* AuthorService.swift */; };
-		27B471DB28D36BD100805F79 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471DA28D36BD100805F79 /* AppleLoginService.swift */; };
+		27B471D828D2CA2700805F79 /* EmailAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* EmailAuthService.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
@@ -85,6 +87,9 @@
 		2750A45328D04C95000EE24D /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
 		2750A45528D051D3000EE24D /* SetPurposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeViewController.swift; sourceTree = "<group>"; };
 		27615A8228D450B80099DB00 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		27615A8428D4B86A0099DB00 /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
+		27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
+		27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNotificationService.swift; sourceTree = "<group>"; };
 		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -99,9 +104,8 @@
 		27B471CE28D20DAF00805F79 /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		27B471D228D22E6900805F79 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		27B471D428D236D900805F79 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
-		27B471D728D2CA2700805F79 /* AuthorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorService.swift; sourceTree = "<group>"; };
+		27B471D728D2CA2700805F79 /* EmailAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthService.swift; sourceTree = "<group>"; };
 		27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HongikTimer.entitlements; sourceTree = "<group>"; };
-		27B471DA28D36BD100805F79 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -319,8 +323,10 @@
 		27B471D628D2C9F000805F79 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				27B471D728D2CA2700805F79 /* AuthorService.swift */,
-				27B471DA28D36BD100805F79 /* AppleLoginService.swift */,
+				27B471D728D2CA2700805F79 /* EmailAuthService.swift */,
+				27615A8428D4B86A0099DB00 /* AppleAuthService.swift */,
+				27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */,
+				27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -623,11 +629,13 @@
 			files = (
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
+				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
-				27B471D828D2CA2700805F79 /* AuthorService.swift in Sources */,
+				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
+				27B471D828D2CA2700805F79 /* EmailAuthService.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
@@ -638,12 +646,12 @@
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
-				27B471DB28D36BD100805F79 /* AppleLoginService.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
+				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

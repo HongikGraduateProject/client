@@ -6,17 +6,17 @@
 //
 
 import AuthenticationServices
+import Firebase
+import GoogleSignIn
 import SnapKit
 import Toast_Swift
 import Then
 import UIKit
-import CryptoKit
-
-import Firebase
 
 final class RegisterViewController: UIViewController {
     
     var window: UIWindow?
+    
     private var currentNonce: String?
     
     private lazy var logoImageView = UIImageView().then {
@@ -54,7 +54,7 @@ final class RegisterViewController: UIViewController {
     private lazy var kakaoLoginButton = UIButton(configuration: snsLoginConfig).then {
         var title = AttributedString("Kakao로 계속하기")
         title.font = .systemFont(ofSize: 19)
-        $0.configuration?.baseForegroundColor = .black.withAlphaComponent(0.85)
+        $0.configuration?.baseForegroundColor = .Social.kakaoBrown
         $0.configuration?.attributedTitle = title
         $0.configuration?.baseBackgroundColor = .Social.kakaoYellow
         var logo = UIImage(named: "kakaoLogo")
@@ -108,6 +108,10 @@ final class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        
+        AuthNotificationService
+            .shared
+            .addObserverSignInSuccess(with: self, completion: #selector(loginSuccessHandler))
         
         try? Auth.auth().signOut()
     }
@@ -165,7 +169,7 @@ private extension RegisterViewController {
             $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
             $0.height.equalTo(24.0)
         }
-                
+        
         registerButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(authDefaultInset)
             $0.centerX.equalToSuperview()
@@ -184,15 +188,12 @@ private extension RegisterViewController {
     
     @objc func tapAppleLogin() {
         guard let window = view.window else { return }
-        AppleLoginService.shared.signInWithApple(window: window) {
-            let vc = TabBarViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
-        }
+        
+        AppleAuthService.shared.signInWithApple(window: window)
     }
     
     @objc func tapGoogleLogin() {
-        
+        GoogleAuthService.shared.signInWithGoogle(with: self)
     }
     
     @objc func tapKakaoLogin() {
@@ -214,5 +215,12 @@ private extension RegisterViewController {
         )
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    @objc func loginSuccessHandler() {
+        let vc = TabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        print("ddd")
     }
 }

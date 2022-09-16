@@ -7,10 +7,10 @@ target 'HongikTimer' do
 
   pod 'SwiftLint'
 
-  pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Auth'
+
+  pod 'FirebaseAuth'
+  pod 'GoogleSignIn'
 
   pod 'Toast-Swift', '~> 5.0.1'
 

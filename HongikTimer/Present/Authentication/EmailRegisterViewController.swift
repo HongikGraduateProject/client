@@ -126,7 +126,7 @@ private extension EmailRegisterViewController {
             nickname: nickname,
             password: password
         )
-        AuthService.shared.registerUser(
+        EmailAuthService.shared.registerUser(
             credentials: authCredentials
         ) { result, error in
             if let error = error {

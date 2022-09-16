@@ -10,13 +10,9 @@ import Then
 import UIKit
 import SwiftUI
 
-protocol SavePurposeDelegate: AnyObject {
-    func savePurpose(with purpose: String)
-}
-
 final class SetPurposeViewController: UIViewController {
-    
-    weak var delegate: SavePurposeDelegate?
+        
+    var textCompletion: ((String) -> Void)?
     
     private let barButtonTintColor = UIColor.white
     
@@ -64,16 +60,6 @@ final class SetPurposeViewController: UIViewController {
         view.backgroundColor = .black.withAlphaComponent(0.9)
         setNavigationBar()
         setupLayout()
-    }
-    
-    init(delegate: SavePurposeDelegate) {
-        self.delegate = delegate
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -145,8 +131,8 @@ private extension SetPurposeViewController {
     }
     
     @objc func tapRightBarButton() {
-        guard let purpose = textField.text else { return }
-        delegate?.savePurpose(with: purpose)
+        guard let text = textField.text else { return }
+        textCompletion?(text)
         dismiss(animated: true)
     }
 }
