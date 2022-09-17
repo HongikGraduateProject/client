@@ -7,6 +7,8 @@
 
 import Firebase
 import GoogleSignIn
+import KakaoSDKCommon
+import KakaoSDKAuth
 import UIKit
 
 @main
@@ -16,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure()
+        
+        let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
+        KakaoSDK.initSDK(appKey: nativeAppKey as! String)
                         
         if let user = Auth.auth().currentUser {
             print("You're sign in as \(user.uid), email: \(user.email ?? "")")
         }
-        
         return true
     }
     
@@ -29,9 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         open url: URL,
         options: [UIApplication.OpenURLOptionsKey: Any] = [:]
     ) -> Bool {
-        return GIDSignIn.sharedInstance.handle(url)
+        if AuthApi.isKakaoTalkLoginUrl(url) {
+            return AuthController.handleOpenUrl(url: url)
+        } else {
+            return GIDSignIn.sharedInstance.handle(url)
+        }
+//        return false
     }
-    
+
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication,

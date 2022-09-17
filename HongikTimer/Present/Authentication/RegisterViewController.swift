@@ -16,8 +16,9 @@ import UIKit
 final class RegisterViewController: UIViewController {
     
     var window: UIWindow?
-    
     private var currentNonce: String?
+    
+    private lazy var kakaoAuthViewModel: KakaoAuthViewModel = { KakaoAuthViewModel() }()
         
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -197,6 +198,7 @@ private extension RegisterViewController {
     }
     
     @objc func tapKakaoLogin() {
+        kakaoAuthViewModel.handleKakaoLogin()
     }
     
     @objc func tapNaverLogin() {
@@ -220,6 +222,5 @@ private extension RegisterViewController {
         let vc = TabBarViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-        print("ddd")
     }
 }
