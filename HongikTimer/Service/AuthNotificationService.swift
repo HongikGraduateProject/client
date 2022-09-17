@@ -57,5 +57,4 @@ struct AuthNotificationService {
             object: nil
         )
     }
-    
 }

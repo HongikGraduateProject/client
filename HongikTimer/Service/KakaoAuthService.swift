@@ -25,6 +25,9 @@ struct KakaoAuthService {
                     
                     // do something
                     _ = oauthToken
+                    AuthNotificationService
+                        .shared
+                        .postNotificationSignInSuccess()
                 }
             }
         } else {

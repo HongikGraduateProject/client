@@ -28,6 +28,7 @@
 		27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8428D4B86A0099DB00 /* AppleAuthService.swift */; };
 		27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */; };
 		27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */; };
+		278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DE6B628D6240000E38A1F /* NaverAuthService.swift */; };
 		27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B028D0A16F00805F79 /* SettingViewController.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
@@ -90,6 +91,7 @@
 		27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNotificationService.swift; sourceTree = "<group>"; };
 		27615AA128D4EB5D0099DB00 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		278DE6B628D6240000E38A1F /* NaverAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAuthService.swift; sourceTree = "<group>"; };
 		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				27615A8428D4B86A0099DB00 /* AppleAuthService.swift */,
 				27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */,
 				2755964828D5CE4500E103F6 /* KakaoAuthService.swift */,
+				278DE6B628D6240000E38A1F /* NaverAuthService.swift */,
 				27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */,
 			);
 			path = Service;
@@ -651,6 +654,7 @@
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
+				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+.swift in Sources */,

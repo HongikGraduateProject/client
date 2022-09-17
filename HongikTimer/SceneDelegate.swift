@@ -6,6 +6,7 @@
 //
 
 import KakaoSDKAuth
+import NaverThirdPartyLogin
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -29,14 +30,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UINavigationBar.appearance().tintColor = .barTint
         UITabBar.appearance().tintColor = .barTint
+        
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if let url = URLContexts.first?.url {
-            if AuthApi.isKakaoTalkLoginUrl(url) {
-                _ = AuthController.handleOpenUrl(url: url)
-            }
-        }
+//        if let url = URLContexts.first?.url {
+//            if AuthApi.isKakaoTalkLoginUrl(url) {
+//                _ = AuthController.handleOpenUrl(url: url)
+//            } else {
+//                NaverThirdPartyLoginConnection
+//                   .getSharedInstance()?
+//                   .receiveAccessToken(URLContexts.first?.url)
+//            }
+//        }
+        
+        NaverThirdPartyLoginConnection
+           .getSharedInstance()?
+           .receiveAccessToken(URLContexts.first?.url)
     }
 }
-

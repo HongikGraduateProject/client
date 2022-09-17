@@ -12,11 +12,14 @@ import SnapKit
 import Toast_Swift
 import Then
 import UIKit
+import NaverThirdPartyLogin
 
 final class RegisterViewController: UIViewController {
     
     var window: UIWindow?
     private var currentNonce: String?
+    
+    private lazy var naverAuthService = NaverAuthService(delegate: self)
     
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -116,6 +119,33 @@ final class RegisterViewController: UIViewController {
             )
         try? Auth.auth().signOut()
         KakaoAuthService.shared.kakaoLogout()
+        naverAuthService.shared?.requestDeleteToken()
+    }
+}
+
+// MARK: - NaverThirdPartyLoginConnectionDelegate
+
+extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
+    
+    // 로그인 성공
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        print("DEBUG 네이버 로그인 성공")
+        AuthNotificationService.shared.postNotificationSignInSuccess()
+    }
+    
+    // 접근 토큰 갱신
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+//        print("DEBUG 네이버 토큰\(shared?.accessToken)")
+    }
+    
+    // 로그아웃 (토큰 삭제)
+    func oauth20ConnectionDidFinishDeleteToken() {
+        print("DEBUG 네이버 로그아웃")
+    }
+    
+    // 모든 Error
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        print("DEBUG 에러 = \(error.localizedDescription)")
     }
 }
 
@@ -203,7 +233,7 @@ private extension RegisterViewController {
     }
     
     @objc func tapNaverLogin() {
-        
+        naverAuthService.shared?.requestThirdPartyLogin()
     }
     
     @objc func tapRegisterButton() {
