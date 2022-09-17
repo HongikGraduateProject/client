@@ -12,6 +12,7 @@ target 'HongikTimer' do
   pod 'FirebaseAuth'
   pod 'GoogleSignIn'
   pod 'KakaoSDK'
+  pod 'naveridlogin-sdk-ios'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
