@@ -18,7 +18,7 @@ final class RegisterViewController: UIViewController {
     var window: UIWindow?
     
     private var currentNonce: String?
-    
+        
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
@@ -197,7 +197,6 @@ private extension RegisterViewController {
     }
     
     @objc func tapKakaoLogin() {
-        
     }
     
     @objc func tapNaverLogin() {

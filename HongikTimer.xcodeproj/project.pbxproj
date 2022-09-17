@@ -90,6 +90,7 @@
 		27615A8428D4B86A0099DB00 /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
 		27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNotificationService.swift; sourceTree = "<group>"; };
+		27615AA128D4EB5D0099DB00 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
 				2750A41228D02BEB000EE24D /* Info.plist */,
 				27B471BF28D1968500805F79 /* GoogleService-Info.plist */,
+				27615AA128D4EB5D0099DB00 /* Config.xcconfig */,
 			);
 			path = HongikTimer;
 			sourceTree = "<group>";
@@ -701,6 +703,7 @@
 /* Begin XCBuildConfiguration section */
 		2750A42928D02BEB000EE24D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27615AA128D4EB5D0099DB00 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -761,6 +764,7 @@
 		};
 		2750A42A28D02BEB000EE24D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27615AA128D4EB5D0099DB00 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -817,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA1F5AB474B727D1BE4675FD /* Pods-HongikTimer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HongikTimer/HongikTimer.entitlements;
@@ -846,6 +851,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HongikTimer/HongikTimer.entitlements;
@@ -875,7 +881,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -896,7 +902,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -917,7 +923,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BC366D269652CAB663F933B /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
@@ -936,7 +942,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A17F95CB44DA866D16431521 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;

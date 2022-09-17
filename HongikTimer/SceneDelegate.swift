@@ -8,9 +8,9 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
         window?.tintColor = .defaultTintColor
-//        window?.rootViewController = TabBarViewController()
+        //        window?.rootViewController = TabBarViewController()
         window?.rootViewController = UINavigationController(
             rootViewController: RegisterViewController()
         )
