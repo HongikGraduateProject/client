@@ -6,6 +6,7 @@
 //
 
 import AuthenticationServices
+import Combine
 import Firebase
 import GoogleSignIn
 import SnapKit
@@ -14,6 +15,8 @@ import Then
 import UIKit
 
 final class RegisterViewController: UIViewController {
+    
+    var subscriptions = Set<AnyCancellable>()
     
     var window: UIWindow?
     private var currentNonce: String?
@@ -112,9 +115,33 @@ final class RegisterViewController: UIViewController {
         
         AuthNotificationService
             .shared
-            .addObserverSignInSuccess(with: self, completion: #selector(loginSuccessHandler))
+            .addObserverSignInSuccess(
+                with: self,
+                completion: #selector(loginSuccessHandler)
+            )
         
         try? Auth.auth().signOut()
+        
+        setBindings()
+    }
+}
+
+// MARK: - kakaoViewModel binding
+extension RegisterViewController {
+    fileprivate func setBindings() {
+//        self.kakaoAuthViewModel.$isLoggedIn.sink { [weak self] isLoggedIn in
+//            guard let self = self else { return }
+//
+//            let vc = TabBarViewController()
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true)
+//        }
+//        .store(in: &subscriptions)
+        
+        self.kakaoAuthViewModel.loginStatusInfo
+            .receive(on: DispatchQueue.main)
+            .assign(to: \., on: <#T##Root#>)
+            .store(in: &subscriptions)
     }
 }
 
@@ -198,7 +225,7 @@ private extension RegisterViewController {
     }
     
     @objc func tapKakaoLogin() {
-        kakaoAuthViewModel.handleKakaoLogin()
+        kakaoAuthViewModel.kakaoLogin()
     }
     
     @objc func tapNaverLogin() {
