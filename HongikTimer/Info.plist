@@ -35,10 +35,10 @@
 	<string>$(KAKAO_NATIVE_APP_KEY)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-        <string>naversearchapp</string>
-        <string>naversearchthirdlogin</string>
         <string>kakaokompassauth</string>
         <string>kakaolink</string>
+        <string>naversearchapp</string>
+        <string>naversearchthirdlogin</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
