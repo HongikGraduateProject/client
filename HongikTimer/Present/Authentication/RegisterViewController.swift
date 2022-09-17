@@ -6,7 +6,6 @@
 //
 
 import AuthenticationServices
-import Combine
 import Firebase
 import GoogleSignIn
 import SnapKit
@@ -16,13 +15,9 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
     
-    var subscriptions = Set<AnyCancellable>()
-    
     var window: UIWindow?
     private var currentNonce: String?
     
-    private lazy var kakaoAuthViewModel: KakaoAuthViewModel = { KakaoAuthViewModel() }()
-        
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
@@ -119,29 +114,8 @@ final class RegisterViewController: UIViewController {
                 with: self,
                 completion: #selector(loginSuccessHandler)
             )
-        
         try? Auth.auth().signOut()
-        
-        setBindings()
-    }
-}
-
-// MARK: - kakaoViewModel binding
-extension RegisterViewController {
-    fileprivate func setBindings() {
-//        self.kakaoAuthViewModel.$isLoggedIn.sink { [weak self] isLoggedIn in
-//            guard let self = self else { return }
-//
-//            let vc = TabBarViewController()
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true)
-//        }
-//        .store(in: &subscriptions)
-        
-        self.kakaoAuthViewModel.loginStatusInfo
-            .receive(on: DispatchQueue.main)
-            .assign(to: \., on: <#T##Root#>)
-            .store(in: &subscriptions)
+        KakaoAuthService.shared.kakaoLogout()
     }
 }
 
@@ -225,7 +199,7 @@ private extension RegisterViewController {
     }
     
     @objc func tapKakaoLogin() {
-        kakaoAuthViewModel.kakaoLogin()
+        KakaoAuthService.shared.signInWithKakao()
     }
     
     @objc func tapNaverLogin() {

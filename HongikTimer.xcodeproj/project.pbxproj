@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2740F7D428D5AB8300284372 /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740F7D328D5AB8300284372 /* KakaoAuthViewModel.swift */; };
 		2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40428D02BE9000EE24D /* AppDelegate.swift */; };
 		2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40628D02BE9000EE24D /* SceneDelegate.swift */; };
 		2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40828D02BE9000EE24D /* TabBarViewController.swift */; };
@@ -16,17 +15,15 @@
 		2750A41C28D02BEB000EE24D /* HongikTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A41B28D02BEB000EE24D /* HongikTimerTests.swift */; };
 		2750A42628D02BEB000EE24D /* HongikTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42528D02BEB000EE24D /* HongikTimerUITests.swift */; };
 		2750A42828D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42728D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift */; };
-		2750A43B28D03171000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A43A28D03171000EE24D /* Alamofire */; };
-		2750A44128D0319E000EE24D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44028D0319E000EE24D /* SnapKit */; };
-		2750A44428D031AD000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44328D031AD000EE24D /* Alamofire */; };
-		2750A44728D031BE000EE24D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44628D031BE000EE24D /* Alamofire */; };
-		2750A44A28D031D8000EE24D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2750A44928D031D8000EE24D /* Kingfisher */; };
 		2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2750A44C28D032A2000EE24D /* .swiftlint.yml */; };
 		2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A44E28D0340F000EE24D /* TabBarViewModel.swift */; };
 		2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45128D0386A000EE24D /* HomeViewController.swift */; };
 		2750A45428D04C95000EE24D /* PurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45328D04C95000EE24D /* PurposeView.swift */; };
 		2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45528D051D3000EE24D /* SetPurposeViewController.swift */; };
-		27615A8128D44F590099DB00 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 27615A8028D44F590099DB00 /* Then */; };
+		2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755964828D5CE4500E103F6 /* KakaoAuthService.swift */; };
+		2755964C28D5D3F400E103F6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2755964B28D5D3F400E103F6 /* Then */; };
+		2755964F28D5D40B00E103F6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2755964E28D5D40B00E103F6 /* SnapKit */; };
+		2755965228D5D42100E103F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2755965128D5D42100E103F6 /* Kingfisher */; };
 		27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8228D450B80099DB00 /* SeparatorView.swift */; };
 		27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8428D4B86A0099DB00 /* AppleAuthService.swift */; };
 		27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */; };
@@ -70,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		0BC366D269652CAB663F933B /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer-HongikTimerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2740F7D328D5AB8300284372 /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
 		2750A40128D02BE9000EE24D /* HongikTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongikTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750A40428D02BE9000EE24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2750A40628D02BE9000EE24D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +84,7 @@
 		2750A45128D0386A000EE24D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2750A45328D04C95000EE24D /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
 		2750A45528D051D3000EE24D /* SetPurposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeViewController.swift; sourceTree = "<group>"; };
+		2755964828D5CE4500E103F6 /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
 		27615A8228D450B80099DB00 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		27615A8428D4B86A0099DB00 /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
 		27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
@@ -124,13 +121,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2750A44428D031AD000EE24D /* Alamofire in Frameworks */,
-				2750A44A28D031D8000EE24D /* Kingfisher in Frameworks */,
-				2750A44128D0319E000EE24D /* SnapKit in Frameworks */,
-				27615A8128D44F590099DB00 /* Then in Frameworks */,
-				2750A44728D031BE000EE24D /* Alamofire in Frameworks */,
-				2750A43B28D03171000EE24D /* Alamofire in Frameworks */,
+				2755965228D5D42100E103F6 /* Kingfisher in Frameworks */,
+				2755964F28D5D40B00E103F6 /* SnapKit in Frameworks */,
 				BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */,
+				2755964C28D5D3F400E103F6 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				2750A44E28D0340F000EE24D /* TabBarViewModel.swift */,
-				2740F7D328D5AB8300284372 /* KakaoAuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,6 +332,7 @@
 				27B471D728D2CA2700805F79 /* EmailAuthService.swift */,
 				27615A8428D4B86A0099DB00 /* AppleAuthService.swift */,
 				27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */,
+				2755964828D5CE4500E103F6 /* KakaoAuthService.swift */,
 				27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */,
 			);
 			path = Service;
@@ -387,12 +381,9 @@
 			);
 			name = HongikTimer;
 			packageProductDependencies = (
-				2750A43A28D03171000EE24D /* Alamofire */,
-				2750A44028D0319E000EE24D /* SnapKit */,
-				2750A44328D031AD000EE24D /* Alamofire */,
-				2750A44628D031BE000EE24D /* Alamofire */,
-				2750A44928D031D8000EE24D /* Kingfisher */,
-				27615A8028D44F590099DB00 /* Then */,
+				2755964B28D5D3F400E103F6 /* Then */,
+				2755964E28D5D40B00E103F6 /* SnapKit */,
+				2755965128D5D42100E103F6 /* Kingfisher */,
 			);
 			productName = HongikTimer;
 			productReference = 2750A40128D02BE9000EE24D /* HongikTimer.app */;
@@ -470,10 +461,9 @@
 			);
 			mainGroup = 2750A3F828D02BE9000EE24D;
 			packageReferences = (
-				2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */,
-				2750A43F28D0319E000EE24D /* XCRemoteSwiftPackageReference "SnapKit" */,
-				2750A44828D031D8000EE24D /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */,
+				2755964A28D5D3F400E103F6 /* XCRemoteSwiftPackageReference "Then" */,
+				2755964D28D5D40B00E103F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2755965028D5D42100E103F6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2750A40228D02BE9000EE24D /* Products */;
 			projectDirPath = "";
@@ -643,10 +633,10 @@
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
+				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
-				2740F7D428D5AB8300284372 /* KakaoAuthViewModel.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
 				27B471D828D2CA2700805F79 /* EmailAuthService.swift in Sources */,
@@ -1011,31 +1001,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
-		2750A43F28D0319E000EE24D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
-		2750A44828D031D8000EE24D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 7.3.0;
-			};
-		};
-		27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */ = {
+		2755964A28D5D3F400E103F6 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
@@ -1043,38 +1009,39 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		2755964D28D5D40B00E103F6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		2755965028D5D42100E103F6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2750A43A28D03171000EE24D /* Alamofire */ = {
+		2755964B28D5D3F400E103F6 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 2755964A28D5D3F400E103F6 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
-		2750A44028D0319E000EE24D /* SnapKit */ = {
+		2755964E28D5D40B00E103F6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2750A43F28D0319E000EE24D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 2755964D28D5D40B00E103F6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		2750A44328D031AD000EE24D /* Alamofire */ = {
+		2755965128D5D42100E103F6 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		2750A44628D031BE000EE24D /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2750A43928D03171000EE24D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		2750A44928D031D8000EE24D /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2750A44828D031D8000EE24D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 2755965028D5D42100E103F6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		27615A8028D44F590099DB00 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 27615A7F28D44F590099DB00 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
