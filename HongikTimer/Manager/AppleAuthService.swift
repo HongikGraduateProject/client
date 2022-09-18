@@ -10,7 +10,6 @@ import AuthenticationServices
 import FirebaseAuth
 import CommonCrypto
 
-
 class AppleAuthService: NSObject {
     static let shared = AppleAuthService()
 
@@ -37,10 +36,10 @@ class AppleAuthService: NSObject {
     func signInWithAnonymous() {
         Auth.auth().signInAnonymously() { (authResult, error) in
             if error != nil {
-                AuthNotificationService.shared.postNotificationSignInError()
+                AuthNotificationManager.shared.postNotificationSignInError()
                 return
             }
-            AuthNotificationService.shared.postNotificationSignInSuccess()
+            AuthNotificationManager.shared.postNotificationSignInSuccess()
         }
     }
 
@@ -48,9 +47,9 @@ class AppleAuthService: NSObject {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            AuthNotificationService.shared.postNotificationSignOutSuccess()
+            AuthNotificationManager.shared.postNotificationSignOutSuccess()
         } catch let error {
-            AuthNotificationService.shared.postNotificationSignOutError()
+            AuthNotificationManager.shared.postNotificationSignOutError()
         }
     }
 }
@@ -76,10 +75,10 @@ extension AppleAuthService: ASAuthorizationControllerDelegate {
         // Sign in with Firebase.
         Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
             if error != nil {
-                AuthNotificationService.shared.postNotificationSignInError()
+                AuthNotificationManager.shared.postNotificationSignInError()
             return
           }
-            AuthNotificationService.shared.postNotificationSignInSuccess()
+            AuthNotificationManager.shared.postNotificationSignInSuccess()
         }
       }
     }

@@ -56,12 +56,14 @@ extension EmailRegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(
         _ textField: UITextField
     ) -> Bool {
-        if emailTextField.textField.isFirstResponder {
+        if textField == emailTextField.textField {
             nicknameTextField.textField.becomeFirstResponder()
-        } else if nicknameTextField.textField.isFirstResponder {
+        } else if textField == nicknameTextField.textField {
             passwordTextField.textField.becomeFirstResponder()
-        } else if passwordTextField.textField.isFirstResponder {
+        } else if textField == passwordTextField.textField {
             passwordCheckTextField.textField.becomeFirstResponder()
+        } else if textField == passwordCheckTextField.textField {
+            tapRegisterButton()
         }
         return true
     }
@@ -112,10 +114,15 @@ private extension EmailRegisterViewController {
     // MARK: - Selector
     
     @objc func tapRegisterButton() {
-        guard let email = emailTextField.textField.text else { return }
-        guard let nickname = nicknameTextField.textField.text else { return }
-        guard let password = passwordTextField.textField.text else { return }
-        guard let passwordCheck = passwordCheckTextField.textField.text else { return }
+        emailTextField.textField.resignFirstResponder()
+        nicknameTextField.textField.resignFirstResponder()
+        passwordTextField.textField.resignFirstResponder()
+        passwordCheckTextField.textField.resignFirstResponder()
+        
+        guard let email = emailTextField.textField.text, !email.isEmpty else { return }
+        guard let username = nicknameTextField.textField.text, !username.isEmpty else { return }
+        guard let password = passwordTextField.textField.text, !password.isEmpty else { return }
+        guard let passwordCheck = passwordCheckTextField.textField.text, !passwordCheck.isEmpty else { return }
         
         if password != passwordCheck {
             view.makeToast("비밀번호와 비밀번호 확인이 일치하지 않습니다", position: .top)
@@ -123,10 +130,10 @@ private extension EmailRegisterViewController {
         
         let authCredentials = AuthCredentials(
             email: email,
-            nickname: nickname,
+            username: username,
             password: password
         )
-        EmailAuthService.shared.registerUser(
+        AuthManager.shared.signInWithEmail(
             credentials: authCredentials
         ) { result, error in
             if let error = error {
@@ -138,7 +145,7 @@ private extension EmailRegisterViewController {
             
             let values = [
                 "email": email,
-                "nickname": nickname
+                "username": username
             ]
             
             refUSERS.child(uid).updateChildValues(values) { error, ref in

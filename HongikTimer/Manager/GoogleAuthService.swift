@@ -30,7 +30,7 @@ struct GoogleAuthService {
                                                            accessToken: authentication.accessToken)
             
             Auth.auth().signIn(with: credential) { _, _ in
-                AuthNotificationService.shared.postNotificationSignInSuccess()
+                AuthNotificationManager.shared.postNotificationSignInSuccess()
             }
         }
     }

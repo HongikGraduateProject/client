@@ -18,9 +18,9 @@ enum AuthentState: String {
     }
 }
 
-struct AuthNotificationService {
+struct AuthNotificationManager {
     
-    static let shared = AuthNotificationService()
+    static let shared = AuthNotificationManager()
     
     func postNotificationSignInSuccess() {
         NotificationCenter.default.post(

@@ -21,15 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        window?.tintColor = .defaultTintColor
-        //        window?.rootViewController = TabBarViewController()
-        window?.rootViewController = UINavigationController(
-            rootViewController: RegisterViewController()
-        )
-        window?.makeKeyAndVisible()
-        
         UINavigationBar.appearance().tintColor = .barTint
         UITabBar.appearance().tintColor = .barTint
+                window?.rootViewController = TabBarViewController()
+        window?.makeKeyAndVisible()
         
     }
     

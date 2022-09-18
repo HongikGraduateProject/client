@@ -9,6 +9,6 @@ import Foundation
 
 struct AuthCredentials {
     let email: String
-    let nickname: String
+    let username: String
     let password: String
 }

@@ -24,7 +24,10 @@ final class RegisterViewController: UIViewController {
     private lazy var logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
-        $0.image = UIImage(systemName: "timer")
+        $0.image = UIImage(systemName: "timer")?.withTintColor(
+            .defaultTintColor,
+            renderingMode: .alwaysOriginal
+        )
     }
     
     private lazy var appleLoginButton = UIButton(configuration: snsLoginConfig).then {
@@ -111,15 +114,15 @@ final class RegisterViewController: UIViewController {
         super.viewDidLoad()
         setupLayout()
         
-        AuthNotificationService
+        AuthNotificationManager
             .shared
             .addObserverSignInSuccess(
                 with: self,
                 completion: #selector(loginSuccessHandler)
             )
-        try? Auth.auth().signOut()
-        KakaoAuthService.shared.kakaoLogout()
-        naverAuthService.shared?.requestDeleteToken()
+//        try? Auth.auth().signOut()
+//        KakaoAuthService.shared.kakaoLogout()
+//        naverAuthService.shared?.requestDeleteToken()
     }
 }
 
@@ -130,7 +133,7 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     // 로그인 성공
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("DEBUG 네이버 로그인 성공")
-        AuthNotificationService.shared.postNotificationSignInSuccess()
+        AuthNotificationManager.shared.postNotificationSignInSuccess()
     }
     
     // 접근 토큰 갱신
@@ -253,5 +256,7 @@ private extension RegisterViewController {
         let vc = TabBarViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+        navigationController?.popToRootViewController(animated: false)
+
     }
 }

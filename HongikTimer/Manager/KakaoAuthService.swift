@@ -25,7 +25,7 @@ struct KakaoAuthService {
                     
                     // do something
                     _ = oauthToken
-                    AuthNotificationService
+                    AuthNotificationManager
                         .shared
                         .postNotificationSignInSuccess()
                 }
@@ -36,7 +36,7 @@ struct KakaoAuthService {
                     print(error)
                 } else {
                     print("loginWithKakaoAccount() success.")
-                    AuthNotificationService
+                    AuthNotificationManager
                         .shared
                         .postNotificationSignInSuccess()
                     // do something
@@ -51,7 +51,7 @@ struct KakaoAuthService {
                 print(error)
             } else {
                 print("logout() success.")
-                AuthNotificationService
+                AuthNotificationManager
                     .shared
                     .postNotificationSignOutSuccess()
             }

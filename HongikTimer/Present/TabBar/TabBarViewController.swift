@@ -5,21 +5,38 @@
 //  Created by JongHoon on 2022/09/13.
 //
 
+import FirebaseAuth
 import UIKit
 
 final class TabBarViewController: UITabBarController {
     
-// MARK: - Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        handleNotAuthenticated()
     }
 }
 
 // MARK: - Private
 
 private extension TabBarViewController {
+    
+    func handleNotAuthenticated() {
+        // Check auth statts
+        if Auth.auth().currentUser == nil {
+            // SHow log in
+            let nv = UINavigationController(rootViewController: RegisterViewController())
+            nv.modalPresentationStyle = .fullScreen
+            present(nv, animated: false)
+        }
+    }
     
     func setTabBar() {
         let tabBarViewControllers: [UIViewController] = TabBarItem
@@ -30,7 +47,7 @@ private extension TabBarViewController {
                     image: tabCase.icon.default,
                     selectedImage: tabCase.icon.selected
                 )
-            
+                
                 return viewController
             }
         viewControllers = tabBarViewControllers

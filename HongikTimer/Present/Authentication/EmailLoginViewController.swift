@@ -6,11 +6,11 @@
 //
 
 import SnapKit
+import Toast_Swift
 import Then
 import UIKit
 
 final class EmailLoginViewController: UIViewController {
-    // MARK: - Lifecycle
     
     private var labelConfig = ButtonConfig(buttonConfig: .label).getConfig()
     
@@ -46,9 +46,17 @@ final class EmailLoginViewController: UIViewController {
         )
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         setupNavigationBar()
         setupLayout()
+        
+        AuthNotificationManager.shared
+            .addObserverSignInSuccess(
+                with: self,
+                completion: #selector(loginSuccessHandler)
+            )
     }
 }
 
@@ -59,8 +67,9 @@ extension EmailLoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField.textField {
             passwordTextField.textField.becomeFirstResponder()
+        } else if textField == passwordTextField.textField {
+            tapLoginButton()
         }
-        
         return true
     }
 }
@@ -70,6 +79,7 @@ extension EmailLoginViewController: UITextFieldDelegate {
 private extension EmailLoginViewController {
     
     func setupNavigationBar() {
+        navigationItem.title = "Email 로그인"
         
         lazy var leftBarButton = UIBarButtonItem(
             barButtonSystemItem: .close,
@@ -112,22 +122,57 @@ private extension EmailLoginViewController {
         dismiss(animated: true)
     }
     
+//    @objc func tapLoginButton() {
+//        guard let email = emailTextField.textField.text,
+//              !email.isEmpty,
+//              let password = passwordTextField.textField.text,
+//              !password.isEmpty else {
+//            view.makeToast("이메일 / 비밀번호를 확인해주세요", position: .top)
+//            return
+//        }
+//
+//        AuthManager.shared.logInWithEmail(
+//            email: email,
+//            password: password) { [weak self] success in
+//                DispatchQueue.main.async {
+//                    if success {
+//                        AuthNotificationManager.shared.postNotificationSignInSuccess()
+//                    } else {
+//                        self?.view.makeToast("로그인 오류", position: .top)
+//                    }
+//                }
+//            }
+//    }
+    
     @objc func tapLoginButton() {
-        guard let email = emailTextField.textField.text else { return }
-        guard let password = passwordTextField.textField.text else { return }
+        emailTextField.textField.resignFirstResponder()
+        passwordTextField.textField.resignFirstResponder()
         
-        EmailAuthService.shared.loginUser(
-            email: email,
-            password: password
-        ) { [weak self] result, error in
-            if let error = error {
-                print("DEBUG Error logging in \(error)")
-                return
-            }
-            
-            let vc = TabBarViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self?.present(vc, animated: true)
+        guard let email = emailTextField.textField.text,
+              !email.isEmpty,
+              let password = passwordTextField.textField.text,
+              !password.isEmpty else {
+            view.makeToast("이메일 / 비밀번호를 확인하세요", position: .top)
+            return
         }
+        
+        AuthManager.shared.logInWithEmail(
+            email: email,
+            password: password) { [weak self] authResult, error in
+                guard authResult != nil, error == nil else {
+                    print("DEBUG tapLoginButton error: \(String(describing: error))")
+                    self?.view.makeToast("이메일 / 비밀번호를 확인하세요")
+                    return }
+                
+                AuthNotificationManager.shared.postNotificationSignInSuccess()
+            }
     }
+    
+    @objc func loginSuccessHandler() {
+        let vc = TabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        navigationController?.popToRootViewController(animated: false)
+    }
+    
 }
