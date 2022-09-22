@@ -36,7 +36,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 NaverThirdPartyLoginConnection
                     .getSharedInstance()?
                     .receiveAccessToken(URLContexts.first?.url)
+        
             }
+            
         }
     }
 }
