@@ -62,7 +62,7 @@ enum TabBarItem: CaseIterable {
         case .home:
             return UINavigationController(rootViewController: HomeViewController())
         case .todo:
-            return UINavigationController(rootViewController: UIViewController())
+            return UINavigationController(rootViewController: ToDoViewController())
         case .timer:
             return UINavigationController(rootViewController: UIViewController())
         case .group:
