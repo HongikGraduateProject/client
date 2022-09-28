@@ -11,47 +11,37 @@ import UIKit
 
 final class ToDoViewController: UIViewController {
     
-    private lazy var collectionView = UICollectionView(
-        frame: .zero,
-        collectionViewLayout: UICollectionViewFlowLayout()
-    ).then {
-        let layout = UICollectionViewFlowLayout()
-        
-        $0.backgroundColor = .systemBackground
-        $0.delegate = self
-        $0.dataSource = self
-    }
+    private var tasks = [Task]()
+    
+    private lazy var weekView = WeekView()
+    private lazy var taskView = TaskView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
     }
-}
-
-// MARK: - CollectionView
-
-extension ToDoViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        UICollectionViewCell()
-    }
-}
-
-extension ToDoViewController: UICollectionViewDelegateFlowLayout {
-    
 }
 
 // MARK: - Private
 
 private extension ToDoViewController {
     func setupLayout() {
+        [
+            weekView,
+            taskView
+        ].forEach { view.addSubview($0) }
         
+        weekView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(64.0)
+        }
+        
+        taskView.snp.makeConstraints {
+            $0.top.equalTo(weekView.snp.bottom).offset(16.0)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }

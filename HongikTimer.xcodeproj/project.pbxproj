@@ -32,6 +32,13 @@
 		278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DE6B828D71A1200E38A1F /* SettingCellModel.swift */; };
 		278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DE6BA28D766D600E38A1F /* DatabaseManager.swift */; };
 		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
+		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
+		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
+		27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AE28E33A530076FF80 /* HeaderView.swift */; };
+		27A977B128E34E130076FF80 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B028E34E130076FF80 /* Identifier.swift */; };
+		27A977B328E3501A0076FF80 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B228E3501A0076FF80 /* Task.swift */; };
+		27A977B528E363880076FF80 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B428E363880076FF80 /* WeekView.swift */; };
+		27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B628E3689C0076FF80 /* TaskCollectionView.swift */; };
 		27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B028D0A16F00805F79 /* SettingViewController.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
@@ -98,6 +105,13 @@
 		278DE6B828D71A1200E38A1F /* SettingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellModel.swift; sourceTree = "<group>"; };
 		278DE6BA28D766D600E38A1F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
+		27A977AE28E33A530076FF80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		27A977B028E34E130076FF80 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		27A977B228E3501A0076FF80 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		27A977B428E363880076FF80 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		27A977B628E3689C0076FF80 /* TaskCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionView.swift; sourceTree = "<group>"; };
 		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -267,8 +281,26 @@
 			isa = PBXGroup;
 			children = (
 				27A977A228E208020076FF80 /* ToDoViewController.swift */,
+				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
+			sourceTree = "<group>";
+		};
+		27A977B928E368D30076FF80 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				27A977BA28E368E50076FF80 /* WeekView */,
+				27C3DF9728E369AA00B458CD /* TaskView */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		27A977BA28E368E50076FF80 /* WeekView */ = {
+			isa = PBXGroup;
+			children = (
+				27A977B428E363880076FF80 /* WeekView.swift */,
+			);
+			path = WeekView;
 			sourceTree = "<group>";
 		};
 		27B471AF28D0A14E00805F79 /* Setting */ = {
@@ -302,6 +334,7 @@
 				27B471BC28D0ACF100805F79 /* Notification.swift */,
 				27B471D428D236D900805F79 /* AuthCredentials.swift */,
 				278DE6B828D71A1200E38A1F /* SettingCellModel.swift */,
+				27A977B228E3501A0076FF80 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +356,7 @@
 				27B471C428D19B2400805F79 /* UIColor+.swift */,
 				27B471CE28D20DAF00805F79 /* ButtonConfig.swift */,
 				27B471D228D22E6900805F79 /* Constant.swift */,
+				27A977B028E34E130076FF80 /* Identifier.swift */,
 			);
 			path = Plus;
 			sourceTree = "<group>";
@@ -356,6 +390,17 @@
 				278DE6BA28D766D600E38A1F /* DatabaseManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		27C3DF9728E369AA00B458CD /* TaskView */ = {
+			isa = PBXGroup;
+			children = (
+				27A977B628E3689C0076FF80 /* TaskCollectionView.swift */,
+				27A977AA28E331D70076FF80 /* TaskCell.swift */,
+				27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */,
+				27A977AE28E33A530076FF80 /* HeaderView.swift */,
+			);
+			path = TaskView;
 			sourceTree = "<group>";
 		};
 		DC59D37AD871089D6B979296 /* Pods */ = {
@@ -657,18 +702,25 @@
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
+				27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
+				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthManager.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
+				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
+				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailRegisterViewController.swift in Sources */,
+				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
+				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
+				27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,

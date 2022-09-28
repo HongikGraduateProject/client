@@ -10,9 +10,7 @@ import Then
 import UIKit
 
 final class NotificationCell: UICollectionViewCell {
-    
-    static let identifier: String = "NotificationCell"
-    
+        
     var notification: Notification? {
         didSet { setupView() }
     }
