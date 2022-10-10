@@ -19,6 +19,7 @@ final class TaskCollectionView: UIView {
     ).then {
         let layout = UICollectionViewFlowLayout()
         
+        $0.alwaysBounceVertical = true
         $0.collectionViewLayout = layout
         $0.backgroundColor = .systemBackground
         $0.delegate = self
@@ -38,7 +39,7 @@ final class TaskCollectionView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+            
         setupLayout()
     }
     required init?(coder: NSCoder) {
@@ -66,7 +67,25 @@ extension TaskCollectionView: UICollectionViewDataSource {
             for: indexPath
         ) as? TaskCell
         let taskVM = taskListVM.modelAt(indexPath.row)
-        cell?.setupCell(taskVM)
+        
+        if taskVM.contents.isEmpty == false {
+            cell?.setupCell(taskVM)
+        } else {
+            cell?.textField.becomeFirstResponder()
+        }
+        
+        cell?.textFieldNotEmptyCompletion = { [weak self] taskVM in
+            self?.taskListVM.updateTaskViewModel(taskVM)
+            self?.taskListVM.addTaskViewModel(TaskViewModel(task: Task()))
+            
+            collectionView.reloadData()
+        }
+        
+        cell?.textFieldEmptyCompletion = { [weak self] in
+            self?.taskListVM.removeEndIndex()
+            collectionView.reloadData()
+            
+        }
         
         return cell ?? UICollectionViewCell()
     }
@@ -83,7 +102,10 @@ extension TaskCollectionView: UICollectionViewDataSource {
             for: indexPath
         ) as? TaskHeaderCell
         
-        headerView?.tapAddTodoCompletion = { Task
+        headerView?.tapAddTodoCompletion = { [weak self] taskVM in
+            self?.taskListVM.addTaskViewModel(taskVM)
+            
+            collectionView.reloadData()
         }
         
         return headerView ?? UICollectionReusableView()
@@ -129,5 +151,7 @@ private extension TaskCollectionView {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
+        // TODO: 키보드가 todo작성 textField 가리는거 해결
     }
 }

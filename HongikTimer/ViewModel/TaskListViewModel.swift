@@ -18,13 +18,21 @@ class TaskListViewModel {
         TaskViewModel(task: Task(
             taskId: 0,
             userId: 0,
-            
             contents: "운동",
             isChecked: false))
     ]
     
     func addTaskViewModel(_ vm: TaskViewModel) {
         taskViewModels.append(vm)
+    }
+    
+    func updateTaskViewModel(_ vm: TaskViewModel) {
+        taskViewModels.remove(at: taskViewModels.endIndex - 1)
+        addTaskViewModel(vm)
+    }
+    
+    func removeEndIndex() {
+        taskViewModels.remove(at: taskViewModels.index(before: taskViewModels.endIndex))
     }
     
     func numberOfRows(_ section: Int) -> Int {
@@ -42,7 +50,7 @@ class TaskViewModel {
     var isChecked: Bool
     
     init(task: Task) {
-        self.contents = task.contents
-        self.isChecked = task.isChecked
+        self.contents = task.contents ?? ""
+        self.isChecked = task.isChecked ?? false
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 final class TaskHeaderCell: UICollectionReusableView {
     
-    var tapAddTodoCompletion: ((TaskCell) -> Void)?
+    var tapAddTodoCompletion: ((TaskViewModel) -> Void)?
     
     private lazy var headerView = HeaderView().then {
         $0.layer.cornerRadius = 12.0
@@ -58,7 +58,7 @@ private extension TaskHeaderCell {
     // MARK: - Selector
     
     @objc func tapAddTodoHeader() {
-        let vm = TaskViewModel(task: Task)
-        tapAddTodoCompletion?(TaskViewModel)
+        let vm = TaskViewModel(task: Task())
+        tapAddTodoCompletion?(vm)
     }
 }

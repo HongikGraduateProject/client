@@ -17,4 +17,16 @@ struct Task {
         self.taskId = 0
         self.userId = 0
     }
+    
+    init(
+        taskId: Int,
+        userId: Int,
+        contents: String,
+        isChecked: Bool
+    ) {
+        self.taskId = taskId
+        self.userId = userId
+        self.contents = contents
+        self.isChecked = isChecked
+    }
 }

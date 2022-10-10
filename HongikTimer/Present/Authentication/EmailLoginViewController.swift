@@ -173,6 +173,7 @@ private extension EmailLoginViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
         navigationController?.popToRootViewController(animated: false)
+        
+        
     }
-    
 }

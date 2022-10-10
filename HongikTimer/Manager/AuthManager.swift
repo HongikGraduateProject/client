@@ -7,6 +7,7 @@
 
 import Firebase
 import UIKit
+import Alamofire
 
 final class AuthManager: NSObject {
     
@@ -71,4 +72,31 @@ extension AuthManager {
             completion: completion
         )
     }
+    
+    func sign(username: String, email: String, password: String) {
+        let param: Parameters = [
+            "username": username,
+            "email": email,
+            "password": password
+        ]
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        
+        AF.request(URLS.loginURL, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>, interceptor: <#T##RequestInterceptor?#>, requestModifier: <#T##Session.RequestModifier?##Session.RequestModifier?##(inout URLRequest) throws -> Void#>)
+        
+        
+//        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseString() { response in
+//            switch response.result {
+//            case .failure(let e):
+//                //에러메세지 출력
+//                print(e)
+//            case .success:
+//                //회원가입 후 로직 작성
+//            }
+//        }
+        
+    }
+    
+    
 }

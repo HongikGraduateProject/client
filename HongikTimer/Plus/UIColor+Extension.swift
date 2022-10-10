@@ -1,5 +1,5 @@
 //
-//  UIColor+.swift
+//  UIColor+Extension.swift
 //  HongikTimer
 //
 //  Created by JongHoon on 2022/09/14.

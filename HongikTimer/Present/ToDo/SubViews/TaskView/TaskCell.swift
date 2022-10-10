@@ -12,7 +12,13 @@ import UIKit
 final class TaskCell: UICollectionViewCell {
 
     private var taskVM: TaskViewModel?
-
+    
+    /// 텍스트필드 입력값이 empty가 아니면 입력값으로 viewModelList update
+    var textFieldNotEmptyCompletion: ((TaskViewModel) -> Void)?
+    
+    /// 텍스트필드 입력값이 empty이면 viewModelList의 마지막 요소 삭제
+    var textFieldEmptyCompletion: (() -> Void)?
+    
     private let squareImage = UIImage(systemName: "square")
     private let checkSquareImage = UIImage(systemName: "checkmark.square")
 
@@ -22,8 +28,9 @@ final class TaskCell: UICollectionViewCell {
         $0.addTarget(self, action: #selector(toggleCheck), for: .touchUpInside)
     }
     
-    private lazy var textField = UITextField().then {
+    lazy var textField = UITextField().then {
         $0.placeholder = "입력"
+        $0.delegate = self
     }
     
     private lazy var setButton = UIButton().then {
@@ -46,8 +53,33 @@ final class TaskCell: UICollectionViewCell {
     func setupCell(_ vm: TaskViewModel) {
         taskVM = vm
         textField.text = vm.contents
+        textField.isEnabled = false
+        
         let image = vm.isChecked ? checkSquareImage : squareImage
         checkButton.setImage(image, for: .normal)
+    }
+    
+}
+
+// MARK: - TextField
+
+extension TaskCell: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let taskVM = TaskViewModel(task: Task(
+            taskId: 0,
+            userId: 0,
+            contents: textField.text ?? "", isChecked: false)
+        )
+        
+        textField.isEnabled = false
+        if textField.text?.isEmpty == false {
+            textFieldNotEmptyCompletion?(taskVM)
+        } else {
+            textFieldEmptyCompletion?()
+        }
+        
+        return true
     }
     
 }
@@ -102,4 +134,6 @@ private extension TaskCell {
             )
         }
     }
+    
+    // TODO: button 클릭시 viewModelList 업데이트, 마지막 todo 클릭시 한번만 바뀜
 }
