@@ -10,6 +10,11 @@ import Foundation
 struct Task {
     let taskId: Int
     let userId: Int
-    var contents: String
-    var isChecked: Bool
+    var contents: String?
+    var isChecked: Bool?
+    
+    init() {
+        self.taskId = 0
+        self.userId = 0
+    }
 }

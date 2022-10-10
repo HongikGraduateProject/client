@@ -14,7 +14,7 @@ final class ToDoViewController: UIViewController {
     private var tasks = [Task]()
     
     private lazy var weekView = WeekView()
-    private lazy var taskView = TaskView()
+    private lazy var taskView = TaskCollectionView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {

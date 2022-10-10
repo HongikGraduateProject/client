@@ -11,12 +11,14 @@ import UIKit
 
 final class TaskHeaderCell: UICollectionReusableView {
     
+    var tapAddTodoCompletion: ((TaskCell) -> Void)?
+    
     private lazy var headerView = HeaderView().then {
         $0.layer.cornerRadius = 12.0
         
         let tap = UITapGestureRecognizer(
             target: self,
-            action: #selector(tapHeader)
+            action: #selector(tapAddTodoHeader)
         )
         $0.addGestureRecognizer(tap)
         $0.isUserInteractionEnabled = true
@@ -55,7 +57,8 @@ private extension TaskHeaderCell {
     
     // MARK: - Selector
     
-    @objc func tapHeader() {
-        print("tap Header")
+    @objc func tapAddTodoHeader() {
+        let vm = TaskViewModel(task: Task)
+        tapAddTodoCompletion?(TaskViewModel)
     }
 }

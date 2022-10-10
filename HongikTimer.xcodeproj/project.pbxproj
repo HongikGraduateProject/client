@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E134E28F1D9A700877965 /* TaskListViewModel.swift */; };
 		2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40428D02BE9000EE24D /* AppDelegate.swift */; };
 		2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40628D02BE9000EE24D /* SceneDelegate.swift */; };
 		2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A40828D02BE9000EE24D /* TabBarViewController.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		0BC366D269652CAB663F933B /* Pods-HongikTimer-HongikTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer-HongikTimerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		273E134E28F1D9A700877965 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		2750A40128D02BE9000EE24D /* HongikTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongikTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750A40428D02BE9000EE24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2750A40628D02BE9000EE24D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2750A44E28D0340F000EE24D /* TabBarViewModel.swift */,
+				273E134E28F1D9A700877965 /* TaskListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
+				273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailRegisterViewController.swift in Sources */,

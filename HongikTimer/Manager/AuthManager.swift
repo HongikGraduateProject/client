@@ -42,25 +42,25 @@ extension AuthManager {
         )
     }
     
-//    func logInWithEmail(
-//        email: String,
-//        password: String,
-//        completion: @escaping (Bool) -> Void
-//    ) {
-//        Auth.auth().signIn(
-//            withEmail: email,
-//            password: password) { authResult, error in
-//                guard authResult != nil, error == nil else {
-//                    completion(false)
-//                    return
-//                }
-//                completion(true)
-//            }
-//    }
-        
-        func signInWithEmail(
-            credentials: AuthCredentials,
-            completion: ((AuthDataResult?, Error?) -> Void)?
+    //    func logInWithEmail(
+    //        email: String,
+    //        password: String,
+    //        completion: @escaping (Bool) -> Void
+    //    ) {
+    //        Auth.auth().signIn(
+    //            withEmail: email,
+    //            password: password) { authResult, error in
+    //                guard authResult != nil, error == nil else {
+    //                    completion(false)
+    //                    return
+    //                }
+    //                completion(true)
+    //            }
+    //    }
+    
+    func signInWithEmail(
+        credentials: AuthCredentials,
+        completion: ((AuthDataResult?, Error?) -> Void)?
     ) {
         let email = credentials.email
         let password = credentials.password

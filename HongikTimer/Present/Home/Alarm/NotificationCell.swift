@@ -91,7 +91,6 @@ final class NotificationCell: UICollectionViewCell {
             $0.leading.equalTo(iconImageView.snp.trailing).offset(8.0)
             $0.trailing.equalToSuperview().inset(8.0)
             $0.bottom.greaterThanOrEqualToSuperview().inset(16.0)
-
         }
         
         separatorView.snp.makeConstraints {

@@ -11,9 +11,15 @@ import UIKit
 
 final class TaskCell: UICollectionViewCell {
 
+    private var taskVM: TaskViewModel?
+
+    private let squareImage = UIImage(systemName: "square")
+    private let checkSquareImage = UIImage(systemName: "checkmark.square")
+
     private lazy var checkButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "square"), for: .normal)
+        $0.setImage(squareImage, for: .normal)
         $0.tintColor = .label
+        $0.addTarget(self, action: #selector(toggleCheck), for: .touchUpInside)
     }
     
     private lazy var textField = UITextField().then {
@@ -35,6 +41,13 @@ final class TaskCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupCell(_ vm: TaskViewModel) {
+        taskVM = vm
+        textField.text = vm.contents
+        let image = vm.isChecked ? checkSquareImage : squareImage
+        checkButton.setImage(image, for: .normal)
     }
     
 }
@@ -69,6 +82,24 @@ private extension TaskCell {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.trailing.equalToSuperview().inset(16.0)
             $0.height.width.equalTo(16.0)
+        }
+    }
+
+// MARK: - selector
+    
+    @objc func toggleCheck() {
+        if taskVM?.isChecked == true {
+            taskVM?.isChecked = false
+            checkButton.setImage(
+                squareImage,
+                for: .normal
+            )
+        } else {
+            taskVM?.isChecked = true
+            checkButton.setImage(
+                checkSquareImage,
+                for: .normal
+            )
         }
     }
 }

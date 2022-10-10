@@ -9,7 +9,9 @@ import SnapKit
 import Then
 import UIKit
 
-final class TaskView: UIView {
+final class TaskCollectionView: UIView {
+    
+    private var taskListVM = TaskListViewModel()
     
     private lazy var collectionView = UICollectionView(
         frame: .zero,
@@ -46,12 +48,12 @@ final class TaskView: UIView {
 
 // MARK: - CollectionView
 
-extension TaskView: UICollectionViewDataSource {
+extension TaskCollectionView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        5
+        taskListVM.numberOfRows(section)
     }
     
     func collectionView(
@@ -62,8 +64,11 @@ extension TaskView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: TaskCell.identifier,
             for: indexPath
-        )
-        return cell
+        ) as? TaskCell
+        let taskVM = taskListVM.modelAt(indexPath.row)
+        cell?.setupCell(taskVM)
+        
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(
@@ -76,12 +81,16 @@ extension TaskView: UICollectionViewDataSource {
             ofKind: kind,
             withReuseIdentifier: TaskHeaderCell.idenifier,
             for: indexPath
-        )
-        return headerView
+        ) as? TaskHeaderCell
+        
+        headerView?.tapAddTodoCompletion = { Task
+        }
+        
+        return headerView ?? UICollectionReusableView()
     }
 }
 
-extension TaskView: UICollectionViewDelegateFlowLayout {
+extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(
         _ collectionView: UICollectionView,
@@ -111,7 +120,7 @@ extension TaskView: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Private
 
-private extension TaskView {
+private extension TaskCollectionView {
     func setupLayout() {
         [
             collectionView
