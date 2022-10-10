@@ -25,7 +25,11 @@ final class TaskCell: UICollectionViewCell {
     private lazy var checkButton = UIButton().then {
         $0.setImage(squareImage, for: .normal)
         $0.tintColor = .label
-        $0.addTarget(self, action: #selector(toggleCheck), for: .touchUpInside)
+        $0.addTarget(
+            self,
+            action: #selector(toggleCheck),
+            for: .touchUpInside
+        )
     }
     
     lazy var textField = UITextField().then {
@@ -33,9 +37,17 @@ final class TaskCell: UICollectionViewCell {
         $0.delegate = self
     }
     
-    private lazy var setButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+    private lazy var editButton = UIButton().then {
+        $0.setImage(
+            UIImage(systemName: "ellipsis"),
+            for: .normal
+        )
         $0.tintColor = .systemGray2
+        $0.addTarget(
+            self,
+            action: #selector(tapEditButton),
+            for: .touchUpInside
+        )
     }
 
     // MARK: - Lifecycle
@@ -93,7 +105,7 @@ private extension TaskCell {
         [
             checkButton,
             textField,
-            setButton
+            editButton
         ].forEach { addSubview($0) }
         
         checkButton.snp.makeConstraints {
@@ -106,11 +118,11 @@ private extension TaskCell {
         textField.snp.makeConstraints {
             $0.leading.equalTo(checkButton.snp.trailing).offset(8.0)
             $0.height.equalTo(16.0)
-            $0.trailing.equalTo(setButton.snp.leading).offset(16.0)
+            $0.trailing.equalTo(editButton.snp.leading).offset(16.0)
             $0.centerY.equalTo(checkButton)
         }
         
-        setButton.snp.makeConstraints {
+        editButton.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(8.0)
             $0.trailing.equalToSuperview().inset(16.0)
             $0.height.width.equalTo(16.0)
@@ -133,6 +145,10 @@ private extension TaskCell {
                 for: .normal
             )
         }
+    }
+    
+    @objc func tapEditButton() {
+        let taskHalfM
     }
     
     // TODO: button 클릭시 viewModelList 업데이트, 마지막 todo 클릭시 한번만 바뀜

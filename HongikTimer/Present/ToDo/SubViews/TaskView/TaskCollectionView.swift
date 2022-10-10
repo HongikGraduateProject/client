@@ -12,7 +12,7 @@ import UIKit
 final class TaskCollectionView: UIView {
     
     private var taskListVM = TaskListViewModel()
-    
+        
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()

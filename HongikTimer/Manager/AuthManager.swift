@@ -41,24 +41,31 @@ extension AuthManager {
             password: password,
             completion: completion
         )
+        
+        let param: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        AF.request(URLs.login.url,
+                   method: .post,
+                   parameters: param,
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseString { response in
+            switch response.result {
+            case .failure(let error):
+                print("DEBUG email 로그인 후 post error")
+                print(error)
+            case .success:
+                // 이후에 로그인 성공 후 로직 실행
+                print("DEBUG email 로그인 post 성공")
+            }
+        }
     }
     
-    //    func logInWithEmail(
-    //        email: String,
-    //        password: String,
-    //        completion: @escaping (Bool) -> Void
-    //    ) {
-    //        Auth.auth().signIn(
-    //            withEmail: email,
-    //            password: password) { authResult, error in
-    //                guard authResult != nil, error == nil else {
-    //                    completion(false)
-    //                    return
-    //                }
-    //                completion(true)
-    //            }
-    //    }
-    
+    /// Firebase Email 회원가입
     func signInWithEmail(
         credentials: AuthCredentials,
         completion: ((AuthDataResult?, Error?) -> Void)?
@@ -71,32 +78,43 @@ extension AuthManager {
             password: password,
             completion: completion
         )
-    }
-    
-    func sign(username: String, email: String, password: String) {
-        let param: Parameters = [
-            "username": username,
-            "email": email,
-            "password": password
+        
+        let parameters: Parameters = [
+            "username": credentials.username,
+            "email": credentials.email,
+            "password": credentials.password
         ]
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
         
-        AF.request(URLS.loginURL, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>, interceptor: <#T##RequestInterceptor?#>, requestModifier: <#T##Session.RequestModifier?##Session.RequestModifier?##(inout URLRequest) throws -> Void#>)
-        
-        
-//        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseString() { response in
-//            switch response.result {
-//            case .failure(let e):
-//                //에러메세지 출력
-//                print(e)
-//            case .success:
-//                //회원가입 후 로직 작성
-//            }
-//        }
-        
+        AF.request(
+            URLs.signin.url,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            headers: headers
+        ).responseDecodable(of: User.self) { response in
+            switch response.result {
+            case .success(let user):
+                print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
+                
+                UserDefaultManager.shared.setUser(user)
+                
+            case .failure(let error):
+                print("DEBUG 회원가입 post 실패 error: \(error)")
+            }
+            
+            //        .responseString { response in
+            //            switch response.result {
+            //            case .failure(let error):
+            //                print("DEBUG email 회원가입 실패")
+            //                print(error)
+            //            case .success:
+            //                print("DEBUG AuthManager 이메일 회원가입 post 성공")
+            //                // 회원가입 후 로직 작성
+            //            }
+            //        }
+        }
     }
-    
-    
 }

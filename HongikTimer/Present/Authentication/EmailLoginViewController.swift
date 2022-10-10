@@ -122,28 +122,6 @@ private extension EmailLoginViewController {
         dismiss(animated: true)
     }
     
-//    @objc func tapLoginButton() {
-//        guard let email = emailTextField.textField.text,
-//              !email.isEmpty,
-//              let password = passwordTextField.textField.text,
-//              !password.isEmpty else {
-//            view.makeToast("이메일 / 비밀번호를 확인해주세요", position: .top)
-//            return
-//        }
-//
-//        AuthManager.shared.logInWithEmail(
-//            email: email,
-//            password: password) { [weak self] success in
-//                DispatchQueue.main.async {
-//                    if success {
-//                        AuthNotificationManager.shared.postNotificationSignInSuccess()
-//                    } else {
-//                        self?.view.makeToast("로그인 오류", position: .top)
-//                    }
-//                }
-//            }
-//    }
-    
     @objc func tapLoginButton() {
         emailTextField.textField.resignFirstResponder()
         passwordTextField.textField.resignFirstResponder()
@@ -173,7 +151,7 @@ private extension EmailLoginViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
         navigationController?.popToRootViewController(animated: false)
-        
-        
     }
 }
+
+// TODO: 인디케이터 추가

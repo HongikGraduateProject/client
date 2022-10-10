@@ -73,7 +73,7 @@ extension AppleAuthService: ASAuthorizationControllerDelegate {
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
             // Sign in with Firebase.
-            Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            Auth.auth().signIn(with: credential) { (authResult, error) in
                 if error != nil {
                     AuthNotificationManager.shared.postNotificationSignInError()
                     return

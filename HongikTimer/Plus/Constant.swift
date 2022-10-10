@@ -19,15 +19,16 @@ let refUSERS = dbREF.child("users")
 
 // MARK: - URL
 
-//struct URLS {
-//    let loginURL = URL(string: "http://localhost:8080/join")
-//}
-
-enum URLS {
+enum URLs {
     case login
-    
-    return url: URl {
-        swi
+    case signin
+
+    var url: String {
+        switch self {
+        case .signin:
+            return "http://localhost:8080/join"
+        case .login:
+            return "http://localhost:8080/login"
+        }
     }
 }
-

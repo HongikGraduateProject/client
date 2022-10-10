@@ -1,5 +1,5 @@
 //
-//  EmailRegisterViewController.swift
+//  EmailSigninViewController.swift
 //  HongikTimer
 //
 //  Created by JongHoon on 2022/09/14.
@@ -10,7 +10,7 @@ import SnapKit
 import Then
 import UIKit
 
-final class EmailRegisterViewController: UIViewController {
+final class EmailSigninViewController: UIViewController {
         
     private lazy var emailTextField = TextFieldView(with: "이메일").then {
         $0.textField.becomeFirstResponder()
@@ -31,13 +31,13 @@ final class EmailRegisterViewController: UIViewController {
         $0.textField.isSecureTextEntry = true
     }
     
-    private lazy var registerButton = UIButton(configuration: labelConfig).then {
+    private lazy var signinButton = UIButton(configuration: labelConfig).then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .bold)
         $0.addTarget(
             self,
-            action: #selector(tapRegisterButton),
+            action: #selector(tapsigninButton),
             for: .touchUpInside
         )
     }
@@ -52,7 +52,7 @@ final class EmailRegisterViewController: UIViewController {
 
 // MARK: - TextField
 
-extension EmailRegisterViewController: UITextFieldDelegate {
+extension EmailSigninViewController: UITextFieldDelegate {
     func textFieldShouldReturn(
         _ textField: UITextField
     ) -> Bool {
@@ -63,7 +63,7 @@ extension EmailRegisterViewController: UITextFieldDelegate {
         } else if textField == passwordTextField.textField {
             passwordCheckTextField.textField.becomeFirstResponder()
         } else if textField == passwordCheckTextField.textField {
-            tapRegisterButton()
+            tapsigninButton()
         }
         return true
     }
@@ -71,7 +71,7 @@ extension EmailRegisterViewController: UITextFieldDelegate {
 
 // MARK: - Private
 
-private extension EmailRegisterViewController {
+private extension EmailSigninViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         navigationItem.title = "회원가입"
@@ -85,7 +85,7 @@ private extension EmailRegisterViewController {
             nicknameTextField,
             passwordTextField,
             passwordCheckTextField,
-            registerButton
+            signinButton
         ]).then {
             $0.axis = .vertical
             $0.distribution = .equalSpacing
@@ -113,7 +113,7 @@ private extension EmailRegisterViewController {
     
     // MARK: - Selector
     
-    @objc func tapRegisterButton() {
+    @objc func tapsigninButton() {
         emailTextField.textField.resignFirstResponder()
         nicknameTextField.textField.resignFirstResponder()
         passwordTextField.textField.resignFirstResponder()
@@ -137,7 +137,7 @@ private extension EmailRegisterViewController {
             credentials: authCredentials
         ) { result, error in
             if let error = error {
-                print("DEBUG Error is \(error)")
+                print("DEBUG 이메일 회원가입 에러 \(error)")
                 return
             }
             
@@ -153,12 +153,6 @@ private extension EmailRegisterViewController {
                     print(error)
                 }
                 
-                let window = (
-                    UIApplication
-                    .shared
-                    .connectedScenes
-                    .first as? UIWindowScene
-                )?.keyWindow
                 
                 let vc = TabBarViewController()
                 vc.modalPresentationStyle = .fullScreen
@@ -167,3 +161,5 @@ private extension EmailRegisterViewController {
         }
     }
 }
+
+// TODO: 회원가입 에러 처리

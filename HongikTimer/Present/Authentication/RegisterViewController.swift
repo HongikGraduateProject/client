@@ -240,7 +240,7 @@ private extension RegisterViewController {
     }
     
     @objc func tapRegisterButton() {
-        let vc = EmailRegisterViewController()
+        let vc = EmailSigninViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
