@@ -100,7 +100,10 @@ extension TaskCollectionView: UICollectionViewDataSource {
         }
         
         cell?.textFieldEditCompletion = { [weak self] taskVM, indexPath in
-            self?.taskListVM.configureEdit(taskVM, indexPath: indexPath)
+            self?.taskListVM.configureEdit(
+                taskVM,
+                indexPath: indexPath
+            )
             collectionView.reloadData()
         }
         

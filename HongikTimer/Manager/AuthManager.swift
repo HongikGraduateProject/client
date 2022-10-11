@@ -104,17 +104,6 @@ extension AuthManager {
             case .failure(let error):
                 print("DEBUG 회원가입 post 실패 error: \(error)")
             }
-            
-            //        .responseString { response in
-            //            switch response.result {
-            //            case .failure(let error):
-            //                print("DEBUG email 회원가입 실패")
-            //                print(error)
-            //            case .success:
-            //                print("DEBUG AuthManager 이메일 회원가입 post 성공")
-            //                // 회원가입 후 로직 작성
-            //            }
-            //        }
         }
     }
 }
