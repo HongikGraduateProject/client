@@ -47,7 +47,6 @@ private extension TabBarViewController {
                     image: tabCase.icon.default,
                     selectedImage: tabCase.icon.selected
                 )
-                
                 return viewController
             }
         viewControllers = tabBarViewControllers

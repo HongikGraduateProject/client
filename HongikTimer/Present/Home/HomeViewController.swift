@@ -19,7 +19,6 @@ final class HomeViewController: UIViewController {
 
     private lazy var wallpaperImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.backgroundColor = .red
     }
     
     private lazy var houseImageView = UIImageView().then {
@@ -35,7 +34,7 @@ final class HomeViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
         
-    // MARK: - Lifecycle
+// MARK: - Lifecycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,7 @@ final class HomeViewController: UIViewController {
         setNavigationbar()
         setupLayout()
 
-        // MARK: - dummy
+// MARK: - dummy
         wallpaperImageView.image = UIImage(named: "w6")
         houseImageView.image = UIImage(named: "Home_ex2")
     }
@@ -113,7 +112,7 @@ private extension HomeViewController {
         }
     }
     
-    // MARK: - Selector
+// MARK: - Selector
     
     @objc func tapPurposeView() {
         let vc = SetPurposeViewController()

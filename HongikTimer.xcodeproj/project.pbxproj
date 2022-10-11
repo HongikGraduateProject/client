@@ -39,6 +39,10 @@
 		2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */; };
 		2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */; };
 		2793C12D28F535C500FC7D13 /* TodoNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */; };
+		2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* TimerViewController.swift */; };
+		2793C13328F5901400FC7D13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2793C13228F5901400FC7D13 /* Lottie */; };
+		2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2793C13A28F5969E00FC7D13 /* TimerAnimation.json */; };
+		2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */; };
 		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
 		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
@@ -120,6 +124,9 @@
 		2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
 		2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotificationManager.swift; sourceTree = "<group>"; };
+		2793C12F28F58DB300FC7D13 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		2793C13A28F5969E00FC7D13 /* TimerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimerAnimation.json; sourceTree = "<group>"; };
+		2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
@@ -159,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2793C13328F5901400FC7D13 /* Lottie in Frameworks */,
 				2755965228D5D42100E103F6 /* Kingfisher in Frameworks */,
 				2755964F28D5D40B00E103F6 /* SnapKit in Frameworks */,
 				BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */,
@@ -228,7 +236,7 @@
 				27B471BB28D0ACDC00805F79 /* Model */,
 				2740F7D228D5AB5900284372 /* ViewModel */,
 				2750A43428D02F89000EE24D /* Present */,
-				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
+				2793C13928F5967B00FC7D13 /* Assets */,
 				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
 				2750A41228D02BEB000EE24D /* Info.plist */,
 				27B471BF28D1968500805F79 /* GoogleService-Info.plist */,
@@ -261,6 +269,8 @@
 				2750A43528D030AD000EE24D /* TabBar */,
 				2750A45028D0384D000EE24D /* Home */,
 				27A977A128E2076A0076FF80 /* ToDo */,
+				2793C12E28F58D9100FC7D13 /* Timer */,
+				2793C13C28F5C17900FC7D13 /* Board */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -301,6 +311,31 @@
 				2793C12328F499DC00FC7D13 /* TaskEditPresentaionController.swift */,
 			);
 			path = TaskEditView;
+			sourceTree = "<group>";
+		};
+		2793C12E28F58D9100FC7D13 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				2793C12F28F58DB300FC7D13 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		2793C13928F5967B00FC7D13 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2793C13A28F5969E00FC7D13 /* TimerAnimation.json */,
+				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2793C13C28F5C17900FC7D13 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 		27A977A128E2076A0076FF80 /* ToDo */ = {
@@ -481,6 +516,7 @@
 				2755964B28D5D3F400E103F6 /* Then */,
 				2755964E28D5D40B00E103F6 /* SnapKit */,
 				2755965128D5D42100E103F6 /* Kingfisher */,
+				2793C13228F5901400FC7D13 /* Lottie */,
 			);
 			productName = HongikTimer;
 			productReference = 2750A40128D02BE9000EE24D /* HongikTimer.app */;
@@ -561,6 +597,7 @@
 				2755964A28D5D3F400E103F6 /* XCRemoteSwiftPackageReference "Then" */,
 				2755964D28D5D40B00E103F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2755965028D5D42100E103F6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2793C13128F5901400FC7D13 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2750A40228D02BE9000EE24D /* Products */;
 			projectDirPath = "";
@@ -582,6 +619,7 @@
 				2750A41128D02BEB000EE24D /* LaunchScreen.storyboard in Resources */,
 				2750A40E28D02BEB000EE24D /* Assets.xcassets in Resources */,
 				27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */,
+				2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +779,7 @@
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
+				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthManager.swift in Sources */,
@@ -750,6 +789,7 @@
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				2793C12D28F535C500FC7D13 /* TodoNotificationManager.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
+				2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */,
 				273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
@@ -1141,6 +1181,14 @@
 				minimumVersion = 7.3.0;
 			};
 		};
+		2793C13128F5901400FC7D13 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1158,6 +1206,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2755965028D5D42100E103F6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		2793C13228F5901400FC7D13 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2793C13128F5901400FC7D13 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -4,6 +4,7 @@ disabled_rules:
 - force_cast
 - function_body_length
 - closure_parameter_position
+- void_function_in_ternary
 
 
 included:
