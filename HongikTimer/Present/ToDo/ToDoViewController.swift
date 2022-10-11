@@ -11,16 +11,42 @@ import UIKit
 
 final class ToDoViewController: UIViewController {
     
-    private var tasks = [Task]()
+    private var taskListVM = TaskListViewModel()
+    private var editIndexPath: IndexPath = []
     
     private lazy var weekView = WeekView()
-    private lazy var taskView = TaskCollectionView()
+    private lazy var taskView = TaskCollectionView(taskListVM).then {
+        $0.presentTaskEditViewCompletion = { [weak self] taskVM, indexPath in
+            self?.editIndexPath = indexPath
+            let vc = TaskEditViewController(
+                taskVM,
+                indexPath: indexPath
+            )
+            vc.modalPresentationStyle = .custom
+            vc.transitioningDelegate = self
+            self?.present(vc, animated: true)
+        }
+    }
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
+    }
+}
+
+// MARK: - ViewControllerTransitioning
+extension ToDoViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController?,
+        source: UIViewController
+    ) -> UIPresentationController? {
+        TaskEditPresentaionController(
+            presentedViewController: presented,
+            presenting: presenting
+        )
     }
 }
 

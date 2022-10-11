@@ -11,7 +11,9 @@ import UIKit
 
 final class TaskCollectionView: UIView {
     
-    private var taskListVM = TaskListViewModel()
+    private var taskListVM: TaskListViewModel
+    
+    var presentTaskEditViewCompletion: ((TaskViewModel, IndexPath) -> Void)?
         
     private lazy var collectionView = UICollectionView(
         frame: .zero,
@@ -37,11 +39,18 @@ final class TaskCollectionView: UIView {
     
     // MARK: - Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-            
+    init(_ taskListViewModel: TaskListViewModel) {
+        taskListVM = taskListViewModel
+        
+        super.init(frame: .zero)
         setupLayout()
+        TodoNotificationManager.shared.addObserverEdit(
+            with: self,
+            completion: #selector(editTodo)
+        )
+        
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -75,7 +84,7 @@ extension TaskCollectionView: UICollectionViewDataSource {
         }
         
         cell?.textFieldNotEmptyCompletion = { [weak self] taskVM in
-            self?.taskListVM.updateTaskViewModel(taskVM)
+            self?.taskListVM.configureNotEmptyTextField(taskVM)
             self?.taskListVM.addTaskViewModel(TaskViewModel(task: Task()))
             
             collectionView.reloadData()
@@ -84,7 +93,11 @@ extension TaskCollectionView: UICollectionViewDataSource {
         cell?.textFieldEmptyCompletion = { [weak self] in
             self?.taskListVM.removeEndIndex()
             collectionView.reloadData()
-            
+        }
+        
+        cell?.textFieldEditCompletion = { [weak self] taskVM, indexPath in
+            self?.taskListVM.configureEdit(taskVM, indexPath: indexPath)
+            collectionView.reloadData()
         }
         
         return cell ?? UICollectionViewCell()
@@ -116,6 +129,14 @@ extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(
         _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let taskVM = taskListVM.modelAt(indexPath.item)
+        presentTaskEditViewCompletion?(taskVM, indexPath)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
@@ -137,7 +158,6 @@ extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
     ) -> CGFloat {
         return 0
     }
-    
 }
 
 // MARK: - Private
@@ -154,4 +174,17 @@ private extension TaskCollectionView {
         
         // TODO: 키보드가 todo작성 textField 가리는거 해결
     }
+    
+// MARK: - Selector
+    
+    @objc func editTodo(_ notification: NSNotification) {
+        
+        guard let indexPath = notification.userInfo?[TodoNotificationKey.indexPath.rawValue] as? IndexPath else { return}
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? TaskCell
+        cell?.textFieldEditMode(indexPath)
+    }
 }
+
+// TODO: 노티피케이션 uiview에서 처리하기
+// TODO: 키보드 눌러서 endEdit 됐을때 마지막 삭제

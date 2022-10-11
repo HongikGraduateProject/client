@@ -34,8 +34,11 @@
 		278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DE6BA28D766D600E38A1F /* DatabaseManager.swift */; };
 		2793C11E28F47AF400FC7D13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C11D28F47AF400FC7D13 /* User.swift */; };
 		2793C12028F4801600FC7D13 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C11F28F4801600FC7D13 /* UserDefaultManager.swift */; };
-		2793C12228F491EB00FC7D13 /* TaskHalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12128F491EB00FC7D13 /* TaskHalfModalPresentationController.swift */; };
 		2793C12428F499DC00FC7D13 /* TaskEditPresentaionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12328F499DC00FC7D13 /* TaskEditPresentaionController.swift */; };
+		2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12528F49F9100FC7D13 /* UIView+Extension.swift */; };
+		2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */; };
+		2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */; };
+		2793C12D28F535C500FC7D13 /* TodoNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */; };
 		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
 		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
@@ -112,8 +115,11 @@
 		278DE6BA28D766D600E38A1F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2793C11D28F47AF400FC7D13 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2793C11F28F4801600FC7D13 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
-		2793C12128F491EB00FC7D13 /* TaskHalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHalfModalPresentationController.swift; sourceTree = "<group>"; };
 		2793C12328F499DC00FC7D13 /* TaskEditPresentaionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditPresentaionController.swift; sourceTree = "<group>"; };
+		2793C12528F49F9100FC7D13 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotificationManager.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
@@ -217,7 +223,7 @@
 				27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */,
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
-				27B471C328D19B1800805F79 /* Plus */,
+				27B471C328D19B1800805F79 /* Extensions */,
 				27B471D628D2C9F000805F79 /* Manager */,
 				27B471BB28D0ACDC00805F79 /* Model */,
 				2740F7D228D5AB5900284372 /* ViewModel */,
@@ -288,6 +294,15 @@
 			path = SetPurpose;
 			sourceTree = "<group>";
 		};
+		2793C12928F5233900FC7D13 /* TaskEditView */ = {
+			isa = PBXGroup;
+			children = (
+				2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */,
+				2793C12328F499DC00FC7D13 /* TaskEditPresentaionController.swift */,
+			);
+			path = TaskEditView;
+			sourceTree = "<group>";
+		};
 		27A977A128E2076A0076FF80 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +317,7 @@
 			children = (
 				27A977BA28E368E50076FF80 /* WeekView */,
 				27C3DF9728E369AA00B458CD /* TaskView */,
+				2793C12928F5233900FC7D13 /* TaskEditView */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -362,15 +378,17 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		27B471C328D19B1800805F79 /* Plus */ = {
+		27B471C328D19B1800805F79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				27B471C428D19B2400805F79 /* UIColor+Extension.swift */,
+				2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */,
 				27B471CE28D20DAF00805F79 /* ButtonConfig.swift */,
 				27B471D228D22E6900805F79 /* Constant.swift */,
 				27A977B028E34E130076FF80 /* Identifier.swift */,
+				2793C12528F49F9100FC7D13 /* UIView+Extension.swift */,
 			);
-			path = Plus;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		27B471CC28D2081900805F79 /* SubViews */ = {
@@ -399,6 +417,7 @@
 				2755964828D5CE4500E103F6 /* KakaoAuthService.swift */,
 				278DE6B628D6240000E38A1F /* NaverAuthService.swift */,
 				27615A8828D4DB7D0099DB00 /* AuthNotificationManager.swift */,
+				2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */,
 				278DE6BA28D766D600E38A1F /* DatabaseManager.swift */,
 				2793C11F28F4801600FC7D13 /* UserDefaultManager.swift */,
 			);
@@ -412,8 +431,6 @@
 				27A977AA28E331D70076FF80 /* TaskCell.swift */,
 				27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */,
 				27A977AE28E33A530076FF80 /* HeaderView.swift */,
-				2793C12128F491EB00FC7D13 /* TaskHalfModalPresentationController.swift */,
-				2793C12328F499DC00FC7D13 /* TaskEditPresentaionController.swift */,
 			);
 			path = TaskView;
 			sourceTree = "<group>";
@@ -718,6 +735,8 @@
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */,
+				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
+				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
 				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
@@ -729,10 +748,12 @@
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
+				2793C12D28F535C500FC7D13 /* TodoNotificationManager.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
 				273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
+				2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailSigninViewController.swift in Sources */,
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
@@ -747,7 +768,6 @@
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultManager.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
-				2793C12228F491EB00FC7D13 /* TaskHalfModalPresentationController.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,

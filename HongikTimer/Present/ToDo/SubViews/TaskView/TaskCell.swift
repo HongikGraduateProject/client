@@ -12,12 +12,19 @@ import UIKit
 final class TaskCell: UICollectionViewCell {
 
     private var taskVM: TaskViewModel?
+    private var indexPath: IndexPath?
+    private var isEditMode: Bool = false
     
+    var tapEditButtonCompletion: ((String) -> Void)?
+        
     /// 텍스트필드 입력값이 empty가 아니면 입력값으로 viewModelList update
     var textFieldNotEmptyCompletion: ((TaskViewModel) -> Void)?
     
     /// 텍스트필드 입력값이 empty이면 viewModelList의 마지막 요소 삭제
     var textFieldEmptyCompletion: (() -> Void)?
+    
+    /// Task 수정 completion
+    var textFieldEditCompletion: ((TaskViewModel, IndexPath) -> Void)?
     
     private let squareImage = UIImage(systemName: "square")
     private let checkSquareImage = UIImage(systemName: "checkmark.square")
@@ -43,16 +50,12 @@ final class TaskCell: UICollectionViewCell {
             for: .normal
         )
         $0.tintColor = .systemGray2
-        $0.addTarget(
-            self,
-            action: #selector(tapEditButton),
-            for: .touchUpInside
-        )
     }
 
     // MARK: - Lifecycle
     
     override init(frame: CGRect) {
+        
         super.init(frame: frame)
         
         setupLayout()
@@ -71,6 +74,12 @@ final class TaskCell: UICollectionViewCell {
         checkButton.setImage(image, for: .normal)
     }
     
+    func textFieldEditMode(_ indexPath: IndexPath) {
+        self.indexPath = indexPath
+        textField.isEnabled = true
+        isEditMode = true
+        textField.becomeFirstResponder()
+    }
 }
 
 // MARK: - TextField
@@ -78,22 +87,37 @@ final class TaskCell: UICollectionViewCell {
 extension TaskCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let taskVM = TaskViewModel(task: Task(
-            taskId: 0,
-            userId: 0,
-            contents: textField.text ?? "", isChecked: false)
-        )
         
-        textField.isEnabled = false
-        if textField.text?.isEmpty == false {
-            textFieldNotEmptyCompletion?(taskVM)
+        if isEditMode == false {
+            taskVM = TaskViewModel(task: Task(
+                taskId: 0,
+                userId: 0,
+                contents: textField.text ?? "",
+                isChecked: false)
+            )
+            textField.isEnabled = false
+            if textField.text?.isEmpty == false {
+                guard let taskVM = taskVM else { return false }
+                textFieldNotEmptyCompletion?(taskVM)
+            } else {
+                textFieldEmptyCompletion?()
+            }
         } else {
-            textFieldEmptyCompletion?()
+            guard let task = taskVM?.task else { return false }
+            taskVM = TaskViewModel(task: Task(
+                taskId: task.taskId,
+                userId: task.userId,
+                contents: textField.text ?? "",
+                isChecked: task.isChecked ?? false)
+            )
+            guard let taskVM = taskVM else { return false }
+            textField.isEnabled = false
+            isEditMode = false
+            textFieldEditCompletion?(taskVM, indexPath ?? [])
         }
         
         return true
     }
-    
 }
 
 // MARK: - Private
@@ -145,10 +169,6 @@ private extension TaskCell {
                 for: .normal
             )
         }
-    }
-    
-    @objc func tapEditButton() {
-        let taskHalfM
     }
     
     // TODO: button 클릭시 viewModelList 업데이트, 마지막 todo 클릭시 한번만 바뀜

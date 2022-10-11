@@ -26,13 +26,24 @@ class TaskListViewModel {
         taskViewModels.append(vm)
     }
     
-    func updateTaskViewModel(_ vm: TaskViewModel) {
+    /// 텍스트 필드가 빈 상태가 아닐때
+    func configureNotEmptyTextField(_ vm: TaskViewModel) {
         taskViewModels.remove(at: taskViewModels.endIndex - 1)
         addTaskViewModel(vm)
     }
     
+    /// 마지막 TaskViewModel 제거
     func removeEndIndex() {
-        taskViewModels.remove(at: taskViewModels.index(before: taskViewModels.endIndex))
+        taskViewModels
+            .remove(at: taskViewModels
+            .index(before: taskViewModels.endIndex))
+    }
+    
+    func configureEdit(
+        _ taskViewModel: TaskViewModel,
+        indexPath: IndexPath
+    ) {
+        taskViewModels[indexPath.item] = taskViewModel
     }
     
     func numberOfRows(_ section: Int) -> Int {
@@ -42,15 +53,16 @@ class TaskListViewModel {
     func modelAt(_ index: Int) -> TaskViewModel {
         return taskViewModels[index]
     }
-    
 }
 
 class TaskViewModel {
     var contents: String
     var isChecked: Bool
+    var task: Task
     
     init(task: Task) {
         self.contents = task.contents ?? ""
         self.isChecked = task.isChecked ?? false
+        self.task = task
     }
 }
