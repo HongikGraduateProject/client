@@ -46,9 +46,13 @@ final class TaskCollectionView: UIView {
         setupLayout()
         TodoNotificationManager.shared.addObserverEdit(
             with: self,
-            completion: #selector(editTodo)
+            completion: #selector(editTask)
         )
         
+        TodoNotificationManager.shared.addObserverRemove(
+            with: self,
+            completion: #selector(removeTask)
+        )
     }
     
     required init?(coder: NSCoder) {
@@ -177,13 +181,23 @@ private extension TaskCollectionView {
     
 // MARK: - Selector
     
-    @objc func editTodo(_ notification: NSNotification) {
+    @objc func editTask(_ notification: NSNotification) {
         
-        guard let indexPath = notification.userInfo?[TodoNotificationKey.indexPath.rawValue] as? IndexPath else { return}
+        guard let indexPath = notification
+            .userInfo?[TodoNotificationKey.indexPath.rawValue] as? IndexPath else { return}
         
         let cell = collectionView.cellForItem(at: indexPath) as? TaskCell
         cell?.textFieldEditMode(indexPath)
     }
+    
+    @objc func removeTask(_ notification: NSNotification) {
+        
+        guard let indexPath = notification
+            .userInfo?[TodoNotificationKey.indexPath.rawValue] as? IndexPath else { return}
+        taskListVM.removeTaskAt(indexPath)
+        collectionView.reloadData()
+    }
+
 }
 
 // TODO: 노티피케이션 uiview에서 처리하기

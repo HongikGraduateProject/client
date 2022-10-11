@@ -11,24 +11,24 @@ struct User: Codable {
     let id: Int
     var username: String
     let email: String
-    var password: String
-    var nickName: String?
-    var phoneNumber: String?
-    var age: Int
-    var job: String?
-    var goal: String?
-    var timer: String?
-    var gold: Int
-    var role: String?
-    var creatDate: Date?
+//    var password: String
+//    var nickName: String?
+//    var phoneNumber: String?
+//    var age: Int
+//    var job: String?
+//    var goal: String?
+//    var timer: String?
+//    var gold: Int
+//    var role: String?
+//    var creatDate: Date?
     
     init() {
         self.id = 1
         self.username = "user1"
         self.email = "user1@gmail.com"
-        self.password = "qwerty@"
-        self.age = 0
-        self.gold = 0
+//        self.password = "qwerty@"
+//        self.age = 0
+//        self.gold = 0
     }
     
 }

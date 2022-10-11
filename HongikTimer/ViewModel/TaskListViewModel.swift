@@ -46,6 +46,10 @@ class TaskListViewModel {
         taskViewModels[indexPath.item] = taskViewModel
     }
     
+    func removeTaskAt(_ indexPath: IndexPath) {
+        taskViewModels.remove(at: indexPath.item)
+    }
+    
     func numberOfRows(_ section: Int) -> Int {
         return taskViewModels.count
     }

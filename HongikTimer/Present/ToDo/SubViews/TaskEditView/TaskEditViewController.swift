@@ -10,7 +10,7 @@ import UIKit
 final class TaskEditViewController: UIViewController {
         
     private var taskVM: TaskViewModel
-    private var editIndex: IndexPath
+    private var indexPath: IndexPath
     
     private var hasSetPointOrigin = false
     private var pointOrigin: CGPoint?
@@ -65,7 +65,7 @@ final class TaskEditViewController: UIViewController {
     
     init(_ taskViewModel: TaskViewModel, indexPath: IndexPath) {
         self.taskVM = taskViewModel
-        self.editIndex = indexPath
+        self.indexPath = indexPath
         super.init(nibName: nil, bundle: nil)
         
         print("DEBUG edit view의 todo는 \(taskViewModel.contents)")
@@ -152,11 +152,11 @@ private extension TaskEditViewController {
     
     @objc func tapEditButton() {
         dismiss(animated: true)
-        TodoNotificationManager.shared.postEdit(editIndex)
+        TodoNotificationManager.shared.postEdit(indexPath)
     }
     
     @objc func tapDeleteButton() {
         dismiss(animated: true)
-//        Todo
+        TodoNotificationManager.shared.postRemove(indexPath)
     }
 }

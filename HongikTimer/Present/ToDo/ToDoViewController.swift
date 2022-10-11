@@ -53,6 +53,15 @@ extension ToDoViewController: UIViewControllerTransitioningDelegate {
 // MARK: - Private
 
 private extension ToDoViewController {
+    func setupNavigationBar() {
+        let leftBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "gearshape"),
+            style: .plain,
+            target: self,
+            action: #selector(moveToTodoSettingVC)
+        )
+    }
+    
     func setupLayout() {
         [
             weekView,
@@ -69,5 +78,10 @@ private extension ToDoViewController {
             $0.top.equalTo(weekView.snp.bottom).offset(16.0)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+// MARK: - Selector
+    @objc func moveToTodoSettingVC() {
+        
     }
 }
