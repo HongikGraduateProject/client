@@ -66,7 +66,7 @@ final class TimerViewController: UIViewController {
 private extension TimerViewController {
     
     func setupLayout() {
-        view.backgroundColor = UIColor.init(rgb: 0x8bc86b)
+        view.backgroundColor = .timerGreen
         
         [
             animaionView,

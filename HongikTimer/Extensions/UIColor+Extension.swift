@@ -9,6 +9,7 @@ import UIKit
 
 extension UIColor {
     static let defaultTintColor = UIColor.systemGreen
+    static let timerGreen = UIColor.init(rgb: 0x8bc86b)
     static let barTint = UIColor.label
     
     struct Social {
