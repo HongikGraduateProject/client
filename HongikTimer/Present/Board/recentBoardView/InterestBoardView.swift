@@ -1,5 +1,5 @@
 //
-//  recentBoardView.swift
+//  InterestBoardView.swift
 //  HongikTimer
 //
 //  Created by JongHoon on 2022/10/12.
@@ -9,7 +9,7 @@ import SnapKit
 import Then
 import UIKit
 
-final class RecentBoardView: UIView {
+final class InterestBoardView: UIView {
     
     private lazy var titleLabel = UILabel().then {
         $0.text = "새로 올라온 관심글💘"
@@ -44,8 +44,8 @@ final class RecentBoardView: UIView {
         $0.backgroundColor = .systemBackground
         
         $0.register(
-            PopularBoardCell.self,
-            forCellWithReuseIdentifier: PopularBoardCell.idenifier
+            InterestBoardCell.self,
+            forCellWithReuseIdentifier: InterestBoardCell.idenifier
         )
     }
     
@@ -64,12 +64,12 @@ final class RecentBoardView: UIView {
 
 // MARK: - CollectionView
 
-extension RecentBoardView: UICollectionViewDataSource {
+extension InterestBoardView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        5
+        10
     }
     
     func collectionView(
@@ -77,9 +77,9 @@ extension RecentBoardView: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: PopularBoardCell.idenifier,
+            withReuseIdentifier: InterestBoardCell.idenifier,
             for: indexPath
-        ) as? PopularBoardCell else { return UICollectionViewCell() }
+        ) as? InterestBoardCell else { return UICollectionViewCell() }
         
         cell.setupCell()
                     
@@ -87,22 +87,22 @@ extension RecentBoardView: UICollectionViewDataSource {
     }
 }
 
-extension RecentBoardView: UICollectionViewDelegateFlowLayout {
+extension InterestBoardView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: 320, height: 180.0 )
+        return CGSize(width: layer.frame.width, height: 400)
     }
 }
 
 // MARK: - Private
 
-private extension RecentBoardView {
+private extension InterestBoardView {
     func setupLayout() {
-        backgroundColor = .systemGray3
+        backgroundColor = .systemBackground
         
         [
             titleLabel,
@@ -120,3 +120,5 @@ private extension RecentBoardView {
         }
     }
 }
+
+// TODO: cell 자동높이 조절 공부
