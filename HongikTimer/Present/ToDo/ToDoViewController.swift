@@ -32,6 +32,7 @@ final class ToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         setupLayout()
     }
 }
@@ -54,15 +55,18 @@ extension ToDoViewController: UIViewControllerTransitioningDelegate {
 
 private extension ToDoViewController {
     func setupNavigationBar() {
-        let leftBarButton = UIBarButtonItem(
+        let rightBarButton = UIBarButtonItem(
             image: UIImage(systemName: "gearshape"),
             style: .plain,
             target: self,
             action: #selector(moveToTodoSettingVC)
         )
+        
+        navigationItem.rightBarButtonItem = rightBarButton
     }
     
     func setupLayout() {
+        view.backgroundColor = .systemBackground
         [
             weekView,
             taskView
@@ -82,6 +86,10 @@ private extension ToDoViewController {
     
 // MARK: - Selector
     @objc func moveToTodoSettingVC() {
-        
+        let vc = TodoSettingViewController()
+        navigationController?.pushViewController(
+            vc,
+            animated: true
+        )
     }
 }

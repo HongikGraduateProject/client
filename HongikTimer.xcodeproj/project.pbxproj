@@ -43,6 +43,11 @@
 		2793C13328F5901400FC7D13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2793C13228F5901400FC7D13 /* Lottie */; };
 		2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2793C13A28F5969E00FC7D13 /* TimerAnimation.json */; };
 		2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */; };
+		2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */; };
+		2793C14428F5D52300FC7D13 /* PopularBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14328F5D52300FC7D13 /* PopularBoardView.swift */; };
+		2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */; };
+		2793C14C28F5F25600FC7D13 /* RecentBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14B28F5F25600FC7D13 /* RecentBoardView.swift */; };
+		2793C14E28F6670300FC7D13 /* RecentBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14D28F6670300FC7D13 /* RecentBoardCell.swift */; };
 		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
 		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
@@ -127,6 +132,11 @@
 		2793C12F28F58DB300FC7D13 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		2793C13A28F5969E00FC7D13 /* TimerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimerAnimation.json; sourceTree = "<group>"; };
 		2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSettingViewController.swift; sourceTree = "<group>"; };
+		2793C14328F5D52300FC7D13 /* PopularBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBoardView.swift; sourceTree = "<group>"; };
+		2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBoardCell.swift; sourceTree = "<group>"; };
+		2793C14B28F5F25600FC7D13 /* RecentBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBoardView.swift; sourceTree = "<group>"; };
+		2793C14D28F6670300FC7D13 /* RecentBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBoardCell.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
@@ -334,14 +344,35 @@
 			isa = PBXGroup;
 			children = (
 				2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */,
+				2793C14928F5F1EB00FC7D13 /* popularBoardView */,
+				2793C14A28F5F1FB00FC7D13 /* recentBoardView */,
 			);
 			path = Board;
+			sourceTree = "<group>";
+		};
+		2793C14928F5F1EB00FC7D13 /* popularBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				2793C14328F5D52300FC7D13 /* PopularBoardView.swift */,
+				2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */,
+			);
+			path = popularBoardView;
+			sourceTree = "<group>";
+		};
+		2793C14A28F5F1FB00FC7D13 /* recentBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				2793C14B28F5F25600FC7D13 /* RecentBoardView.swift */,
+				2793C14D28F6670300FC7D13 /* RecentBoardCell.swift */,
+			);
+			path = recentBoardView;
 			sourceTree = "<group>";
 		};
 		27A977A128E2076A0076FF80 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
 				27A977A228E208020076FF80 /* ToDoViewController.swift */,
+				2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -798,11 +829,14 @@
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
+				2793C14E28F6670300FC7D13 /* RecentBoardCell.swift in Sources */,
 				27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
+				2793C14428F5D52300FC7D13 /* PopularBoardView.swift in Sources */,
 				2793C12428F499DC00FC7D13 /* TaskEditPresentaionController.swift in Sources */,
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
+				2793C14C28F5F25600FC7D13 /* RecentBoardView.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
@@ -810,6 +844,8 @@
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
+				2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */,
+				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationManager.swift in Sources */,
 			);

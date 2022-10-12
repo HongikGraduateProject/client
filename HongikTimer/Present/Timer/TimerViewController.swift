@@ -35,6 +35,7 @@ final class TimerViewController: UIViewController {
             weight: .bold
         )
         $0.textColor = .black
+        $0.textAlignment = .center
     }
     
     private lazy var timerButton = UIButton().then {
