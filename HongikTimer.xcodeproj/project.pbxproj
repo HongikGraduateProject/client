@@ -256,14 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */,
-				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
-				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
-				2793C14F28F694A100FC7D13 /* API */,
-				27B471C328D19B1800805F79 /* Extensions */,
-				27B471D628D2C9F000805F79 /* Manager */,
-				27B471BB28D0ACDC00805F79 /* Model */,
-				2740F7D228D5AB5900284372 /* ViewModel */,
-				2750A43428D02F89000EE24D /* Present */,
+				ED9C81CE290EB0B0002210B6 /* Sources */,
 				2793C13928F5967B00FC7D13 /* Resources */,
 				2750A41228D02BEB000EE24D /* Info.plist */,
 				27B471BF28D1968500805F79 /* GoogleService-Info.plist */,
@@ -568,6 +561,21 @@
 				57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED9C81CE290EB0B0002210B6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
+				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
+				2793C14F28F694A100FC7D13 /* API */,
+				27B471C328D19B1800805F79 /* Extensions */,
+				27B471D628D2C9F000805F79 /* Manager */,
+				27B471BB28D0ACDC00805F79 /* Model */,
+				2740F7D228D5AB5900284372 /* ViewModel */,
+				2750A43428D02F89000EE24D /* Present */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F2C6CA726173AFA706F01625 /* Frameworks */ = {
