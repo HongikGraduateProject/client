@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .barTint
         UITabBar.appearance().tintColor = .barTint
                 window?.rootViewController = TabBarViewController()
+        
         window?.makeKeyAndVisible()
         
     }

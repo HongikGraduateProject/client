@@ -27,9 +27,9 @@ enum URLs {
         switch self {
             // TODO: 회원가입 url 수정해야햠
         case .signin:
-            return "http://localhost:8080/join"
+            return "http://localhost:8080/api/members"
         case .login:
-            return "http://localhost:8080/login"
+            return "http://localhost:8080/api/login"
         }
     }
 }

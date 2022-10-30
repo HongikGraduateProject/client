@@ -9,8 +9,11 @@ import Firebase
 import SnapKit
 import Then
 import UIKit
+import CloudKit
 
 final class EmailSigninViewController: UIViewController {
+    
+    var userVM: UserViewModel?
         
     private lazy var emailTextField = TextFieldView(with: "이메일").then {
         $0.textField.becomeFirstResponder()
@@ -133,9 +136,10 @@ private extension EmailSigninViewController {
             username: username,
             password: password
         )
+        
         AuthManager.shared.signInWithEmail(
             credentials: authCredentials
-        ) { result, error in
+        ) { [weak self] result, error in
             if let error = error {
                 print("DEBUG 이메일 회원가입 에러 \(error)")
                 return
@@ -153,10 +157,9 @@ private extension EmailSigninViewController {
                     print(error)
                 }
                 
-                
                 let vc = TabBarViewController()
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+                self?.present(vc, animated: true)
             }
         }
     }

@@ -39,7 +39,7 @@
 		2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */; };
 		2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */; };
 		2793C12D28F535C500FC7D13 /* TodoNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */; };
-		2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* TimerViewController.swift */; };
+		2793C13028F58DB300FC7D13 /* NotTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */; };
 		2793C13328F5901400FC7D13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2793C13228F5901400FC7D13 /* Lottie */; };
 		2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2793C13A28F5969E00FC7D13 /* TimerAnimation.json */; };
 		2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */; };
@@ -48,6 +48,11 @@
 		2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */; };
 		2793C14C28F5F25600FC7D13 /* InterestBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14B28F5F25600FC7D13 /* InterestBoardView.swift */; };
 		2793C14E28F6670300FC7D13 /* InterestBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14D28F6670300FC7D13 /* InterestBoardCell.swift */; };
+		2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15128F694C100FC7D13 /* ApiClient.swift */; };
+		2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15428F6963D00FC7D13 /* BaseInterceptor.swift */; };
+		2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15628F6986F00FC7D13 /* ApiLogger.swift */; };
+		2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15828F69A8100FC7D13 /* AuthRouter.swift */; };
+		2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */; };
 		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
 		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
@@ -56,7 +61,6 @@
 		27A977B328E3501A0076FF80 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B228E3501A0076FF80 /* Task.swift */; };
 		27A977B528E363880076FF80 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B428E363880076FF80 /* WeekView.swift */; };
 		27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B628E3689C0076FF80 /* TaskCollectionView.swift */; };
-		27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B028D0A16F00805F79 /* SettingViewController.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
 		27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B928D0ACC700805F79 /* NotificationCell.swift */; };
@@ -71,8 +75,12 @@
 		27B471D328D22E6900805F79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D228D22E6900805F79 /* Constant.swift */; };
 		27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D428D236D900805F79 /* AuthCredentials.swift */; };
 		27B471D828D2CA2700805F79 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* AuthManager.swift */; };
+		27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFA928F6A78E009356E5 /* UserInfo.swift */; };
+		27C2DFAC28F6A927009356E5 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFAB28F6A927009356E5 /* AuthResponse.swift */; };
+		27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFAD28F6B540009356E5 /* UserViewModel.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
+		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +137,7 @@
 		2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
 		2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2793C12C28F535C500FC7D13 /* TodoNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotificationManager.swift; sourceTree = "<group>"; };
-		2793C12F28F58DB300FC7D13 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTimerViewController.swift; sourceTree = "<group>"; };
 		2793C13A28F5969E00FC7D13 /* TimerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimerAnimation.json; sourceTree = "<group>"; };
 		2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSettingViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +145,11 @@
 		2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBoardCell.swift; sourceTree = "<group>"; };
 		2793C14B28F5F25600FC7D13 /* InterestBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestBoardView.swift; sourceTree = "<group>"; };
 		2793C14D28F6670300FC7D13 /* InterestBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestBoardCell.swift; sourceTree = "<group>"; };
+		2793C15128F694C100FC7D13 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		2793C15428F6963D00FC7D13 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		2793C15628F6986F00FC7D13 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
+		2793C15828F69A8100FC7D13 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiService.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
@@ -145,7 +158,6 @@
 		27A977B228E3501A0076FF80 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		27A977B428E363880076FF80 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		27A977B628E3689C0076FF80 /* TaskCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionView.swift; sourceTree = "<group>"; };
-		27B471B028D0A16F00805F79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../../../../../../../SettingViewController.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		27B471B928D0ACC700805F79 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -161,6 +173,9 @@
 		27B471D428D236D900805F79 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
 		27B471D728D2CA2700805F79 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HongikTimer.entitlements; sourceTree = "<group>"; };
+		27C2DFA928F6A78E009356E5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		27C2DFAB28F6A927009356E5 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		27C2DFAD28F6B540009356E5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		583263E1154E6955416586F3 /* Pods-HongikTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +183,7 @@
 		A17F95CB44DA866D16431521 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer-HongikTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimer_HongikTimerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1F5AB474B727D1BE4675FD /* Pods-HongikTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +224,7 @@
 			children = (
 				2750A44E28D0340F000EE24D /* TabBarViewModel.swift */,
 				273E134E28F1D9A700877965 /* TaskListViewModel.swift */,
+				27C2DFAD28F6B540009356E5 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +258,7 @@
 				27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */,
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
+				2793C14F28F694A100FC7D13 /* API */,
 				27B471C328D19B1800805F79 /* Extensions */,
 				27B471D628D2C9F000805F79 /* Manager */,
 				27B471BB28D0ACDC00805F79 /* Model */,
@@ -326,7 +344,7 @@
 		2793C12E28F58D9100FC7D13 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				2793C12F28F58DB300FC7D13 /* TimerViewController.swift */,
+				2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -368,6 +386,42 @@
 			path = recentBoardView;
 			sourceTree = "<group>";
 		};
+		2793C14F28F694A100FC7D13 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2793C15A28F6A28400FC7D13 /* Service */,
+				2793C15328F6962600FC7D13 /* interceptor */,
+				2793C15028F694AD00FC7D13 /* Router */,
+				2793C15128F694C100FC7D13 /* ApiClient.swift */,
+				2793C15628F6986F00FC7D13 /* ApiLogger.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2793C15028F694AD00FC7D13 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2793C15828F69A8100FC7D13 /* AuthRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		2793C15328F6962600FC7D13 /* interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				2793C15428F6963D00FC7D13 /* BaseInterceptor.swift */,
+			);
+			path = interceptor;
+			sourceTree = "<group>";
+		};
+		2793C15A28F6A28400FC7D13 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		27A977A128E2076A0076FF80 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				27B471B928D0ACC700805F79 /* NotificationCell.swift */,
-				27B471B028D0A16F00805F79 /* SettingViewController.swift */,
+				ED13F2F4290E46CA00883D19 /* SettingViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -429,6 +483,8 @@
 				278DE6B828D71A1200E38A1F /* SettingCellModel.swift */,
 				27A977B228E3501A0076FF80 /* Task.swift */,
 				2793C11D28F47AF400FC7D13 /* User.swift */,
+				27C2DFA928F6A78E009356E5 /* UserInfo.swift */,
+				27C2DFAB28F6A927009356E5 /* AuthResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -797,6 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
+				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
@@ -805,16 +862,20 @@
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */,
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
+				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
 				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
-				27B471B128D0A16F00805F79 /* SettingViewController.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
+				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
+				2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
-				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
+				2793C13028F58DB300FC7D13 /* NotTimerViewController.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthManager.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
+				2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */,
+				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
@@ -825,6 +886,8 @@
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
 				2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */,
+				27C2DFAC28F6A927009356E5 /* AuthResponse.swift in Sources */,
+				2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailSigninViewController.swift in Sources */,
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
@@ -836,6 +899,7 @@
 				2793C12428F499DC00FC7D13 /* TaskEditPresentaionController.swift in Sources */,
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
+				2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */,
 				2793C14C28F5F25600FC7D13 /* InterestBoardView.swift in Sources */,
 				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,

@@ -13,6 +13,8 @@ final class AuthManager: NSObject {
     
     static let shared = AuthManager()
     
+    var userVM = UserViewModel()
+    
     func logOutWithFirebase(completion: (Bool) -> Void) {
         do {
             try Auth.auth().signOut()
@@ -71,6 +73,7 @@ extension AuthManager {
         completion: ((AuthDataResult?, Error?) -> Void)?
     ) {
         let email = credentials.email
+        let username = credentials.username
         let password = credentials.password
         
         Auth.auth().createUser(
@@ -79,31 +82,38 @@ extension AuthManager {
             completion: completion
         )
         
-        let parameters: Parameters = [
-            "username": credentials.username,
-            "email": credentials.email,
-            "password": credentials.password
-        ]
-        let headers: HTTPHeaders = [
-            "Accept": "application/json"
-        ]
+        userVM.register(
+            email: email,
+            username: username,
+            password: password
+        )
         
-        AF.request(
-            URLs.signin.url,
-            method: .post,
-            parameters: parameters,
-            encoding: JSONEncoding.default,
-            headers: headers
-        ).responseDecodable(of: User.self) { response in
-            switch response.result {
-            case .success(let user):
-                print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
-                
-                UserDefaultManager.shared.setUser(user)
-                
-            case .failure(let error):
-                print("DEBUG 회원가입 post 실패 error: \(error)")
-            }
-        }
+//        let parameters: Parameters = [
+//            "username": credentials.username,
+//            "email": credentials.email,
+//            "password": credentials.password
+//        ]
+//        let headers: HTTPHeaders = [
+//            "Accept": "application/json"
+//        ]
+        
+//        AF.request(
+//            URLs.signin.url,
+//            method: .post,
+//            parameters: parameters,
+//            encoding: JSONEncoding.default,
+//            headers: headers
+//        ).responseDecodable(of: User.self) { response in
+//            switch response.result {
+//            case .success(let user):
+//                print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
+//
+//                UserDefaultManager.shared.setUser(user)
+//
+//            case .failure(let error):
+//                print("DEBUG 회원가입 post 실패 error: \(error)")
+//            }
+//        }
+        
     }
 }

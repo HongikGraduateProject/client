@@ -33,4 +33,3 @@ struct User: Codable {
     
 }
 
-// TODO: username nickname 같은거 아닌지???

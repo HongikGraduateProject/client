@@ -17,6 +17,7 @@ enum Config {
         var filledConfig = UIButton.Configuration.filled()
         
         switch self {
+          
         case .white:
             filledConfig.cornerStyle = .capsule
             filledConfig.baseBackgroundColor = .white
@@ -30,6 +31,7 @@ enum Config {
             filledConfig.baseBackgroundColor = .label
             filledConfig.imagePadding = 16.0
             return filledConfig
+          
         }
     }
 }

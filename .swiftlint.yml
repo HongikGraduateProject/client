@@ -14,7 +14,9 @@ excluded:
 
 
 identifier_name:
-  min_length:
-    warning: 1
+    min_length:
+        warning: 1
+    allowed_symbols: ["_"]
+
 
 trailing_whitespace:
