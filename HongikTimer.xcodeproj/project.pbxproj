@@ -264,8 +264,7 @@
 				27B471BB28D0ACDC00805F79 /* Model */,
 				2740F7D228D5AB5900284372 /* ViewModel */,
 				2750A43428D02F89000EE24D /* Present */,
-				2793C13928F5967B00FC7D13 /* Assets */,
-				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
+				2793C13928F5967B00FC7D13 /* Resources */,
 				2750A41228D02BEB000EE24D /* Info.plist */,
 				27B471BF28D1968500805F79 /* GoogleService-Info.plist */,
 				27615AA128D4EB5D0099DB00 /* Config.xcconfig */,
@@ -349,13 +348,14 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		2793C13928F5967B00FC7D13 /* Assets */ = {
+		2793C13928F5967B00FC7D13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
 				2793C13A28F5969E00FC7D13 /* TimerAnimation.json */,
 				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2793C13C28F5C17900FC7D13 /* Board */ = {
