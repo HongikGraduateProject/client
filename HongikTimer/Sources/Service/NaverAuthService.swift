@@ -10,10 +10,10 @@ import NaverThirdPartyLogin
 import UIKit
 
 final class NaverAuthService: NSObject {
-    
-    var shared = NaverThirdPartyLoginConnection.getSharedInstance()
-
-    init(delegate: NaverThirdPartyLoginConnectionDelegate) {
-        self.shared?.delegate = delegate
-    }
+  
+  var shared = NaverThirdPartyLoginConnection.getSharedInstance()
+  
+  init(delegate: NaverThirdPartyLoginConnectionDelegate) {
+    self.shared?.delegate = delegate
+  }
 }

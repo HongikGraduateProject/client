@@ -134,7 +134,7 @@ private extension EmailLoginViewController {
             return
         }
         
-        AuthManager.shared.logInWithEmail(
+        AuthService.shared.logInWithEmail(
             email: email,
             password: password) { [weak self] authResult, error in
                 guard authResult != nil, error == nil else {

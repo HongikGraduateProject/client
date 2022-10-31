@@ -1,5 +1,5 @@
 //
-//  EmailSigninViewController.swift
+//  EmailSignUpViewController.swift
 //  HongikTimer
 //
 //  Created by JongHoon on 2022/09/14.
@@ -11,7 +11,7 @@ import Then
 import UIKit
 import CloudKit
 
-final class EmailSigninViewController: UIViewController {
+final class EmailSignUpViewController: UIViewController {
     
     var userVM: UserViewModel?
         
@@ -55,7 +55,7 @@ final class EmailSigninViewController: UIViewController {
 
 // MARK: - TextField
 
-extension EmailSigninViewController: UITextFieldDelegate {
+extension EmailSignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(
         _ textField: UITextField
     ) -> Bool {
@@ -74,7 +74,7 @@ extension EmailSigninViewController: UITextFieldDelegate {
 
 // MARK: - Private
 
-private extension EmailSigninViewController {
+private extension EmailSignUpViewController {
     func setupNavigationBar() {
         navigationController?.navigationBar.topItem?.title = ""
         navigationItem.title = "회원가입"
@@ -137,7 +137,7 @@ private extension EmailSigninViewController {
             password: password
         )
         
-        AuthManager.shared.signInWithEmail(
+        AuthService.shared.signInWithEmail(
             credentials: authCredentials
         ) { [weak self] result, error in
             if let error = error {

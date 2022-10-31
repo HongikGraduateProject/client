@@ -44,12 +44,12 @@ final class TaskCollectionView: UIView {
         
         super.init(frame: .zero)
         setupLayout()
-        TodoNotificationManager.shared.addObserverEdit(
+        TodoNotificationService.shared.addObserverEdit(
             with: self,
             completion: #selector(editTask)
         )
         
-        TodoNotificationManager.shared.addObserverRemove(
+        TodoNotificationService.shared.addObserverRemove(
             with: self,
             completion: #selector(removeTask)
         )

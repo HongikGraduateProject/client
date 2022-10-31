@@ -140,7 +140,7 @@ private extension SettingViewController {
         ).then {
             $0.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             $0.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { [weak self] _ in
-                AuthManager.shared.logOutWithFirebase { success in
+                AuthService.shared.logOutWithFirebase { success in
                     DispatchQueue.main.async {
                         if success {
                             let nv = UINavigationController(rootViewController: RegisterViewController())

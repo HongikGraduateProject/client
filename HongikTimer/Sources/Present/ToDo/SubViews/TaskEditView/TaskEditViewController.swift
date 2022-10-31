@@ -152,11 +152,11 @@ private extension TaskEditViewController {
     
     @objc func tapEditButton() {
         dismiss(animated: true)
-        TodoNotificationManager.shared.postEdit(indexPath)
+        TodoNotificationService.shared.postEdit(indexPath)
     }
     
     @objc func tapDeleteButton() {
         dismiss(animated: true)
-        TodoNotificationManager.shared.postRemove(indexPath)
+        TodoNotificationService.shared.postRemove(indexPath)
     }
 }
