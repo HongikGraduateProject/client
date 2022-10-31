@@ -5,6 +5,16 @@ target 'HongikTimer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  # Architecture
+  pod 'ReactorKit'
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'RxOptional'
+  pod 'RxViewController'
+
   pod 'SwiftLint'
 
   pod 'Firebase/Database'

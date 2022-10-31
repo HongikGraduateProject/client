@@ -2618,7 +2618,7 @@
 		7536278A57FC17D98E4456B05B64AC7E /* ApiRequestAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApiRequestAdapter.swift; path = sources/KakaoSDKCommon/network/ApiRequestAdapter.swift; sourceTree = "<group>"; };
 		756A37B868A7BA8A98F8060928609A1E /* FWebSocketConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FWebSocketConnection.h; path = FirebaseDatabase/Sources/Realtime/FWebSocketConnection.h; sourceTree = "<group>"; };
 		7590FEC06CBF0A8AA9EF09ED855F962E /* FIRComponentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentType.h; path = FirebaseCore/Extension/FIRComponentType.h; sourceTree = "<group>"; };
-		75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HongikTimer"; path = Pods_HongikTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		765F8ECE8E39D2202425FA79E5C25359 /* AuthErrorInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthErrorInfo.swift; path = sources/KakaoSDKCommon/common/model/AuthErrorInfo.swift; sourceTree = "<group>"; };
 		767612F657F0EAA426F7C92BFEA7FA35 /* KakaoSDKTalk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KakaoSDKTalk.modulemap; sourceTree = "<group>"; };
 		768EF750ABE34E720379DB186CD419D6 /* FIRConfigurationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfigurationInternal.h; path = FirebaseCore/Sources/FIRConfigurationInternal.h; sourceTree = "<group>"; };
@@ -4972,7 +4972,7 @@
 				1353D6A467F43A6A3EA21D310BD35A31 /* KakaoSDKUser.framework */,
 				0A9F46A999C47653013D3AD854352507 /* leveldb.framework */,
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb.framework */,
-				75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */,
+				75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */,
 				FFAD2470387FD02F94127E81212F9BB7 /* Pods-HongikTimer-HongikTimerUITests */,
 				4453E65B47F1E6B907A57D572FC94C1F /* Pods-HongikTimerTests */,
 				3347A1AB6546F0A3977529B8F199DC41 /* FBLPromises.framework */,
@@ -6522,7 +6522,7 @@
 			);
 			name = "Pods-HongikTimer";
 			productName = Pods_HongikTimer;
-			productReference = 75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */;
+			productReference = 75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3F7BF367078951B6E8BC95B3DA89967A /* KakaoSDKUser */ = {

@@ -6,6 +6,7 @@ PODS:
   - AppAuth/Core (1.5.0)
   - AppAuth/ExternalUserAgent (1.5.0):
     - AppAuth/Core
+  - Differentiator (5.0.0)
   - Firebase/CoreOnly (9.3.0):
     - FirebaseCore (= 9.3.0)
   - Firebase/Database (9.3.0):
@@ -101,8 +102,28 @@ PODS:
   - nanopb/encode (2.30909.0)
   - naveridlogin-sdk-ios (4.1.5)
   - PromisesObjC (2.1.1)
+  - ReactorKit (3.2.0):
+    - RxSwift (~> 6.0)
+    - WeakMapTable (~> 1.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxOptional (5.0.2):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - RxViewController (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - SwiftLint (0.49.1)
   - Toast-Swift (5.0.1)
+  - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
   - Firebase/Database
@@ -110,6 +131,12 @@ DEPENDENCIES:
   - GoogleSignIn
   - KakaoSDK
   - naveridlogin-sdk-ios
+  - ReactorKit
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
+  - RxSwift
+  - RxViewController
   - SwiftLint
   - Toast-Swift (~> 5.0.1)
 
@@ -117,6 +144,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
+    - Differentiator
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -142,12 +170,21 @@ SPEC REPOS:
     - nanopb
     - naveridlogin-sdk-ios
     - PromisesObjC
+    - ReactorKit
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxViewController
     - SwiftLint
     - Toast-Swift
+    - WeakMapTable
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Firebase: ef75abb1cdbc746d5a38f4e26c422c807b189b8c
   FirebaseAuth: 9ebc3577fe0acf9092df21ac314024b70aebf21e
   FirebaseCore: c088995ece701a021a48a1348ea0174877de2a6a
@@ -173,9 +210,17 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   naveridlogin-sdk-ios: 4351fe7162cd6b8b6dbb37bd7cc205304fa1d889
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 1f6d4cefb993ed928717cd4371b7ee7d90edb877
+PODFILE CHECKSUM: 31f14082079ace8b550468b4e0077130bc31e89f
 
 COCOAPODS: 1.11.3

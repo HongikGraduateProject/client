@@ -8,14 +8,25 @@
 import Foundation
 import NaverThirdPartyLogin
 
-final class ServiceProvider {
+protocol ServiceProviderType: AnyObject {
+  var authService: AuthService { get }
+  var appleAuthService:  AppleAuthService { get }
+  var googleAuthService: GoogleAuthService { get }
+  var kakaoAuthService: KakaoAuthService { get }
+//  var  naverAuthService: NaverThirdPartyLoginConnection { get }
+  var authNotificationService: AuthNotificationManager { get }
+  var  todoNotificationService: TodoNotificationService { get }
+  var  userDefaultService: UserDefaultService { get }
+}
+
+final class ServiceProvider: ServiceProviderType {
   
-  static let authService = AuthService()
-  static let appleAuthService = AppleAuthService()
-  static let googleAuthService = GoogleAuthService()
-  static let kakaoAuthService = KakaoAuthService()
-  static let naverAuthService = NaverThirdPartyLoginConnection.getSharedInstance()
-  static let authNotificationService = AuthNotificationManager()
-  static let todoNotificationService = TodoNotificationService()
-  static let userDefaultService = UserDefaultService()
+  let authService = AuthService()
+  let appleAuthService = AppleAuthService()
+  let googleAuthService = GoogleAuthService()
+  let kakaoAuthService = KakaoAuthService()
+  let naverAuthService = NaverThirdPartyLoginConnection.getSharedInstance()
+  let authNotificationService = AuthNotificationManager()
+  let todoNotificationService = TodoNotificationService()
+  let userDefaultService = UserDefaultService()
 }

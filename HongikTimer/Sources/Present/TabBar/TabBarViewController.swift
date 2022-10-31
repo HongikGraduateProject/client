@@ -33,7 +33,8 @@ private extension TabBarViewController {
     if Auth.auth().currentUser == nil {
       // SHow log in
       
-      let nv = UINavigationController(rootViewController: RegisterViewController())
+      let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
+      let nv = UINavigationController(rootViewController: vc)
       nv.modalPresentationStyle = .fullScreen
       present(nv, animated: false)
     }

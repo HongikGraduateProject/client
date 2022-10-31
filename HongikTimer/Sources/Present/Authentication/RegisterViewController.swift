@@ -18,6 +18,7 @@ final class RegisterViewController: BaseViewController {
   
   // MARK: - Property
   
+  let reactor: RegisterViewReactor!
   var window: UIWindow?
   private var currentNonce: String?
   
@@ -125,6 +126,17 @@ final class RegisterViewController: BaseViewController {
     //        try? Auth.auth().signOut()
     //        KakaoAuthService.shared.kakaoLogout()
     //        naverAuthService.shared?.requestDeleteToken()
+  }
+  
+  // MARK: - Init
+  
+  init(with reactor: RegisterViewReactor) {
+  
+    self.reactor = reactor
+  }
+  
+  required convenience init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 }
 
@@ -242,7 +254,7 @@ private extension RegisterViewController {
   }
   
   @objc func tapRegisterButton() {
-    let vc = EmailSignUpViewController()
+    let vc = EmailSignUpViewController(with: EmailSignUpReactor(provider: self.reactor.provider))
     navigationController?.pushViewController(vc, animated: true)
   }
   
