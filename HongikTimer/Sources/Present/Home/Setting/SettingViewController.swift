@@ -98,7 +98,6 @@ extension SettingViewController: NaverThirdPartyLoginConnectionDelegate {
   }
 }
 
-
 // MARK: - Private
 
 private extension SettingViewController {
@@ -144,6 +143,8 @@ private extension SettingViewController {
           DispatchQueue.main.async {
             if success {
               
+              print("DEBUG 로그아웃 시도")
+              ServiceProvider().userDefaultService.logoutUser()
               let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
               let nv = UINavigationController(rootViewController: vc)
               nv.modalPresentationStyle = .fullScreen

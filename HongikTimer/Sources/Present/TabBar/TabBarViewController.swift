@@ -7,9 +7,13 @@
 
 import FirebaseAuth
 import UIKit
+import SwiftUI
 
 final class TabBarViewController: UITabBarController {
   
+  // MARK: - Property
+  
+  let reactor: TabBarViewReactor
   
   // MARK: - Lifecycle
   
@@ -21,23 +25,41 @@ final class TabBarViewController: UITabBarController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    handleNotAuthenticated()
+    handleNotAuthenticated()    
+  }
+  
+  // MARK: - Init
+  
+  init(with reactor: TabBarViewReactor) {
+    self.reactor = reactor
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 }
 
-// MARK: - Private
+// MARK: - Method
 
 private extension TabBarViewController {
   
   func handleNotAuthenticated() {
-    // Check auth statts
-    if Auth.auth().currentUser == nil {
+    
+    // Check auth with firebase
+//    if Auth.auth().currentUser == nil {
       // SHow log in
-      
+    
+    if reactor.provider.userDefaultService.isCurrentUser() == false {
+    
       let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
       let nv = UINavigationController(rootViewController: vc)
       nv.modalPresentationStyle = .fullScreen
       present(nv, animated: false)
+    } else {
+      reactor.user = reactor.provider.userDefaultService.getUser()
+      guard let user = reactor.user else { return }
+      print("DEBUG 현재 사용중인 유저: \(user)")
     }
   }
   

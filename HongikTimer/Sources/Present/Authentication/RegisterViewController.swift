@@ -267,7 +267,7 @@ private extension RegisterViewController {
   }
   
   @objc func loginSuccessHandler() {
-    let vc = TabBarViewController()
+    let vc = TabBarViewController(with: TabBarViewReactor(ServiceProvider()))
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: true)
     navigationController?.popToRootViewController(animated: false)

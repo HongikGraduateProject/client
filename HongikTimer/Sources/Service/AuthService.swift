@@ -107,11 +107,13 @@ extension AuthService {
       switch response.result {
       case .success(let user):
         print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
-        
         UserDefaultService.shared.setUser(user)
-        
       case .failure(let error):
         print("DEBUG 회원가입 post 실패 error: \(error)")
+      
+        #warning("dummy current user")
+        let user = User()
+        UserDefaultService.shared.setUser(user)
       }
     }
   }

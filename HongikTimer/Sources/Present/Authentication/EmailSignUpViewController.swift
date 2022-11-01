@@ -219,7 +219,6 @@ private extension EmailSignUpViewController {
         return
       }
       
-      
       // firebase db에 저장
       guard let uid = result?.user.uid else { return }
       
@@ -228,14 +227,15 @@ private extension EmailSignUpViewController {
         "username": username
       ]
       
-      refUSERS.child(uid).updateChildValues(values) { error, ref in
+      refUSERS.child(uid).updateChildValues(values) { error, _ in
         if let error = error {
           print(error)
         }
         
         self?.view.hideToast()
         
-        let vc = TabBarViewController()
+        guard let provider = self?.reactor.provider else { return }
+        let vc = TabBarViewController(with: TabBarViewReactor(provider))
         vc.modalPresentationStyle = .fullScreen
         self?.present(vc, animated: true)
       }

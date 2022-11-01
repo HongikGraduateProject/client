@@ -10,5 +10,10 @@ import UIKit
 final class TabBarViewReactor {
    
   let provider: ServiceProviderType
-  let currentUser: User
+  var user: User?
+  
+  init(_ provider: ServiceProviderType, with user: User? = nil) {
+    self.provider = provider
+    self.user = user
+  }
 }
