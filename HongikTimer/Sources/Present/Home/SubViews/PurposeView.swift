@@ -12,13 +12,13 @@ import UIKit
 final class PurposeView: UIView {
         
     private var purpose: String? 
-    private lazy var purposeImageView = UIImageView().then {
-        $0.image = UIImage(named: "speechBubble")
-        $0.contentMode = .scaleToFill
-    }
+//    private lazy var purposeImageView = UIImageView().then {
+//        $0.image = UIImage(named: "speechBubble")
+//        $0.contentMode = .scaleToFill
+//    }
     
-    private lazy var purposeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 14.0, weight: .bold)
+    lazy var purposeLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 16.0, weight: .bold)
         $0.textColor = .black
         $0.textAlignment = .center
         $0.text = purpose
@@ -46,15 +46,15 @@ final class PurposeView: UIView {
 private extension PurposeView {
     func setLayout() {
         [
-            purposeImageView,
+//            purposeImageView,
             purposeLabel
         ].forEach { addSubview($0) }
         
-        purposeImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.height.equalTo(frame.height)
-            $0.width.equalTo(frame.width)
-        }
+//        purposeImageView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//            $0.height.equalTo(frame.height)
+//            $0.width.equalTo(frame.width)
+//        }
         
         purposeLabel.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()

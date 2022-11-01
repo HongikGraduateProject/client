@@ -84,6 +84,7 @@
 		ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A602910F75000D30F7A /* TabBarViewReactor.swift */; };
 		ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */; };
 		ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6429112B5500D30F7A /* BaseReactorType.swift */; };
+		ED037A672911524100D30F7A /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A662911524100D30F7A /* Reactive+Extension.swift */; };
 		ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507EF290FFE190016455B /* ServiceProvider.swift */; };
 		ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F3291002F10016455B /* RegisterViewReactor.swift */; };
 		ED0507F6291003560016455B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F5291003560016455B /* BaseViewController.swift */; };
@@ -194,6 +195,7 @@
 		ED037A602910F75000D30F7A /* TabBarViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewReactor.swift; sourceTree = "<group>"; };
 		ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		ED037A6429112B5500D30F7A /* BaseReactorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReactorType.swift; sourceTree = "<group>"; };
+		ED037A662911524100D30F7A /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		ED0507EF290FFE190016455B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		ED0507F3291002F10016455B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		ED0507F5291003560016455B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				27A977B028E34E130076FF80 /* Identifier.swift */,
 				2793C12528F49F9100FC7D13 /* UIView+Extension.swift */,
 				ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */,
+				ED037A662911524100D30F7A /* Reactive+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */,
 				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
+				ED037A672911524100D30F7A /* Reactive+Extension.swift in Sources */,
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
 				ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */,
 				2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */,

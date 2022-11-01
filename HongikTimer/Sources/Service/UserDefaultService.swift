@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserDefaultService {
   
@@ -13,22 +14,29 @@ struct UserDefaultService {
   private let standard = UserDefaults.standard
   
   enum UserDefaultKeys: String {
+    
+    // 로그인
     case user
+    
+    // Home 화면
+    case chickImage
+    case wallImage
+    case studyTime
     
     var key: String {
       self.rawValue
     }
   }
   
-  /// 현재 유저 존재하는지 확인
-//  func isCurrentUser() -> Bool {
-//    if standard.data(forKey: UserDefaultKeys.user.key) == nil {
-//      return false
-//    } else {
-//      return true
-//    }
-//  }
+  // MARK: - Auth
   
+  /// 로그인 or 회원가입시 현재 유저 저장
+  func setUser(_ user: User) {
+    standard.setValue(
+      try? PropertyListEncoder().encode(user),
+      forKey: UserDefaultKeys.user.key)
+  }
+
   /// 현재 유저 get
   func getUser() -> User? {
     guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
@@ -38,19 +46,71 @@ struct UserDefaultService {
     ) ?? User()
   }
   
-  /// 로그인 or 회원가입시 현재 유저 저장
-  func setUser(_ user: User) {
-    let currentUser = user
-    
-    standard.setValue(
-      try? PropertyListEncoder().encode(currentUser)
-      , forKey: UserDefaultKeys.user.key)
-  }
-  
   /// 로그아웃시 저장된 유저값 삭제
   func logoutUser() {
     standard.removeObject(forKey: UserDefaultKeys.user.key)
     
     print("DEBUG User Defau유저 정보 삭제")
+  }
+  
+  // MARK: - Home 화면 관련
+  
+  // chick image
+  func setChickImage(_ imageName: String) {
+    standard.setValue(
+      try? PropertyListEncoder().encode(imageName),
+      forKey: UserDefaultKeys.chickImage.key)
+  }
+  
+  func getChickImage() -> UIImage? {
+    guard let data = standard.data(forKey: UserDefaultKeys.chickImage.key) else {
+      return UIImage(named: "chick1")
+      
+    }
+    let imageNmae = (
+      try? PropertyListDecoder().decode(String.self, from: data)
+    ) ?? "chick1"
+  
+    return UIImage(named: imageNmae)
+  }
+  
+  // wallpaper image
+  func setWallImage(_ imageName: String) {
+    standard.setValue(
+      try? PropertyListEncoder().encode(imageName),
+      forKey: UserDefaultKeys.wallImage.key)
+  }
+  
+  func getwallImage() -> UIImage? {
+    guard let data = standard.data(forKey: UserDefaultKeys.wallImage.key) else {
+      return UIImage(named: "w0")
+      
+    }
+    let imageNmae = (
+      try? PropertyListDecoder().decode(String.self, from: data)
+    ) ?? "w0"
+  
+    return UIImage(named: imageNmae)
+  }
+  
+  // 타이머
+  func setStudyTime(_ time: Int) {
+    var currentitme = self.getStudyTime()
+    currentitme += time
+    
+    standard.setValue(
+      try? PropertyListEncoder().encode(currentitme),
+      forKey: UserDefaultKeys.studyTime.key)
+  }
+  
+  func getStudyTime() -> Int {
+    guard let data = standard.data(forKey: UserDefaultKeys.studyTime.key) else {
+      return 0
+    }
+    let time = (
+      try? PropertyListDecoder().decode(Int.self, from: data)
+    ) ?? 0
+    
+    return time
   }
 }
