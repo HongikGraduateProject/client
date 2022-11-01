@@ -145,7 +145,7 @@ private extension SettingViewController {
               
               print("DEBUG 로그아웃 시도")
               ServiceProvider().userDefaultService.logoutUser()
-              let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
+              let vc = RegisterViewController(with: RegisterViewReactor(ServiceProvider()))
               let nv = UINavigationController(rootViewController: vc)
               nv.modalPresentationStyle = .fullScreen
               self?.present(nv, animated: true) { [weak self] in
@@ -166,7 +166,7 @@ private extension SettingViewController {
     
     naverAuthService.shared?.requestDeleteToken()
     
-    let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
+    let vc = RegisterViewController(with: RegisterViewReactor(ServiceProvider()))
     let nv = UINavigationController(rootViewController: vc)
     nv.modalPresentationStyle = .fullScreen
     present(nv, animated: true) { [weak self] in

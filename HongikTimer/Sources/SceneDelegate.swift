@@ -49,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   func isCurrentUser() -> UIViewController {
     if provider.userDefaultService.getUser() == nil {
-      let vc = RegisterViewController(with: RegisterViewReactor(provider: self.provider))
+      let vc = RegisterViewController(with: RegisterViewReactor(self.provider))
       return UINavigationController(rootViewController: vc)
     } else {
       let user = provider.userDefaultService.getUser()

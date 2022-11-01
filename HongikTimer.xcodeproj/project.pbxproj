@@ -38,7 +38,7 @@
 		2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */; };
 		2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */; };
 		2793C12D28F535C500FC7D13 /* TodoNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12C28F535C500FC7D13 /* TodoNotificationService.swift */; };
-		2793C13028F58DB300FC7D13 /* NotTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */; };
+		2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* TimerViewController.swift */; };
 		2793C13328F5901400FC7D13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2793C13228F5901400FC7D13 /* Lottie */; };
 		2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2793C13A28F5969E00FC7D13 /* TimerAnimation.json */; };
 		2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */; };
@@ -85,6 +85,12 @@
 		ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */; };
 		ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6429112B5500D30F7A /* BaseReactorType.swift */; };
 		ED037A672911524100D30F7A /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A662911524100D30F7A /* Reactive+Extension.swift */; };
+		ED037A6929115CFB00D30F7A /* TimerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6829115CFB00D30F7A /* TimerViewReactor.swift */; };
+		ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6A29116DAD00D30F7A /* ItemViewReactor.swift */; };
+		ED037A6D29116E7800D30F7A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6C29116E7800D30F7A /* PreviewView.swift */; };
+		ED037A6F2911798300D30F7A /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */; };
+		ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7029117E2F00D30F7A /* ItemCell.swift */; };
+		ED037A7329117EE500D30F7A /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7229117EE500D30F7A /* ItemCollectionView.swift */; };
 		ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507EF290FFE190016455B /* ServiceProvider.swift */; };
 		ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F3291002F10016455B /* RegisterViewReactor.swift */; };
 		ED0507F6291003560016455B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F5291003560016455B /* BaseViewController.swift */; };
@@ -144,7 +150,7 @@
 		2793C12728F4A2B000FC7D13 /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
 		2793C12A28F52F4300FC7D13 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2793C12C28F535C500FC7D13 /* TodoNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotificationService.swift; sourceTree = "<group>"; };
-		2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTimerViewController.swift; sourceTree = "<group>"; };
+		2793C12F28F58DB300FC7D13 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		2793C13A28F5969E00FC7D13 /* TimerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimerAnimation.json; sourceTree = "<group>"; };
 		2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSettingViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,12 @@
 		ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		ED037A6429112B5500D30F7A /* BaseReactorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReactorType.swift; sourceTree = "<group>"; };
 		ED037A662911524100D30F7A /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
+		ED037A6829115CFB00D30F7A /* TimerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewReactor.swift; sourceTree = "<group>"; };
+		ED037A6A29116DAD00D30F7A /* ItemViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewReactor.swift; sourceTree = "<group>"; };
+		ED037A6C29116E7800D30F7A /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED037A7029117E2F00D30F7A /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		ED037A7229117EE500D30F7A /* ItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionView.swift; sourceTree = "<group>"; };
 		ED0507EF290FFE190016455B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		ED0507F3291002F10016455B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		ED0507F5291003560016455B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -329,7 +341,7 @@
 				27B471CD28D2082F00805F79 /* SubViews */,
 				2750A45728D05586000EE24D /* SetPurpose */,
 				27B471AF28D0A14E00805F79 /* Setting */,
-				27B471B428D0A97200805F79 /* Alarm */,
+				27B471B428D0A97200805F79 /* Notification */,
 				27B471B328D0A97200805F79 /* Item */,
 			);
 			path = Home;
@@ -355,7 +367,8 @@
 		2793C12E28F58D9100FC7D13 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				2793C12F28F58DB300FC7D13 /* NotTimerViewController.swift */,
+				2793C12F28F58DB300FC7D13 /* TimerViewController.swift */,
+				ED037A6829115CFB00D30F7A /* TimerViewReactor.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -475,22 +488,27 @@
 			isa = PBXGroup;
 			children = (
 				27B471B728D0ABAA00805F79 /* ItemViewController.swift */,
+				ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */,
+				ED037A7229117EE500D30F7A /* ItemCollectionView.swift */,
+				ED037A6C29116E7800D30F7A /* PreviewView.swift */,
+				ED037A6A29116DAD00D30F7A /* ItemViewReactor.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
 		};
-		27B471B428D0A97200805F79 /* Alarm */ = {
+		27B471B428D0A97200805F79 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
 				27B471B528D0A9D900805F79 /* NotificationViewController.swift */,
 			);
-			path = Alarm;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		27B471BB28D0ACDC00805F79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				27B471BC28D0ACF100805F79 /* Notification.swift */,
+				ED037A7029117E2F00D30F7A /* ItemCell.swift */,
 				27B471D428D236D900805F79 /* AuthCredentials.swift */,
 				278DE6B828D71A1200E38A1F /* SettingCellModel.swift */,
 				27A977B228E3501A0076FF80 /* Task.swift */,
@@ -887,6 +905,7 @@
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */,
 				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
+				ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */,
 				ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
@@ -899,6 +918,7 @@
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
 				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
 				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
+				ED037A6929115CFB00D30F7A /* TimerViewReactor.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */,
 				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
@@ -907,7 +927,7 @@
 				ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */,
 				2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
-				2793C13028F58DB300FC7D13 /* NotTimerViewController.swift in Sources */,
+				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
@@ -916,9 +936,11 @@
 				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */,
+				ED037A6F2911798300D30F7A /* ItemCollectionViewCell.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */,
+				ED037A6D29116E7800D30F7A /* PreviewView.swift in Sources */,
 				2793C12D28F535C500FC7D13 /* TodoNotificationService.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
 				2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */,
@@ -945,10 +967,12 @@
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
+				ED037A7329117EE500D30F7A /* ItemCollectionView.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */,
+				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,

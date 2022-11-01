@@ -54,7 +54,10 @@ final class HomeViewController: BaseViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
     refresh()
+    reloadInputViews()
   }
   
   // MARK: - Init
@@ -156,7 +159,7 @@ private extension HomeViewController {
   func refresh() {
     
     chickImageView.image = reactor.provider.userDefaultService.getChickImage()
-    wallpaperImageView.image = reactor.provider.userDefaultService.getwallImage()
+    wallpaperImageView.image = reactor.provider.userDefaultService.getWallImage()
     
     let time = reactor.provider.userDefaultService.getStudyTime()
     let hour = time / 3600
@@ -169,6 +172,7 @@ private extension HomeViewController {
       miniute,
       second
     )
+    print("DEBUG Viewillappearr에서 refresh 실행")
   }
   
   // MARK: - Selector
@@ -197,9 +201,7 @@ private extension HomeViewController {
   }
   
   @objc func tapItemButton() {
-    let vc = ItemViewController(
-      collectionViewLayout: UICollectionViewFlowLayout()
-    )
+    let vc = ItemViewController(ItemViewReactor(reactor.provider, with: reactor.user))
     navigationController?.pushViewController(vc, animated: true)
   }
 }

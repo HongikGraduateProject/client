@@ -9,6 +9,9 @@ import Lottie
 import SnapKit
 import Then
 import UIKit
+import ReactorKit
+import RxCocoa
+import RxSwift
 
 enum TimerStatus {
   case start
@@ -16,9 +19,11 @@ enum TimerStatus {
   case end
 }
 
-class TimerViewController: UIViewController {
+class TimerViewController: BaseViewController {
   
   // MARK: - Protery
+  
+  let reactor: TimerViewReactor
   
   private let playImage = UIImage(systemName: "play.circle")
   private let pauseImage = UIImage(systemName: "pause.circle")
@@ -86,6 +91,37 @@ class TimerViewController: UIViewController {
     super.viewDidLoad()
     
     configureUI()
+    bind(reactor: self.reactor)
+  }
+  
+  // MARK: - Init
+  
+  init(_ reactor: TimerViewReactor) {
+    self.reactor = reactor
+  }
+
+  required convenience init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}
+
+// MARK: - Bind
+
+extension TimerViewController: View {
+  func bind(reactor: TimerViewReactor) {
+    
+    // MARK: action
+    
+    datePicker.rx.countDownDuration
+      .map { Reactor.Action.selectTime($0) }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    // MARK: state
+    
+    reactor.state.asObservable().map { $0.timeLableText }
+      .bind(to: timerLabel.rx.text)
+      .disposed(by: self.disposeBag)
   }
 }
 
@@ -141,8 +177,6 @@ private extension TimerViewController {
   func startTimer() {
     toggleButton.setImage(stopImage, for: .normal)
     animaionView.play()
-    
-    
     UIView.animate(withDuration: 0.5, animations: {
         self.progressView.alpha = 1
         self.datePicker.alpha = 0
@@ -177,6 +211,8 @@ private extension TimerViewController {
         self.progressView.progress = Float(self.currnetSeconds) / Float(self.duration)
         
         if self.currnetSeconds <= 0 {
+          self.reactor.provider.userDefaultService.setStudyTime(Int(self.duration))
+          print("DEBUG \(self.duration) 만큼 시간 저장")
           self.stopTimer()
         }
         

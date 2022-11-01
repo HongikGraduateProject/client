@@ -36,7 +36,7 @@ struct UserDefaultService {
       try? PropertyListEncoder().encode(user),
       forKey: UserDefaultKeys.user.key)
   }
-
+  
   /// 현재 유저 get
   func getUser() -> User? {
     guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
@@ -57,59 +57,45 @@ struct UserDefaultService {
   
   // chick image
   func setChickImage(_ imageName: String) {
-    standard.setValue(
-      try? PropertyListEncoder().encode(imageName),
-      forKey: UserDefaultKeys.chickImage.key)
+    standard.set(imageName, forKey: UserDefaultKeys.wallImage.key)
   }
   
   func getChickImage() -> UIImage? {
-    guard let data = standard.data(forKey: UserDefaultKeys.chickImage.key) else {
+    guard let name = standard.string(forKey: UserDefaultKeys.wallImage.key) else {
       return UIImage(named: "chick1")
-      
     }
-    let imageNmae = (
-      try? PropertyListDecoder().decode(String.self, from: data)
-    ) ?? "chick1"
-  
-    return UIImage(named: imageNmae)
+    
+    return UIImage(named: name)
   }
-  
+
   // wallpaper image
   func setWallImage(_ imageName: String) {
-    standard.setValue(
-      try? PropertyListEncoder().encode(imageName),
-      forKey: UserDefaultKeys.wallImage.key)
+    standard.set(imageName, forKey: UserDefaultKeys.wallImage.key)
   }
   
-  func getwallImage() -> UIImage? {
-    guard let data = standard.data(forKey: UserDefaultKeys.wallImage.key) else {
+  func getWallImage() -> UIImage? {
+    guard let name = standard.string(forKey: UserDefaultKeys.wallImage.key) else {
       return UIImage(named: "w0")
-      
     }
-    let imageNmae = (
-      try? PropertyListDecoder().decode(String.self, from: data)
-    ) ?? "w0"
-  
-    return UIImage(named: imageNmae)
+    
+    return UIImage(named: name)
   }
   
   // 타이머
   func setStudyTime(_ time: Int) {
     var currentitme = self.getStudyTime()
+    
+    print("DEBUG currenttime: \(currentitme)")
+    
     currentitme += time
     
-    standard.setValue(
-      try? PropertyListEncoder().encode(currentitme),
-      forKey: UserDefaultKeys.studyTime.key)
+    print("DEBUG currenttime: \(currentitme)")
+    
+    standard.set(currentitme, forKey: UserDefaultKeys.studyTime.key)
   }
   
   func getStudyTime() -> Int {
-    guard let data = standard.data(forKey: UserDefaultKeys.studyTime.key) else {
-      return 0
-    }
-    let time = (
-      try? PropertyListDecoder().decode(Int.self, from: data)
-    ) ?? 0
+    let time = standard.integer(forKey: UserDefaultKeys.studyTime.key)
     
     return time
   }

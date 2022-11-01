@@ -10,8 +10,8 @@ import ReactorKit
 
 final class RegisterViewReactor: Reactor {
   
-  let provider: ServiceProviderType
-  
+  var provider: ServiceProviderType
+
   enum Action {
     
   }
@@ -22,7 +22,7 @@ final class RegisterViewReactor: Reactor {
   
   var initialState: State = State()
 
-  init(provider: ServiceProviderType) {
+  init(_ provider: ServiceProviderType) {
     self.provider = provider
   }
   

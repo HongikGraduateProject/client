@@ -53,9 +53,13 @@ final class TabBarViewReactor {
   private lazy var todoViewController = UINavigationController(rootViewController: ToDoViewController()).then {
     $0.tabBarItem = todoTabBarItem
   }
-  private lazy var timerViewController = UINavigationController(rootViewController: TimerViewController()).then {
+  private lazy var timerViewController = UINavigationController(
+    rootViewController: TimerViewController(
+      TimerViewReactor(self.provider, with: self.user)
+    )).then {
     $0.tabBarItem = timerTabBarItem
   }
+  
   private lazy var groupViewController = UINavigationController(rootViewController: UIViewController()).then {
     $0.tabBarItem = groupTabBarItem
   }
