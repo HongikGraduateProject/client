@@ -10,6 +10,13 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
+enum ValidationResult {
+    case ok(message: String)
+    case empty
+    case validating
+    case failed(message: String)
+}
+
 final class EmailSignUpReactor: Reactor {
   
   let provider: ServiceProviderType
@@ -18,30 +25,28 @@ final class EmailSignUpReactor: Reactor {
     case emailInput(_ email: String)
     case nicknameInput(_ nickname: String)
     case passwordInput(String)
-    case passwordCheckInput(String, String)
+    case passwordCheckInput(String)
   }
   
   enum Mutation {
-    case checkEmail(String)
-    case checkNickname(String)
-    case checkPassword(String)
-    case checkPasswordCheck(String)
-  }
- 
-  struct State {
-    var emailMessage: NSAttributedString
-    var nickNameMessage: NSAttributedString
-    var passwordMessage: NSAttributedString
-    var passwordCheckMessage: NSAttributedString
+    case validateEmail(String)
+    case validateNickname(String)
+    case validatePassword(String)
+    case validatePasswordCheck(String)
   }
   
-  var initialState: State = State(
-    emailMessage: NSAttributedString(""),
-    nickNameMessage: NSAttributedString(""),
-    passwordMessage: NSAttributedString(""),
-    passwordCheckMessage: NSAttributedString("")
-  )
-
+  struct State {
+    var emailMessage: NSAttributedString?
+    var nickNameMessage: NSAttributedString?
+    var passwordMessage: NSAttributedString?
+    var passwordCheckMessage: NSAttributedString?
+    var password: String?
+    var passwordcheck: String?
+    
+  }
+    
+  var initialState: State = State()
+  
   init(provider: ServiceProviderType) {
     self.provider = provider
   }
@@ -49,13 +54,16 @@ final class EmailSignUpReactor: Reactor {
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case let .emailInput(input):
-      return Observable.just(Mutation.checkEmail(input))
+      return Observable.just(Mutation.validateEmail(input))
     case let .nicknameInput(input):
-      return Observable.just(Mutation.checkNickname(input))
+      return Observable.just(Mutation.validateNickname(input))
     case let .passwordInput(input):
-      return Observable.just(Mutation.checkPassword(input))
+      return Observable.concat([
+        Observable.just(Mutation.validatePassword(input)),
+        Observable.just(Mutation.validatePasswordCheck(currentState.passwordcheck ?? ""))
+      ])
     case let .passwordCheckInput(input):
-      return Observable.just(Mutation.checkPasswordCheck(input))
+      return Observable.just(Mutation.validatePasswordCheck(input))
     }
   }
   
@@ -63,80 +71,112 @@ final class EmailSignUpReactor: Reactor {
     var state = state
     switch mutation {
       
-    case let .checkEmail(input):
-            
-      if input.isEmpty {
-        let message = NSAttributedString(string: "")
-        state.emailMessage = message
-        
-      } else if input.contains("@") == false {
-        
-        let message = NSAttributedString(
-          string: "eamil 형식으로 입력해주세요",
-          attributes: [.foregroundColor: UIColor.systemRed]
-        )
-        state.emailMessage = message
-        
-      } else {
-        let message = NSAttributedString(
-          string: "사용가능한 email 입니다.",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.emailMessage = message
-      }
+    case let .validateEmail(input):
+      state.emailMessage = self.isValidEmail(input: input)
       return state
       
-    case let .checkNickname(input):
-      
-      if input.count == 0 {
-        let message = NSAttributedString(
-          string: "",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.nickNameMessage = message
-      } else if input.count > 9 {
-        let message = NSAttributedString(
-          string: "8자 이하로 입력해주세요.",
-          attributes: [.foregroundColor: UIColor.systemRed]
-        )
-        state.nickNameMessage = message
-        
-      } else {
-        let message = NSAttributedString(
-          string: "사용가능한 별명 입니다.",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.nickNameMessage = message
-      }
+    case let .validateNickname(input):
+      state.nickNameMessage = self.isValidNickname(input: input)
       return state
       
-    case let .checkPassword(input):
-      
-      if input.count == 0 {
-        let message = NSAttributedString(
-          string: "",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.nickNameMessage = message
-      } else if input.count < 6 {
-        let message = NSAttributedString(
-          string: "6자리 이상 입력해주세요",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.passwordMessage = message
-      } else {
-        let message = NSAttributedString(
-          string: "사용가능한 비밀번호입니다.",
-          attributes: [.foregroundColor: UIColor.systemGray]
-        )
-        state.passwordMessage = message
-      }
-      
+    case let .validatePassword(input):
+      state.passwordMessage = self.isValidPassword(input: input)
+      state.password = input
       return state
       
-    case let .checkPasswordCheck(input):
+    case let .validatePasswordCheck(input):
+      state.passwordCheckMessage = isValidPasswordCheck(input: input, pwd: state.password ?? "")
+      state.passwordcheck = input
       return state
-    
     }
+  }
+}
+
+// MARK: - Method
+
+/// email 입력값 확인해서 message 출력
+private extension EmailSignUpReactor {
+  func isValidEmail(input: String) -> NSAttributedString {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+    var message: NSAttributedString
+    
+    if input.isEmpty {
+      message = NSAttributedString(string: "")
+    } else if emailTest.evaluate(with: input) == false {
+      message = NSAttributedString(
+        string: "eamil 형식으로 입력해주세요",
+        attributes: [.foregroundColor: UIColor.systemRed]
+      )
+    } else {
+      message = NSAttributedString(
+        string: "사용가능한 email 입니다.",
+        attributes: [.foregroundColor: UIColor.systemGray]
+      )
+    }
+    return message
+  }
+  
+  func isValidNickname(input: String) -> NSAttributedString {
+    let nicknameRegEx = "[가-힣A-Za-z0-9]{2,8}"
+    let nicknameTest = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
+    var message: NSAttributedString
+    
+    if input.count == 0 {
+      message = NSAttributedString(string: "")
+    } else if input.count == 1 {
+      message = NSAttributedString(
+        string: "2자 이상 올바른 형식으로 입력해주세요.",
+        attributes: [.foregroundColor: UIColor.systemRed]
+      )
+    } else if nicknameTest.evaluate(with: input) == false {
+      message = NSAttributedString(
+        string: "8자 이하 올바른 형식으로 입력해주세요.",
+        attributes: [.foregroundColor: UIColor.systemRed]
+      )
+    } else {
+      message = NSAttributedString(
+        string: "사용가능한 별명 입니다.",
+        attributes: [.foregroundColor: UIColor.systemGray]
+      )
+    }
+    return message
+  }
+  
+  func isValidPassword(input: String) -> NSAttributedString {
+    var message: NSAttributedString?
+    if input.count == 0 {
+      message = NSAttributedString(string: "")
+    } else if input.count > 0 && input.count < 6 {
+      message = NSAttributedString(
+        string: "6자리 이상 입력해주세요",
+        attributes: [.foregroundColor: UIColor.systemRed]
+      )
+    } else if input.count >= 6 {
+      message = NSAttributedString(
+        string: "사용가능한 비밀번호입니다.",
+        attributes: [.foregroundColor: UIColor.systemGray]
+      )
+    }
+    return message ?? NSAttributedString(string: "")
+  }
+  
+  func isValidPasswordCheck(input: String, pwd: String) -> NSAttributedString {
+    var message: NSAttributedString?
+    
+    if input.count == 0 {
+      message = NSAttributedString(string: "")
+    } else if input != pwd {
+      message = NSAttributedString(
+        string: "비밀번호와 일치하지 않습니다.",
+        attributes: [.foregroundColor: UIColor.systemRed]
+      )
+    } else {
+      message = NSAttributedString(
+        string: "비밀번호와 일치합니다.",
+        attributes: [.foregroundColor: UIColor.systemGray]
+      )
+    }
+    return message ?? NSAttributedString(string: "")
   }
 }

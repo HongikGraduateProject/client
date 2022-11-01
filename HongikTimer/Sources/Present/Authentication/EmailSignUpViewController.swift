@@ -16,8 +16,6 @@ import RxCocoa
 
 final class EmailSignUpViewController: BaseViewController {
   
-  //    var userVM: UserViewModel?
-
   // MARK: - Property
   
   let reactor: EmailSignUpReactor!
@@ -41,13 +39,13 @@ final class EmailSignUpViewController: BaseViewController {
     $0.textField.isSecureTextEntry = true
   }
   
-  private lazy var signinButton = UIButton(configuration: labelConfig).then {
+  private lazy var signUpButton = UIButton(configuration: labelConfig).then {
     $0.setTitle("회원가입", for: .normal)
     $0.setTitleColor(.systemBackground, for: .normal)
     $0.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .bold)
     $0.addTarget(
       self,
-      action: #selector(tapsigninButton),
+      action: #selector(tapsignUpButton),
       for: .touchUpInside
     )
   }
@@ -56,8 +54,16 @@ final class EmailSignUpViewController: BaseViewController {
   
   override func viewDidLoad() {
     setupNavigationBar()
-    setupLayout()
+    configureLayout()
     bind(reactor: self.reactor)
+    
+    let tapBackground = UITapGestureRecognizer()
+    tapBackground.rx.event
+        .subscribe(onNext: { [weak self] _ in
+            self?.view.endEditing(true)
+        })
+        .disposed(by: disposeBag)
+    view.addGestureRecognizer(tapBackground)
   }
   
   // MARK: - Init
@@ -69,6 +75,7 @@ final class EmailSignUpViewController: BaseViewController {
   required convenience init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
   
 }
 
@@ -90,23 +97,17 @@ extension EmailSignUpViewController: View {
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
     
-    
     passwordTextField.textField.rx.text
       .orEmpty
       .map { Reactor.Action.passwordInput($0) }
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
     
-    let passwordText = passwordTextField.textField.rx.text.orEmpty.map { $0 }
-    let passwordCheckText = passwordCheckTextField.textField.rx.text.orEmpty.map { $0 }
-    
-    Observable.combineLatest(
-      passwordText,
-      passwordCheckText
-    )
-    .map { Reactor.Action.passwordCheckInput($0, $1) }
-    .bind(to: reactor.action)
-    .disposed(by: disposeBag)
+    passwordCheckTextField.textField.rx.text
+      .orEmpty
+      .map { Reactor.Action.passwordCheckInput($0) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
        
     // MARK: State
     reactor.state.asObservable().map { $0.emailMessage }
@@ -140,7 +141,7 @@ extension EmailSignUpViewController: UITextFieldDelegate {
     } else if textField == passwordTextField.textField {
       passwordCheckTextField.textField.becomeFirstResponder()
     } else if textField == passwordCheckTextField.textField {
-      tapsigninButton()
+      tapsignUpButton()
     }
     return true
   }
@@ -154,7 +155,7 @@ private extension EmailSignUpViewController {
     navigationItem.title = "회원가입"
   }
   
-  func setupLayout() {
+  func configureLayout() {
     view.backgroundColor = .systemBackground
     
     let stackView = UIStackView(arrangedSubviews: [
@@ -162,7 +163,7 @@ private extension EmailSignUpViewController {
       nicknameTextField,
       passwordTextField,
       passwordCheckTextField,
-      signinButton
+      signUpButton
     ]).then {
       $0.axis = .vertical
       $0.distribution = .equalSpacing
@@ -190,7 +191,7 @@ private extension EmailSignUpViewController {
   
   // MARK: - Selector
   
-  @objc func tapsigninButton() {
+  @objc func tapsignUpButton() {
     emailTextField.textField.resignFirstResponder()
     nicknameTextField.textField.resignFirstResponder()
     passwordTextField.textField.resignFirstResponder()
@@ -201,9 +202,7 @@ private extension EmailSignUpViewController {
     guard let password = passwordTextField.textField.text, !password.isEmpty else { return }
     guard let passwordCheck = passwordCheckTextField.textField.text, !passwordCheck.isEmpty else { return }
     
-    if password != passwordCheck {
-      view.makeToast("비밀번호와 비밀번호 확인이 일치하지 않습니다", position: .top)
-    }
+    view.makeToastActivity(.center)
     
     let authCredentials = AuthCredentials(
       email: email,
@@ -211,14 +210,17 @@ private extension EmailSignUpViewController {
       password: password
     )
     
-    AuthService.shared.signInWithEmail(
+    self.reactor.provider.authService.signUpWithEmail(
       credentials: authCredentials
     ) { [weak self] result, error in
       if let error = error {
         print("DEBUG 이메일 회원가입 에러 \(error)")
+        self?.view.hideToast()
         return
       }
       
+      
+      // firebase db에 저장
       guard let uid = result?.user.uid else { return }
       
       let values = [
@@ -230,6 +232,8 @@ private extension EmailSignUpViewController {
         if let error = error {
           print(error)
         }
+        
+        self?.view.hideToast()
         
         let vc = TabBarViewController()
         vc.modalPresentationStyle = .fullScreen

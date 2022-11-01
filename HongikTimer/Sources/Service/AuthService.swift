@@ -67,8 +67,7 @@ extension AuthService {
     }
   }
   
-  /// Firebase Email 회원가입
-  func signInWithEmail(
+  func signUpWithEmail(
     credentials: AuthCredentials,
     completion: ((AuthDataResult?, Error?) -> Void)?
   ) {
@@ -76,44 +75,44 @@ extension AuthService {
     let username = credentials.username
     let password = credentials.password
     
+    // firebase 사용
     Auth.auth().createUser(
       withEmail: email,
       password: password,
       completion: completion
     )
     
-    userVM.register(
-      email: email,
-      username: username,
-      password: password
-    )
+    //    userVM.register(
+    //      email: email,
+    //      username: username,
+    //      password: password
+    //    )
     
-    //        let parameters: Parameters = [
-    //            "username": credentials.username,
-    //            "email": credentials.email,
-    //            "password": credentials.password
-    //        ]
-    //        let headers: HTTPHeaders = [
-    //            "Accept": "application/json"
-    //        ]
+    let parameters: Parameters = [
+      "username": credentials.username,
+      "email": credentials.email,
+      "password": credentials.password
+    ]
+    let headers: HTTPHeaders = [
+      "Accept": "application/json"
+    ]
     
-    //        AF.request(
-    //            URLs.signin.url,
-    //            method: .post,
-    //            parameters: parameters,
-    //            encoding: JSONEncoding.default,
-    //            headers: headers
-    //        ).responseDecodable(of: User.self) { response in
-    //            switch response.result {
-    //            case .success(let user):
-    //                print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
-    //
-    //                UserDefaultManager.shared.setUser(user)
-    //
-    //            case .failure(let error):
-    //                print("DEBUG 회원가입 post 실패 error: \(error)")
-    //            }
-    //        }
-    
+    AF.request(
+      URLs.signin.url,
+      method: .post,
+      parameters: parameters,
+      encoding: JSONEncoding.default,
+      headers: headers
+    ).responseDecodable(of: User.self) { response in
+      switch response.result {
+      case .success(let user):
+        print("DEBUG Email: \(user.email), Username: \(user.username) 으로 회원가입 성공")
+        
+        UserDefaultService.shared.setUser(user)
+        
+      case .failure(let error):
+        print("DEBUG 회원가입 post 실패 error: \(error)")
+      }
+    }
   }
 }

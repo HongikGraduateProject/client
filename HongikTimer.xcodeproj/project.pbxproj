@@ -17,7 +17,7 @@
 		2750A42628D02BEB000EE24D /* HongikTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42528D02BEB000EE24D /* HongikTimerUITests.swift */; };
 		2750A42828D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A42728D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift */; };
 		2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2750A44C28D032A2000EE24D /* .swiftlint.yml */; };
-		2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A44E28D0340F000EE24D /* TabBarViewModel.swift */; };
+		2750A44F28D0340F000EE24D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A44E28D0340F000EE24D /* TabBarItem.swift */; };
 		2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45128D0386A000EE24D /* HomeViewController.swift */; };
 		2750A45428D04C95000EE24D /* PurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45328D04C95000EE24D /* PurposeView.swift */; };
 		2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A45528D051D3000EE24D /* SetPurposeViewController.swift */; };
@@ -82,6 +82,7 @@
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
 		ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A5B29100B0C00D30F7A /* EmailSignUpReactor.swift */; };
 		ED037A5F291027C400D30F7A /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */; };
+		ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A602910F75000D30F7A /* TabBarViewReactor.swift */; };
 		ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507EF290FFE190016455B /* ServiceProvider.swift */; };
 		ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F3291002F10016455B /* RegisterViewReactor.swift */; };
 		ED0507F6291003560016455B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F5291003560016455B /* BaseViewController.swift */; };
@@ -122,7 +123,7 @@
 		2750A42528D02BEB000EE24D /* HongikTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongikTimerUITests.swift; sourceTree = "<group>"; };
 		2750A42728D02BEB000EE24D /* HongikTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongikTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2750A44C28D032A2000EE24D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		2750A44E28D0340F000EE24D /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		2750A44E28D0340F000EE24D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		2750A45128D0386A000EE24D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2750A45328D04C95000EE24D /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
 		2750A45528D051D3000EE24D /* SetPurposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 		EA1F5AB474B727D1BE4675FD /* Pods-HongikTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		ED037A5B29100B0C00D30F7A /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
+		ED037A602910F75000D30F7A /* TabBarViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewReactor.swift; sourceTree = "<group>"; };
 		ED0507EF290FFE190016455B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		ED0507F3291002F10016455B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		ED0507F5291003560016455B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +234,6 @@
 		2740F7D228D5AB5900284372 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2750A44E28D0340F000EE24D /* TabBarViewModel.swift */,
 				273E134E28F1D9A700877965 /* TaskListViewModel.swift */,
 				27C2DFAD28F6B540009356E5 /* UserViewModel.swift */,
 			);
@@ -309,7 +310,9 @@
 		2750A43528D030AD000EE24D /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				2750A44E28D0340F000EE24D /* TabBarItem.swift */,
 				2750A40828D02BE9000EE24D /* TabBarViewController.swift */,
+				ED037A602910F75000D30F7A /* TabBarViewReactor.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */,
 				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
+				ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
@@ -929,7 +933,7 @@
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */,
 				2793C14C28F5F25600FC7D13 /* InterestBoardView.swift in Sources */,
-				2750A44F28D0340F000EE24D /* TabBarViewModel.swift in Sources */,
+				2750A44F28D0340F000EE24D /* TabBarItem.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
