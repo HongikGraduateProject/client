@@ -9,7 +9,9 @@ import UIKit
 import RxSwift
 
 class BaseViewController: UIViewController {
-
+  
+  // MARK: - Property
+  
   // MARK: Initializing
 
   init() {

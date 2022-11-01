@@ -18,7 +18,7 @@ final class EmailSignUpViewController: BaseViewController {
   
   // MARK: - Property
   
-  let reactor: EmailSignUpReactor!
+  let reactor: EmailSignUpReactor
   
   private lazy var emailTextField = TextFieldView(with: "이메일").then {
     $0.textField.becomeFirstResponder()
@@ -235,7 +235,9 @@ private extension EmailSignUpViewController {
         self?.view.hideToast()
         
         guard let provider = self?.reactor.provider else { return }
-        let vc = TabBarViewController(with: TabBarViewReactor(provider))
+        let user = self?.reactor.provider.userDefaultService.getUser()
+        print("DEBUG \(user!)로 회원 가입완료후 화면이동")
+        let vc = TabBarViewController(with: TabBarViewReactor(provider, with: user!))
         vc.modalPresentationStyle = .fullScreen
         self?.present(vc, animated: true)
       }

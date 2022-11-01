@@ -22,12 +22,6 @@ final class TabBarViewController: UITabBarController {
     setTabBar()
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    handleNotAuthenticated()    
-  }
-  
   // MARK: - Init
   
   init(with reactor: TabBarViewReactor) {
@@ -44,37 +38,11 @@ final class TabBarViewController: UITabBarController {
 
 private extension TabBarViewController {
   
-  func handleNotAuthenticated() {
-    
-    // Check auth with firebase
-//    if Auth.auth().currentUser == nil {
-      // SHow log in
-    
-    if reactor.provider.userDefaultService.isCurrentUser() == false {
-    
-      let vc = RegisterViewController(with: RegisterViewReactor(provider: ServiceProvider()))
-      let nv = UINavigationController(rootViewController: vc)
-      nv.modalPresentationStyle = .fullScreen
-      present(nv, animated: false)
-    } else {
-      reactor.user = reactor.provider.userDefaultService.getUser()
-      guard let user = reactor.user else { return }
-      print("DEBUG 현재 사용중인 유저: \(user)")
-    }
-  }
-  
   func setTabBar() {
-    let tabBarViewControllers: [UIViewController] = TabBarItem
-      .allCases.map { tabCase in
-        let viewController = tabCase.viewController
-        viewController.tabBarItem = UITabBarItem(
-          title: tabCase.title,
-          image: tabCase.icon.default,
-          selectedImage: tabCase.icon.selected
-        )
-        return viewController
-      }
-    viewControllers = tabBarViewControllers
+    viewControllers = reactor.viewControllers
     tabBar.backgroundColor = .systemGray6
   }
 }
+
+// MARK: - TabBarItem
+ 

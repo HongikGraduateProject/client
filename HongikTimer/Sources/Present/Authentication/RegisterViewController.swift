@@ -17,8 +17,9 @@ import NaverThirdPartyLogin
 final class RegisterViewController: BaseViewController {
   
   // MARK: - Property
+    
+  let reactor: RegisterViewReactor
   
-  let reactor: RegisterViewReactor!
   var window: UIWindow?
   private var currentNonce: String?
   
@@ -267,7 +268,9 @@ private extension RegisterViewController {
   }
   
   @objc func loginSuccessHandler() {
-    let vc = TabBarViewController(with: TabBarViewReactor(ServiceProvider()))
+    #warning("더미 유저")
+    let vc = TabBarViewController(with: TabBarViewReactor(reactor.provider, with: User()))
+    
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: true)
     navigationController?.popToRootViewController(animated: false)

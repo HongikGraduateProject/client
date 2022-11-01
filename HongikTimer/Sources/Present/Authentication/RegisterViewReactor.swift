@@ -16,11 +16,11 @@ final class RegisterViewReactor: Reactor {
     
   }
  
-  enum State {
-    case none
+  struct State {
+    
   }
   
-  var initialState: State = State.none
+  var initialState: State = State()
 
   init(provider: ServiceProviderType) {
     self.provider = provider

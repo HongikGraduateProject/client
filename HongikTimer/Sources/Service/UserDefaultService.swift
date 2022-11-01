@@ -21,13 +21,13 @@ struct UserDefaultService {
   }
   
   /// 현재 유저 존재하는지 확인
-  func isCurrentUser() -> Bool {
-    if standard.data(forKey: UserDefaultKeys.user.key) == nil {
-      return false
-    } else {
-      return true
-    }
-  }
+//  func isCurrentUser() -> Bool {
+//    if standard.data(forKey: UserDefaultKeys.user.key) == nil {
+//      return false
+//    } else {
+//      return true
+//    }
+//  }
   
   /// 현재 유저 get
   func getUser() -> User? {

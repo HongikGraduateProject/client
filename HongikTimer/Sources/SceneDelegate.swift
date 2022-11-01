@@ -11,7 +11,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
+  // MARK: - Property
   var window: UIWindow?
+  var provider: ServiceProviderType = ServiceProvider()
   
   func scene(
     _ scene: UIScene,
@@ -23,11 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.backgroundColor = .systemBackground
     UINavigationBar.appearance().tintColor = .barTint
     
-    let vc = TabBarViewController(with: TabBarViewReactor(ServiceProvider()))
     
     UITabBar.appearance().tintColor = .barTint
-    window?.rootViewController = vc
-    
+
+    window?.rootViewController = isCurrentUser()
     window?.makeKeyAndVisible()
     
   }
@@ -43,6 +44,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
       }
       
+    }
+  }
+  
+  func isCurrentUser() -> UIViewController {
+    if provider.userDefaultService.getUser() == nil {
+      let vc = RegisterViewController(with: RegisterViewReactor(provider: self.provider))
+      return UINavigationController(rootViewController: vc)
+    } else {
+      let user = provider.userDefaultService.getUser()
+      return TabBarViewController(with: TabBarViewReactor(self.provider, with: user!))
     }
   }
 }
