@@ -103,6 +103,7 @@
 		EDF3A89929120F7C00A7C980 /* AutoSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */; };
 		EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */; };
 		EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89329120F7C00A7C980 /* BoardViewController.swift */; };
+		EDF3A89D291220D100A7C980 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89C291220D100A7C980 /* EnterViewController.swift */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +229,7 @@
 		EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideView.swift; sourceTree = "<group>"; };
 		EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDF3A89329120F7C00A7C980 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		EDF3A89C291220D100A7C980 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -617,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF3A89329120F7C00A7C980 /* BoardViewController.swift */,
+				EDF3A89C291220D100A7C980 /* EnterViewController.swift */,
 				EDF3A88629120F7C00A7C980 /* SubViews */,
 			);
 			path = board;
@@ -966,6 +969,7 @@
 				ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */,
 				27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */,
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
+				EDF3A89D291220D100A7C980 /* EnterViewController.swift in Sources */,
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
 				ED0507F6291003560016455B /* BaseViewController.swift in Sources */,
 				ED037A792911994D00D30F7A /* ChickViewController.swift in Sources */,

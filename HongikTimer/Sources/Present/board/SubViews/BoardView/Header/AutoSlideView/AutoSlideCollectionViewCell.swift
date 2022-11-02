@@ -37,7 +37,7 @@ final class AutoSlideCollectionViewCell: UICollectionViewCell {
 
 extension AutoSlideCollectionViewCell {
     func configureCell(_ content: String) {
-        contentLabel.text = content + " 빡코딩!🔥👨‍💻"
+        contentLabel.text = content + " chickTimer🔥👨‍💻"
     }
 }
 
