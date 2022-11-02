@@ -28,12 +28,13 @@ final class EnterViewController: UIViewController {
   private lazy var contentLabel = UILabel().then {
     $0.font = .systemFont(ofSize: 12.0, weight: .regular)
     $0.textColor = .label
+    $0.numberOfLines = 0
 
   }
   
   private lazy var enterButton = UIButton().then {
     $0.setTitle("입장하기", for: .normal)
-    $0.setTitleColor(.defaultTintColor, for: .normal)
+    $0.backgroundColor = .label
     $0.setTitleColor(.systemBackground, for: .normal)
     $0.layer.cornerRadius = 8.0
   }
@@ -66,6 +67,9 @@ private extension EnterViewController {
   }
   
   func configureLayout() {
+    
+    view.backgroundColor = .systemBackground
+    
     [
       titleLabel,
       separatorLabel,
@@ -74,8 +78,8 @@ private extension EnterViewController {
     ].forEach { view.addSubview($0) }
     
     titleLabel.snp.makeConstraints {
-      $0.leading.equalToSuperview().inset(16.0)
-      $0.top.equalToSuperview().inset(16.0)
+      $0.leading.trailing.equalToSuperview().inset(16.0)
+      $0.top.equalTo(view.safeAreaLayoutGuide).inset(16.0)
     }
     
     separatorLabel.snp.makeConstraints {
@@ -84,12 +88,12 @@ private extension EnterViewController {
     }
     
     contentLabel.snp.makeConstraints {
-      $0.leading.equalTo(titleLabel)
+      $0.leading.trailing.equalTo(titleLabel)
       $0.top.equalTo(separatorLabel.snp.bottom).offset(16.0)
     }
     
     enterButton.snp.makeConstraints {
-      $0.bottom.equalToSuperview().inset(16.0)
+      $0.bottom.equalToSuperview().inset(32.0)
       $0.leading.trailing.equalToSuperview().inset(16.0)
     }
   }
@@ -100,4 +104,7 @@ private extension EnterViewController {
     dismiss(animated: true, completion: nil)
   }
   
+  @objc func tapEnterButton() {
+    
+  }
 }

@@ -110,8 +110,8 @@ extension AuthService {
         UserDefaultService.shared.setUser(user)
       case .failure(let error):
         print("DEBUG 회원가입 post 실패 error: \(error)")
-      
-        #warning("dummy current user")
+        
+#warning("dummy current user")
         let user = User()
         UserDefaultService.shared.setUser(user)
       }

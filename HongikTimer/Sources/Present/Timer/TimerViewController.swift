@@ -28,33 +28,32 @@ class TimerViewController: BaseViewController {
   private let playImage = UIImage(systemName: "play.circle")
   private let pauseImage = UIImage(systemName: "pause.circle")
   private let stopImage = UIImage(systemName: "stop.circle")
+  private let chickImage = UIImage(named: "TimerChick")
   
-  private lazy var animaionView = LottieAnimationView.init(name: "TimerAnimation").then {
+//  private lazy var animaionView = LottieAnimationView.init(name: "TimerAnimation").then {
+//    $0.contentMode = .scaleAspectFit
+//    $0.loopMode = .loop
+//  }
+  
+  lazy var chickImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFit
-    $0.loopMode = .loop
+    $0.image = chickImage
+    
   }
   
   private lazy var toggleButton = UIButton().then {
-    $0.setImage(
-      playImage,
-      for: .normal
-    )
+    
+    $0.setTitle("시작하기", for: .normal)
     $0.addTarget(
       self,
       action: #selector(tapToggleButton),
       for: .touchUpInside
     )
-    $0.tintColor = .black
+    $0.tintColor = .systemBackground
+    $0.backgroundColor = .label
+    $0.layer.cornerRadius = 4.0
   }
-  
-  private lazy var stopButton = UIButton().then {
-    $0.setImage(
-      stopImage,
-      for: .normal
-    )
-    $0.tintColor = .black
-  }
-  
+    
   private lazy var timerLabel = UILabel().then {
     $0.text = String(
       format: "%02d:%02d:%02d",
@@ -62,11 +61,9 @@ class TimerViewController: BaseViewController {
       0,
       0
     )
-    
-    $0.font = .systemFont(
-      ofSize: 64.0,
-      weight: .bold
-    )
+  
+//    $0.font = UIFont(name: "NanumMyeongjo-Regular", size: 64.0)
+    $0.font = UIFont(name: "NotoSansCJKkr-Medium", size: 52.0)
     $0.textColor = .black
     $0.textAlignment = .center
   }
@@ -130,24 +127,26 @@ extension TimerViewController: View {
 private extension TimerViewController {
   func configureUI() {
     
+    navigationItem.title = "Timer"
+    
     progressView.isHidden = true
     
     [
-      animaionView,
+      chickImageView,
       datePicker,
       progressView,
       timerLabel,
       toggleButton
     ].forEach { view.addSubview($0) }
     
-    animaionView.snp.makeConstraints {
-      $0.top.equalTo(view.safeAreaLayoutGuide).offset(16.0)
+    chickImageView.snp.makeConstraints {
+      $0.top.equalTo(view.safeAreaLayoutGuide).offset(48.0)
       $0.width.height.equalTo(100.0)
       $0.centerX.equalToSuperview()
     }
     
     datePicker.snp.makeConstraints {
-      $0.top.equalTo(animaionView.snp.bottom).offset(16.0)
+      $0.top.equalTo(chickImageView.snp.bottom).offset(16.0)
       $0.height.equalTo(240.0)
       $0.leading.trailing.equalToSuperview()
     }
@@ -165,18 +164,19 @@ private extension TimerViewController {
     
     toggleButton.snp.makeConstraints {
       $0.top.equalTo(timerLabel.snp.bottom).offset(16.0)
-      $0.height.width.equalTo(100.0)
+      $0.height.equalTo(36.0)
+      $0.width.equalTo(100.0)
       $0.centerX.equalToSuperview()
     }
     
-    toggleButton.imageView?.snp.makeConstraints {
-      $0.width.height.equalTo(80.0)
-    }
+//    toggleButton.imageView?.snp.makeConstraints {
+//      $0.width.height.equalTo(80.0)
+//    }
   }
   
   func startTimer() {
-    toggleButton.setImage(stopImage, for: .normal)
-    animaionView.play()
+    toggleButton.setTitle("포기하기", for: .normal)
+//    animaionView.play()
     UIView.animate(withDuration: 0.5, animations: {
         self.progressView.alpha = 1
         self.datePicker.alpha = 0
@@ -223,8 +223,9 @@ private extension TimerViewController {
   
   func stopTimer() {
 
-    toggleButton.setImage(playImage, for: .normal)
-    animaionView.stop()
+//    toggleButton.setImage(playImage, for: .normal)
+    toggleButton.setTitle("시작하기", for: .normal)
+//    animaionView.stop()
     
     UIView.animate(withDuration: 0.5, animations: {
         self.progressView.alpha = 0
@@ -264,10 +265,6 @@ private extension TimerViewController {
   
 }
 
-
-extension TimerViewController {
-  
-}
 
 //final class TimerViewController: UIViewController {
 //

@@ -30,8 +30,9 @@ final class HomeViewController: BaseViewController {
   }
   
   private lazy var timeLabel = UILabel().then {
-    $0.font = .systemFont(ofSize: 52.0, weight: .bold)
+//    $0.font = .systemFont(ofSize: 52.0, weight: .bold)
     $0.text = "00:00:00"
+    $0.font = UIFont(name: "NotoSansCJKkr-Medium", size: 52.0)
   }
   
   private lazy var purposeView = PurposeView(purpose: purpose ?? "").then {

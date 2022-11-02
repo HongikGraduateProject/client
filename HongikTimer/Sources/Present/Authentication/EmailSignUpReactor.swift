@@ -42,7 +42,6 @@ final class EmailSignUpReactor: Reactor {
     var passwordCheckMessage: NSAttributedString?
     var password: String?
     var passwordcheck: String?
-    
   }
     
   var initialState: State = State()

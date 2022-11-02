@@ -27,7 +27,6 @@ final class TextFieldView: UIView {
   
   lazy var messageLabel = UILabel().then {
     $0.textColor = .systemGray
-    $0.text = "* testtest"
   }
   
   // MARK: - Lifecycle

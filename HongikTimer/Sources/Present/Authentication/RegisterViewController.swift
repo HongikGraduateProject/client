@@ -149,6 +149,7 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
     print("DEBUG 네이버 로그인 성공")
     AuthNotificationManager.shared.postNotificationSignInSuccess()
+    
   }
   
   // 접근 토큰 갱신
@@ -159,6 +160,8 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   // 로그아웃 (토큰 삭제)
   func oauth20ConnectionDidFinishDeleteToken() {
     print("DEBUG 네이버 로그아웃")
+    
+    
   }
   
   // 모든 Error

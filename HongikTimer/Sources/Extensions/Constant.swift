@@ -20,16 +20,16 @@ let refUSERS = dbREF.child("users")
 // MARK: - URL
 
 enum URLs {
-    case login
-    case signin
-
-    var url: String {
-        switch self {
-            // TODO: 회원가입 url 수정해야햠
-        case .signin:
-            return "http://localhost:8080/api/members"
-        case .login:
-            return "http://localhost:8080/api/login"
-        }
+  case login
+  case signin
+  
+  var url: String {
+    switch self {
+      // TODO: 회원가입 url 수정해야햠
+    case .signin:
+      return "http://localhost:8080/api/members"
+    case .login:
+      return "http://localhost:8080/api/login"
     }
+  }
 }

@@ -104,6 +104,18 @@
 		EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */; };
 		EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89329120F7C00A7C980 /* BoardViewController.swift */; };
 		EDF3A89D291220D100A7C980 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89C291220D100A7C980 /* EnterViewController.swift */; };
+		EDF3A8A02912454300A7C980 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89F2912454300A7C980 /* GroupViewController.swift */; };
+		EDF3A8A22912488D00A7C980 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8A12912488D00A7C980 /* GroupViewCell.swift */; };
+		EDF3A8AB29124F6300A7C980 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A429124F6100A7C980 /* NotoSansCJKkr-Bold.otf */; };
+		EDF3A8AC29124F6300A7C980 /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A529124F6200A7C980 /* AbrilFatface-Regular.ttf */; };
+		EDF3A8AD29124F6300A7C980 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A629124F6200A7C980 /* NanumMyeongjo-ExtraBold.ttf */; };
+		EDF3A8AE29124F6300A7C980 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A729124F6200A7C980 /* NanumMyeongjo-Bold.ttf */; };
+		EDF3A8AF29124F6300A7C980 /* CooperBlackStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A829124F6200A7C980 /* CooperBlackStd.otf */; };
+		EDF3A8B029124F6300A7C980 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8A929124F6300A7C980 /* NotoSansCJKkr-Medium.otf */; };
+		EDF3A8B129124F6300A7C980 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8AA29124F6300A7C980 /* NanumMyeongjo-Regular.ttf */; };
+		EDF3A8B42912517B00A7C980 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8B32912517B00A7C980 /* UIFont+Extension.swift */; };
+		EDF3A8B6291259FF00A7C980 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8B5291259FF00A7C980 /* GroupDetailViewController.swift */; };
+		EDF3A8B829125E9300A7C980 /* GroupDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8B729125E9300A7C980 /* GroupDetailCell.swift */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +242,18 @@
 		EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDF3A89329120F7C00A7C980 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		EDF3A89C291220D100A7C980 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		EDF3A89F2912454300A7C980 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		EDF3A8A12912488D00A7C980 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
+		EDF3A8A429124F6100A7C980 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		EDF3A8A529124F6200A7C980 /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		EDF3A8A629124F6200A7C980 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EDF3A8A729124F6200A7C980 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
+		EDF3A8A829124F6200A7C980 /* CooperBlackStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CooperBlackStd.otf; sourceTree = "<group>"; };
+		EDF3A8A929124F6300A7C980 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		EDF3A8AA29124F6300A7C980 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
+		EDF3A8B32912517B00A7C980 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		EDF3A8B5291259FF00A7C980 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
+		EDF3A8B729125E9300A7C980 /* GroupDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailCell.swift; sourceTree = "<group>"; };
 		F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -337,6 +361,7 @@
 				2750A45028D0384D000EE24D /* Home */,
 				27A977A128E2076A0076FF80 /* ToDo */,
 				2793C12E28F58D9100FC7D13 /* Timer */,
+				EDF3A89E2912452A00A7C980 /* group */,
 				EDF3A88529120F7C00A7C980 /* board */,
 			);
 			path = Present;
@@ -387,6 +412,7 @@
 			children = (
 				2793C12F28F58DB300FC7D13 /* TimerViewController.swift */,
 				ED037A6829115CFB00D30F7A /* TimerViewReactor.swift */,
+				EDF3A8B92912620000A7C980 /* New Group */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -394,6 +420,7 @@
 		2793C13928F5967B00FC7D13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDF3A8A329124F3F00A7C980 /* Fonts */,
 				2750A40F28D02BEB000EE24D /* LaunchScreen.storyboard */,
 				2793C13A28F5969E00FC7D13 /* TimerAnimation.json */,
 				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
@@ -538,6 +565,7 @@
 				2793C12528F49F9100FC7D13 /* UIView+Extension.swift */,
 				ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */,
 				ED037A662911524100D30F7A /* Reactive+Extension.swift */,
+				EDF3A8B32912517B00A7C980 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -679,6 +707,38 @@
 			path = AutoSlideView;
 			sourceTree = "<group>";
 		};
+		EDF3A89E2912452A00A7C980 /* group */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A89F2912454300A7C980 /* GroupViewController.swift */,
+				EDF3A8A12912488D00A7C980 /* GroupViewCell.swift */,
+				EDF3A8B5291259FF00A7C980 /* GroupDetailViewController.swift */,
+				EDF3A8B729125E9300A7C980 /* GroupDetailCell.swift */,
+			);
+			path = group;
+			sourceTree = "<group>";
+		};
+		EDF3A8A329124F3F00A7C980 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A8A529124F6200A7C980 /* AbrilFatface-Regular.ttf */,
+				EDF3A8A829124F6200A7C980 /* CooperBlackStd.otf */,
+				EDF3A8A729124F6200A7C980 /* NanumMyeongjo-Bold.ttf */,
+				EDF3A8A629124F6200A7C980 /* NanumMyeongjo-ExtraBold.ttf */,
+				EDF3A8AA29124F6300A7C980 /* NanumMyeongjo-Regular.ttf */,
+				EDF3A8A429124F6100A7C980 /* NotoSansCJKkr-Bold.otf */,
+				EDF3A8A929124F6300A7C980 /* NotoSansCJKkr-Medium.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EDF3A8B92912620000A7C980 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		F2C6CA726173AFA706F01625 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,9 +874,16 @@
 				2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */,
 				2750A41128D02BEB000EE24D /* LaunchScreen.storyboard in Resources */,
 				2750A40E28D02BEB000EE24D /* Assets.xcassets in Resources */,
+				EDF3A8AE29124F6300A7C980 /* NanumMyeongjo-Bold.ttf in Resources */,
 				EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */,
+				EDF3A8AD29124F6300A7C980 /* NanumMyeongjo-ExtraBold.ttf in Resources */,
+				EDF3A8AB29124F6300A7C980 /* NotoSansCJKkr-Bold.otf in Resources */,
 				27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */,
 				2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */,
+				EDF3A8AF29124F6300A7C980 /* CooperBlackStd.otf in Resources */,
+				EDF3A8AC29124F6300A7C980 /* AbrilFatface-Regular.ttf in Resources */,
+				EDF3A8B029124F6300A7C980 /* NotoSansCJKkr-Medium.otf in Resources */,
+				EDF3A8B129124F6300A7C980 /* NanumMyeongjo-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +1031,7 @@
 			files = (
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
 				ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */,
+				EDF3A8A22912488D00A7C980 /* GroupViewCell.swift in Sources */,
 				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
 				ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */,
 				ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */,
@@ -977,6 +1045,7 @@
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
 				27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */,
+				EDF3A8B829125E9300A7C980 /* GroupDetailCell.swift in Sources */,
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
 				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
 				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
@@ -993,6 +1062,7 @@
 				ED037A7729118CD000D30F7A /* WallpaperViewReactor.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
 				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
+				EDF3A8A02912454300A7C980 /* GroupViewController.swift in Sources */,
 				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
@@ -1038,12 +1108,14 @@
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
+				EDF3A8B42912517B00A7C980 /* UIFont+Extension.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,
+				EDF3A8B6291259FF00A7C980 /* GroupDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
