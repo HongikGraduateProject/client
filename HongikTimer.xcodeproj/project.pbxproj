@@ -90,11 +90,16 @@
 		ED037A6D29116E7800D30F7A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6C29116E7800D30F7A /* PreviewView.swift */; };
 		ED037A6F2911798300D30F7A /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */; };
 		ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7029117E2F00D30F7A /* ItemCell.swift */; };
-		ED037A7329117EE500D30F7A /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7229117EE500D30F7A /* ItemCollectionView.swift */; };
+		ED037A75291189DD00D30F7A /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A74291189DD00D30F7A /* WallpaperViewController.swift */; };
+		ED037A7729118CD000D30F7A /* WallpaperViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7629118CD000D30F7A /* WallpaperViewReactor.swift */; };
+		ED037A792911994D00D30F7A /* ChickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A782911994D00D30F7A /* ChickViewController.swift */; };
+		ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A7A2911995C00D30F7A /* ChickViewReactor.swift */; };
 		ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507EF290FFE190016455B /* ServiceProvider.swift */; };
 		ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F3291002F10016455B /* RegisterViewReactor.swift */; };
 		ED0507F6291003560016455B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F5291003560016455B /* BaseViewController.swift */; };
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
+		EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */; };
+		EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -207,11 +212,16 @@
 		ED037A6C29116E7800D30F7A /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED037A7029117E2F00D30F7A /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		ED037A7229117EE500D30F7A /* ItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionView.swift; sourceTree = "<group>"; };
+		ED037A74291189DD00D30F7A /* WallpaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
+		ED037A7629118CD000D30F7A /* WallpaperViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperViewReactor.swift; sourceTree = "<group>"; };
+		ED037A782911994D00D30F7A /* ChickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickViewController.swift; sourceTree = "<group>"; };
+		ED037A7A2911995C00D30F7A /* ChickViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickViewReactor.swift; sourceTree = "<group>"; };
 		ED0507EF290FFE190016455B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		ED0507F3291002F10016455B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		ED0507F5291003560016455B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSTodoViewController.swift; sourceTree = "<group>"; };
+		EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSTodoViewController.xib; sourceTree = "<group>"; };
 		F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -452,6 +462,8 @@
 			children = (
 				27A977A228E208020076FF80 /* ToDoViewController.swift */,
 				2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */,
+				EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */,
+				EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -489,9 +501,12 @@
 			children = (
 				27B471B728D0ABAA00805F79 /* ItemViewController.swift */,
 				ED037A6E2911798300D30F7A /* ItemCollectionViewCell.swift */,
-				ED037A7229117EE500D30F7A /* ItemCollectionView.swift */,
 				ED037A6C29116E7800D30F7A /* PreviewView.swift */,
 				ED037A6A29116DAD00D30F7A /* ItemViewReactor.swift */,
+				ED037A74291189DD00D30F7A /* WallpaperViewController.swift */,
+				ED037A7629118CD000D30F7A /* WallpaperViewReactor.swift */,
+				ED037A782911994D00D30F7A /* ChickViewController.swift */,
+				ED037A7A2911995C00D30F7A /* ChickViewReactor.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -755,6 +770,7 @@
 				2750A44D28D032A2000EE24D /* .swiftlint.yml in Resources */,
 				2750A41128D02BEB000EE24D /* LaunchScreen.storyboard in Resources */,
 				2750A40E28D02BEB000EE24D /* Assets.xcassets in Resources */,
+				EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */,
 				27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */,
 				2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */,
 			);
@@ -911,6 +927,7 @@
 				27615A8728D4D9E80099DB00 /* GoogleAuthService.swift in Sources */,
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
 				ED0507F6291003560016455B /* BaseViewController.swift in Sources */,
+				ED037A792911994D00D30F7A /* ChickViewController.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
@@ -926,8 +943,10 @@
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
 				ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */,
 				2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */,
+				ED037A7729118CD000D30F7A /* WallpaperViewReactor.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
 				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
+				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
@@ -945,6 +964,7 @@
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
 				2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */,
 				273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */,
+				ED037A75291189DD00D30F7A /* WallpaperViewController.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
 				ED037A5F291027C400D30F7A /* ObservableType+Extension.swift in Sources */,
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
@@ -967,11 +987,11 @@
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
-				ED037A7329117EE500D30F7A /* ItemCollectionView.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */,
+				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,

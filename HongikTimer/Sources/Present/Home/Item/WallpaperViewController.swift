@@ -1,25 +1,32 @@
 //
-//  ItemViewController.swift
+//  WallpaperViewController.swift
 //  HongikTimer
 //
-//  Created by JongHoon on 2022/09/13.
+//  Created by JongHoon on 2022/11/02.
 //
 
-import SnapKit
-import Then
 import UIKit
-import ReactorKit
 
-final class ItemViewController: BaseViewController {
+final class WallpaperViewController: BaseViewController {
   
   // MARK: - Property
-  
-  let categories: [ItemCell] = [
-    ItemCell("벽지", imageName: "w9"),
-    ItemCell("버드", imageName: "chick0")
+
+  let wallpapers: [ItemCell] = [
+    ItemCell("벽지1", imageName: "w0"),
+    ItemCell("벽지2", imageName: "w1"),
+    ItemCell("벽지3", imageName: "w2"),
+    ItemCell("벽지4", imageName: "w3"),
+    ItemCell("벽지5", imageName: "w4"),
+    ItemCell("벽지6", imageName: "w5"),
+    ItemCell("벽지7", imageName: "w6"),
+    ItemCell("벽지8", imageName: "w7"),
+    ItemCell("벽지9", imageName: "w8"),
+    ItemCell("벽지10", imageName: "w9")
   ]
   
-  let reactor: ItemViewReactor
+  var dismissCompletion: (() -> Void)?
+
+  let reactor: WallpaperViewReactor
   
   private lazy var previewView = PreviewView().then {
     $0.layer.cornerRadius = 12.0
@@ -32,7 +39,6 @@ final class ItemViewController: BaseViewController {
   ).then {
     let layout = UICollectionViewFlowLayout()
     
-    //      $0.alwaysBounceVertical = true
     $0.collectionViewLayout = layout
     $0.backgroundColor = .systemBackground
     $0.delegate = self
@@ -55,14 +61,14 @@ final class ItemViewController: BaseViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
     refresh()
+    
     reloadInputViews()
   }
   
   // MARK: - Init
   
-  init(_ reactor: ItemViewReactor) {
+  init(_ reactor: WallpaperViewReactor) {
     self.reactor = reactor
   }
   
@@ -71,20 +77,22 @@ final class ItemViewController: BaseViewController {
   }
 }
 
-// MARK: - Bind
-
-extension ItemViewController: View {
-  func bind(reactor: ItemViewReactor) {
-    
-  }
-}
-
 // MARK: - Method
 
-private extension ItemViewController {
+private extension WallpaperViewController {
+  
   func configureNavigationbar() {
-    navigationItem.title = "아이템"
-    navigationController?.navigationBar.topItem?.title = ""
+//    navigationItem.title = "아이템"
+//    navigationController?.navigationBar.topItem?.title = ""
+    
+    let rightBarButton = UIBarButtonItem(
+      image: UIImage(systemName: "checkmark"),
+      style: .plain,
+      target: self,
+      action: #selector(tabRightBarButton)
+    )
+    
+    navigationItem.rightBarButtonItem = rightBarButton
   }
   
   func configureLayout() {
@@ -111,17 +119,24 @@ private extension ItemViewController {
     previewView.wallImageView.image = reactor.provider.userDefaultService.getWallImage()
     previewView.chickImageView.image = reactor.provider.userDefaultService.getChickImage()
   }
+  
+  // MARK: - Selector
+  
+  @objc func tabRightBarButton() {
+    self.dismiss(animated: true)
+    dismissCompletion?()
+  }
 }
 
 // MARK: - CollectionView
 
-extension ItemViewController: UICollectionViewDataSource {
+extension WallpaperViewController: UICollectionViewDataSource {
   
   func collectionView(
     _ collectionView: UICollectionView,
     numberOfItemsInSection section: Int
   ) -> Int {
-    categories.count
+    wallpapers.count
   }
   
   func collectionView(
@@ -133,14 +148,14 @@ extension ItemViewController: UICollectionViewDataSource {
       for: indexPath
     ) as? ItemCollectionViewCell
     
-    cell?.configureCell(with: categories[indexPath.item])
+    cell?.configureCell(with: wallpapers[indexPath.item])
     cell?.layer.cornerRadius = 8.0
     cell?.clipsToBounds = true
     return cell ?? UICollectionViewCell()
   }
 }
 
-extension ItemViewController: UICollectionViewDelegateFlowLayout {
+extension WallpaperViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
@@ -156,9 +171,9 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
   ) -> UIEdgeInsets {
     return UIEdgeInsets(
       top: 0,
-      left: 2.0,
-      bottom: 2.0,
-      right: 2.0
+      left: 4.0,
+      bottom: 4.0,
+      right: 4.0
     )
   }
   
@@ -166,30 +181,12 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
     _ collectionView: UICollectionView,
     didSelectItemAt indexPath: IndexPath
   ) {
-    if indexPath.item == 0 {
-      let vc = WallpaperViewController(WallpaperViewReactor(
-        reactor.provider,
-        with: reactor.user
-      ))
-      vc.dismissCompletion = { [weak self] in
-        self?.refresh()
-      }
-      present(UINavigationController(
-        rootViewController: vc),
-              animated: true
-      )
-    } else {
-      let vc = ChickViewController(ChickViewReactor(
-        reactor.provider,
-        with: reactor.user
-      ))
-      vc.dismissCompletion = { [weak self] in
-        self?.refresh()
-      }
-      present(UINavigationController(
-        rootViewController: vc),
-              animated: true
-      )
-    }
+    let newWallpaper = wallpapers[indexPath.item].image
+    previewView.wallImageView.image = newWallpaper
+    
+    reactor.provider.userDefaultService.setWallImage("w"+"\(indexPath.item)")
+    
+    collectionView.reloadData()
+    
   }
 }

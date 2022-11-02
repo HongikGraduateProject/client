@@ -153,7 +153,6 @@ private extension HomeViewController {
       $0.top.equalTo(chickImageView.snp.bottom).offset(36.0)
       $0.centerX.equalToSuperview()
     }
-    
   }
   
   func refresh() {

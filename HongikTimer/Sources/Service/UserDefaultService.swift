@@ -57,12 +57,12 @@ struct UserDefaultService {
   
   // chick image
   func setChickImage(_ imageName: String) {
-    standard.set(imageName, forKey: UserDefaultKeys.wallImage.key)
+    standard.set(imageName, forKey: UserDefaultKeys.chickImage.key)
   }
   
   func getChickImage() -> UIImage? {
-    guard let name = standard.string(forKey: UserDefaultKeys.wallImage.key) else {
-      return UIImage(named: "chick1")
+    guard let name = standard.string(forKey: UserDefaultKeys.chickImage.key) else {
+      return UIImage(named: "chick0")
     }
     
     return UIImage(named: name)
