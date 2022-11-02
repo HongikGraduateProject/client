@@ -27,7 +27,7 @@ final class BoardCollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         
         configureLayout()
-        headerLabel.text = "지금 가장 뜨거울 빡코빡코 추천🔥"
+        headerLabel.text = "스터디 추천🔥"
             }
     
     required init?(coder: NSCoder) {

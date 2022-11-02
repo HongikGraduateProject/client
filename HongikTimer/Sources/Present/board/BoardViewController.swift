@@ -56,7 +56,6 @@ class BoardViewController: UIViewController {
     $0.backgroundColor = .systemGray6
   }
   
-  
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -103,7 +102,6 @@ private extension BoardViewController {
 
 
 
-
 extension BoardViewController: UICollectionViewDataSource {
   
   func collectionView(
@@ -129,19 +127,19 @@ extension BoardViewController: UICollectionViewDataSource {
     return cell ?? UICollectionViewCell()
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    viewForSupplementaryElementOfKind kind: String,
-    at indexPath: IndexPath
-  ) -> UICollectionReusableView {
-    let header = collectionView.dequeueReusableSupplementaryView(
-      ofKind: UICollectionView.elementKindSectionHeader,
-      withReuseIdentifier: BoardCollectionReusableView.idenifier,
-      for: indexPath
-    ) as? BoardCollectionReusableView
-    
-    return header ?? UICollectionReusableView()
-  }
+//  func collectionView(
+//    _ collectionView: UICollectionView,
+//    viewForSupplementaryElementOfKind kind: String,
+//    at indexPath: IndexPath
+//  ) -> UICollectionReusableView {
+//    let header = collectionView.dequeueReusableSupplementaryView(
+//      ofKind: UICollectionView.elementKindSectionHeader,
+//      withReuseIdentifier: BoardCollectionReusableView.idenifier,
+//      for: indexPath
+//    ) as? BoardCollectionReusableView
+//
+//    return header ?? UICollectionReusableView()
+//  }
 }
 
 extension BoardViewController: UICollectionViewDelegateFlowLayout {
@@ -158,7 +156,7 @@ extension BoardViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     referenceSizeForHeaderInSection section: Int
   ) -> CGSize {
-    return CGSize(width: view.frame.width, height: 170.0)
+    return CGSize(width: view.frame.width, height: 0.0)
   }
   
   func collectionView(
