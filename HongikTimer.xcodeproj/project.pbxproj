@@ -41,12 +41,7 @@
 		2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C12F28F58DB300FC7D13 /* TimerViewController.swift */; };
 		2793C13328F5901400FC7D13 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2793C13228F5901400FC7D13 /* Lottie */; };
 		2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 2793C13A28F5969E00FC7D13 /* TimerAnimation.json */; };
-		2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */; };
 		2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */; };
-		2793C14428F5D52300FC7D13 /* PopularBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14328F5D52300FC7D13 /* PopularBoardView.swift */; };
-		2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */; };
-		2793C14C28F5F25600FC7D13 /* InterestBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14B28F5F25600FC7D13 /* InterestBoardView.swift */; };
-		2793C14E28F6670300FC7D13 /* InterestBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C14D28F6670300FC7D13 /* InterestBoardCell.swift */; };
 		2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15128F694C100FC7D13 /* ApiClient.swift */; };
 		2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15428F6963D00FC7D13 /* BaseInterceptor.swift */; };
 		2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15628F6986F00FC7D13 /* ApiLogger.swift */; };
@@ -100,6 +95,14 @@
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
 		EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */; };
 		EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */; };
+		EDF3A89429120F7C00A7C980 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88829120F7C00A7C980 /* BoardView.swift */; };
+		EDF3A89529120F7C00A7C980 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */; };
+		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
+		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
+		EDF3A89829120F7C00A7C980 /* BoardCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */; };
+		EDF3A89929120F7C00A7C980 /* AutoSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */; };
+		EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */; };
+		EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89329120F7C00A7C980 /* BoardViewController.swift */; };
 		FAE335FC088F6FD303C9209E /* Pods_HongikTimer_HongikTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,12 +160,7 @@
 		2793C12C28F535C500FC7D13 /* TodoNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNotificationService.swift; sourceTree = "<group>"; };
 		2793C12F28F58DB300FC7D13 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		2793C13A28F5969E00FC7D13 /* TimerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimerAnimation.json; sourceTree = "<group>"; };
-		2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSettingViewController.swift; sourceTree = "<group>"; };
-		2793C14328F5D52300FC7D13 /* PopularBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBoardView.swift; sourceTree = "<group>"; };
-		2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBoardCell.swift; sourceTree = "<group>"; };
-		2793C14B28F5F25600FC7D13 /* InterestBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestBoardView.swift; sourceTree = "<group>"; };
-		2793C14D28F6670300FC7D13 /* InterestBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestBoardCell.swift; sourceTree = "<group>"; };
 		2793C15128F694C100FC7D13 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2793C15428F6963D00FC7D13 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		2793C15628F6986F00FC7D13 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
@@ -222,6 +220,14 @@
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSTodoViewController.swift; sourceTree = "<group>"; };
 		EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSTodoViewController.xib; sourceTree = "<group>"; };
+		EDF3A88829120F7C00A7C980 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionReusableView.swift; sourceTree = "<group>"; };
+		EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideView.swift; sourceTree = "<group>"; };
+		EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF3A89329120F7C00A7C980 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -329,7 +335,7 @@
 				2750A45028D0384D000EE24D /* Home */,
 				27A977A128E2076A0076FF80 /* ToDo */,
 				2793C12E28F58D9100FC7D13 /* Timer */,
-				2793C13C28F5C17900FC7D13 /* Board */,
+				EDF3A88529120F7C00A7C980 /* board */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -391,34 +397,6 @@
 				2750A40D28D02BEB000EE24D /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		2793C13C28F5C17900FC7D13 /* Board */ = {
-			isa = PBXGroup;
-			children = (
-				2793C13F28F5C1BF00FC7D13 /* BoardViewController.swift */,
-				2793C14928F5F1EB00FC7D13 /* popularBoardView */,
-				2793C14A28F5F1FB00FC7D13 /* recentBoardView */,
-			);
-			path = Board;
-			sourceTree = "<group>";
-		};
-		2793C14928F5F1EB00FC7D13 /* popularBoardView */ = {
-			isa = PBXGroup;
-			children = (
-				2793C14328F5D52300FC7D13 /* PopularBoardView.swift */,
-				2793C14528F5D7EA00FC7D13 /* PopularBoardCell.swift */,
-			);
-			path = popularBoardView;
-			sourceTree = "<group>";
-		};
-		2793C14A28F5F1FB00FC7D13 /* recentBoardView */ = {
-			isa = PBXGroup;
-			children = (
-				2793C14B28F5F25600FC7D13 /* InterestBoardView.swift */,
-				2793C14D28F6670300FC7D13 /* InterestBoardCell.swift */,
-			);
-			path = recentBoardView;
 			sourceTree = "<group>";
 		};
 		2793C14F28F694A100FC7D13 /* API */ = {
@@ -633,6 +611,69 @@
 				2750A43428D02F89000EE24D /* Present */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		EDF3A88529120F7C00A7C980 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A89329120F7C00A7C980 /* BoardViewController.swift */,
+				EDF3A88629120F7C00A7C980 /* SubViews */,
+			);
+			path = board;
+			sourceTree = "<group>";
+		};
+		EDF3A88629120F7C00A7C980 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A88729120F7C00A7C980 /* BoardView */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		EDF3A88729120F7C00A7C980 /* BoardView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A88829120F7C00A7C980 /* BoardView.swift */,
+				EDF3A88929120F7C00A7C980 /* Cell */,
+				EDF3A88B29120F7C00A7C980 /* Header */,
+			);
+			path = BoardView;
+			sourceTree = "<group>";
+		};
+		EDF3A88929120F7C00A7C980 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EDF3A88B29120F7C00A7C980 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A88C29120F7C00A7C980 /* CategoryView */,
+				EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */,
+				EDF3A89029120F7C00A7C980 /* AutoSlideView */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		EDF3A88C29120F7C00A7C980 /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A88D29120F7C00A7C980 /* CategoryView.swift */,
+				EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */,
+			);
+			path = CategoryView;
+			sourceTree = "<group>";
+		};
+		EDF3A89029120F7C00A7C980 /* AutoSlideView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */,
+				EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */,
+			);
+			path = AutoSlideView;
 			sourceTree = "<group>";
 		};
 		F2C6CA726173AFA706F01625 /* Frameworks */ = {
@@ -935,7 +976,9 @@
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
 				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
 				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
+				EDF3A89529120F7C00A7C980 /* BoardCollectionViewCell.swift in Sources */,
 				ED037A6929115CFB00D30F7A /* TimerViewReactor.swift in Sources */,
+				EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */,
 				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
@@ -949,20 +992,22 @@
 				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
 				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
+				EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
+				EDF3A89429120F7C00A7C980 /* BoardView.swift in Sources */,
 				2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */,
 				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */,
 				ED037A6F2911798300D30F7A /* ItemCollectionViewCell.swift in Sources */,
+				EDF3A89929120F7C00A7C980 /* AutoSlideView.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */,
 				ED037A6D29116E7800D30F7A /* PreviewView.swift in Sources */,
 				2793C12D28F535C500FC7D13 /* TodoNotificationService.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
-				2793C14028F5C1BF00FC7D13 /* BoardViewController.swift in Sources */,
 				273E134F28F1D9A700877965 /* TaskListViewModel.swift in Sources */,
 				ED037A75291189DD00D30F7A /* WallpaperViewController.swift in Sources */,
 				27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */,
@@ -970,27 +1015,26 @@
 				27B471D328D22E6900805F79 /* Constant.swift in Sources */,
 				2793C12B28F52F4300FC7D13 /* UIButton+Extension.swift in Sources */,
 				27C2DFAC28F6A927009356E5 /* AuthResponse.swift in Sources */,
+				EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */,
 				2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailSignUpViewController.swift in Sources */,
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
+				EDF3A89829120F7C00A7C980 /* BoardCollectionReusableView.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
-				2793C14E28F6670300FC7D13 /* InterestBoardCell.swift in Sources */,
 				27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
-				2793C14428F5D52300FC7D13 /* PopularBoardView.swift in Sources */,
 				2793C12428F499DC00FC7D13 /* TaskEditPresentaionController.swift in Sources */,
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
+				EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */,
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */,
-				2793C14C28F5F25600FC7D13 /* InterestBoardView.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
-				2793C14628F5D7EA00FC7D13 /* PopularBoardCell.swift in Sources */,
 				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
