@@ -36,7 +36,7 @@ final class BoardViewController: UIViewController {
         setupLayout()
     }
     
-}
+} 
 
 // MARK: - Private
 
