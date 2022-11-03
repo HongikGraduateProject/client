@@ -60,7 +60,7 @@ final class TabBarViewReactor {
     $0.tabBarItem = timerTabBarItem
   }
   
-  private lazy var groupViewController = UINavigationController(rootViewController: GroupViewController()).then {
+  private lazy var groupViewController = UINavigationController(rootViewController: GroupDetailViewController()).then {
     $0.tabBarItem = groupTabBarItem
   }
   private lazy var boardViewController = UINavigationController(rootViewController: BoardViewController()).then {

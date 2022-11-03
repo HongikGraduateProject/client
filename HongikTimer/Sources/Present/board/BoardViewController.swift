@@ -156,7 +156,7 @@ extension BoardViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     referenceSizeForHeaderInSection section: Int
   ) -> CGSize {
-    return CGSize(width: view.frame.width, height: 0.0)
+    return CGSize(width: view.frame.width, height: 10.0)
   }
   
   func collectionView(

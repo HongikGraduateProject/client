@@ -11,17 +11,27 @@ final class GroupDetailCell: UICollectionViewCell {
   
   lazy var memberImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFit
-    
+    $0.image = UIImage(named: "smallChick")
   }
   
   private lazy var memberNameLabel = UILabel().then {
     $0.font = .systemFont(ofSize: 14.0, weight: .regular)
     $0.textColor = .label
     $0.numberOfLines = 1
+    $0.text = "김홍익"
+  }
+  
+  private lazy var memberTimeLabel = UILabel().then {
+    $0.font = .systemFont(ofSize: 14.0, weight: .regular)
+    $0.textColor = .label
+    $0.numberOfLines = 1
+    $0.text = "00:00:00"
   }
   
   override init(frame: CGRect) {
     super.init(frame: .zero)
+    
+    configureUI()
   
   }
   
@@ -40,7 +50,8 @@ private extension GroupDetailCell {
     
     [
       memberImageView,
-      memberNameLabel
+      memberNameLabel,
+      memberTimeLabel
     ].forEach { addSubview($0) }
   
     memberImageView.snp.makeConstraints {
@@ -49,7 +60,12 @@ private extension GroupDetailCell {
     }
     
     memberNameLabel.snp.makeConstraints {
-      $0.top.equalTo(memberImageView.snp.bottom).offset(16.0)
+      $0.top.equalTo(memberImageView.snp.bottom).offset(8.0)
+      $0.centerX.equalToSuperview()
+    }
+    
+    memberTimeLabel.snp.makeConstraints {
+      $0.top.equalTo(memberNameLabel.snp.bottom).offset(8.0)
       $0.centerX.equalToSuperview()
     }
   }
