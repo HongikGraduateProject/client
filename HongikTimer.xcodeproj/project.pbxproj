@@ -99,6 +99,7 @@
 		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
 		ED3297CC291BDF660081F606 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CB291BDF660081F606 /* WriteViewController.swift */; };
 		ED3297CF291BE0220081F606 /* WriteViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CE291BE0220081F606 /* WriteViewReactor.swift */; };
+		ED3297D2291BF93C0081F606 /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297D1291BF93C0081F606 /* NumberSelectView.swift */; };
 		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
 		EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */; };
 		EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */; };
@@ -243,6 +244,7 @@
 		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
 		ED3297CB291BDF660081F606 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		ED3297CE291BE0220081F606 /* WriteViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewReactor.swift; sourceTree = "<group>"; };
+		ED3297D1291BF93C0081F606 /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
 		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSTodoViewController.swift; sourceTree = "<group>"; };
 		EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSTodoViewController.xib; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				ED3297CB291BDF660081F606 /* WriteViewController.swift */,
+				ED3297D1291BF93C0081F606 /* NumberSelectView.swift */,
 				ED3297CE291BE0220081F606 /* WriteViewReactor.swift */,
 			);
 			path = WriteView;
@@ -1153,6 +1156,7 @@
 				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
+				ED3297D2291BF93C0081F606 /* NumberSelectView.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,
 				EDF3A8B6291259FF00A7C980 /* GroupDetailViewController.swift in Sources */,

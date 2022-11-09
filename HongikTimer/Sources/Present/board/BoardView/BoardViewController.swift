@@ -168,8 +168,8 @@ private extension BoardViewController {
     }
     
     writeButton.snp.makeConstraints {
-      $0.trailing.equalToSuperview().inset(32.0)
-      $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-24.0)
+      $0.trailing.equalToSuperview().inset(16.0)
+      $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-8.0)
       $0.height.width.equalTo(56.0)
     }
   }

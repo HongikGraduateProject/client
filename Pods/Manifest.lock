@@ -112,6 +112,9 @@ PODS:
     - Differentiator (~> 5.0)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxOptional (5.0.2):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -134,6 +137,7 @@ DEPENDENCIES:
   - ReactorKit
   - RxCocoa
   - RxDataSources
+  - RxGesture
   - RxOptional
   - RxSwift
   - RxViewController
@@ -173,6 +177,7 @@ SPEC REPOS:
     - ReactorKit
     - RxCocoa
     - RxDataSources
+    - RxGesture
     - RxOptional
     - RxRelay
     - RxSwift
@@ -213,6 +218,7 @@ SPEC CHECKSUMS:
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
@@ -221,6 +227,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 31f14082079ace8b550468b4e0077130bc31e89f
+PODFILE CHECKSUM: 37b49b26db12afaae1d22572911766dd1e14a70b
 
 COCOAPODS: 1.11.3
