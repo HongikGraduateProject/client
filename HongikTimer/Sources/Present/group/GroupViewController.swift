@@ -34,6 +34,8 @@ final class GroupViewController: UIViewController {
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
+    super.viewDidLoad()
+    
     configureLayout()
     configureNavigationBar()
   }
@@ -79,7 +81,7 @@ extension GroupViewController: UICollectionViewDataSource {
   ) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: GroupViewCell.idenifier,
+      withReuseIdentifier: GroupViewCell.identifier,
       for: indexPath
     ) as? GroupViewCell
     

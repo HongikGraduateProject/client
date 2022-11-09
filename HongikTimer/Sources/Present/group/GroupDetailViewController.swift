@@ -86,7 +86,7 @@ extension GroupDetailViewController: UICollectionViewDataSource {
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: GroupDetailCell.idenifier, for: indexPath
+      withReuseIdentifier: GroupDetailCell.identifier, for: indexPath
     ) as? GroupDetailCell
     
     return cell ?? UICollectionViewCell()

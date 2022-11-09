@@ -29,11 +29,11 @@ final class TaskCollectionView: UIView {
         $0.register(
             TaskHeaderCell.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: TaskHeaderCell.idenifier
+            withReuseIdentifier: TaskHeaderCell.identifier
         )
         $0.register(
             TaskCell.self,
-            forCellWithReuseIdentifier: TaskCell.idenifier
+            forCellWithReuseIdentifier: TaskCell.identifier
         )
     }
     
@@ -118,7 +118,7 @@ extension TaskCollectionView: UICollectionViewDataSource {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
-            withReuseIdentifier: TaskHeaderCell.idenifier,
+            withReuseIdentifier: TaskHeaderCell.identifier,
             for: indexPath
         ) as? TaskHeaderCell
         

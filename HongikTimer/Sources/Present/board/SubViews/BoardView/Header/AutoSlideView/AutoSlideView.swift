@@ -37,7 +37,6 @@ final class AutoSlideView: UIView {
         
         $0.collectionViewLayout = layout
             
-        
         $0.showsHorizontalScrollIndicator = false
         $0.isPagingEnabled = true
         
@@ -49,7 +48,6 @@ final class AutoSlideView: UIView {
             forCellWithReuseIdentifier: AutoSlideCollectionViewCell.identifier
         )
     }
-    
     
 // MARK: - Lifecycle
     
@@ -119,7 +117,6 @@ private extension AutoSlideView {
             $0.edges.equalToSuperview()
         }
     }
-    
     
     /// 3초다마 슬라이드  이동
     func autoSlideTimer() {

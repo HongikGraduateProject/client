@@ -74,7 +74,6 @@
 		27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFAD28F6B540009356E5 /* UserViewModel.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
-		ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A5B29100B0C00D30F7A /* EmailSignUpReactor.swift */; };
 		ED037A5F291027C400D30F7A /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */; };
 		ED037A612910F75000D30F7A /* TabBarViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A602910F75000D30F7A /* TabBarViewReactor.swift */; };
 		ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */; };
@@ -92,14 +91,21 @@
 		ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507EF290FFE190016455B /* ServiceProvider.swift */; };
 		ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F3291002F10016455B /* RegisterViewReactor.swift */; };
 		ED0507F6291003560016455B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0507F5291003560016455B /* BaseViewController.swift */; };
+		ED052D3F29142D2000E79BB6 /* BoardViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED052D3E29142D2000E79BB6 /* BoardViewReactor.swift */; };
+		ED052D4129142E4100E79BB6 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED052D4029142E4100E79BB6 /* helpers.swift */; };
+		ED052D4329142EA600E79BB6 /* BoardPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED052D4229142EA600E79BB6 /* BoardPost.swift */; };
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
+		ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E092917B21F00C38019 /* BoardService.swift */; };
+		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
+		ED3297CC291BDF660081F606 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CB291BDF660081F606 /* WriteViewController.swift */; };
+		ED3297CF291BE0220081F606 /* WriteViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CE291BE0220081F606 /* WriteViewReactor.swift */; };
+		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
 		EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */; };
 		EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */; };
-		EDF3A89429120F7C00A7C980 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88829120F7C00A7C980 /* BoardView.swift */; };
-		EDF3A89529120F7C00A7C980 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */; };
+		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
-		EDF3A89829120F7C00A7C980 /* BoardCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */; };
+		EDF3A89829120F7C00A7C980 /* BoardCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88F29120F7C00A7C980 /* BoardCollectionHeaderView.swift */; };
 		EDF3A89929120F7C00A7C980 /* AutoSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */; };
 		EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */; };
 		EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A89329120F7C00A7C980 /* BoardViewController.swift */; };
@@ -212,7 +218,6 @@
 		A17F95CB44DA866D16431521 /* Pods-HongikTimer-HongikTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer-HongikTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimer-HongikTimerUITests/Pods-HongikTimer-HongikTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B527A7CFE09CB372827D5BC7 /* Pods_HongikTimer_HongikTimerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimer_HongikTimerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1F5AB474B727D1BE4675FD /* Pods-HongikTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimer.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimer/Pods-HongikTimer.debug.xcconfig"; sourceTree = "<group>"; };
-		ED037A5B29100B0C00D30F7A /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		ED037A602910F75000D30F7A /* TabBarViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewReactor.swift; sourceTree = "<group>"; };
 		ED037A6229112A8F00D30F7A /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
@@ -230,14 +235,21 @@
 		ED0507EF290FFE190016455B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		ED0507F3291002F10016455B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		ED0507F5291003560016455B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED052D3E29142D2000E79BB6 /* BoardViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewReactor.swift; sourceTree = "<group>"; };
+		ED052D4029142E4100E79BB6 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		ED052D4229142EA600E79BB6 /* BoardPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPost.swift; sourceTree = "<group>"; };
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		ED2A2E092917B21F00C38019 /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
+		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
+		ED3297CB291BDF660081F606 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		ED3297CE291BE0220081F606 /* WriteViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewReactor.swift; sourceTree = "<group>"; };
+		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSTodoViewController.swift; sourceTree = "<group>"; };
 		EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSTodoViewController.xib; sourceTree = "<group>"; };
-		EDF3A88829120F7C00A7C980 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
-		EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionReusableView.swift; sourceTree = "<group>"; };
+		EDF3A88F29120F7C00A7C980 /* BoardCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionHeaderView.swift; sourceTree = "<group>"; };
 		EDF3A89129120F7C00A7C980 /* AutoSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideView.swift; sourceTree = "<group>"; };
 		EDF3A89229120F7C00A7C980 /* AutoSlideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDF3A89329120F7C00A7C980 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -537,6 +549,7 @@
 				2793C11D28F47AF400FC7D13 /* User.swift */,
 				27C2DFA928F6A78E009356E5 /* UserInfo.swift */,
 				27C2DFAB28F6A927009356E5 /* AuthResponse.swift */,
+				ED052D4229142EA600E79BB6 /* BoardPost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -547,7 +560,7 @@
 				27B471C628D1AF1700805F79 /* RegisterViewController.swift */,
 				ED0507F3291002F10016455B /* RegisterViewReactor.swift */,
 				27B471C828D1BAC300805F79 /* EmailSignUpViewController.swift */,
-				ED037A5B29100B0C00D30F7A /* EmailSignUpReactor.swift */,
+				EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */,
 				27B471C128D19ADA00805F79 /* EmailLoginViewController.swift */,
 				27B471CC28D2081900805F79 /* SubViews */,
 			);
@@ -566,6 +579,7 @@
 				ED037A5E291027C400D30F7A /* ObservableType+Extension.swift */,
 				ED037A662911524100D30F7A /* Reactive+Extension.swift */,
 				EDF3A8B32912517B00A7C980 /* UIFont+Extension.swift */,
+				ED052D4029142E4100E79BB6 /* helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -598,6 +612,7 @@
 				278DE6B628D6240000E38A1F /* NaverAuthService.swift */,
 				27615A8828D4DB7D0099DB00 /* AuthNotificationService.swift */,
 				2793C12C28F535C500FC7D13 /* TodoNotificationService.swift */,
+				ED2A2E092917B21F00C38019 /* BoardService.swift */,
 				2793C11F28F4801600FC7D13 /* UserDefaultService.swift */,
 				278DE6BA28D766D600E38A1F /* DatabaseManager.swift */,
 			);
@@ -628,6 +643,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED3297CD291BE00A0081F606 /* BoardView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3A89329120F7C00A7C980 /* BoardViewController.swift */,
+				ED052D3E29142D2000E79BB6 /* BoardViewReactor.swift */,
+			);
+			path = BoardView;
+			sourceTree = "<group>";
+		};
+		ED3297D0291BE4E70081F606 /* WriteView */ = {
+			isa = PBXGroup;
+			children = (
+				ED3297CB291BDF660081F606 /* WriteViewController.swift */,
+				ED3297CE291BE0220081F606 /* WriteViewReactor.swift */,
+			);
+			path = WriteView;
+			sourceTree = "<group>";
+		};
 		ED9C81CE290EB0B0002210B6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,7 +679,8 @@
 		EDF3A88529120F7C00A7C980 /* board */ = {
 			isa = PBXGroup;
 			children = (
-				EDF3A89329120F7C00A7C980 /* BoardViewController.swift */,
+				ED3297CD291BE00A0081F606 /* BoardView */,
+				ED3297D0291BE4E70081F606 /* WriteView */,
 				EDF3A89C291220D100A7C980 /* EnterViewController.swift */,
 				EDF3A88629120F7C00A7C980 /* SubViews */,
 			);
@@ -664,7 +698,6 @@
 		EDF3A88729120F7C00A7C980 /* BoardView */ = {
 			isa = PBXGroup;
 			children = (
-				EDF3A88829120F7C00A7C980 /* BoardView.swift */,
 				EDF3A88929120F7C00A7C980 /* Cell */,
 				EDF3A88B29120F7C00A7C980 /* Header */,
 			);
@@ -674,7 +707,8 @@
 		EDF3A88929120F7C00A7C980 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EDF3A88A29120F7C00A7C980 /* BoardCollectionViewCell.swift */,
+				EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */,
+				ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -682,8 +716,8 @@
 		EDF3A88B29120F7C00A7C980 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				EDF3A88F29120F7C00A7C980 /* BoardCollectionHeaderView.swift */,
 				EDF3A88C29120F7C00A7C980 /* CategoryView */,
-				EDF3A88F29120F7C00A7C980 /* BoardCollectionReusableView.swift */,
 				EDF3A89029120F7C00A7C980 /* AutoSlideView */,
 			);
 			path = Header;
@@ -1030,7 +1064,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
-				ED037A5C29100B0C00D30F7A /* EmailSignUpReactor.swift in Sources */,
 				EDF3A8A22912488D00A7C980 /* GroupViewCell.swift in Sources */,
 				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
 				ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */,
@@ -1040,7 +1073,9 @@
 				EDF3A89D291220D100A7C980 /* EnterViewController.swift in Sources */,
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
 				ED0507F6291003560016455B /* BaseViewController.swift in Sources */,
+				ED3297CC291BDF660081F606 /* WriteViewController.swift in Sources */,
 				ED037A792911994D00D30F7A /* ChickViewController.swift in Sources */,
+				ED052D3F29142D2000E79BB6 /* BoardViewReactor.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
@@ -1049,7 +1084,7 @@
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
 				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
 				2793C12828F4A2B000FC7D13 /* TaskEditViewController.swift in Sources */,
-				EDF3A89529120F7C00A7C980 /* BoardCollectionViewCell.swift in Sources */,
+				EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */,
 				ED037A6929115CFB00D30F7A /* TimerViewReactor.swift in Sources */,
 				EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
@@ -1069,16 +1104,19 @@
 				EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
-				EDF3A89429120F7C00A7C980 /* BoardView.swift in Sources */,
 				2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */,
 				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
+				ED3297CF291BE0220081F606 /* WriteViewReactor.swift in Sources */,
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */,
+				ED052D4329142EA600E79BB6 /* BoardPost.swift in Sources */,
 				ED037A6F2911798300D30F7A /* ItemCollectionViewCell.swift in Sources */,
+				ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */,
 				EDF3A89929120F7C00A7C980 /* AutoSlideView.swift in Sources */,
 				27B471C728D1AF1700805F79 /* RegisterViewController.swift in Sources */,
 				27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */,
 				ED0507F4291002F10016455B /* RegisterViewReactor.swift in Sources */,
+				ED052D4129142E4100E79BB6 /* helpers.swift in Sources */,
 				ED037A6D29116E7800D30F7A /* PreviewView.swift in Sources */,
 				2793C12D28F535C500FC7D13 /* TodoNotificationService.swift in Sources */,
 				278DE6B928D71A1200E38A1F /* SettingCellModel.swift in Sources */,
@@ -1094,7 +1132,7 @@
 				27B471C928D1BAC300805F79 /* EmailSignUpViewController.swift in Sources */,
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
-				EDF3A89829120F7C00A7C980 /* BoardCollectionReusableView.swift in Sources */,
+				EDF3A89829120F7C00A7C980 /* BoardCollectionHeaderView.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
 				27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
@@ -1104,12 +1142,14 @@
 				27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */,
 				2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */,
 				27B471C228D19ADA00805F79 /* EmailLoginViewController.swift in Sources */,
+				EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */,
 				278DE6B728D6240000E38A1F /* NaverAuthService.swift in Sources */,
 				2793C12028F4801600FC7D13 /* UserDefaultService.swift in Sources */,
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				EDF3A8B42912517B00A7C980 /* UIFont+Extension.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
+				ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */,
 				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,

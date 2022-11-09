@@ -39,7 +39,7 @@ final class ItemViewController: BaseViewController {
     $0.dataSource = self
     $0.register(
       ItemCollectionViewCell.self,
-      forCellWithReuseIdentifier: ItemCollectionViewCell.idenifier
+      forCellWithReuseIdentifier: ItemCollectionViewCell.identifier
     )
     $0.backgroundColor = .systemGray6
   }
@@ -129,7 +129,7 @@ extension ItemViewController: UICollectionViewDataSource {
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: ItemCollectionViewCell.idenifier,
+      withReuseIdentifier: ItemCollectionViewCell.identifier,
       for: indexPath
     ) as? ItemCollectionViewCell
     

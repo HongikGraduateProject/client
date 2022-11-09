@@ -172,7 +172,7 @@ private extension HomeViewController {
       miniute,
       second
     )
-    print("DEBUG Viewillappearr에서 refresh 실행")
+    print("DEBUG Viewillappear에서 refresh 실행")
   }
   
   // MARK: - Selector

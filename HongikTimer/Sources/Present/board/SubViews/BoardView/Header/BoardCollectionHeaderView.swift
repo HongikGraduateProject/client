@@ -9,10 +9,10 @@ import Then
 import SnapKit
 import UIKit
 
-final class BoardCollectionReusableView: UICollectionReusableView {
+final class BoardCollectionHeaderView: UICollectionReusableView {
     
     private lazy var autoSlideView = AutoSlideView()
-    private lazy var categoryView = CategoryView()
+//    private lazy var categoryView = CategoryView()
     
     private lazy var headerLabel = UILabel().then {
         $0.font = .systemFont(
@@ -37,13 +37,13 @@ final class BoardCollectionReusableView: UICollectionReusableView {
 
 // MARK: - Private
 
-private extension BoardCollectionReusableView {
+private extension BoardCollectionHeaderView {
     func configureLayout() {
         
         [
-            autoSlideView,
-            categoryView,
-            headerLabel
+            autoSlideView
+//            categoryView,
+//            headerLabel
         ].forEach { addSubview($0) }
             
         autoSlideView.snp.makeConstraints {
@@ -52,17 +52,15 @@ private extension BoardCollectionReusableView {
             $0.height.equalTo(28.0)
         }
         
-        categoryView.snp.makeConstraints {
-            $0.top.equalTo(autoSlideView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(96.0)
-        }
+//        categoryView.snp.makeConstraints {
+//            $0.top.equalTo(autoSlideView.snp.bottom)
+//            $0.leading.trailing.equalToSuperview()
+//            $0.height.equalTo(96.0)
+//        }
         
-        headerLabel.snp.makeConstraints {
-            $0.top.equalTo(categoryView.snp.bottom).offset(24.0)
-            $0.leading.equalToSuperview().inset(16.0)
-        }
+//        headerLabel.snp.makeConstraints {
+//            $0.top.equalTo(autoSlideView.snp.bottom).offset(24.0)
+//            $0.leading.equalToSuperview().inset(16.0)
+//        }
     }
 }
-
-

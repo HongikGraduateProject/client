@@ -22,7 +22,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         $0.textColor = .label
         $0.numberOfLines = 1
     }
-
     
     // MARK: - Lifecycle
 

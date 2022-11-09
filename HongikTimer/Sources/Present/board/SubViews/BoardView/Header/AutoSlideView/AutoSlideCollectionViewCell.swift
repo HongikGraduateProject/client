@@ -16,11 +16,10 @@ final class AutoSlideCollectionViewCell: UICollectionViewCell {
             ofSize: 12.0,
             weight: .regular
         )
-        $0.textColor = .label
+        $0.textColor = .black
         $0.numberOfLines = 1
     }
 
-    
 // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,10 +36,9 @@ final class AutoSlideCollectionViewCell: UICollectionViewCell {
 
 extension AutoSlideCollectionViewCell {
     func configureCell(_ content: String) {
-        contentLabel.text = content + " chickTimer🔥👨‍💻"
+        contentLabel.text = content + " Hype Chick🔥👨‍💻"
     }
 }
-
 
 // MARK: - Private
 

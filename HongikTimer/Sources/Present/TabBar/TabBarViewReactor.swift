@@ -63,7 +63,9 @@ final class TabBarViewReactor {
   private lazy var groupViewController = UINavigationController(rootViewController: GroupDetailViewController()).then {
     $0.tabBarItem = groupTabBarItem
   }
-  private lazy var boardViewController = UINavigationController(rootViewController: BoardViewController()).then {
+  private lazy var boardViewController = UINavigationController(rootViewController: BoardViewController(
+    BoardViewReactor(self.provider, with: self.user)
+  )).then {
     $0.tabBarItem = boardTabBarItem
   }
 

@@ -13,7 +13,7 @@ final class AuthService: NSObject {
   
   static let shared = AuthService()
   
-  var userVM = UserViewModel()
+//  var userVM = UserViewModel()
   
   func logOutWithFirebase(completion: (Bool) -> Void) {
     do {
@@ -72,7 +72,6 @@ extension AuthService {
     completion: ((AuthDataResult?, Error?) -> Void)?
   ) {
     let email = credentials.email
-    let username = credentials.username
     let password = credentials.password
     
     // firebase 사용

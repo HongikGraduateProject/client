@@ -161,7 +161,6 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishDeleteToken() {
     print("DEBUG 네이버 로그아웃")
     
-    
   }
   
   // 모든 Error

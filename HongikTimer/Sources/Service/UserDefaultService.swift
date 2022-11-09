@@ -23,6 +23,9 @@ struct UserDefaultService {
     case wallImage
     case studyTime
     
+    // boar 화면
+    case boardPost
+
     var key: String {
       self.rawValue
     }
@@ -33,7 +36,7 @@ struct UserDefaultService {
   /// 로그인 or 회원가입시 현재 유저 저장
   func setUser(_ user: User) {
     standard.setValue(
-      try? PropertyListEncoder().encode(user),
+      try? JSONEncoder().encode(user),
       forKey: UserDefaultKeys.user.key)
   }
   
@@ -42,8 +45,8 @@ struct UserDefaultService {
     guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
     
     return (
-      try? PropertyListDecoder().decode(User.self, from: data)
-    ) ?? User()
+      try? JSONDecoder().decode(User.self, from: data)
+    )
   }
   
   /// 로그아웃시 저장된 유저값 삭제
@@ -98,5 +101,21 @@ struct UserDefaultService {
     let time = standard.integer(forKey: UserDefaultKeys.studyTime.key)
     
     return time
+  }
+  
+  // MARK: - board 관련
+  #warning("db로 이동해야됨")
+  func setBoardPost(_ boardPosts: [BoardPost]) {
+    standard.setValue(
+      try? JSONEncoder().encode(boardPosts),
+      forKey: UserDefaultKeys.boardPost.key)
+  }
+  
+  func getBoardPosts() -> [BoardPost]? {
+    guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
+    
+    return (
+      try? JSONDecoder().decode([BoardPost].self, from: data)
+    )
   }
 }
