@@ -13,10 +13,12 @@ final class WriteViewReactor: Reactor {
   
   enum Action {
     case close
+    case selectNumber
   }
   
   enum Mutation {
     case dismiss
+    case selectNumber
   }
   
   struct State {
@@ -39,6 +41,8 @@ final class WriteViewReactor: Reactor {
     switch action {
     case .close:
       return .just(.dismiss)
+    case .selectNumber:
+      return .just(.selectNumber)
     }
   }
   
@@ -47,6 +51,11 @@ final class WriteViewReactor: Reactor {
     switch mutation {
     case .dismiss:
       state.isDismissed = true
+      return state
+    case .selectNumber:
+      
+      print("tapppppppp")
+      
       return state
     }
   }

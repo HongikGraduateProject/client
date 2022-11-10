@@ -28,10 +28,7 @@ final class RegisterViewController: BaseViewController {
   private lazy var logoImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
     $0.clipsToBounds = true
-    $0.image = UIImage(systemName: "timer")?.withTintColor(
-      .defaultTintColor,
-      renderingMode: .alwaysOriginal
-    )
+    $0.image = UIImage(named: "chick0")
   }
   
   private lazy var appleLoginButton = UIButton(configuration: snsLoginConfig).then {

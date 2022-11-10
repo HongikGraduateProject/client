@@ -14,7 +14,7 @@ target 'HongikTimer' do
   pod 'RxDataSources'
   pod 'RxOptional'
   pod 'RxViewController'
-	pod 'RxGesture'
+ 	pod 'RxGesture'
 
   pod 'SwiftLint'
 

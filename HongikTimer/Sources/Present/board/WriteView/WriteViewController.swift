@@ -7,6 +7,7 @@
 
 import UIKit
 import ReactorKit
+import RxGesture
 
 final class WriteViewController: BaseViewController, View {
   
@@ -71,6 +72,12 @@ final class WriteViewController: BaseViewController, View {
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
+    numberSelectView.rx.tapGesture()
+      .when(.recognized)
+      .asObservable()
+      .map { _ in Reactor.Action.selectNumber }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
     
     // state
     reactor.state.asObservable().map { $0.isDismissed }
