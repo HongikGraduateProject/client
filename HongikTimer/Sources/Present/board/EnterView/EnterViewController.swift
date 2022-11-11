@@ -16,7 +16,7 @@ final class EnterViewController: UIViewController {
   private lazy var  titleLabel = UILabel().then {
     $0.font = .systemFont(ofSize: 24.0, weight: .bold)
     $0.textColor = .label
-    $0.numberOfLines = 1
+    $0.numberOfLines = 0
   }
   
   private lazy var separatorLabel = UILabel().then {

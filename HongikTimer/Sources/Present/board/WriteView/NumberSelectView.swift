@@ -37,7 +37,7 @@ final class NumberSelectView: UIView {
     
     chevronImageView.snp.makeConstraints {
       $0.trailing.equalToSuperview().inset(16.0)
-      $0.height.width.equalTo(14.0)
+      $0.height.width.equalTo(16.0)
       $0.centerY.equalToSuperview()
     }
   }

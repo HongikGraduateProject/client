@@ -56,10 +56,12 @@ final class BoardViewCell: UICollectionViewCell, View {
   
   func bind(reactor: BoardViewCellReactor) {
     self.titleLabel.text = reactor.currentState.title
-    self.memberLabel.attributedText = makeLabel("인원", content: reactor.currentState.member)
+    self.memberLabel.attributedText = makeLabel(
+      "인원",
+      content: "\(reactor.currentState.memberCount)/\(reactor.currentState.maxMemberCount)명" )
     self.chiefLabel.attributedText = makeLabel("그룹장", content: reactor.currentState.chief)
-    self.startDayLabel.attributedText = makeLabel("시작일", content: reactor.currentState.start)
-    self.totalTimeLabel.attributedText = makeLabel("공부량", content: reactor.currentState.totalTime)
+    self.startDayLabel.attributedText = makeLabel("시작일", content: reactor.currentState.startDay)
+    self.totalTimeLabel.attributedText = makeLabel("총 시간", content: "\(reactor.currentState.totalTime%3600)시간")
     self.contentLabel.text = reactor.currentState.content
   }
 }

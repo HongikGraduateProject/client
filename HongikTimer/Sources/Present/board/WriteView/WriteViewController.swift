@@ -31,6 +31,8 @@ final class WriteViewController: BaseViewController, View {
   
   private lazy var contentTextView = UITextView().then {
     $0.font = .systemFont(ofSize: 17.0)
+    $0.text = "내용을 입력해주세요"
+    $0.textColor = .placeholderText
   }
   
   private lazy var firstSeparatorView = UIView().then {
@@ -46,9 +48,6 @@ final class WriteViewController: BaseViewController, View {
     super.viewDidLoad()
     
     configureLayout()
-    
-    #warning("dummy")
-    numberSelectView.numberLabel.text = "인원수 선택"
   }
   
   // MARK: - Initialize
@@ -67,8 +66,14 @@ final class WriteViewController: BaseViewController, View {
   func bind(reactor: WriteViewReactor) {
     
     // action
+    
     closeBarButton.rx.tap
       .map { Reactor.Action.close }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    submitBarButton.rx.tap
+      .map { Reactor.Action.submit }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
@@ -79,6 +84,38 @@ final class WriteViewController: BaseViewController, View {
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
+    let titleText = titleTextField.rx.text.orEmpty
+    let contentText = contentTextView.rx.text.orEmpty
+    
+    Observable.combineLatest(titleText, contentText)
+      .skip(1)
+      .map { Reactor.Action.updateText(title: $0, content: $1)}
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    // TODO: textField처럼 placeHolder 구현해보기
+    contentTextView.rx.didBeginEditing
+      .subscribe(onNext: { [weak self] in
+        guard let self = self else { return }
+      
+        if self.contentTextView.textColor == .placeholderText {
+          self.contentTextView.text = nil
+          self.contentTextView.textColor = .label
+        }
+      })
+      .disposed(by: self.disposeBag)
+    
+    contentTextView.rx.didEndEditing
+      .subscribe(onNext: { [weak self] in
+        guard let self = self else { return }
+        
+        if self.contentTextView.text == nil || self.contentTextView.text == "" {
+          self.contentTextView.text = "내용을 입력해주세요"
+          self.contentTextView.textColor = .placeholderText
+        }
+      })
+      .disposed(by: self.disposeBag)
+  
     // state
     reactor.state.asObservable().map { $0.isDismissed }
       .distinctUntilChanged()
@@ -86,6 +123,17 @@ final class WriteViewController: BaseViewController, View {
         self?.dismiss(animated: true)
       })
       .disposed(by: self.disposeBag)
+    
+    reactor.state.asObservable().map { $0.selectNumber }
+      .distinctUntilChanged()
+      .bind(to: numberSelectView.numberLabel.rx.selectedNumber)
+      .disposed(by: self.disposeBag)
+    
+    reactor.state.asObservable().map { $0.canSubmit }
+      .distinctUntilChanged()
+      .bind(to: submitBarButton.rx.isEnabled)
+      .disposed(by: self.disposeBag)
+    
   }
 }
 
@@ -93,7 +141,7 @@ final class WriteViewController: BaseViewController, View {
 
 extension WriteViewController {
   
-  func configureLayout() {
+  private func configureLayout() {
     self.view.backgroundColor = .systemBackground
     
     self.navigationItem.title = "글쓰기"
@@ -135,6 +183,25 @@ extension WriteViewController {
       $0.top.equalTo(secondSeparatorView.snp.bottom).offset(16.0)
       $0.leading.trailing.equalToSuperview().inset(16.0)
       $0.height.equalTo(300.0)
+    }
+  }
+}
+
+extension Reactive where Base: UILabel {
+  var selectedNumber: Binder<Int?> {
+    return Binder(self.base) { label, number in
+      switch number {
+      case 1:
+        label.text = "최대 1명"
+      case 2:
+        label.text = "최대 2명"
+      case 3:
+        label.text = "최대 3명"
+      case 4:
+        label.text = "최대 4명"
+      default:
+        label.text = "최대 인원수를 선택해 주세요."
+      }
     }
   }
 }

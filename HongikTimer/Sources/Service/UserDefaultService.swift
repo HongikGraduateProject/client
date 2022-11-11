@@ -25,7 +25,7 @@ struct UserDefaultService {
     
     // boar 화면
     case boardPost
-
+    
     var key: String {
       self.rawValue
     }
@@ -70,7 +70,7 @@ struct UserDefaultService {
     
     return UIImage(named: name)
   }
-
+  
   // wallpaper image
   func setWallImage(_ imageName: String) {
     standard.set(imageName, forKey: UserDefaultKeys.wallImage.key)
@@ -104,15 +104,16 @@ struct UserDefaultService {
   }
   
   // MARK: - board 관련
-  #warning("db로 이동해야됨")
+#warning("db로 이동해야됨")
   func setBoardPost(_ boardPosts: [BoardPost]) {
     standard.setValue(
       try? JSONEncoder().encode(boardPosts),
       forKey: UserDefaultKeys.boardPost.key)
+  
   }
   
   func getBoardPosts() -> [BoardPost]? {
-    guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
+    guard let data = standard.data(forKey: UserDefaultKeys.boardPost.key) else { return nil }
     
     return (
       try? JSONDecoder().decode([BoardPost].self, from: data)

@@ -17,6 +17,8 @@ target 'HongikTimer' do
  	pod 'RxGesture'
 
   pod 'SwiftLint'
+  
+  pod 'URLNavigator'
 
   pod 'Firebase/Database'
 

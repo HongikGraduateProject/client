@@ -20,7 +20,13 @@ protocol BoardServicType {
   @discardableResult
   func saveBoardPosts(_ boarPosts: [BoardPost]) -> Observable<Void>
   
-  func create(_ title: String, content: String, member: String) -> Observable<BoardPost>
+  func create(
+    _ title: String,
+    maxMemberCount: Int,
+    chief: String,
+    startDay: Date,
+    content: String
+  ) -> Observable<BoardPost>
 }
 
 final class BoardService: BoardServicType {
@@ -46,12 +52,24 @@ final class BoardService: BoardServicType {
     return .just(Void())
   }
   
-  func create(_ title: String, content: String, member: String) -> Observable<BoardPost> {
+  func create(
+    _ title: String,
+    maxMemberCount: Int,
+    chief: String,
+    startDay: Date,
+    content: String
+  ) -> Observable<BoardPost> {
     return self.fetchBoardPosts()
       .flatMap { [weak self] boardPosts -> Observable<BoardPost> in
         guard let self = self else { return .empty() }
-        let newPost = BoardPost(title: title, content: content, member: member)
-        return self.saveBoardPosts(boardPosts + [newPost]).map { _ in newPost }
+        let newPost = BoardPost(
+          title: title,
+          maxMemberCount: maxMemberCount,
+          chief: chief,
+          startDay: startDay,
+          content: content
+        )
+        return self.saveBoardPosts([newPost] + boardPosts).map { _ in newPost }
       }
       .do(onNext: { boardPost in
         self.event.onNext(.create(boardPost))

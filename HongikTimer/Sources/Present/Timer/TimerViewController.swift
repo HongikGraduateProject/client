@@ -44,6 +44,7 @@ class TimerViewController: BaseViewController {
   private lazy var toggleButton = UIButton().then {
     
     $0.setTitle("시작하기", for: .normal)
+    $0.setTitleColor(.systemBackground, for: .normal)
     $0.addTarget(
       self,
       action: #selector(tapToggleButton),
@@ -64,7 +65,7 @@ class TimerViewController: BaseViewController {
   
 //    $0.font = UIFont(name: "NanumMyeongjo-Regular", size: 64.0)
     $0.font = UIFont(name: "NotoSansCJKkr-Medium", size: 52.0)
-    $0.textColor = .black
+    $0.textColor = .label
     $0.textAlignment = .center
   }
   
@@ -73,7 +74,7 @@ class TimerViewController: BaseViewController {
   }
   
   private lazy var progressView = UIProgressView().then {
-    $0.tintColor = .black
+    $0.tintColor = .label
     $0.layer.masksToBounds = true
     $0.layer.cornerRadius = 6.0
   }

@@ -126,6 +126,7 @@ PODS:
     - RxSwift (~> 6.0)
   - SwiftLint (0.49.1)
   - Toast-Swift (5.0.1)
+  - URLNavigator (2.4.1)
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - RxViewController
   - SwiftLint
   - Toast-Swift (~> 5.0.1)
+  - URLNavigator
 
 SPEC REPOS:
   trunk:
@@ -184,6 +186,7 @@ SPEC REPOS:
     - RxViewController
     - SwiftLint
     - Toast-Swift
+    - URLNavigator
     - WeakMapTable
 
 SPEC CHECKSUMS:
@@ -225,8 +228,9 @@ SPEC CHECKSUMS:
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 9135db8162c5311f089c0403402a5c019c2a6671
+PODFILE CHECKSUM: 1c8183f277bbba557f27e88bfb5107a2cf444397
 
 COCOAPODS: 1.11.3

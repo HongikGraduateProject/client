@@ -129,6 +129,8 @@ class BoardViewController: BaseViewController, View {
       })
       .disposed(by: self.disposeBag)
     
+    self.boardCollectionView.rx.modelSelected()
+    
     // MARK: State
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.boardCollectionView.rx.items(dataSource: self.dataSource))
@@ -189,7 +191,7 @@ extension BoardViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     referenceSizeForHeaderInSection section: Int
   ) -> CGSize {
-    return CGSize(width: view.frame.width, height: 28.0)
+    return CGSize(width: view.frame.width, height: 32.0)
   }
   
   func collectionView(

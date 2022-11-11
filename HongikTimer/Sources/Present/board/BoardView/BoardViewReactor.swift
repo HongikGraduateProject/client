@@ -69,6 +69,9 @@ extension BoardViewReactor {
     
     let boardPosts = self.provider.boardService.fetchBoardPosts()
     
+    print("boardPosts")
+    print(boardPosts.values)
+    
     return boardPosts.map { boardPosts in
       let sectionItems = boardPosts.map(BoardViewCellReactor.init)
       let section = BoardListSection(model: Void(), items: sectionItems)
