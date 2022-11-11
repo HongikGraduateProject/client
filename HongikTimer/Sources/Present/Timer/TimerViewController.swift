@@ -266,7 +266,6 @@ private extension TimerViewController {
   
 }
 
-
 //final class TimerViewController: UIViewController {
 //
 //  // MARK: - Properties
@@ -351,7 +350,6 @@ private extension TimerViewController {
 //        $0.width.height.equalTo(100.0)
 //      }
 //
-//    }
 //
 //    [
 //      animaionView,

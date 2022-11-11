@@ -47,7 +47,7 @@
 		2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15628F6986F00FC7D13 /* ApiLogger.swift */; };
 		2793C15928F69A8100FC7D13 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15828F69A8100FC7D13 /* AuthRouter.swift */; };
 		2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */; };
-		27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* ToDoViewController.swift */; };
+		27A977A328E208020076FF80 /* NotToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* NotToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
 		27A977AD28E338EC0076FF80 /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */; };
 		27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AE28E33A530076FF80 /* HeaderView.swift */; };
@@ -97,14 +97,14 @@
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
 		ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E092917B21F00C38019 /* BoardService.swift */; };
 		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
+		ED30DE30291E99A400E50AA1 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DE2E291E99A400E50AA1 /* ToDoViewController.swift */; };
+		ED30DE31291E99A400E50AA1 /* ToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED30DE2F291E99A400E50AA1 /* ToDoViewController.xib */; };
 		ED3297CC291BDF660081F606 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CB291BDF660081F606 /* WriteViewController.swift */; };
 		ED3297CF291BE0220081F606 /* WriteViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297CE291BE0220081F606 /* WriteViewReactor.swift */; };
 		ED3297D2291BF93C0081F606 /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3297D1291BF93C0081F606 /* NumberSelectView.swift */; };
 		ED7D72B3291CD7B0006A3887 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D72B2291CD7B0006A3887 /* AlertService.swift */; };
 		ED7D72B8291E07CF006A3887 /* EnterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */; };
 		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
-		EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */; };
-		EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */; };
 		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
@@ -188,7 +188,7 @@
 		2793C15628F6986F00FC7D13 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		2793C15828F69A8100FC7D13 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiService.swift; sourceTree = "<group>"; };
-		27A977A228E208020076FF80 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		27A977A228E208020076FF80 /* NotToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
 		27A977AE28E33A530076FF80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -244,14 +244,14 @@
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED2A2E092917B21F00C38019 /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
 		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
+		ED30DE2E291E99A400E50AA1 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		ED30DE2F291E99A400E50AA1 /* ToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoViewController.xib; sourceTree = "<group>"; };
 		ED3297CB291BDF660081F606 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		ED3297CE291BE0220081F606 /* WriteViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewReactor.swift; sourceTree = "<group>"; };
 		ED3297D1291BF93C0081F606 /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
 		ED7D72B2291CD7B0006A3887 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertService.swift; path = ../../../../../AlertService.swift; sourceTree = "<group>"; };
 		ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewReactor.swift; sourceTree = "<group>"; };
 		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
-		EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSTodoViewController.swift; sourceTree = "<group>"; };
-		EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSTodoViewController.xib; sourceTree = "<group>"; };
 		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -485,10 +485,10 @@
 		27A977A128E2076A0076FF80 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				27A977A228E208020076FF80 /* ToDoViewController.swift */,
+				27A977A228E208020076FF80 /* NotToDoViewController.swift */,
+				ED30DE2E291E99A400E50AA1 /* ToDoViewController.swift */,
+				ED30DE2F291E99A400E50AA1 /* ToDoViewController.xib */,
 				2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */,
-				EDF3A8652911A9BA00A7C980 /* FSTodoViewController.swift */,
-				EDF3A8662911A9BA00A7C980 /* FSTodoViewController.xib */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -926,9 +926,9 @@
 				2750A41128D02BEB000EE24D /* LaunchScreen.storyboard in Resources */,
 				2750A40E28D02BEB000EE24D /* Assets.xcassets in Resources */,
 				EDF3A8AE29124F6300A7C980 /* NanumMyeongjo-Bold.ttf in Resources */,
-				EDF3A8682911A9BA00A7C980 /* FSTodoViewController.xib in Resources */,
 				EDF3A8AD29124F6300A7C980 /* NanumMyeongjo-ExtraBold.ttf in Resources */,
 				EDF3A8AB29124F6300A7C980 /* NotoSansCJKkr-Bold.otf in Resources */,
+				ED30DE31291E99A400E50AA1 /* ToDoViewController.xib in Resources */,
 				27B471C028D1968500805F79 /* GoogleService-Info.plist in Resources */,
 				2793C13B28F5969E00FC7D13 /* TimerAnimation.json in Resources */,
 				EDF3A8AF29124F6300A7C980 /* CooperBlackStd.otf in Resources */,
@@ -1116,10 +1116,11 @@
 				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
 				EDF3A8A02912454300A7C980 /* GroupViewController.swift in Sources */,
 				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
-				27A977A328E208020076FF80 /* ToDoViewController.swift in Sources */,
+				27A977A328E208020076FF80 /* NotToDoViewController.swift in Sources */,
 				27A977B328E3501A0076FF80 /* Task.swift in Sources */,
 				EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
+				ED30DE30291E99A400E50AA1 /* ToDoViewController.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
 				2793C15528F6963D00FC7D13 /* BaseInterceptor.swift in Sources */,
 				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
@@ -1168,7 +1169,6 @@
 				EDF3A8B42912517B00A7C980 /* UIFont+Extension.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */,
-				EDF3A8672911A9BA00A7C980 /* FSTodoViewController.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,
 				ED7D72B8291E07CF006A3887 /* EnterViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,

@@ -3461,7 +3461,7 @@
 		7561263A7032E4E098668534D7310A8E /* GDTCORPlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDTCORPlatform.m; path = GoogleDataTransport/GDTCORLibrary/GDTCORPlatform.m; sourceTree = "<group>"; };
 		756EAC1C55700799B21DAC5F2E8C5FE8 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		75883226DEC21DEBDB9112F01D0EF366 /* KakaoSDKTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKTemplate.release.xcconfig; sourceTree = "<group>"; };
-		75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HongikTimer"; path = Pods_HongikTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongikTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D6CB76C24A2D968A8A0A76B07FB7A3 /* GoogleUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleUtilities-dummy.m"; sourceTree = "<group>"; };
 		75DD3B6498AACD527EE817BC708280E7 /* GDTCOREventDataObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDTCOREventDataObject.h; path = GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREventDataObject.h; sourceTree = "<group>"; };
 		7619D96B013D2C792BBA5B737DA66506 /* FImmutableSortedDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FImmutableSortedDictionary.m; path = FirebaseDatabase/Sources/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FImmutableSortedDictionary.m; sourceTree = "<group>"; };
@@ -5980,7 +5980,7 @@
 				1353D6A467F43A6A3EA21D310BD35A31 /* KakaoSDKUser */,
 				0A9F46A999C47653013D3AD854352507 /* leveldb-library */,
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb */,
-				75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */,
+				75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */,
 				FFAD2470387FD02F94127E81212F9BB7 /* Pods-HongikTimer-HongikTimerUITests */,
 				4453E65B47F1E6B907A57D572FC94C1F /* Pods-HongikTimerTests */,
 				3347A1AB6546F0A3977529B8F199DC41 /* PromisesObjC */,
@@ -8458,7 +8458,7 @@
 			);
 			name = "Pods-HongikTimer";
 			productName = Pods_HongikTimer;
-			productReference = 75BC71806A3776A74E36A527C1C65C9E /* Pods-HongikTimer */;
+			productReference = 75BC71806A3776A74E36A527C1C65C9E /* Pods_HongikTimer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3D8B1104C8B4F5AD74F600289D7A12AD /* RxOptional */ = {

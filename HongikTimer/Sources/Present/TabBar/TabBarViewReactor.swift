@@ -50,7 +50,7 @@ final class TabBarViewReactor {
       $0.tabBarItem = homeTabBarItem
     }
   
-  private lazy var todoViewController = UINavigationController(rootViewController: ToDoViewController()).then {
+  private lazy var todoViewController = UINavigationController(rootViewController: NotToDoViewController()).then {
     $0.tabBarItem = todoTabBarItem
   }
   private lazy var timerViewController = UINavigationController(

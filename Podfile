@@ -19,6 +19,7 @@ target 'HongikTimer' do
   pod 'SwiftLint'
   
   pod 'URLNavigator'
+  pod 'FSCalendar'
 
   pod 'Firebase/Database'
 
