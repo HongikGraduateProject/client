@@ -129,7 +129,11 @@ class BoardViewController: BaseViewController, View {
       })
       .disposed(by: self.disposeBag)
     
-    self.boardCollectionView.rx.modelSelected()
+    self.boardCollectionView.rx.modelSelected(BoardListSection.Item.self)
+      .subscribe(onNext: {
+        print($0.currentState.content)
+      })
+      .disposed(by: disposeBag)
     
     // MARK: State
     reactor.state.asObservable().map { $0.sections }
@@ -202,13 +206,6 @@ extension BoardViewController: UICollectionViewDelegateFlowLayout {
     return UIEdgeInsets(top: 4.0, left: 8.0, bottom: 4.0, right: 8.0)
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    didSelectItemAt indexPath: IndexPath
-  ) {
-    let vc = UINavigationController(rootViewController: EnterViewController())
-    self.present(vc, animated: true)
-  }
 }
 
 // MARK: - Private

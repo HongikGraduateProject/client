@@ -8,8 +8,9 @@
 import UIKit
 import Then
 import SnapKit
+import ReactorKit
 
-final class EnterViewController: UIViewController {
+final class EnterViewController: BaseViewController, View {
   
   // MARK: - Property
   
@@ -51,6 +52,10 @@ final class EnterViewController: UIViewController {
     contentLabel.text = "계집애들의 별 별 별 잔디가 나는 봅니다. 하나에 별들을 파란 하나에 까닭입니다. 새겨지는 위에 토끼, 자랑처럼 나는 헤는 버리었습니다. 했던 불러 아스라히 이제 아이들의 있습니다. 이런 내일 하늘에는 새겨지는 까닭입니다. 하나에 겨울이 이름을 걱정도 내일 내린 경, 거외다. 써 나는 하나 둘 거외다."
   }
   
+  // MARK: - Binding
+  func bind(reactor: EnterViewReactor) {
+    
+  }
 }
 
 // MARK: - Method
