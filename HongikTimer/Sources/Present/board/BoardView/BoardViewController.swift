@@ -130,8 +130,15 @@ class BoardViewController: BaseViewController, View {
       .disposed(by: self.disposeBag)
     
     self.boardCollectionView.rx.modelSelected(BoardListSection.Item.self)
-      .subscribe(onNext: {
-        print($0.currentState.content)
+      .subscribe(onNext: { [weak self] boardPostReactor in
+        let boardPost = boardPostReactor.currentState
+        
+        guard let self = self else { return }
+        guard let reactor = self.reactor?.reactorForEnterView() else { return }
+        reactor.initialState.boardPost = boardPost
+        let viewcontroller = EnterViewController(reactor: reactor)
+        
+        self.navigationController?.pushViewController(viewcontroller, animated: true)
       })
       .disposed(by: disposeBag)
     
@@ -203,7 +210,10 @@ extension BoardViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     insetForSectionAt section: Int
   ) -> UIEdgeInsets {
-    return UIEdgeInsets(top: 4.0, left: 8.0, bottom: 4.0, right: 8.0)
+    return UIEdgeInsets(
+      top: 4.0, left: 8.0,
+      bottom: 4.0, right: 8.0
+    )
   }
   
 }

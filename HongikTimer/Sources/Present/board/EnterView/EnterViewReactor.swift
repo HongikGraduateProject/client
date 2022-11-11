@@ -20,21 +20,20 @@ final class EnterViewReactor: Reactor {
   }
   
   struct State {
-    let boardPost: BoardPost
+    var boardPost: BoardPost? = nil
   }
   
   let provider: ServiceProviderType
-  let user: User
-  let initialState: State
+  var user: User
+  var initialState: State
   
   init(
     _ provider: ServiceProviderType,
-    user: User,
-    boardPost: BoardPost
+    user: User
   ) {
     self.provider = provider
     self.user = user
-    self.initialState = State(boardPost: boardPost)
+    self.initialState = State()
   }
   
 //  func mutate(action: Action) -> Observable<Mutation> {

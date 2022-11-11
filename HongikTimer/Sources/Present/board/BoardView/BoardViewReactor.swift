@@ -82,4 +82,8 @@ extension BoardViewReactor {
   func reactorForWriteView() -> WriteViewReactor {
     return WriteViewReactor(self.provider, user: self.user)
   }
+  
+  func reactorForEnterView() -> EnterViewReactor {
+    return EnterViewReactor(self.provider, user: self.user)
+  }
 }
