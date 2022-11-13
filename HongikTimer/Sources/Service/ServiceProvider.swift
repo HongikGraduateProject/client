@@ -19,6 +19,7 @@ protocol ServiceProviderType: AnyObject {
   var  userDefaultService: UserDefaultService { get }
   var boardService: BoardService { get }
   var alertService: AlertService { get }
+  var todoService: TodoService { get }
 }
 
 final class ServiceProvider: ServiceProviderType {
@@ -33,4 +34,5 @@ final class ServiceProvider: ServiceProviderType {
   let userDefaultService = UserDefaultService()
   let boardService = BoardService()
   let alertService = AlertService()
+  let todoService = TodoService()
 }

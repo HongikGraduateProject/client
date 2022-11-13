@@ -86,38 +86,38 @@ final class TaskCell: UICollectionViewCell {
 
 extension TaskCell: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if isEditMode == false {
-            taskVM = TaskViewModel(task: Task(
-                taskId: 0,
-                userId: 0,
-                contents: textField.text ?? "",
-                isChecked: false)
-            )
-            textField.isEnabled = false
-            if textField.text?.isEmpty == false {
-                guard let taskVM = taskVM else { return false }
-                textFieldNotEmptyCompletion?(taskVM)
-            } else {
-                textFieldEmptyCompletion?()
-            }
-        } else {
-            guard let task = taskVM?.task else { return false }
-            taskVM = TaskViewModel(task: Task(
-                taskId: task.taskId,
-                userId: task.userId,
-                contents: textField.text ?? "",
-                isChecked: task.isChecked ?? false)
-            )
-            guard let taskVM = taskVM else { return false }
-            textField.isEnabled = false
-            isEditMode = false
-            textFieldEditCompletion?(taskVM, indexPath ?? [])
-        }
-        
-        return true
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        
+//        if isEditMode == false {
+//            taskVM = TaskViewModel(task: Task(
+//                taskId: 0,
+//                userId: 0,
+//                contents: textField.text ?? "",
+//                isChecked: false)
+//            )
+//            textField.isEnabled = false
+//            if textField.text?.isEmpty == false {
+//                guard let taskVM = taskVM else { return false }
+//                textFieldNotEmptyCompletion?(taskVM)
+//            } else {
+//                textFieldEmptyCompletion?()
+//            }
+//        } else {
+//            guard let task = taskVM?.task else { return false }
+//            taskVM = TaskViewModel(task: Task(
+//                taskId: task.taskId,
+//                userId: task.userId,
+//                contents: textField.text ?? "",
+//                isChecked: task.isChecked ?? false)
+//            )
+//            guard let taskVM = taskVM else { return false }
+//            textField.isEnabled = false
+//            isEditMode = false
+//            textFieldEditCompletion?(taskVM, indexPath ?? [])
+//        }
+//        
+//        return true
+//    }
 }
 
 // MARK: - Private

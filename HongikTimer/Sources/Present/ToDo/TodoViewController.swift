@@ -149,7 +149,7 @@ extension TodoViewController {
     
     calendarView.appearance.weekdayFont = .systemFont(ofSize: 14.0)
     calendarView.appearance.titleFont = .systemFont(ofSize: 14.0)
-    calendarView.appearance.titleTodayColor = .secondaryLabel
+    calendarView.appearance.titleTodayColor = .label
     calendarView.appearance.titleDefaultColor = .secondaryLabel
     
     calendarView.appearance.todayColor = .clear

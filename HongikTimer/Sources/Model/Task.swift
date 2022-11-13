@@ -7,26 +7,38 @@
 
 import Foundation
 
-struct Task {
-    let taskId: Int
-    let userId: Int
-    var contents: String?
-    var isChecked: Bool?
+struct Task: Codable {
+  
+  var taskId: Int?
+  var contents: String?
+  var isChecked: Bool?
+  let date: String
+  
+  init(default: Bool) {
+    self.contents = "스위프트 문법 공부"
+    self.isChecked = false
+    self.date = "2022-11-11"
+  }
+  
+  init() {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.locale = Locale(identifier: "ko_kr")
+    dateFormatter.timeZone = TimeZone(identifier: "KST")
     
-    init() {
-        self.taskId = 0
-        self.userId = 0
-    }
+    self.date = dateFormatter.string(from: Date())
+  }
+  
+  init(
+    contents: String
+  ) {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.locale = Locale(identifier: "ko_kr")
+    dateFormatter.timeZone = TimeZone(identifier: "KST")
     
-    init(
-        taskId: Int,
-        userId: Int,
-        contents: String,
-        isChecked: Bool
-    ) {
-        self.taskId = taskId
-        self.userId = userId
-        self.contents = contents
-        self.isChecked = isChecked
-    }
+    self.contents = contents
+    self.isChecked = false
+    self.date = dateFormatter.string(from: Date())
+  }
 }

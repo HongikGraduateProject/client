@@ -95,6 +95,8 @@
 		ED052D4129142E4100E79BB6 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED052D4029142E4100E79BB6 /* helpers.swift */; };
 		ED052D4329142EA600E79BB6 /* BoardPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED052D4229142EA600E79BB6 /* BoardPost.swift */; };
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
+		ED2402E02920BE23000DF54C /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402DF2920BE23000DF54C /* TodoService.swift */; };
+		ED2402E22920BF00000DF54C /* TodoViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E12920BF00000DF54C /* TodoViewReactor.swift */; };
 		ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E092917B21F00C38019 /* BoardService.swift */; };
 		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
 		ED30DE34291E9CFC00E50AA1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */; };
@@ -241,6 +243,8 @@
 		ED052D4029142E4100E79BB6 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		ED052D4229142EA600E79BB6 /* BoardPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPost.swift; sourceTree = "<group>"; };
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		ED2402DF2920BE23000DF54C /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		ED2402E12920BF00000DF54C /* TodoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewReactor.swift; sourceTree = "<group>"; };
 		ED2A2E092917B21F00C38019 /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
 		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
 		ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
@@ -486,6 +490,7 @@
 				27A977A228E208020076FF80 /* NotToDoViewController.swift */,
 				2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */,
 				ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */,
+				ED2402E12920BF00000DF54C /* TodoViewReactor.swift */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -617,6 +622,7 @@
 				2793C12C28F535C500FC7D13 /* TodoNotificationService.swift */,
 				ED2A2E092917B21F00C38019 /* BoardService.swift */,
 				2793C11F28F4801600FC7D13 /* UserDefaultService.swift */,
+				ED2402DF2920BE23000DF54C /* TodoService.swift */,
 				278DE6BA28D766D600E38A1F /* DatabaseManager.swift */,
 				ED7D72B2291CD7B0006A3887 /* AlertService.swift */,
 			);
@@ -1100,6 +1106,7 @@
 				EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */,
 				ED037A6929115CFB00D30F7A /* TimerViewReactor.swift in Sources */,
 				EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */,
+				ED2402E02920BE23000DF54C /* TodoService.swift in Sources */,
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */,
 				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
@@ -1144,6 +1151,7 @@
 				2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailSignUpViewController.swift in Sources */,
 				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
+				ED2402E22920BF00000DF54C /* TodoViewReactor.swift in Sources */,
 				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
 				ED7D72B3291CD7B0006A3887 /* AlertService.swift in Sources */,
 				EDF3A89829120F7C00A7C980 /* BoardCollectionHeaderView.swift in Sources */,

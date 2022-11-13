@@ -10,16 +10,16 @@ import Foundation
 class TaskListViewModel {
     
     private var taskViewModels: [TaskViewModel] = [
-        TaskViewModel(task: Task(
-            taskId: 0,
-            userId: 0,
-            contents: "독서",
-            isChecked: true)),
-        TaskViewModel(task: Task(
-            taskId: 0,
-            userId: 0,
-            contents: "운동",
-            isChecked: false))
+//        TaskViewModel(task: Task(
+//            taskId: 0,
+//            userId: 0,
+//            contents: "독서",
+//            isChecked: true)),
+//        TaskViewModel(task: Task(
+//            taskId: 0,
+//            userId: 0,
+//            contents: "운동",
+//            isChecked: false))
     ]
     
     func addTaskViewModel(_ vm: TaskViewModel) {

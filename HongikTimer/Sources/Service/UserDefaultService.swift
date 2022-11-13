@@ -23,8 +23,12 @@ struct UserDefaultService {
     case wallImage
     case studyTime
     
+    // todo 화면
+    case task
+    
     // boar 화면
     case boardPost
+    
     
     var key: String {
       self.rawValue
@@ -109,7 +113,7 @@ struct UserDefaultService {
     standard.setValue(
       try? JSONEncoder().encode(boardPosts),
       forKey: UserDefaultKeys.boardPost.key)
-  
+    
   }
   
   func getBoardPosts() -> [BoardPost]? {
@@ -117,6 +121,22 @@ struct UserDefaultService {
     
     return (
       try? JSONDecoder().decode([BoardPost].self, from: data)
+    )
+  }
+  
+  // MARK: - Todo 관련
+  
+  func setTasks(_ tasks: [Task]) {
+    standard.setValue(
+      try? JSONEncoder().encode(tasks),
+      forKey: UserDefaultKeys.task.key)
+  }
+  
+  func getTasks() -> [Task]? {
+    guard let data = standard.data(forKey: UserDefaultKeys.task.key) else { return nil }
+    
+    return (
+      try? JSONDecoder().decode([Task].self, from: data)
     )
   }
 }
