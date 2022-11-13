@@ -52,6 +52,9 @@ final class HomeViewController: BaseViewController {
     setNavigationbar()
     setupLayout()
     bind(reactor: self.reactor)
+    
+    UserDefaults.standard.removeObject(forKey: "task")
+    UserDefaults.standard.removeObject(forKey: "boardPost")
   }
   
   override func viewWillAppear(_ animated: Bool) {

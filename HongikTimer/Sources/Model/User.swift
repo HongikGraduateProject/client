@@ -24,7 +24,7 @@ struct User: Codable {
     
     init() {
         self.id = 1
-        self.username = "user1"
+        self.username = "김홍익"
         self.email = "user1@gmail.com"
 //        self.password = "qwerty@"
 //        self.age = 0

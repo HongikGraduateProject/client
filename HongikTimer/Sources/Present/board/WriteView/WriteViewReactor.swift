@@ -11,7 +11,6 @@ import RxSwift
 
 enum NumberSelectAllertAction: AlertActionType {
   case close
-  case one
   case two
   case three
   case four
@@ -19,7 +18,6 @@ enum NumberSelectAllertAction: AlertActionType {
   var title: String? {
     switch self {
     case .close: return "닫기"
-    case .one: return "1명"
     case .two: return "2명"
     case .three: return "3명"
     case .four: return "4명"
@@ -29,7 +27,6 @@ enum NumberSelectAllertAction: AlertActionType {
   var style: UIAlertAction.Style {
     switch self {
     case .close: return .cancel
-    case .one: return .default
     case .two: return .default
     case .three: return .default
     case .four: return .default
@@ -102,7 +99,7 @@ final class WriteViewReactor: Reactor {
         .create(
           currentState.title,
           maxMemberCount: currentState.selectNumber,
-          chief: user.username,
+          chief: self.user.username,
           startDay: Date(),
           content: currentState.content ?? ""
         )
@@ -155,7 +152,7 @@ extension WriteViewReactor {
     let alertActions: [NumberSelectAllertAction] = [
       .close,
       .four, .three,
-      .two, .one
+      .two
     ]
     return self.provider.alertService
       .show(
@@ -168,8 +165,6 @@ extension WriteViewReactor {
         switch alertAction {
         case .close:
           return Observable.empty()
-        case .one:
-          return .just(.selectOne)
         case .two:
           return .just(.selectTwo)
         case .three:

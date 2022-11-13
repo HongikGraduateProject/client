@@ -20,7 +20,7 @@ final class TodoService {
     
     #warning("더미")
     let defaultTasks: [Task] = [
-      Task(default: true), Task(default: true), Task(default: true)
+      Task(contents: "스위프트 문법 공부"), Task(contents: "운영체제 2주차 복습"), Task(contents: "코딩테스트 공부")
     ]
     self.userDefaultservice.setTasks(defaultTasks)
     return .just(defaultTasks)

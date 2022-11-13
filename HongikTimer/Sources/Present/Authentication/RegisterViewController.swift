@@ -176,7 +176,7 @@ private extension RegisterViewController {
       sv.distribution = .equalSpacing
       sv.spacing = 16.0
       [
-        appleLoginButton,
+//        appleLoginButton,
         googleLoginButton,
         kakaoLoginButton,
         naverLoginButton

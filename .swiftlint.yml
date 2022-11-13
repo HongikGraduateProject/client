@@ -5,13 +5,14 @@ disabled_rules:
 - function_body_length
 - closure_parameter_position
 - void_function_in_ternary
-
+- line_length
 
 included:
 
 excluded:
 - Pods
 
+line_length:
 
 identifier_name:
     min_length:
@@ -20,3 +21,4 @@ identifier_name:
 
 
 trailing_whitespace:
+

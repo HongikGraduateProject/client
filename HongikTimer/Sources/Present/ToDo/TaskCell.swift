@@ -24,12 +24,15 @@ final class TaskCell: UICollectionViewCell, View {
   private lazy var checkButton = UIButton().then {
     $0.setImage(Icon.squareIcon, for: .normal)
     $0.tintColor = .label
+    $0.addTarget(self, action: #selector(toggleButton), for: .touchUpInside)
   }
   
   lazy var textField = UITextField().then {
     $0.placeholder = "입력"
     $0.delegate = self
   }
+  
+  var isChecked: Bool = false
   
   private lazy var editButton = UIButton().then {
     $0.setImage(
@@ -146,7 +149,14 @@ private extension TaskCell {
   
   // MARK: - selector
   
-  
+  @objc func toggleButton() {
+    if isChecked == false {
+      checkButton.setImage(Icon.checkSquareIcon, for: .normal)
+    } else {
+      checkButton.setImage(Icon.squareIcon, for: .normal)
+    }
+    isChecked.toggle()
+  }
   
   // TODO: button 클릭시 viewModelList 업데이트, 마지막 todo 클릭시 한번만 바뀜
 }

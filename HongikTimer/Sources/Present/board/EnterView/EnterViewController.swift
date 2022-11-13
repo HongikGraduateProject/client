@@ -9,6 +9,7 @@ import UIKit
 import Then
 import SnapKit
 import ReactorKit
+import Toast_Swift
 
 final class EnterViewController: BaseViewController, View {
   
@@ -87,8 +88,8 @@ final class EnterViewController: BaseViewController, View {
     self.totalTimeLabel.attributedText = makeLabel("총 시간",
                                                    content: "\(boardPost.totalTime%3600)시간")
     self.contentLabel.text = boardPost.content
-    
   }
+  
 }
 
 // MARK: - Method
@@ -182,5 +183,13 @@ private extension EnterViewController {
   
   @objc func tapEnterButton() {
     print("입장하기")
+    
+    let alertController = UIAlertController(title: "", message: "가입이 완료됐습니다.", preferredStyle: .alert)
+    let action = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+      self?.navigationController?.popViewController(animated: true)
+    }
+  
+    alertController.addAction(action)
+    present(alertController, animated: true)
   }
 }

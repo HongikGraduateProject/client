@@ -259,11 +259,19 @@ private extension TimerViewController {
       self.timerStatus = .start
       self.startTimer()
     case .start:
-      self.stopTimer()
       
+      let alertController = UIAlertController(title: nil, message: "정말 포기하시겠습니까?", preferredStyle: .alert)
+      let cancelAciton = UIAlertAction(title: "취소", style: .default)
+      let forgiveAction = UIAlertAction(title: "포기하기", style: .destructive) { [weak self] _ in
+        guard let self = self else { return }
+        self.stopTimer()
+      }
+      
+      alertController.addAction(cancelAciton)
+      alertController.addAction(forgiveAction)
+      present(alertController, animated: true)
     }
   }
-  
 }
 
 //final class TimerViewController: UIViewController {
