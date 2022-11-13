@@ -45,7 +45,8 @@ final class TodoService {
       }
   }
   
-  func tapCreateButton() -> O {
-    headerEvent.onNext(.create)
+  func tapCreateButton() -> Observable<Void> {
+    self.headerEvent.onNext(.create)
+    return .empty()
   }
 }

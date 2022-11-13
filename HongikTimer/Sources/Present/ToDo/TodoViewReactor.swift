@@ -123,10 +123,9 @@ final class TodoViewReactor: Reactor, BaseReactorType {
             return .empty()
           case .stay:
             print(self.todoRelay.value)
-            let task = Task(contents: self.todoRelay.value)
+            self.provider.todoService.create(contents: self.todoRelay.value)
             
-            
-            return  .empty()
+            return .empty()
           }
         }
     }

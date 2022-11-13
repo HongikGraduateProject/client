@@ -151,40 +151,40 @@ class TodoViewController: BaseViewController, View {
       .map { Reactor.Action.refresh }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
-
+    
     self.rx.viewDidLoad
       .map { Reactor.Action.refresh }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
-
+    
     // state
-
+    
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
     
-//    reactor.pulse(\.$presentTextField)
-//      .subscribe(onNext: { [weak self] _ in
-//        guard let self = self else { return }
-//
-//        let alertController = UIAlertController(title: "Todo", message: nil, preferredStyle: .alert)
-//        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-//        let submitAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
-//          guard let self = self else { return }
-//          self.reloadRelay.accept(Void())
-//        }
-//
-//        alertController.addTextField { textField in
-//          textField.placeholder = "할일을 입력해 주세요!"
-//        }
-//        [cancelAction, submitAction].forEach { alertController.addAction($0) }
-//
-//        self.present(alertController, animated: true)
-//      })
-//      .disposed(by: self.disposeBag)
+    //    reactor.pulse(\.$presentTextField)
+    //      .subscribe(onNext: { [weak self] _ in
+    //        guard let self = self else { return }
+    //
+    //        let alertController = UIAlertController(title: "Todo", message: nil, preferredStyle: .alert)
+    //        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+    //        let submitAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+    //          guard let self = self else { return }
+    //          self.reloadRelay.accept(Void())
+    //        }
+    //
+    //        alertController.addTextField { textField in
+    //          textField.placeholder = "할일을 입력해 주세요!"
+    //        }
+    //        [cancelAction, submitAction].forEach { alertController.addAction($0) }
+    //
+    //        self.present(alertController, animated: true)
+    //      })
+    //      .disposed(by: self.disposeBag)
     
     // delegate
-
+    
     taskCollectionView.rx.setDelegate(self)
       .disposed(by: self.disposeBag)
   }
