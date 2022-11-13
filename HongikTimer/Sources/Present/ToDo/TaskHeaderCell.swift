@@ -8,55 +8,58 @@
 import SnapKit
 import Then
 import UIKit
+import ReactorKit
 
-final class TaskHeaderCell: UICollectionReusableView {
+final class TaskHeaderCell: UICollectionReusableView, View {
+  
+  var disposeBag = DisposeBag()
+  
+  // MARK: - Constant
+  
+  struct Icon {
+    static let plusImage = UIImage(systemName: "plus.circle")?
+      .withTintColor(.label, renderingMode: .alwaysOriginal)
+  }
+  
+  // MARK: - UI
+  
+  private lazy var plustButton = UIButton().then {
+    $0.setTitle("Todo", for: .normal)
+    $0.setTitleColor(.label, for: .normal)
+    $0.titleLabel?.font = .systemFont(ofSize: 16.0)
+    $0.setImage(Icon.plusImage, for: .normal)
+    $0.semanticContentAttribute = .forceRightToLeft
+    $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: 4.0,
+                                      bottom: 0, right: 0)
+    $0.backgroundColor = .systemGray5
+    $0.layer.cornerRadius = 8.0
+  }
+  
+  // MARK: - Binding
+  
+  func bind(reactor: TaskHeaderCellReactor) {
+    // action
     
-    var tapAddTodoCompletion: ((TaskViewModel) -> Void)?
-    
-    private lazy var headerView = HeaderView().then {
-        $0.layer.cornerRadius = 12.0
-        
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(tapAddTodoHeader)
-        )
-        $0.addGestureRecognizer(tap)
-        $0.isUserInteractionEnabled = true
-    }
-    
-    // MARK: - Lifecycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    plustButton.rx.tap
+      .map { Reactor.Action.plusTask }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+  }
 }
 
-// MARK: - Private
+// MARK: - Method
 
-private extension TaskHeaderCell {
+extension TaskHeaderCell {
+  func configureUI() {
+    [
+      plustButton
+    ].forEach { addSubview($0) }
     
-    func setupLayout() {
-        [
-            headerView
-        ].forEach { addSubview($0) }
-        
-        headerView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(16.0)
-            $0.top.bottom.equalToSuperview()
-            $0.height.equalTo(20.0)
-        }
+    plustButton.snp.makeConstraints {
+      $0.centerY.equalToSuperview()
+      $0.leading.equalToSuperview().inset(16.0)
+      $0.height.equalTo(40.0)
+      $0.width.equalTo(80.0)
     }
-    
-    // MARK: - Selector
-    
-    @objc func tapAddTodoHeader() {
-        let vm = TaskViewModel(task: Task())
-        tapAddTodoCompletion?(vm)
-    }
+  }
 }
