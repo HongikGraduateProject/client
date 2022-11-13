@@ -25,7 +25,7 @@ final class TaskCollectionView: UIView {
         $0.collectionViewLayout = layout
         $0.backgroundColor = .systemBackground
         $0.delegate = self
-        $0.dataSource = self
+//        $0.dataSource = self
         $0.register(
             TaskHeaderCell.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -44,10 +44,7 @@ final class TaskCollectionView: UIView {
         
         super.init(frame: .zero)
         setupLayout()
-        TodoNotificationService.shared.addObserverEdit(
-            with: self,
-            completion: #selector(editTask)
-        )
+        
         
         TodoNotificationService.shared.addObserverRemove(
             with: self,
@@ -61,6 +58,8 @@ final class TaskCollectionView: UIView {
 }
 
 // MARK: - CollectionView
+
+/*
 
 extension TaskCollectionView: UICollectionViewDataSource {
     func collectionView(
@@ -131,6 +130,8 @@ extension TaskCollectionView: UICollectionViewDataSource {
         return headerView ?? UICollectionReusableView()
     }
 }
+ 
+ */
 
 extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
     
@@ -166,6 +167,8 @@ extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+ 
+ 
 
 // MARK: - Private
 
@@ -183,7 +186,9 @@ private extension TaskCollectionView {
     }
     
 // MARK: - Selector
-    
+  
+  /*
+  
     @objc func editTask(_ notification: NSNotification) {
         
         guard let indexPath = notification
@@ -193,6 +198,7 @@ private extension TaskCollectionView {
         cell?.textFieldEditMode(indexPath)
     }
     
+   */
     @objc func removeTask(_ notification: NSNotification) {
         
         guard let indexPath = notification

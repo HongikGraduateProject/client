@@ -97,6 +97,7 @@
 		ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13F2F4290E46CA00883D19 /* SettingViewController.swift */; };
 		ED2402E02920BE23000DF54C /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402DF2920BE23000DF54C /* TodoService.swift */; };
 		ED2402E22920BF00000DF54C /* TodoViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E12920BF00000DF54C /* TodoViewReactor.swift */; };
+		ED2402E42920C0F9000DF54C /* TaskCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */; };
 		ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E092917B21F00C38019 /* BoardService.swift */; };
 		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
 		ED30DE34291E9CFC00E50AA1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */; };
@@ -245,6 +246,7 @@
 		ED13F2F4290E46CA00883D19 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED2402DF2920BE23000DF54C /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		ED2402E12920BF00000DF54C /* TodoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewReactor.swift; sourceTree = "<group>"; };
+		ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellReactor.swift; sourceTree = "<group>"; };
 		ED2A2E092917B21F00C38019 /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
 		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
 		ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
@@ -491,6 +493,9 @@
 				2793C14128F5D08C00FC7D13 /* TodoSettingViewController.swift */,
 				ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */,
 				ED2402E12920BF00000DF54C /* TodoViewReactor.swift */,
+				27A977AA28E331D70076FF80 /* TaskCell.swift */,
+				ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */,
+				27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -633,8 +638,6 @@
 			isa = PBXGroup;
 			children = (
 				27A977B628E3689C0076FF80 /* TaskCollectionView.swift */,
-				27A977AA28E331D70076FF80 /* TaskCell.swift */,
-				27A977AC28E338EC0076FF80 /* TaskHeaderCell.swift */,
 				27A977AE28E33A530076FF80 /* HeaderView.swift */,
 			);
 			path = TaskView;
@@ -1110,6 +1113,7 @@
 				278DE6BB28D766D600E38A1F /* DatabaseManager.swift in Sources */,
 				ED0507F0290FFE190016455B /* ServiceProvider.swift in Sources */,
 				27C2DFAE28F6B540009356E5 /* UserViewModel.swift in Sources */,
+				ED2402E42920C0F9000DF54C /* TaskCellReactor.swift in Sources */,
 				ED037A672911524100D30F7A /* Reactive+Extension.swift in Sources */,
 				2793C11E28F47AF400FC7D13 /* User.swift in Sources */,
 				ED037A6329112A8F00D30F7A /* HomeViewReactor.swift in Sources */,
