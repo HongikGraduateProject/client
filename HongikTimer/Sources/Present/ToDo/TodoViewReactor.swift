@@ -25,7 +25,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   struct State {
     var sections: [TaskListSection]
   }
-    
+  
   let provider: ServiceProviderType
   let user: User
   let initialState: State
@@ -38,45 +38,29 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     self.initialState = State(sections: [])
   }
   
-    func mutate(action: Action) -> Observable<Mutation> {
-      var newMutation: Observable<Mutation>
-      switch action {
-      case .refresh:
-        newMutation = getRefreshMutation()
-      }
-      return newMutation
+  func mutate(action: Action) -> Observable<Mutation> {
+    switch action {
+    case .refresh:
+      return self.provider.todoService.fetchTodoService()
+        .map { tasks in
+          let sectionItems = tasks.map { TaskCellReactor(self.provider, user: self.user, task: $0) }
+          let section = TaskListSection(model: Void(), items: sectionItems)
+          return .setSections([section])
+        }
+      
     }
+  }
   
-    func reduce(state: State, mutation: Mutation) -> State {
-      var state = state
-      
-      switch mutation {
-      case let .setSections(sections):
-        state.sections = sections
-      }
-      
-      return state
+  func reduce(state: State, mutation: Mutation) -> State {
+    var state = state
+    
+    switch mutation {
+    case let .setSections(sections):
+      state.sections = sections
     }
+    
+    return state
+  }
 }
 
 // MARK: - Method
-
-extension TodoViewReactor {
-  
-  private func getRefreshMutation() -> Observable<Mutation> {
-    let tasks = self.provider.todoService.fetchTodoService()
-    
-    return tasks.map { [weak self] tasks in
-      guard let self = self else { return }
-      
-      let sectionItems = tasks.map { TaskCellReactor.init(
-        self.provider,
-        user: self.user,
-        task: $0
-      )}
-      
-      let section = TaskListSection(model: Void(), items: sectionItems)
-      return .setSections([section])
-    }
-  }
-}

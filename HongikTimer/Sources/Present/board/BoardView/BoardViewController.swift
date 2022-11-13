@@ -112,7 +112,7 @@ class BoardViewController: BaseViewController, View {
   // MARK: - Binding
   
   func bind(reactor: BoardViewReactor) {
-    
+        
     // MARK: Action
     self.rx.viewDidAppear
       .map { _ in Reactor.Action.refresh }

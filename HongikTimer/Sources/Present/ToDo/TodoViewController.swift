@@ -8,13 +8,16 @@
 import UIKit
 
 import ReactorKit
+import RxCocoa
 import RxDataSources
 import RxViewController
 import FSCalendar
 import Then
 import SnapKit
 
-class TodoViewController: BaseViewController, View, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class TodoViewController: BaseViewController, View,
+                          FSCalendarDelegate, FSCalendarDataSource,
+                          FSCalendarDelegateAppearance {
   
   // MARK: - Constant
   
@@ -30,6 +33,19 @@ class TodoViewController: BaseViewController, View, FSCalendarDelegate, FSCalend
   }
   
   // MARK: - Property
+  
+  let dataSource = RxCollectionViewSectionedReloadDataSource<TaskListSection>(configureCell: {
+    _, collectionView,
+    indexPath, reactor in
+    
+    let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: TaskCell.identifier,
+      for: indexPath
+    ) as? TaskCell
+    cell?.reactor = reactor
+    
+    return cell ?? UICollectionViewCell()
+  })
   
   let headerDateFormatter = DateFormatter().then {
     $0.dateFormat = "YYYY년 MM월 W주차"
@@ -73,6 +89,27 @@ class TodoViewController: BaseViewController, View, FSCalendarDelegate, FSCalend
     $0.text = self.headerDateFormatter.string(from: Date())
   }
   
+  private lazy var taskCollectionView = UICollectionView(
+    frame: .zero,
+    collectionViewLayout: UICollectionViewFlowLayout()
+  ).then {
+    let layout = UICollectionViewFlowLayout()
+    
+    $0.alwaysBounceVertical = true
+    $0.collectionViewLayout = layout
+    $0.backgroundColor = .systemBackground
+    $0.register(
+      TaskHeaderCell.self,
+      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: TaskHeaderCell.identifier
+    )
+    $0.register(
+      TaskCell.self,
+      forCellWithReuseIdentifier: TaskCell.identifier
+    )
+    
+  }
+  
   // MARK: - Lifecycle
   override func viewDidLoad() {
     
@@ -82,9 +119,65 @@ class TodoViewController: BaseViewController, View, FSCalendarDelegate, FSCalend
     setCalendar()
   }
   
+  // MARK: - Initialize
+  init(_ reactor: TodoViewReactor) {
+    super.init()
+    self.reactor = reactor
+  }
+  
+  required convenience init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   // MARK: - Binding
   func bind(reactor: TodoViewReactor) {
     
+    // action
+
+    self.rx.viewDidLoad
+      .map { Reactor.Action.refresh }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+
+    // state
+
+    reactor.state.asObservable().map { $0.sections }
+      .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
+      .disposed(by: self.disposeBag)
+
+    // delegate
+
+    taskCollectionView.rx.setDelegate(self)
+      .disposed(by: self.disposeBag)
+  }
+}
+
+// MARK: - CollectionView
+
+extension TodoViewController: UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    return CGSize(width: self.view.frame.width, height: 48.0)
+  }
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    referenceSizeForHeaderInSection section: Int
+  ) -> CGSize {
+    return CGSize(width: 100.0, height: 48.0)
+  }
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return 0
   }
 }
 
@@ -112,7 +205,8 @@ extension TodoViewController {
     [
       calendarView,
       calendarButtonStackView,
-      headerLabel
+      headerLabel,
+      taskCollectionView
     ].forEach { view.addSubview($0) }
     
     calendarView.snp.makeConstraints {
@@ -130,6 +224,12 @@ extension TodoViewController {
     headerLabel.snp.makeConstraints {
       $0.centerY.equalTo(calendarView.calendarHeaderView.snp.centerY)
       $0.leading.equalTo(calendarView.collectionView)
+    }
+    
+    taskCollectionView.snp.makeConstraints {
+      $0.top.equalTo(calendarView.snp.bottom)
+      $0.leading.trailing.equalToSuperview()
+      $0.bottom.equalTo(view.safeAreaLayoutGuide)
     }
   }
   
