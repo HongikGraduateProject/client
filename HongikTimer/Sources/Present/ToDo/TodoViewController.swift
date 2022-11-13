@@ -6,10 +6,15 @@
 //
 
 import UIKit
+
+import ReactorKit
+import RxDataSources
+import RxViewController
 import FSCalendar
+import Then
 import SnapKit
 
-class TodoViewController: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class TodoViewController: BaseViewController, View, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
   
   // MARK: - Constant
   
@@ -68,12 +73,18 @@ class TodoViewController: BaseViewController, FSCalendarDelegate, FSCalendarData
     $0.text = self.headerDateFormatter.string(from: Date())
   }
   
+  // MARK: - Lifecycle
   override func viewDidLoad() {
     
     super.viewDidLoad()
     
     configureUI()
     setCalendar()
+  }
+  
+  // MARK: - Binding
+  func bind(reactor: TodoViewReactor) {
+    
   }
 }
 

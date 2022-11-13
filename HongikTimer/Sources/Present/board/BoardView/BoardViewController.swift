@@ -5,12 +5,13 @@
 //  Created by JongHoon on 2022/10/14.
 //
 
-import Then
-import SnapKit
 import UIKit
+
 import ReactorKit
 import RxDataSources
 import RxViewController
+import Then
+import SnapKit
 
 class BoardViewController: BaseViewController, View {
   

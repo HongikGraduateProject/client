@@ -10,33 +10,73 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-typealias TodoListSection = SectionModel<Void, TaskCellReactor>
+typealias TaskListSection = SectionModel<Void, TaskCellReactor>
 
-final class TodoViewReactor: Reactor {
+final class TodoViewReactor: Reactor, BaseReactorType {
   
   enum Action {
-    
+    case refresh
   }
   
   enum Mutation {
-    
+    case setSections([TaskListSection])
   }
   
   struct State {
+    var sections: [TaskListSection]
+  }
     
+  let provider: ServiceProviderType
+  let user: User
+  let initialState: State
+  
+  // MARK: - Initialize
+  
+  init(_ provider: ServiceProviderType, user: User) {
+    self.user = user
+    self.provider = provider
+    self.initialState = State(sections: [])
   }
   
-  let initialState = State()
+    func mutate(action: Action) -> Observable<Mutation> {
+      var newMutation: Observable<Mutation>
+      switch action {
+      case .refresh:
+        newMutation = getRefreshMutation()
+      }
+      return newMutation
+    }
   
-  init() {
+    func reduce(state: State, mutation: Mutation) -> State {
+      var state = state
+      
+      switch mutation {
+      case let .setSections(sections):
+        state.sections = sections
+      }
+      
+      return state
+    }
+}
+
+// MARK: - Method
+
+extension TodoViewReactor {
+  
+  private func getRefreshMutation() -> Observable<Mutation> {
+    let tasks = self.provider.todoService.fetchTodoService()
     
+    return tasks.map { [weak self] tasks in
+      guard let self = self else { return }
+      
+      let sectionItems = tasks.map { TaskCellReactor.init(
+        self.provider,
+        user: self.user,
+        task: $0
+      )}
+      
+      let section = TaskListSection(model: Void(), items: sectionItems)
+      return .setSections([section])
+    }
   }
-  
-  //  func mutate(action: Action) -> Observable<Mutation> {
-  //    <#code#>
-  //  }
-  //
-  //  func reduce(state: State, mutation: Mutation) -> State {
-  //    <#code#>
-  //  }
 }

@@ -56,7 +56,6 @@ final class BoardViewReactor: Reactor, BaseReactorType {
     case let .setSetcions(sections):
       state.sections = sections
       
-      print(state.sections)
       return state
     }
   }
@@ -68,9 +67,6 @@ extension BoardViewReactor {
   private func getRefreshMutation() -> Observable<Mutation> {
     
     let boardPosts = self.provider.boardService.fetchBoardPosts()
-    
-    print("boardPosts")
-    print(boardPosts.values)
     
     return boardPosts.map { boardPosts in
       let sectionItems = boardPosts.map(BoardViewCellReactor.init)
