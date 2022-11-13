@@ -168,8 +168,6 @@ extension TaskCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
  
- 
-
 // MARK: - Private
 
 private extension TaskCollectionView {

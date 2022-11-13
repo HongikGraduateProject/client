@@ -8,9 +8,15 @@
 import UIKit
 import RxSwift
 
+enum HeaderEvent {
+  case create
+}
+
 final class TodoService {
   
   let userDefaultservice = UserDefaultService.shared
+  
+  let headerEvent = PublishSubject<HeaderEvent>()
 
   func fetchTodoService() -> Observable<[Task]> {
     
@@ -24,5 +30,10 @@ final class TodoService {
     ]
     self.userDefaultservice.setTasks(defaultTasks)
     return .just(defaultTasks)
+  }
+  
+  func create() -> Observable<Void> {
+    self.headerEvent.onNext(.create)
+    return .empty()
   }
 }

@@ -37,12 +37,14 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
   }
   
   func mutate(action: Action) -> Observable<Mutation> {
-    var newMutate: Observable<Mutation>
+    
     switch action {
     case .plusTask:
-      newMutate = .just(.plusTask)
+      return self.provider.todoService.create()
+        .map { _ in .plusTask }
+      
     }
-    return newMutate
+    
   }
   
   func reduce(state: State, mutation: Mutation) -> State {

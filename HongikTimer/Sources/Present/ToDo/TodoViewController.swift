@@ -11,9 +11,11 @@ import ReactorKit
 import RxCocoa
 import RxDataSources
 import RxViewController
+import RxRelay
 import FSCalendar
 import Then
 import SnapKit
+
 
 class TodoViewController: BaseViewController, View {
   
@@ -31,6 +33,8 @@ class TodoViewController: BaseViewController, View {
   }
   
   // MARK: - Property
+  
+  let reloadRelay = PublishRelay<Void>()
   
   let dataSource = RxCollectionViewSectionedReloadDataSource<TaskListSection>(configureCell: {
     _, collectionView,
@@ -142,6 +146,11 @@ class TodoViewController: BaseViewController, View {
   func bind(reactor: TodoViewReactor) {
     
     // action
+    
+    self.reloadRelay
+      .map { Reactor.Action.refresh }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
 
     self.rx.viewDidLoad
       .map { Reactor.Action.refresh }
@@ -153,7 +162,27 @@ class TodoViewController: BaseViewController, View {
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
-
+    
+//    reactor.pulse(\.$presentTextField)
+//      .subscribe(onNext: { [weak self] _ in
+//        guard let self = self else { return }
+//
+//        let alertController = UIAlertController(title: "Todo", message: nil, preferredStyle: .alert)
+//        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+//        let submitAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+//          guard let self = self else { return }
+//          self.reloadRelay.accept(Void())
+//        }
+//
+//        alertController.addTextField { textField in
+//          textField.placeholder = "할일을 입력해 주세요!"
+//        }
+//        [cancelAction, submitAction].forEach { alertController.addAction($0) }
+//
+//        self.present(alertController, animated: true)
+//      })
+//      .disposed(by: self.disposeBag)
+    
     // delegate
 
     taskCollectionView.rx.setDelegate(self)
@@ -254,6 +283,21 @@ extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
   }
 }
 
+// MARK: - ViewControllerTransitioning
+
+extension TodoViewController: UIViewControllerTransitioningDelegate {
+  func presentationController(
+    forPresented presented: UIViewController,
+    presenting: UIViewController?,
+    source: UIViewController
+  ) -> UIPresentationController? {
+    TaskEditPresentaionController(
+      presentedViewController: presented,
+      presenting: presenting
+    )
+  }
+}
+
 // MARK: - Method
 
 extension TodoViewController {
@@ -336,5 +380,8 @@ extension TodoViewController {
     self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
   }
 }
+
+
+
 
 // TODO: 주 / 월 단위 상태관리해서 next month / next week 구별하기
