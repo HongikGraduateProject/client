@@ -40,7 +40,7 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
     
     switch action {
     case .plusTask:
-      return self.provider.todoService.create()
+      return self.provider.todoService.tapCreateButton()
         .map { _ in .plusTask }
       
     }

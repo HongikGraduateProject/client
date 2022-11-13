@@ -11,21 +11,20 @@ import RxSwift
 import RxDataSources
 import URLNavigator
 
-
 typealias TaskListSection = SectionModel<TaskHeaderCellReactor, TaskCellReactor>
 
 enum TaskEditViewCancelAlertAction: AlertActionType {
   case leave
   case stay
-
+  
   var title: String? {
     switch self {
     case .leave: return "취소"
     case .stay: return "확인"
     }
   }
-
-    var style: UIAlertAction.Style {
+  
+  var style: UIAlertAction.Style {
     switch self {
     case .leave: return .cancel
     case .stay: return .default
@@ -33,8 +32,9 @@ enum TaskEditViewCancelAlertAction: AlertActionType {
   }
 }
 
-
 final class TodoViewReactor: Reactor, BaseReactorType {
+  
+  var disposebag = DisposeBag()
   
   enum Action {
     case refresh
@@ -43,7 +43,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   enum Mutation {
     case setSections([TaskListSection])
     
-    case presentCreate
+//    case presentCreate
   }
   
   struct State {
@@ -54,6 +54,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   let provider: ServiceProviderType
   let user: User
   let initialState: State
+  let todoRelay = BehaviorRelay<String>(value: "")
   
   // MARK: - Initialize
   
@@ -66,7 +67,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case .refresh:
-      return self.provider.todoService.fetchTodoService()
+      return self.provider.todoService.fetchTask()
         .map { tasks in
           let sectionItems = tasks.map { TaskCellReactor(self.provider, user: self.user, task: $0) }
           
@@ -100,24 +101,34 @@ final class TodoViewReactor: Reactor, BaseReactorType {
         }
         alert.addTextField { textField in
           textField.placeholder = "할일을 입력하세요!"
+          
+          //          todoRelay.accept(textField.rx.text)
+          textField.rx.text.orEmpty.subscribe { [weak self] in
+            guard let self = self else { return }
+            self.todoRelay.accept($0)
+          }
+          .disposed(by: self.disposebag)
         }
-//        alert.textFields[0]?.rx
+        //        alert.textFields[0]?.rx
         Navigator().present(alert)
         return Disposables.create {
           alert.dismiss(animated: true)
         }
       }
+      // TODO: weak self?
       return observer
         .flatMap { alertAction -> Observable<Mutation> in
           switch alertAction {
           case .leave:
             return .empty()
           case .stay:
+            print(self.todoRelay.value)
+            let task = Task(contents: self.todoRelay.value)
+            
+            
             return  .empty()
           }
         }
-      
-      
     }
   }
   
@@ -130,8 +141,8 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       
       print("리로로로로롤들 하빈다.")
       
-    case .presentCreate:
-      state.presentTextField = true
+//    case .presentCreate:
+//      state.presentTextField = true
     }
     
     return state
