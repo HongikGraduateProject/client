@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-typealias TaskListSection = SectionModel<Void, TaskCellReactor>
+typealias TaskListSection = SectionModel<TaskHeaderCellReactor, TaskCellReactor>
 
 final class TodoViewReactor: Reactor, BaseReactorType {
   
@@ -44,10 +44,11 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       return self.provider.todoService.fetchTodoService()
         .map { tasks in
           let sectionItems = tasks.map { TaskCellReactor(self.provider, user: self.user, task: $0) }
-          let section = TaskListSection(model: Void(), items: sectionItems)
+          
+          let sectionModel = TaskHeaderCellReactor(self.provider, user: self.user)
+          let section = TaskListSection(model: sectionModel, items: sectionItems)
           return .setSections([section])
         }
-      
     }
   }
   

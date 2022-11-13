@@ -23,9 +23,13 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
     
   }
   
+  // MARK: - Property
+  
   let provider: ServiceProviderType
   let user: User
   let initialState = State()
+  
+  // MARK: - Init
   
   init(_ provider: ServiceProviderType, user: User) {
     self.provider = provider

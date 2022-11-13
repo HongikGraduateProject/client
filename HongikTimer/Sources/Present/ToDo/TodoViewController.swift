@@ -15,9 +15,7 @@ import FSCalendar
 import Then
 import SnapKit
 
-class TodoViewController: BaseViewController, View,
-                          FSCalendarDelegate, FSCalendarDataSource,
-                          FSCalendarDelegateAppearance {
+class TodoViewController: BaseViewController, View {
   
   // MARK: - Constant
   
@@ -45,6 +43,17 @@ class TodoViewController: BaseViewController, View,
     cell?.reactor = reactor
     
     return cell ?? UICollectionViewCell()
+  }, configureSupplementaryView: { dataSource, collectionView, _, indexPath in
+    let header = collectionView.dequeueReusableSupplementaryView(
+      ofKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: TaskHeaderCell.identifier,
+      for: indexPath
+    ) as? TaskHeaderCell
+    let reactor = dataSource[indexPath.section].model
+    header?.configureUI()
+    header?.reactor = reactor
+    
+    return header ?? UICollectionReusableView()
   })
   
   let headerDateFormatter = DateFormatter().then {
@@ -115,8 +124,8 @@ class TodoViewController: BaseViewController, View,
     
     super.viewDidLoad()
     
-    configureUI()
-    setCalendar()
+    configureLayout()
+    configureCalendar()
   }
   
   // MARK: - Initialize
@@ -169,7 +178,7 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     referenceSizeForHeaderInSection section: Int
   ) -> CGSize {
-    return CGSize(width: 100.0, height: 48.0)
+    return CGSize(width: 100.0, height: 40.0)
   }
   
   func collectionView(
@@ -181,11 +190,75 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
+// MARK: - FSCalendar
+
+extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+  func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+    calendarView.snp.updateConstraints {
+      $0.height.equalTo(bounds.height)
+    }
+    self.view.layoutIfNeeded()
+  }
+  
+  func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+    let currentPage = calendarView.currentPage
+    
+    headerLabel.text = headerDateFormatter.string(from: currentPage)
+  }
+  
+  private func configureCalendar() {
+    
+    calendarView.delegate = self
+    calendarView.dataSource = self
+    
+    calendarView.select(Date())
+    
+    calendarView.locale = Locale(identifier: "ko_KR")
+    calendarView.scope = .week
+    
+    calendarView.appearance.headerDateFormat = "YYYY년 MM월 W주차"
+    calendarView.appearance.headerTitleColor = .clear
+    calendarView.appearance.headerTitleAlignment = .center
+    calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+    calendarView.appearance.headerTitleFont = .systemFont(ofSize: 18.0)
+    calendarView.appearance.selectionColor = .defaultTintColor
+    
+    let offset: Double = (self.view.frame.width - ("YYYY년 MM월 W주차" as NSString)
+      .size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)])
+      .width - 16.0 ) / 2.0
+    calendarView.appearance.headerTitleOffset = CGPoint(x: -offset, y: 0)
+    
+    calendarView.weekdayHeight = 36.0
+    calendarView.headerHeight = 36.0
+    
+    calendarView.appearance.weekdayFont = .systemFont(ofSize: 14.0)
+    calendarView.appearance.titleFont = .systemFont(ofSize: 14.0)
+    calendarView.appearance.titleTodayColor = .label
+    calendarView.appearance.titleDefaultColor = .secondaryLabel
+    
+    calendarView.appearance.todayColor = .clear
+    calendarView.appearance.weekdayTextColor = .label
+    
+    calendarView.placeholderType = .none
+    
+    calendarView.scrollEnabled = true
+    calendarView.scrollDirection = .horizontal
+  }
+  
+  func getNextWeek(date: Date) -> Date {
+    return  Calendar.current.date(byAdding: .weekOfMonth, value: 1, to: date)!
+  }
+  
+  func getPreviousWeek(date: Date) -> Date {
+    return  Calendar.current.date(byAdding: .weekOfMonth, value: -1, to: date)!
+  }
+}
+
 // MARK: - Method
 
 extension TodoViewController {
   
-  private func configureUI() {
+  private func configureLayout() {
     
     let calendarButtonStackView = UIStackView(arrangedSubviews: [
       leftButton,
@@ -231,66 +304,6 @@ extension TodoViewController {
       $0.leading.trailing.equalToSuperview()
       $0.bottom.equalTo(view.safeAreaLayoutGuide)
     }
-  }
-  
-  private func setCalendar() {
-    
-    calendarView.delegate = self
-    calendarView.dataSource = self
-    
-    calendarView.select(Date())
-    
-    calendarView.locale = Locale(identifier: "ko_KR")
-    calendarView.scope = .week
-    
-    calendarView.appearance.headerDateFormat = "YYYY년 MM월 W주차"
-    calendarView.appearance.headerTitleColor = .clear
-    calendarView.appearance.headerTitleAlignment = .center
-    calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
-    calendarView.appearance.headerTitleFont = .systemFont(ofSize: 18.0)
-    calendarView.appearance.selectionColor = .defaultTintColor
-    
-    let offset: Double = (self.view.frame.width - ("YYYY년 MM월 W주차" as NSString)
-      .size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)])
-      .width - 16.0 ) / 2.0
-    calendarView.appearance.headerTitleOffset = CGPoint(x: -offset, y: 0)
-    
-    calendarView.weekdayHeight = 36.0
-    calendarView.headerHeight = 36.0
-    
-    calendarView.appearance.weekdayFont = .systemFont(ofSize: 14.0)
-    calendarView.appearance.titleFont = .systemFont(ofSize: 14.0)
-    calendarView.appearance.titleTodayColor = .label
-    calendarView.appearance.titleDefaultColor = .secondaryLabel
-    
-    calendarView.appearance.todayColor = .clear
-    calendarView.appearance.weekdayTextColor = .label
-    
-    calendarView.placeholderType = .none
-    
-    calendarView.scrollEnabled = true
-    calendarView.scrollDirection = .horizontal
-  }
-  
-  func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-    calendarView.snp.updateConstraints {
-      $0.height.equalTo(bounds.height)
-    }
-    self.view.layoutIfNeeded()
-  }
-  
-  func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-    let currentPage = calendarView.currentPage
-    
-    headerLabel.text = headerDateFormatter.string(from: currentPage)
-  }
-  
-  func getNextWeek(date: Date) -> Date {
-    return  Calendar.current.date(byAdding: .weekOfMonth, value: 1, to: date)!
-  }
-  
-  func getPreviousWeek(date: Date) -> Date {
-    return  Calendar.current.date(byAdding: .weekOfMonth, value: -1, to: date)!
   }
   
   // MARK: - Selector
