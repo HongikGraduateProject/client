@@ -28,7 +28,7 @@ final class RegisterViewController: BaseViewController {
   private lazy var logoImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
     $0.clipsToBounds = true
-    $0.image = UIImage(named: "chick0")
+    $0.image = UIImage(named: "chick1")
   }
   
   private lazy var appleLoginButton = UIButton(configuration: snsLoginConfig).then {

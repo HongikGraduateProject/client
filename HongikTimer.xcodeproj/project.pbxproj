@@ -99,6 +99,7 @@
 		ED2402E42920C0F9000DF54C /* TaskCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */; };
 		ED2402E72920DEE3000DF54C /* TaskHeaderCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E52920DEE3000DF54C /* TaskHeaderCellReactor.swift */; };
 		ED2402E82920DEE3000DF54C /* TaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E62920DEE3000DF54C /* TaskHeaderCell.swift */; };
+		ED2402EA2920ED03000DF54C /* TestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2402E92920ED03000DF54C /* TestGroup.swift */; };
 		ED2A2E0A2917B21F00C38019 /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E092917B21F00C38019 /* BoardService.swift */; };
 		ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */; };
 		ED30DE34291E9CFC00E50AA1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */; };
@@ -249,6 +250,7 @@
 		ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellReactor.swift; sourceTree = "<group>"; };
 		ED2402E52920DEE3000DF54C /* TaskHeaderCellReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskHeaderCellReactor.swift; sourceTree = "<group>"; };
 		ED2402E62920DEE3000DF54C /* TaskHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskHeaderCell.swift; sourceTree = "<group>"; };
+		ED2402E92920ED03000DF54C /* TestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroup.swift; sourceTree = "<group>"; };
 		ED2A2E092917B21F00C38019 /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
 		ED2A2E0B2917EEE500C38019 /* BoardViewCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewCellReactor.swift; sourceTree = "<group>"; };
 		ED30DE32291E9CFC00E50AA1 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				27C2DFA928F6A78E009356E5 /* UserInfo.swift */,
 				27C2DFAB28F6A927009356E5 /* AuthResponse.swift */,
 				ED052D4229142EA600E79BB6 /* BoardPost.swift */,
+				ED2402E92920ED03000DF54C /* TestGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1185,6 +1188,7 @@
 				ED7D72B8291E07CF006A3887 /* EnterViewReactor.swift in Sources */,
 				2793C14228F5D08C00FC7D13 /* TodoSettingViewController.swift in Sources */,
 				ED3297D2291BF93C0081F606 /* NumberSelectView.swift in Sources */,
+				ED2402EA2920ED03000DF54C /* TestGroup.swift in Sources */,
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,
 				EDF3A8B6291259FF00A7C980 /* GroupDetailViewController.swift in Sources */,

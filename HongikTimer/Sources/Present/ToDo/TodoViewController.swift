@@ -260,6 +260,8 @@ extension TodoViewController {
   
   private func configureLayout() {
     
+    navigationItem.title = "Todo"
+    
     let calendarButtonStackView = UIStackView(arrangedSubviews: [
       leftButton,
       rightButton,

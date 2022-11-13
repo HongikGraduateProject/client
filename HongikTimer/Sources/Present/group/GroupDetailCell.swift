@@ -42,9 +42,15 @@ final class GroupDetailCell: UICollectionViewCell {
 
 // MARK: - Method
 
-private extension GroupDetailCell {
+extension GroupDetailCell {
   
-  func configureUI() {
+  func configureCell(_ testGroup: TestGroup) {
+    self.memberImageView.image = UIImage(named: testGroup.imageName)
+    self.memberNameLabel.text = testGroup.name
+    self.memberTimeLabel.text = testGroup.time
+  }
+  
+  private func configureUI() {
     
     backgroundColor = .systemBackground
     
@@ -57,6 +63,7 @@ private extension GroupDetailCell {
     memberImageView.snp.makeConstraints {
       $0.top.equalToSuperview().inset(16.0)
       $0.centerX.equalToSuperview()
+      $0.width.height.equalTo(88.0)
     }
     
     memberNameLabel.snp.makeConstraints {
@@ -65,8 +72,9 @@ private extension GroupDetailCell {
     }
     
     memberTimeLabel.snp.makeConstraints {
-      $0.top.equalTo(memberNameLabel.snp.bottom).offset(8.0)
+      $0.top.equalTo(memberNameLabel.snp.bottom).offset(4.0)
       $0.centerX.equalToSuperview()
     }
   }
 }
+

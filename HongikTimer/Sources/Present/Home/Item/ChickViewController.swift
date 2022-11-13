@@ -15,14 +15,6 @@ final class ChickViewController: BaseViewController {
     ItemCell("chick1", imageName: "chick0"),
     ItemCell("chick2", imageName: "chick1"),
     ItemCell("chick3", imageName: "chick2"),
-    ItemCell("chick4", imageName: "chick3"),
-    ItemCell("chick1", imageName: "chick0"),
-    ItemCell("chick2", imageName: "chick1"),
-    ItemCell("chick3", imageName: "chick2"),
-    ItemCell("chick4", imageName: "chick3"),
-    ItemCell("chick1", imageName: "chick0"),
-    ItemCell("chick2", imageName: "chick1"),
-    ItemCell("chick3", imageName: "chick2"),
     ItemCell("chick4", imageName: "chick3")
   ]
   

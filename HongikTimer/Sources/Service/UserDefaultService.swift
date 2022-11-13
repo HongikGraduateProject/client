@@ -69,7 +69,7 @@ struct UserDefaultService {
   
   func getChickImage() -> UIImage? {
     guard let name = standard.string(forKey: UserDefaultKeys.chickImage.key) else {
-      return UIImage(named: "chick0")
+      return UIImage(named: "chick1")
     }
     
     return UIImage(named: name)

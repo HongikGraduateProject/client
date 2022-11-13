@@ -48,7 +48,7 @@ final class GroupViewController: UIViewController {
  
 private extension GroupViewController {
   func configureNavigationBar() {
-    navigationItem.title = "내가 가입한 그룹"
+    navigationItem.title = "Group"
   }
   
   func configureLayout() {

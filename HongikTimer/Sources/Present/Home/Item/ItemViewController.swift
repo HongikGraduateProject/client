@@ -16,7 +16,7 @@ final class ItemViewController: BaseViewController {
   
   let categories: [ItemCell] = [
     ItemCell("벽지", imageName: "w9"),
-    ItemCell("버드", imageName: "chick0")
+    ItemCell("버드", imageName: "chick1")
   ]
   
   let reactor: ItemViewReactor
