@@ -58,13 +58,13 @@ final class TodoService {
   }
   
   // MARK: - Edit Event
-  func tapEditButton() -> Observable<Void> {
+  func tapEditButton() -> Observable<Bool> {
     self.editEvent.onNext(.edit)
-    return .empty()
+    return .just(true)
   }
   
-  func tapDeleteButton() -> Observable<Void> {
+  func tapDeleteButton() -> Observable<Bool> {
     self.editEvent.onNext(.delete)
-    return .empty()
+    return .just(true)
   }
 }

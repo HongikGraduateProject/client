@@ -34,6 +34,7 @@ class TodoViewController: BaseViewController, View {
   // MARK: - Property
   
   let selectedDay = PublishRelay<Date>()
+  let selectedID = PublishRelay<String>()
 
   let dataSource = RxCollectionViewSectionedReloadDataSource<TaskListSection>(configureCell: {
     _, collectionView,
@@ -151,7 +152,12 @@ class TodoViewController: BaseViewController, View {
       .disposed(by: self.disposeBag)
     
     self.selectedDay
-      .map { Reactor.Action.selectDay($0) }
+      .map { Reactor.Action.selectedDay($0) }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    self.selectedID
+      .map { Reactor.Action.selectedId($0) }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
@@ -159,9 +165,12 @@ class TodoViewController: BaseViewController, View {
       .subscribe(onNext: { [weak self] indexPath in
         guard let self = self else { return }
         
-        guard let reactor = self.reactor?.reactorForTaskEdit(indexPath: indexPath) else { return }
+        guard let editReactor = self.reactor?.reactorForTaskEdit(indexPath: indexPath) else { return }
+        let id = editReactor.currentState.task.id
+        editReactor.todoRelay = reactor.todoRelay
+        self.selectedID.accept(id)
         
-        let editVC = TaskEditViewController(reactor)
+        let editVC = TaskEditViewController(editReactor)
         editVC.modalPresentationStyle = .custom
         editVC.transitioningDelegate = self
         self.present(editVC, animated: true)

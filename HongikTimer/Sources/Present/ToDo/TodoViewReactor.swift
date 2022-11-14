@@ -13,7 +13,7 @@ import URLNavigator
 
 typealias TaskListSection = SectionModel<TaskHeaderCellReactor, TaskCellReactor>
 
-enum TaskEditViewCancelAlertAction: AlertActionType {
+enum TaskEditAlertAction: AlertActionType {
   case leave
   case submit
   
@@ -38,14 +38,18 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   
   enum Action {
     case load
-    case selectDay(Date)
+    case selectedDay(Date)
+    case selectedId(String)
   }
   
   enum Mutation {
-//    case setSections([TaskListSection])
     case setTasks([Task])
     case setSelectedDayList(Date)
+    case selectedId(String)
+    
     case insertSectionItem(IndexPath, TaskListSection.Item, Task)
+    case deleteSectionItem(IndexPath)
+    case updateSectionItem(IndexPath, TaskListSection.Item)
     
   }
   
@@ -54,6 +58,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     
     var tasks: [Task]
     var selectedDay: Date = Date()
+    var selectedId: String = ""
   }
   
   let provider: ServiceProviderType
@@ -82,25 +87,36 @@ final class TodoViewReactor: Reactor, BaseReactorType {
           return .setTasks(tasks)
         }
       
-    case let .selectDay(date):
+    case let .selectedDay(date):
       print(date)
       return .just(.setSelectedDayList(date))
+      
+    case let .selectedId(id):
+      return .just(.selectedId(id))
+      
     }
   }
   
   func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+    
     let headerEventMutation = self.provider.todoService.headerEvent
       .flatMap { [weak self] headerEvent -> Observable<Mutation> in
         self?.mutate(headerEvent: headerEvent) ?? .empty()
       }
-    return Observable.of(mutation, headerEventMutation).merge()
+    
+    let taskEditEventMutation = self.provider.todoService.editEvent
+      .flatMap { [weak self] editEvent -> Observable<Mutation> in
+        self?.mutate(editEvent: editEvent) ?? .empty()
+      }
+    
+    return Observable.of(mutation, headerEventMutation, taskEditEventMutation).merge()
   }
   
   func mutate(headerEvent: HeaderEvent) -> Observable<Mutation> {
     switch headerEvent {
     case .create:
       let observer = Observable.create { observer in
-        let actions: [TaskEditViewCancelAlertAction] = [.leave, .submit]
+        let actions: [TaskEditAlertAction] = [.leave, .submit]
         let alert = UIAlertController(title: "Todo", message: nil, preferredStyle: .alert)
         for action in actions {
           let alerAction = UIAlertAction(title: action.title, style: action.style) { _ in
@@ -118,7 +134,6 @@ final class TodoViewReactor: Reactor, BaseReactorType {
           }
           .disposed(by: self.disposebag)
         }
-        //        alert.textFields[0]
         Navigator().present(alert)
         return Disposables.create {
           alert.dismiss(animated: true)
@@ -129,8 +144,10 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       return observer
         .flatMap { alertAction -> Observable<Mutation> in
           switch alertAction {
+            
           case .leave:
             return .empty()
+            
           case .submit:
             let count = self.currentState.sections[0].items.count
             let indexPath = IndexPath(item: count, section: 0)
@@ -142,9 +159,34 @@ final class TodoViewReactor: Reactor, BaseReactorType {
             )
             return self.provider.todoService.create(contents: self.todoRelay.value)
               .map { _ in .insertSectionItem(indexPath, reactor, task) }
-            
           }
         }
+    }
+  }
+  
+  func mutate(editEvent: EditEvent) -> Observable<Mutation> {
+    let state = self.currentState
+    
+    switch editEvent {
+    case .delete:
+      guard let indexPath = self.indexPath(
+        forTaskID: state.selectedId,
+        from: state
+      ) else { return .empty() }
+      return .just(.deleteSectionItem(indexPath))
+      
+    case .edit:
+      guard let indexPath = self.indexPath(
+        forTaskID: state.selectedId,
+        from: state
+      ) else { return .empty() }
+      
+      var task = (currentState.tasks.filter { $0.id == currentState.selectedId })[0]
+      task.contents = self.todoRelay.value
+      
+      let reactor = TaskCellReactor(self.provider, user: user, task: task)
+      return .just(.updateSectionItem(indexPath, reactor))
+      
     }
   }
   
@@ -156,9 +198,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     case let .insertSectionItem(indexPath, sectionItem, task):
       state.sections.insert(sectionItem, at: indexPath)
       state.tasks.insert(task, at: state.tasks.count)
-      
-      
-      return state
+    
     case let .setTasks(tasks):
       let currentTasks = tasks.filter { $0.date == dateFormatter.string(from: Date())}
       
@@ -177,6 +217,19 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       let sectionModel = TaskHeaderCellReactor(self.provider, user: self.user)
       let section = TaskListSection(model: sectionModel, items: sectionItems)
       state.sections = [section]
+    
+    case let .selectedId(id):
+      state.selectedId = id
+    
+    case let .deleteSectionItem(indexPath):
+      state.sections.remove(at: indexPath)
+      state.tasks = state.tasks.filter { $0.id != state.selectedId }
+    case let .updateSectionItem(indexPath, sectionItem):
+      state.sections[indexPath] = sectionItem
+      
+      if let index = state.tasks.firstIndex(where: { $0.id == state.selectedId }) {
+        state.tasks[index].contents = todoRelay.value
+      }
     }
     return state
   }
@@ -185,6 +238,17 @@ final class TodoViewReactor: Reactor, BaseReactorType {
 // MARK: - Method
 
 extension TodoViewReactor {
+  
+  private func indexPath(forTaskID taskID: String, from state: State) -> IndexPath? {
+    let section = 0
+    let item = state.sections[section].items.firstIndex { reactor in reactor.currentState.task.id == taskID }
+    if let item = item {
+      return IndexPath(item: item, section: section)
+    } else {
+      return nil
+    }
+  }
+  
   func reactorForTaskEdit(indexPath: IndexPath) -> TaskEditViewReactor {
     return TaskEditViewReactor(
       provider: self.provider,

@@ -65,10 +65,29 @@ final class TaskEditViewController: BaseViewController, View {
   
   func bind(reactor: TaskEditViewReactor) {
     
+    // action
+    deleteButton.rx.tap
+      .map { Reactor.Action.delete }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    editButton.rx.tap
+      .map { Reactor.Action.edit }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
     // state
     reactor.state.asObservable().map { $0.task }
       .subscribe(onNext: { [weak self] task in
         self?.todoLabel.text = task.contents
+      })
+      .disposed(by: self.disposeBag)
+    
+    reactor.state.asObservable().map { $0.isDismissed }
+      .distinctUntilChanged()
+      .filter { $0 }
+      .subscribe(onNext: { [weak self] _ in
+        self?.dismiss(animated: true)
       })
       .disposed(by: self.disposeBag)
   }

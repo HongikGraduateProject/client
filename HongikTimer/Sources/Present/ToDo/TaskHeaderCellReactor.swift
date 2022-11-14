@@ -16,7 +16,7 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
   }
   
   enum Mutation {
-    case plusTask
+    case empty
   }
   
   struct State {
@@ -41,9 +41,7 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
     switch action {
     case .plusTask:
       return self.provider.todoService.tapCreateButton()
-        .map { _ in .plusTask }
-      
+        .map { .empty }
     }
-    
   }
 }
