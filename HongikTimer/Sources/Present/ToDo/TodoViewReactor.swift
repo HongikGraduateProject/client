@@ -44,12 +44,10 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     case setSections([TaskListSection])
     case insertSectionItem(IndexPath, TaskListSection.Item)
     
-    //    case presentCreate
   }
   
   struct State {
     var sections: [TaskListSection]
-    @Pulse var presentTextField: Bool = false
   }
   
   let provider: ServiceProviderType
@@ -104,7 +102,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
           textField.placeholder = "할일을 입력하세요!"
         
           textField.rx.text.orEmpty.subscribe { [weak self] in
-            guard let self = self else { return }
+            guard let self = self else { return } 
             self.todoRelay.accept($0)
           }
           .disposed(by: self.disposebag)

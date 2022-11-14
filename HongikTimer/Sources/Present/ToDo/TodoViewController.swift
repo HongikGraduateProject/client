@@ -16,7 +16,6 @@ import FSCalendar
 import Then
 import SnapKit
 
-
 class TodoViewController: BaseViewController, View {
   
   // MARK: - Constant
@@ -162,26 +161,7 @@ class TodoViewController: BaseViewController, View {
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
-    
-    //    reactor.pulse(\.$presentTextField)
-    //      .subscribe(onNext: { [weak self] _ in
-    //        guard let self = self else { return }
-    //
-    //        let alertController = UIAlertController(title: "Todo", message: nil, preferredStyle: .alert)
-    //        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-    //        let submitAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
-    //          guard let self = self else { return }
-    //          self.reloadRelay.accept(Void())
-    //        }
-    //
-    //        alertController.addTextField { textField in
-    //          textField.placeholder = "할일을 입력해 주세요!"
-    //        }
-    //        [cancelAction, submitAction].forEach { alertController.addAction($0) }
-    //
-    //        self.present(alertController, animated: true)
-    //      })
-    //      .disposed(by: self.disposeBag)
+
     
     // delegate
     
@@ -380,8 +360,5 @@ extension TodoViewController {
     self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
   }
 }
-
-
-
 
 // TODO: 주 / 월 단위 상태관리해서 next month / next week 구별하기
