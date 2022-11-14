@@ -12,8 +12,6 @@ final class TaskEditViewController: UIViewController {
   private var hasSetPointOrigin = false
   private var pointOrigin: CGPoint?
   
-  var editCompletion: (() -> Void)?
-  
   private lazy var sliderIndicator = UIView().then {
     $0.backgroundColor = .systemGray
     $0.layer.cornerRadius = 2

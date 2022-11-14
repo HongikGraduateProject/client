@@ -49,11 +49,8 @@
 		2793C15C28F6A2A000FC7D13 /* AuthApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */; };
 		27A977A328E208020076FF80 /* NotToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977A228E208020076FF80 /* NotToDoViewController.swift */; };
 		27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AA28E331D70076FF80 /* TaskCell.swift */; };
-		27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977AE28E33A530076FF80 /* HeaderView.swift */; };
 		27A977B128E34E130076FF80 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B028E34E130076FF80 /* Identifier.swift */; };
 		27A977B328E3501A0076FF80 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B228E3501A0076FF80 /* Task.swift */; };
-		27A977B528E363880076FF80 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B428E363880076FF80 /* WeekView.swift */; };
-		27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A977B628E3689C0076FF80 /* TaskCollectionView.swift */; };
 		27B471B628D0A9D900805F79 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B528D0A9D900805F79 /* NotificationViewController.swift */; };
 		27B471B828D0ABAA00805F79 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B728D0ABAA00805F79 /* ItemViewController.swift */; };
 		27B471BA28D0ACC700805F79 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471B928D0ACC700805F79 /* NotificationCell.swift */; };
@@ -195,11 +192,8 @@
 		2793C15B28F6A2A000FC7D13 /* AuthApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiService.swift; sourceTree = "<group>"; };
 		27A977A228E208020076FF80 /* NotToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotToDoViewController.swift; sourceTree = "<group>"; };
 		27A977AA28E331D70076FF80 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
-		27A977AE28E33A530076FF80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		27A977B028E34E130076FF80 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		27A977B228E3501A0076FF80 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		27A977B428E363880076FF80 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
-		27A977B628E3689C0076FF80 /* TaskCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionView.swift; sourceTree = "<group>"; };
 		27B471B528D0A9D900805F79 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		27B471B728D0ABAA00805F79 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		27B471B928D0ACC700805F79 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -512,18 +506,8 @@
 		27A977B928E368D30076FF80 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				27A977BA28E368E50076FF80 /* WeekView */,
-				27C3DF9728E369AA00B458CD /* TaskView */,
 			);
 			path = SubViews;
-			sourceTree = "<group>";
-		};
-		27A977BA28E368E50076FF80 /* WeekView */ = {
-			isa = PBXGroup;
-			children = (
-				27A977B428E363880076FF80 /* WeekView.swift */,
-			);
-			path = WeekView;
 			sourceTree = "<group>";
 		};
 		27B471AF28D0A14E00805F79 /* Setting */ = {
@@ -641,15 +625,6 @@
 				ED7D72B2291CD7B0006A3887 /* AlertService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		27C3DF9728E369AA00B458CD /* TaskView */ = {
-			isa = PBXGroup;
-			children = (
-				27A977B628E3689C0076FF80 /* TaskCollectionView.swift */,
-				27A977AE28E33A530076FF80 /* HeaderView.swift */,
-			);
-			path = TaskView;
 			sourceTree = "<group>";
 		};
 		DC59D37AD871089D6B979296 /* Pods */ = {
@@ -1111,7 +1086,6 @@
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
 				27615A8328D450B80099DB00 /* SeparatorView.swift in Sources */,
 				2750A40928D02BE9000EE24D /* TabBarViewController.swift in Sources */,
-				27A977AF28E33A530076FF80 /* HeaderView.swift in Sources */,
 				EDF3A8B829125E9300A7C980 /* GroupDetailCell.swift in Sources */,
 				2793C12628F49F9100FC7D13 /* UIView+Extension.swift in Sources */,
 				2793C15228F694C100FC7D13 /* ApiClient.swift in Sources */,
@@ -1165,9 +1139,7 @@
 				EDF3A89A29120F7C00A7C980 /* AutoSlideCollectionViewCell.swift in Sources */,
 				2793C15728F6986F00FC7D13 /* ApiLogger.swift in Sources */,
 				27B471C928D1BAC300805F79 /* EmailSignUpViewController.swift in Sources */,
-				27A977B728E3689C0076FF80 /* TaskCollectionView.swift in Sources */,
 				ED2402E22920BF00000DF54C /* TodoViewReactor.swift in Sources */,
-				27A977B528E363880076FF80 /* WeekView.swift in Sources */,
 				ED7D72B3291CD7B0006A3887 /* AlertService.swift in Sources */,
 				EDF3A89829120F7C00A7C980 /* BoardCollectionHeaderView.swift in Sources */,
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,

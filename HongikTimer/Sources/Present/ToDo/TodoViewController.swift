@@ -157,9 +157,17 @@ class TodoViewController: BaseViewController, View {
     
     self.taskCollectionView.rx.itemSelected
       .subscribe(onNext: { [weak self] indexPath in
-       
-        let vc =
+        
+        print("DEBUG: \(indexPath)")
+        
+        guard let self = self else { return }
+        
+        let editVC = TaskEditViewController()
+        editVC.modalPresentationStyle = .custom
+        editVC.transitioningDelegate = self
+        self.present(editVC, animated: true)
       })
+      .disposed(by: self.disposeBag)
   
     // state
     
