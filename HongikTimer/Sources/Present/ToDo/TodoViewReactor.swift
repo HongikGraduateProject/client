@@ -42,8 +42,9 @@ final class TodoViewReactor: Reactor, BaseReactorType {
   
   enum Mutation {
     case setSections([TaskListSection])
+    case insertSectionItem(IndexPath, TaskListSection.Item)
     
-//    case presentCreate
+    //    case presentCreate
   }
   
   struct State {
@@ -101,8 +102,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
         }
         alert.addTextField { textField in
           textField.placeholder = "할일을 입력하세요!"
-          
-          //          todoRelay.accept(textField.rx.text)
+        
           textField.rx.text.orEmpty.subscribe { [weak self] in
             guard let self = self else { return }
             self.todoRelay.accept($0)
@@ -122,10 +122,12 @@ final class TodoViewReactor: Reactor, BaseReactorType {
           case .leave:
             return .empty()
           case .stay:
-            print(self.todoRelay.value)
-            self.provider.todoService.create(contents: self.todoRelay.value)
+            let count = self.currentState.sections[0].items.count
+            let indexPath = IndexPath(item: count, section: 0)
+            let reactor = TaskCellReactor(self.provider, user: self.user, task: Task(contents: self.todoRelay.value))
+            return self.provider.todoService.create(contents: self.todoRelay.value)
+              .map { _ in .insertSectionItem(indexPath, reactor) }
             
-            return .empty()
           }
         }
     }
@@ -140,12 +142,12 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       
       print("리로로로로롤들 하빈다.")
       
-//    case .presentCreate:
-//      state.presentTextField = true
+      //    case .presentCreate:
+      //      state.presentTextField = true
+    case let .insertSectionItem(indexPath, sectionItem):
+      state.sections.insert(sectionItem, at: indexPath)
+      
     }
-    
     return state
   }
 }
-
-// MARK: - Method
