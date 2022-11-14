@@ -503,6 +503,7 @@
 				ED2402E32920C0F9000DF54C /* TaskCellReactor.swift */,
 				ED2402E62920DEE3000DF54C /* TaskHeaderCell.swift */,
 				ED2402E52920DEE3000DF54C /* TaskHeaderCellReactor.swift */,
+				2793C12928F5233900FC7D13 /* TaskEditView */,
 				27A977B928E368D30076FF80 /* SubViews */,
 			);
 			path = ToDo;
@@ -513,7 +514,6 @@
 			children = (
 				27A977BA28E368E50076FF80 /* WeekView */,
 				27C3DF9728E369AA00B458CD /* TaskView */,
-				2793C12928F5233900FC7D13 /* TaskEditView */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";

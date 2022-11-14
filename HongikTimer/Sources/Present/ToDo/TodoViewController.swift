@@ -33,8 +33,8 @@ class TodoViewController: BaseViewController, View {
   
   // MARK: - Property
   
-  let reloadRelay = PublishRelay<Void>()
-  
+  let selectedDay = PublishRelay<Date>()
+
   let dataSource = RxCollectionViewSectionedReloadDataSource<TaskListSection>(configureCell: {
     _, collectionView,
     indexPath, reactor in
@@ -90,7 +90,6 @@ class TodoViewController: BaseViewController, View {
   private lazy var rightButton = UIButton().then {
     $0.setImage(Icon.rightIcon, for: .normal)
     $0.addTarget(self, action: #selector(tapNextWeek), for: .touchUpInside)
-    
   }
   
   private lazy var headerLabel = UILabel().then { [weak self] in
@@ -146,23 +145,28 @@ class TodoViewController: BaseViewController, View {
     
     // action
     
-    self.reloadRelay
-      .map { Reactor.Action.refresh }
-      .bind(to: reactor.action)
-      .disposed(by: self.disposeBag)
-    
     self.rx.viewDidLoad
-      .map { Reactor.Action.refresh }
+      .map { Reactor.Action.load }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
+    self.selectedDay
+      .map { Reactor.Action.selectDay($0) }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    self.taskCollectionView.rx.itemSelected
+      .subscribe(onNext: { [weak self] indexPath in
+       
+        let vc =
+      })
+  
     // state
     
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
 
-    
     // delegate
     
     taskCollectionView.rx.setDelegate(self)
@@ -202,6 +206,11 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FSCalendar
 
 extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+  
+  func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    self.selectedDay.accept(date)
+  }
+  
   func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
     calendarView.snp.updateConstraints {
       $0.height.equalTo(bounds.height)
