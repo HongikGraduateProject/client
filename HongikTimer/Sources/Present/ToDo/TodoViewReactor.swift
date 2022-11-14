@@ -124,6 +124,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
           alert.dismiss(animated: true)
         }
       }
+      
       // TODO: weak self?
       return observer
         .flatMap { alertAction -> Observable<Mutation> in
@@ -156,6 +157,7 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       state.sections.insert(sectionItem, at: indexPath)
       state.tasks.insert(task, at: state.tasks.count)
       
+      
       return state
     case let .setTasks(tasks):
       let currentTasks = tasks.filter { $0.date == dateFormatter.string(from: Date())}
@@ -177,5 +179,15 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       state.sections = [section]
     }
     return state
+  }
+}
+
+// MARK: - Method
+
+extension TodoViewReactor {
+  func reactorForTaskEdit(indexPath: IndexPath) -> TaskEditViewReactor {
+    return TaskEditViewReactor(
+      provider: self.provider,
+      user: self.user, task: currentState.tasks[indexPath.item])
   }
 }

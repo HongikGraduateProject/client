@@ -46,13 +46,4 @@ final class TaskHeaderCellReactor: Reactor, BaseReactorType {
     }
     
   }
-  
-  func reduce(state: State, mutation: Mutation) -> State {
-    var state = state
-    switch mutation {
-    case .plusTask:
-      print("tapppppppp")
-    }
-    return state
-  }
 }

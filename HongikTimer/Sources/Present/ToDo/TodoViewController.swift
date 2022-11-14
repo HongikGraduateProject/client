@@ -157,12 +157,11 @@ class TodoViewController: BaseViewController, View {
     
     self.taskCollectionView.rx.itemSelected
       .subscribe(onNext: { [weak self] indexPath in
-        
-        print("DEBUG: \(indexPath)")
-        
         guard let self = self else { return }
         
-        let editVC = TaskEditViewController()
+        guard let reactor = self.reactor?.reactorForTaskEdit(indexPath: indexPath) else { return }
+        
+        let editVC = TaskEditViewController(reactor)
         editVC.modalPresentationStyle = .custom
         editVC.transitioningDelegate = self
         self.present(editVC, animated: true)

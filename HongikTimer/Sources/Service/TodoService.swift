@@ -12,11 +12,17 @@ enum HeaderEvent {
   case create
 }
 
+enum EditEvent {
+  case delete
+  case edit
+}
+
 final class TodoService {
   
   let userDefaultservice = UserDefaultService.shared
   
   let headerEvent = PublishSubject<HeaderEvent>()
+  let editEvent = PublishSubject<EditEvent>()
   
   func fetchTask() -> Observable<[Task]> {
     if let savedTasks = userDefaultservice.getTasks() {
@@ -45,8 +51,20 @@ final class TodoService {
       }
   }
   
+  // MARK: - Header Event
   func tapCreateButton() -> Observable<Void> {
     self.headerEvent.onNext(.create)
+    return .empty()
+  }
+  
+  // MARK: - Edit Event
+  func tapEditButton() -> Observable<Void> {
+    self.editEvent.onNext(.edit)
+    return .empty()
+  }
+  
+  func tapDeleteButton() -> Observable<Void> {
+    self.editEvent.onNext(.delete)
     return .empty()
   }
 }
