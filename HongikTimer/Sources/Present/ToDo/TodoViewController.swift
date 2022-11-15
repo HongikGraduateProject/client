@@ -79,16 +79,17 @@ class TodoViewController: BaseViewController, View {
     $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: 12.0,
                                       bottom: 0, right: 0)
     $0.layer.cornerRadius = 4.0
-//    $0.addTarget(self, action: #selector(tapToggleButton), for: .touchUpInside)
     
   }
   
   private lazy var leftButton = UIButton().then {
     $0.setImage(Icon.leftIcon, for: .normal)
+    $0.addTarget(self, action: #selector(tapLeftButton), for: .touchUpInside)
   }
   
   private lazy var rightButton = UIButton().then {
     $0.setImage(Icon.rightIcon, for: .normal)
+    $0.addTarget(self, action: #selector(tapRightButton), for: .touchUpInside)
   }
   
   private lazy var headerLabel = UILabel().then { [weak self] in
@@ -185,10 +186,6 @@ class TodoViewController: BaseViewController, View {
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
-<<<<<<< HEAD
-
-    
-=======
     
     reactor.state.asObservable().map { $0.isWeekScope }
       .distinctUntilChanged()
@@ -202,8 +199,6 @@ class TodoViewController: BaseViewController, View {
           self.toggleButton.setImage(Icon.downIcon, for: .normal)
           self.headerLabel.text = self.headerDateFormatter.string(from: self.calendarView.currentPage)
           
-          self.rightButton.addTarget(self, action: #selector(self.tapNextWeek), for: .touchUpInside)
-          self.leftButton.addTarget(self, action: #selector(self.tapBeforeWeek), for: .touchUpInside)
 
         } else {
           self.calendarView.setScope(.month, animated: true)
@@ -214,14 +209,11 @@ class TodoViewController: BaseViewController, View {
           self.toggleButton.setTitle("월", for: .normal)
           self.toggleButton.setImage(Icon.upIcon, for: .normal)
           self.headerLabel.text = self.headerDateFormatter.string(from: self.calendarView.currentPage)
-          
-          self.rightButton.addTarget(self, action: #selector(self.tapNextMonth), for: .touchUpInside)
-          self.leftButton.addTarget(self, action: #selector(self.tapBeforeMonth), for: .touchUpInside)
+
         }
       })
       .disposed(by: self.disposeBag)
 
->>>>>>> feature/Todo
     // delegate
     
     taskCollectionView.rx.setDelegate(self)
@@ -423,20 +415,44 @@ extension TodoViewController {
     }
   }
   
-  @objc func tapNextWeek() {
-    self.calendarView.setCurrentPage(getNextWeek(date: calendarView.currentPage), animated: true)
+//  @objc func tapNextWeek() {
+//    print(calendarView.currentPage)
+//    print(getNextWeek(date: calendarView.currentPage))
+//    self.calendarView.setCurrentPage(getNextWeek(date: calendarView.currentPage), animated: true)
+//  }
+//
+//  @objc func tapBeforeWeek() {
+//    print(calendarView.currentPage)
+//    print(getPreviousWeek(date: calendarView.currentPage))
+//    self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
+//  }
+//
+//  @objc func tapNextMonth() {
+//    print(calendarView.currentPage)
+//    print(getNextMonth(date: calendarView.currentPage))
+//    self.calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
+//  }
+//
+//  @objc func tapBeforeMonth() {
+//    print(calendarView.currentPage)
+//    print(getPreviousMonth(date: calendarView.currentPage))
+//    self.calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
+//  }
+  
+  @objc func tapLeftButton() {
+    if self.reactor?.currentState.isWeekScope == true {
+      self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
+    } else {
+      self.calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
+    }
   }
   
-  @objc func tapBeforeWeek() {
-    self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
-  }
-  
-  @objc func tapNextMonth() {
-    self.calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
-  }
-  
-  @objc func tapBeforeMonth() {
-    self.calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
+  @objc func tapRightButton() {
+    if self.reactor?.currentState.isWeekScope == true {
+      self.calendarView.setCurrentPage(getNextWeek(date: calendarView.currentPage), animated: true)
+    } else {
+      self.calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
+    }
   }
 }
 
