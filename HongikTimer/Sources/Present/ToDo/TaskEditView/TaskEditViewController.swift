@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import Then
+import ReactorKit
 
-final class TaskEditViewController: UIViewController {
+final class TaskEditViewController: BaseViewController, View {
+  
+  // MARK: - Property
   
   private var hasSetPointOrigin = false
   private var pointOrigin: CGPoint?
-  
-  var editCompletion: (() -> Void)?
+    
+  // MARK: - UI
   
   private lazy var sliderIndicator = UIView().then {
     $0.backgroundColor = .systemGray
@@ -20,32 +24,16 @@ final class TaskEditViewController: UIViewController {
   }
   
   private lazy var todoLabel = UILabel().then {
-    $0.text = "라벨입니다."
     $0.font = .systemFont(
-      ofSize: 16.0,
-      weight: .bold
+      ofSize: 16.0
     )
     $0.textColor = .label
   }
   
-  private lazy var editButton = UIButton().then {
-    $0.setTitle("수정", for: .normal)
-    $0.setTitleColor(.label, for: .normal)
-    $0.backgroundColor = .systemGray4
-    $0.layer.cornerRadius = 10.0
-//    $0.addTarget(self, action: #selector(tapEditButton), for: .touchUpInside)
-  }
-  
-  private lazy var deleteButton = UIButton().then {
-    $0.setTitle("삭제", for: .normal)
-    $0.setTitleColor(.label, for: .normal)
-    $0.backgroundColor = .systemGray4
-    $0.layer.cornerRadius = 10.0
-//    $0.addTarget(self, action: #selector(tapDeleteButton), for: .touchUpInside)
-  }
+  private lazy var editButton = UIButton()
+  private lazy var deleteButton = UIButton()
   
   // MARK: - Lifecycle
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -62,25 +50,69 @@ final class TaskEditViewController: UIViewController {
   
   // MARK: - Init
   
-//  init(_ taskViewModel: TaskViewModel, indexPath: IndexPath) {
-//    self.taskVM = taskViewModel
-//    self.indexPath = indexPath
-//    super.init(nibName: nil, bundle: nil)
-//
-//    print("DEBUG edit view의 todo는 \(taskViewModel.contents)")
-//  }
+  init(_ reactor: TaskEditViewReactor) {
+    super.init()
+    
+    self.reactor = reactor
+  }
   
+  required convenience init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
+  // MARK: - Binding
   
-//  required init?(coder: NSCoder) {
-//    fatalError("init(coder:) has not been implemented")
-//  }
+  func bind(reactor: TaskEditViewReactor) {
+    
+    // action
+    deleteButton.rx.tap
+      .map { Reactor.Action.delete }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    editButton.rx.tap
+      .map { Reactor.Action.edit }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    // state
+    reactor.state.asObservable().map { $0.task }
+      .subscribe(onNext: { [weak self] task in
+        self?.todoLabel.text = task.contents
+      })
+      .disposed(by: self.disposeBag)
+    
+    reactor.state.asObservable().map { $0.isDismissed }
+      .distinctUntilChanged()
+      .filter { $0 }
+      .subscribe(onNext: { [weak self] _ in
+        self?.dismiss(animated: true)
+      })
+      .disposed(by: self.disposeBag)
+  }
 }
 
 // MARK: - Private
 
 private extension TaskEditViewController {
   func setupLayout() {
+    
+    var config = UIButton.Configuration.filled()
+    config.baseBackgroundColor = .systemGray4
+    config.baseForegroundColor = .label
+    
+    config.imagePlacement = .top
+    config.imagePadding = 4.0
+    config.titlePadding = 4.0
+    
+    editButton.configuration = config
+    editButton.configuration?.title = "수정"
+    editButton.configuration?.image = UIImage(named: "pencil")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+    
+    deleteButton.configuration = config
+    deleteButton.configuration?.title = "삭제"
+    deleteButton.configuration?.image = UIImage(named: "trashCan")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    
     view.backgroundColor = .systemBackground
     
     let buttonStackView = UIStackView(
@@ -115,7 +147,6 @@ private extension TaskEditViewController {
     buttonStackView.snp.makeConstraints {
       $0.top.equalTo(todoLabel.snp.bottom).offset(16.0)
       $0.leading.trailing.equalTo(todoLabel)
-      $0.height.equalTo(32.0)
     }
   }
   
@@ -150,14 +181,4 @@ private extension TaskEditViewController {
       }
     }
   }
-  
-//  @objc func tapEditButton() {
-//    dismiss(animated: true)
-//    TodoNotificationService.shared.postEdit(indexPath)
-//  }
-//
-//  @objc func tapDeleteButton() {
-//    dismiss(animated: true)
-//    TodoNotificationService.shared.postRemove(indexPath)
-//  }
 }

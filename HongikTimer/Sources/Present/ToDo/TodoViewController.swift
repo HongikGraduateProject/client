@@ -16,7 +16,6 @@ import FSCalendar
 import Then
 import SnapKit
 
-
 class TodoViewController: BaseViewController, View {
   
   // MARK: - Constant
@@ -34,8 +33,9 @@ class TodoViewController: BaseViewController, View {
   
   // MARK: - Property
   
-  let reloadRelay = PublishRelay<Void>()
-  
+  let selectedDay = PublishRelay<Date>()
+  let selectedID = PublishRelay<String>()
+
   let dataSource = RxCollectionViewSectionedReloadDataSource<TaskListSection>(configureCell: {
     _, collectionView,
     indexPath, reactor in
@@ -79,19 +79,16 @@ class TodoViewController: BaseViewController, View {
     $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: 12.0,
                                       bottom: 0, right: 0)
     $0.layer.cornerRadius = 4.0
-    $0.addTarget(self, action: #selector(tapToggleButton), for: .touchUpInside)
+//    $0.addTarget(self, action: #selector(tapToggleButton), for: .touchUpInside)
     
   }
   
   private lazy var leftButton = UIButton().then {
     $0.setImage(Icon.leftIcon, for: .normal)
-    $0.addTarget(self, action: #selector(tapBeforeWeek), for: .touchUpInside)
   }
   
   private lazy var rightButton = UIButton().then {
     $0.setImage(Icon.rightIcon, for: .normal)
-    $0.addTarget(self, action: #selector(tapNextWeek), for: .touchUpInside)
-    
   }
   
   private lazy var headerLabel = UILabel().then { [weak self] in
@@ -147,23 +144,84 @@ class TodoViewController: BaseViewController, View {
     
     // action
     
-    self.reloadRelay
-      .map { Reactor.Action.refresh }
-      .bind(to: reactor.action)
-      .disposed(by: self.disposeBag)
-    
     self.rx.viewDidLoad
-      .map { Reactor.Action.refresh }
+      .map { Reactor.Action.load }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
+    self.selectedDay
+      .map { Reactor.Action.selectedDay($0) }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    self.selectedID
+      .map { Reactor.Action.selectedId($0) }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    self.toggleButton.rx.tap
+      .map { Reactor.Action.tapToggle }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+    
+    self.taskCollectionView.rx.itemSelected
+      .subscribe(onNext: { [weak self] indexPath in
+        guard let self = self else { return }
+        
+        guard let editReactor = self.reactor?.reactorForTaskEdit(indexPath: indexPath) else { return }
+        let id = editReactor.currentState.task.id
+        editReactor.todoRelay = reactor.todoRelay
+        self.selectedID.accept(id)
+        
+        let editVC = TaskEditViewController(editReactor)
+        editVC.modalPresentationStyle = .custom
+        editVC.transitioningDelegate = self
+        self.present(editVC, animated: true)
+      })
+      .disposed(by: self.disposeBag)
+  
     // state
     
     reactor.state.asObservable().map { $0.sections }
       .bind(to: self.taskCollectionView.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
+<<<<<<< HEAD
 
     
+=======
+    
+    reactor.state.asObservable().map { $0.isWeekScope }
+      .distinctUntilChanged()
+      .subscribe(onNext: { [weak self] in
+        guard let self = self else { return }
+        if $0 == true {
+          self.calendarView.setScope(.week, animated: true)
+
+          self.headerDateFormatter.dateFormat = "YYYY년 MM월 W주차"
+          self.toggleButton.setTitle("주", for: .normal)
+          self.toggleButton.setImage(Icon.downIcon, for: .normal)
+          self.headerLabel.text = self.headerDateFormatter.string(from: self.calendarView.currentPage)
+          
+          self.rightButton.addTarget(self, action: #selector(self.tapNextWeek), for: .touchUpInside)
+          self.leftButton.addTarget(self, action: #selector(self.tapBeforeWeek), for: .touchUpInside)
+
+        } else {
+          self.calendarView.setScope(.month, animated: true)
+
+          self.calendarView.scope = .month
+          self.calendarView.setScope(.month, animated: true)
+          self.headerDateFormatter.dateFormat = "YYYY년 MM월"
+          self.toggleButton.setTitle("월", for: .normal)
+          self.toggleButton.setImage(Icon.upIcon, for: .normal)
+          self.headerLabel.text = self.headerDateFormatter.string(from: self.calendarView.currentPage)
+          
+          self.rightButton.addTarget(self, action: #selector(self.tapNextMonth), for: .touchUpInside)
+          self.leftButton.addTarget(self, action: #selector(self.tapBeforeMonth), for: .touchUpInside)
+        }
+      })
+      .disposed(by: self.disposeBag)
+
+>>>>>>> feature/Todo
     // delegate
     
     taskCollectionView.rx.setDelegate(self)
@@ -203,6 +261,11 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FSCalendar
 
 extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+  
+  func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    self.selectedDay.accept(date)
+  }
+  
   func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
     calendarView.snp.updateConstraints {
       $0.height.equalTo(bounds.height)
@@ -224,7 +287,6 @@ extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
     calendarView.select(Date())
     
     calendarView.locale = Locale(identifier: "ko_KR")
-    calendarView.scope = .week
     
     calendarView.appearance.headerDateFormat = "YYYY년 MM월 W주차"
     calendarView.appearance.headerTitleColor = .clear
@@ -261,6 +323,14 @@ extension TodoViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
   
   func getPreviousWeek(date: Date) -> Date {
     return  Calendar.current.date(byAdding: .weekOfMonth, value: -1, to: date)!
+  }
+  
+  func getNextMonth(date: Date) -> Date {
+    return  Calendar.current.date(byAdding: .month, value: 1, to: date)!
+  }
+  
+  func getPreviousMonth(date: Date) -> Date {
+    return  Calendar.current.date(byAdding: .month, value: -1, to: date)!
   }
 }
 
@@ -360,9 +430,14 @@ extension TodoViewController {
   @objc func tapBeforeWeek() {
     self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
   }
+  
+  @objc func tapNextMonth() {
+    self.calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
+  }
+  
+  @objc func tapBeforeMonth() {
+    self.calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
+  }
 }
-
-
-
 
 // TODO: 주 / 월 단위 상태관리해서 next month / next week 구별하기
