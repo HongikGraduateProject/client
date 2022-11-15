@@ -40,6 +40,8 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     case load
     case selectedDay(Date)
     case selectedId(String)
+    
+    case tapToggle
   }
   
   enum Mutation {
@@ -50,6 +52,8 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     case insertSectionItem(IndexPath, TaskListSection.Item, Task)
     case deleteSectionItem(IndexPath)
     case updateSectionItem(IndexPath, TaskListSection.Item)
+    case updateCheckedSectionItem(IndexPath, TaskListSection.Item)
+    case tapToggle
     
   }
   
@@ -59,12 +63,15 @@ final class TodoViewReactor: Reactor, BaseReactorType {
     var tasks: [Task]
     var selectedDay: Date = Date()
     var selectedId: String = ""
+    
+    var isWeekScope: Bool = true
   }
   
   let provider: ServiceProviderType
   let user: User
   let initialState: State
   let todoRelay = BehaviorRelay<String>(value: "")
+  let checkedCellIdRelay = BehaviorRelay<String>(value: "")
   let dateFormatter = DateFormatter().then {
     $0.dateFormat = "yyyy-MM-dd"
     $0.locale = Locale(identifier: "ko_kr")
@@ -88,12 +95,13 @@ final class TodoViewReactor: Reactor, BaseReactorType {
         }
       
     case let .selectedDay(date):
-      print(date)
       return .just(.setSelectedDayList(date))
       
     case let .selectedId(id):
       return .just(.selectedId(id))
       
+    case .tapToggle:
+      return .just(.tapToggle)
     }
   }
   
@@ -155,7 +163,8 @@ final class TodoViewReactor: Reactor, BaseReactorType {
             let reactor = TaskCellReactor(
               self.provider,
               user: self.user,
-              task: task
+              task: task,
+              checkRelay: self.checkedCellIdRelay
             )
             return self.provider.todoService.create(contents: self.todoRelay.value)
               .map { _ in .insertSectionItem(indexPath, reactor, task) }
@@ -184,9 +193,25 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       var task = (currentState.tasks.filter { $0.id == currentState.selectedId })[0]
       task.contents = self.todoRelay.value
       
-      let reactor = TaskCellReactor(self.provider, user: user, task: task)
+      let reactor = TaskCellReactor(
+        self.provider,
+        user: user,
+        task: task,
+        checkRelay: self.checkedCellIdRelay
+      )
       return .just(.updateSectionItem(indexPath, reactor))
       
+    case .check:
+      guard let indexPath = self.indexPath(forTaskID: checkedCellIdRelay.value, from: state) else { return .empty() }
+      var task = state.sections[indexPath].currentState.task
+      task.isChecked?.toggle()
+      let reactor = TaskCellReactor(
+        self.provider,
+        user: self.user,
+        task: task,
+        checkRelay: self.checkedCellIdRelay
+      )
+      return .just(.updateCheckedSectionItem(indexPath, reactor))
     }
   }
   
@@ -203,7 +228,12 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       let currentTasks = tasks.filter { $0.date == dateFormatter.string(from: Date())}
       
       state.tasks = tasks
-      let sectionItems = currentTasks.map { TaskCellReactor(self.provider, user: self.user, task: $0)}
+      let sectionItems = currentTasks.map { TaskCellReactor(
+        self.provider,
+        user: self.user,
+        task: $0,
+        checkRelay: self.checkedCellIdRelay
+      )}
       let sectionModel = TaskHeaderCellReactor(self.provider, user: self.user)
       let section = TaskListSection(model: sectionModel, items: sectionItems)
       state.sections = [section]
@@ -213,7 +243,12 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       
       let tasks = state.tasks
       let currentTasks = tasks.filter { $0.date == dateFormatter.string(from: date)}
-      let sectionItems = currentTasks.map { TaskCellReactor(self.provider, user: self.user, task: $0)}
+      let sectionItems = currentTasks.map { TaskCellReactor(
+        self.provider,
+        user: self.user,
+        task: $0,
+        checkRelay: self.checkedCellIdRelay
+      )}
       let sectionModel = TaskHeaderCellReactor(self.provider, user: self.user)
       let section = TaskListSection(model: sectionModel, items: sectionItems)
       state.sections = [section]
@@ -230,6 +265,15 @@ final class TodoViewReactor: Reactor, BaseReactorType {
       if let index = state.tasks.firstIndex(where: { $0.id == state.selectedId }) {
         state.tasks[index].contents = todoRelay.value
       }
+    
+    case let .updateCheckedSectionItem(indexPath, sectionItem):
+      state.sections[indexPath] = sectionItem
+      
+      if let index = state.tasks.firstIndex(where: { $0.id == checkedCellIdRelay.value }) {
+        state.tasks[index].isChecked?.toggle()
+      }
+    case .tapToggle:
+      state.isWeekScope.toggle()
     }
     return state
   }

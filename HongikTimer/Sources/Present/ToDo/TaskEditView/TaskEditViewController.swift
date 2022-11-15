@@ -24,7 +24,6 @@ final class TaskEditViewController: BaseViewController, View {
   }
   
   private lazy var todoLabel = UILabel().then {
-    $0.text = "라벨입니다."
     $0.font = .systemFont(
       ofSize: 16.0
     )
@@ -182,14 +181,4 @@ private extension TaskEditViewController {
       }
     }
   }
-  
-//  @objc func tapEditButton() {
-//    dismiss(animated: true)
-//    TodoNotificationService.shared.postEdit(indexPath)
-//  }
-//
-//  @objc func tapDeleteButton() {
-//    dismiss(animated: true)
-//    TodoNotificationService.shared.postRemove(indexPath)
-//  }
 }

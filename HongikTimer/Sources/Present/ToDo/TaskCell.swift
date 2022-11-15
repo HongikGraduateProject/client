@@ -34,11 +34,9 @@ final class TaskCell: UICollectionViewCell, View {
   
   var isChecked: Bool = false
   
-  private lazy var editButton = UIButton().then {
-    $0.setImage(
-      UIImage(systemName: "ellipsis"),
-      for: .normal
-    )
+  private lazy var editImageView  = UIImageView().then {
+    $0.image = Icon.editIcon
+    $0.contentMode = .scaleAspectFit
     $0.tintColor = .systemGray2
   }
   
@@ -58,6 +56,13 @@ final class TaskCell: UICollectionViewCell, View {
   // MARK: - Binding
   
   func bind(reactor: TaskCellReactor) {
+    
+    // action
+    
+    checkButton.rx.tap
+      .map { Reactor.Action.tapBox }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
     
     // state
     reactor.state.asObservable().map { $0.task }
@@ -123,7 +128,7 @@ private extension TaskCell {
     [
       checkButton,
       textField,
-      editButton
+      editImageView
     ].forEach { addSubview($0) }
     
     checkButton.snp.makeConstraints {
@@ -136,14 +141,14 @@ private extension TaskCell {
     textField.snp.makeConstraints {
       $0.leading.equalTo(checkButton.snp.trailing).offset(8.0)
       $0.height.equalTo(16.0)
-      $0.trailing.equalTo(editButton.snp.leading).offset(16.0)
+      $0.trailing.equalTo(editImageView.snp.leading).offset(-16.0)
       $0.centerY.equalTo(checkButton)
     }
     
-    editButton.snp.makeConstraints {
-      $0.top.bottom.equalToSuperview().inset(8.0)
+    editImageView.snp.makeConstraints {
+      $0.centerY.equalToSuperview()
       $0.trailing.equalToSuperview().inset(16.0)
-      $0.height.width.equalTo(16.0)
+      $0.width.equalTo(20.0)
     }
   }
   
