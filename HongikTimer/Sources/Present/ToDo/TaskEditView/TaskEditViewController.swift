@@ -11,6 +11,15 @@ import ReactorKit
 
 final class TaskEditViewController: BaseViewController, View {
   
+  // MARK: - Constant
+  
+  private struct Icon {
+    static let pencilIcon = UIImage(named: "pencil")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+    static let trashIcon = UIImage(named: "trashCan")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    static let rightArrow = UIImage(systemName: "arrowshape.turn.up.right.circle")?.withTintColor(.label, renderingMode: .alwaysOriginal)
+    static let downArrow = UIImage(systemName: "arrow.down.circle")?.withTintColor(.label, renderingMode: .alwaysOriginal)
+  }
+  
   // MARK: - Property
   
   private var hasSetPointOrigin = false
@@ -32,6 +41,14 @@ final class TaskEditViewController: BaseViewController, View {
   
   private lazy var editButton = UIButton()
   private lazy var deleteButton = UIButton()
+  
+  private lazy var changeDayButton = UIButton().then {
+    $0.contentHorizontalAlignment = .leading
+  }
+  
+  private lazy var separatorView = UIView().then {
+    $0.backgroundColor = .separator
+  }
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -89,6 +106,14 @@ final class TaskEditViewController: BaseViewController, View {
         self?.dismiss(animated: true)
       })
       .disposed(by: self.disposeBag)
+    
+    reactor.state.asObservable().map { $0.changeButtonTitle }
+      .distinctUntilChanged()
+      .subscribe(onNext: { [weak self] title in
+        guard let self = self else { return }
+        self.changeDayButton.setTitle(title, for: .normal)
+      })
+      .disposed(by: self.disposeBag)
   }
 }
 
@@ -97,21 +122,32 @@ final class TaskEditViewController: BaseViewController, View {
 private extension TaskEditViewController {
   func setupLayout() {
     
-    var config = UIButton.Configuration.filled()
-    config.baseBackgroundColor = .systemGray4
-    config.baseForegroundColor = .label
+    var config1 = UIButton.Configuration.filled()
+    config1.baseBackgroundColor = .systemGray4
+    config1.baseForegroundColor = .label
     
-    config.imagePlacement = .top
-    config.imagePadding = 4.0
-    config.titlePadding = 4.0
+    config1.imagePlacement = .top
+    config1.imagePadding = 4.0
+    config1.titlePadding = 4.0
     
-    editButton.configuration = config
+    editButton.configuration = config1
     editButton.configuration?.title = "수정"
-    editButton.configuration?.image = UIImage(named: "pencil")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+    editButton.configuration?.image = Icon.pencilIcon
     
-    deleteButton.configuration = config
+    deleteButton.configuration = config1
     deleteButton.configuration?.title = "삭제"
-    deleteButton.configuration?.image = UIImage(named: "trashCan")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    deleteButton.configuration?.image = Icon.trashIcon
+    
+    var config2 = UIButton.Configuration.plain()
+    config2.baseBackgroundColor = .clear
+    config2.baseForegroundColor = .label
+    config2.imagePlacement = .leading
+    config2.contentInsets = NSDirectionalEdgeInsets(top: 4.0, leading: 0, bottom: 4.0, trailing: 4.0)
+    config2.imagePadding = 8.0
+    
+    changeDayButton.configuration = config2
+//    changeDayButton.configuration?.title = "내일 아님 오늘 하기"
+    changeDayButton.configuration?.image = Icon.rightArrow
     
     view.backgroundColor = .systemBackground
     
@@ -129,7 +165,9 @@ private extension TaskEditViewController {
     [
       sliderIndicator,
       todoLabel,
-      buttonStackView
+      buttonStackView,
+      changeDayButton,
+      separatorView
     ].forEach { view.addSubview($0) }
     
     sliderIndicator.snp.makeConstraints {
@@ -146,6 +184,18 @@ private extension TaskEditViewController {
     
     buttonStackView.snp.makeConstraints {
       $0.top.equalTo(todoLabel.snp.bottom).offset(16.0)
+      $0.leading.trailing.equalTo(todoLabel)
+    }
+    
+    changeDayButton.snp.makeConstraints {
+      $0.top.equalTo(buttonStackView.snp.bottom).offset(16.0)
+      $0.leading.trailing.equalTo(todoLabel)
+      $0.height.equalTo(32.0)
+    }
+    
+    separatorView.snp.makeConstraints {
+      $0.top.equalTo(changeDayButton.snp.bottom)
+      $0.height.equalTo(0.5)
       $0.leading.trailing.equalTo(todoLabel)
     }
   }

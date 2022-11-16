@@ -10,6 +10,11 @@ import RxCocoa
 import RxSwift
 import URLNavigator
 
+enum TaskEditMode {
+  case today
+  case notToday
+}
+
 final class TaskEditViewReactor: Reactor, BaseReactorType {
     
   enum Action {
@@ -25,6 +30,7 @@ final class TaskEditViewReactor: Reactor, BaseReactorType {
   struct State {
     let task: Task
     var isDismissed: Bool = false
+    var changeButtonTitle: String
   }
   
   let user: User
@@ -32,11 +38,27 @@ final class TaskEditViewReactor: Reactor, BaseReactorType {
   let initialState: State
   var todoRelay = BehaviorRelay<String>(value: "")
   var disposebag = DisposeBag()
+  let taskEditMode: TaskEditMode
   
-  init(provider: ServiceProviderType, user: User, task: Task) {
+  // MARK: - Init
+  
+  init(provider: ServiceProviderType, user: User, task: Task, mode: TaskEditMode) {
+    var changeButtonTitle: String {
+      switch mode {
+      case .today:
+        return "내일 하기"
+      case .notToday:
+        return "오늘 하기"
+      }
+    }
+    
     self.provider = provider
     self.user = user
-    self.initialState = State(task: task)
+    self.taskEditMode = mode
+    self.initialState = State(
+      task: task,
+      changeButtonTitle: changeButtonTitle
+    )
   }
   
   func mutate(action: Action) -> Observable<Mutation> {

@@ -294,8 +294,27 @@ extension TodoViewReactor {
   }
   
   func reactorForTaskEdit(indexPath: IndexPath) -> TaskEditViewReactor {
+    var mode: TaskEditMode {
+      if isToday(day: currentState.selectedDay) {
+        return .today
+      } else {
+        return .notToday
+      }
+    }
+    
     return TaskEditViewReactor(
       provider: self.provider,
-      user: self.user, task: currentState.tasks[indexPath.item])
+      user: self.user, task: currentState.tasks[indexPath.item], mode: mode)
+  }
+  
+  private func isToday(day: Date) -> Bool {
+    let todayString = self.dateFormatter.string(from: Date())
+    let dayStrgin = self.dateFormatter.string(from: day)
+    
+    if todayString == dayStrgin {
+      return true
+    } else {
+      return false
+    }
   }
 }

@@ -33,7 +33,7 @@ struct GoogleAuthService {
         if error != nil {
           print("DEBUG google 로그인 error")
         } else {
-          print("DEBUG Google 로그인 uid: \(authDataResult?.user.uid)")
+          print("DEBUG Google 로그인 uid: \(authDataResult?.user.uid ?? "")")
           AuthNotificationManager.shared.postNotificationSignInSuccess()
         }
       }
