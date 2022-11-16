@@ -75,9 +75,13 @@ extension AppleAuthService: ASAuthorizationControllerDelegate {
       // Sign in with Firebase.
       Auth.auth().signIn(with: credential) { (authResult, error) in
         if error != nil {
+          
           AuthNotificationManager.shared.postNotificationSignInError()
           return
         }
+        
+        print("DEBUG Apple 로그인 uid: \(authResult?.user.uid)")
+        
         AuthNotificationManager.shared.postNotificationSignInSuccess()
       }
     }
