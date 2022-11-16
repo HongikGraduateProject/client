@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.backgroundColor = .systemBackground
     UINavigationBar.appearance().tintColor = .barTint
     
-    
     UITabBar.appearance().tintColor = .barTint
 
     window?.rootViewController = isCurrentUser()
@@ -41,9 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NaverThirdPartyLoginConnection
           .getSharedInstance()?
           .receiveAccessToken(URLContexts.first?.url)
-        
       }
-      
     }
   }
   

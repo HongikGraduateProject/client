@@ -15,7 +15,7 @@ final class ItemViewController: BaseViewController {
   // MARK: - Property
   
   let categories: [ItemCell] = [
-    ItemCell("벽지", imageName: "w9"),
+    ItemCell("벽지", imageName: "w8"),
     ItemCell("버드", imageName: "chick1")
   ]
   

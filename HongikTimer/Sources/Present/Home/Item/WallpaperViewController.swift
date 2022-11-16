@@ -20,8 +20,7 @@ final class WallpaperViewController: BaseViewController {
     ItemCell("벽지6", imageName: "w5"),
     ItemCell("벽지7", imageName: "w6"),
     ItemCell("벽지8", imageName: "w7"),
-    ItemCell("벽지9", imageName: "w8"),
-    ItemCell("벽지10", imageName: "w9")
+    ItemCell("벽지9", imageName: "w8")
   ]
   
   var dismissCompletion: (() -> Void)?

@@ -63,7 +63,7 @@ final class GroupDetailViewController: UIViewController {
   
   private lazy var todayLabel = UILabel().then {
     $0.font = .systemFont(ofSize: 16.0, weight: .medium)
-    $0.textColor = .label
+    $0.textColor = .black
     $0.numberOfLines = 1
     $0.text = "오늘 총 공부시간"
   }

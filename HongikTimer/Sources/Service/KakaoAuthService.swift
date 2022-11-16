@@ -14,7 +14,7 @@ struct KakaoAuthService {
   static let shared = KakaoAuthService()
   
   func signInWithKakao() {
-    
+  
     // 카카오톡 설치 여부 확인
     if UserApi.isKakaoTalkLoginAvailable() {
       UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
@@ -23,12 +23,21 @@ struct KakaoAuthService {
         } else {
           print("loginWithKakaoTalk() success.")
           
-          // do something
-          _ = oauthToken
+          UserApi.shared.me { user, error in
+            if let error = error {
+              print(error)
+            } else {
+              print("me() success")
+              print("User Id : \(user?.id)")  // User Id : Optional(2433247323)
+            }
+          }
+          
           AuthNotificationManager
             .shared
             .postNotificationSignInSuccess()
         }
+        // do something
+        //          let token = oauthToken
       }
     } else {
       UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
