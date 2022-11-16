@@ -29,8 +29,13 @@ struct GoogleAuthService {
       let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                      accessToken: authentication.accessToken)
       
-      Auth.auth().signIn(with: credential) { _, _ in
-        AuthNotificationManager.shared.postNotificationSignInSuccess()
+      Auth.auth().signIn(with: credential) { authDataResult, error in
+        if error != nil {
+          print("DEBUG google 로그인 error")
+        } else {
+          print("DEBUG Google 로그인 uid: \(authDataResult?.user.uid)")
+          AuthNotificationManager.shared.postNotificationSignInSuccess()
+        }
       }
     }
   }
