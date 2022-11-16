@@ -13,6 +13,7 @@ import Toast_Swift
 import Then
 import UIKit
 import NaverThirdPartyLogin
+import Alamofire
 
 final class RegisterViewController: BaseViewController {
   
@@ -146,13 +147,7 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
     print("DEBUG 네이버 로그인 성공")
     
-//    let instance = NaverThirdPartyLoginConnection.getSharedInstance()
-    
-//    instance?.isNaverAppOauthEnable = true
-//    instance?.isInAppOauthEnable = true
-//    instance?.isOnlyPortraitSupportedInIphone()
-    
-//    instance.consumer
+    self.naverLoginGetInfo()
     
     AuthNotificationManager.shared.postNotificationSignInSuccess()
     
@@ -174,12 +169,50 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     print("DEBUG 에러 = \(error.localizedDescription)")
   }
   
+  func naverLoginGetInfo() {
+      
+    let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    
+    guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
+    
+    if !isValidAccessToken {
+      print("DEBUG naver login access token이 없습니다")
+      return
+    }
+    
+    guard let tokenType = loginInstance?.tokenType else {
+      print("DEBUG naver login token type이 없음.")
+      return
+    }
+    guard let accessToken = loginInstance?.accessToken else {
+      print("DEBUG naver login accessToken이 없음.")
+      return
+    }
+    
+    let urlStr = "https://openapi.naver.com/v1/nid/me"
+    let url = URL(string: urlStr)!
+    
+    let authorization = "\(tokenType) \(accessToken)"
+    
+    let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+    
+    req.responseJSON { response in
+      
+      guard let result = response.value as? [String: Any] else { return }
+      guard let object = result["response"] as? [String: Any] else { return }
+      guard let id = object["id"] as? String else { return }
+      
+      print("DEBUG naver login 후 get info")
+      print("DEBUG naver login id: \(id)")
+      
+    }
+  }
 }
 
-// MARK: - Private
+// MARK: - Method
 
-private extension RegisterViewController {
-  func setupLayout() {
+extension RegisterViewController {
+  private func setupLayout() {
     view.backgroundColor = .systemBackground
     let snsStackView = UIStackView().then { sv in
       sv.axis = .vertical
