@@ -135,7 +135,7 @@ private extension HomeViewController {
     ].forEach { view.addSubview($0) }
     
     wallpaperImageView.snp.makeConstraints {
-      $0.top.equalToSuperview()
+      $0.top.equalTo(view.safeAreaInsets)
       $0.leading.trailing.equalToSuperview()
       $0.bottom.equalTo(view.snp_bottomMargin)
     }

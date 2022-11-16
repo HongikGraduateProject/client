@@ -146,11 +146,11 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
     print("DEBUG 네이버 로그인 성공")
     
-    let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+//    let instance = NaverThirdPartyLoginConnection.getSharedInstance()
     
-    instance?.isNaverAppOauthEnable = true
-    instance?.isInAppOauthEnable = true
-    instance?.isOnlyPortraitSupportedInIphone()
+//    instance?.isNaverAppOauthEnable = true
+//    instance?.isInAppOauthEnable = true
+//    instance?.isOnlyPortraitSupportedInIphone()
     
 //    instance.consumer
     
