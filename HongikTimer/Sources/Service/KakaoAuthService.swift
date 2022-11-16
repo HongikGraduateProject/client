@@ -45,6 +45,16 @@ struct KakaoAuthService {
           print(error)
         } else {
           print("loginWithKakaoAccount() success.")
+          
+          UserApi.shared.me { user, error in
+            if let error = error {
+              print(error)
+            } else {
+              print("me() success")
+              print("User Id : \(user?.id)")  // User Id : Optional(2433247323)
+            }
+          }
+          
           AuthNotificationManager
             .shared
             .postNotificationSignInSuccess()

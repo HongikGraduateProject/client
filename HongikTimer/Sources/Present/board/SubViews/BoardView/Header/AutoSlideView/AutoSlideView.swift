@@ -102,8 +102,6 @@ extension AutoSlideView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
-
 // MARK: - Private
 
 private extension AutoSlideView {

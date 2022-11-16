@@ -37,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       if AuthApi.isKakaoTalkLoginUrl(url) {
         _ = AuthController.handleOpenUrl(url: url)
       } else {
+        // 네이버 로그인 화면이 새로 등장 -> 토큰을 요청하는 코드
         NaverThirdPartyLoginConnection
           .getSharedInstance()?
           .receiveAccessToken(URLContexts.first?.url)

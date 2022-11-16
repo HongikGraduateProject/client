@@ -173,6 +173,7 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
     print("DEBUG 에러 = \(error.localizedDescription)")
   }
+  
 }
 
 // MARK: - Private
