@@ -149,7 +149,7 @@ private extension EmailLoginViewController {
   @objc func loginSuccessHandler() {
     
 #warning("더미 유저")
-    let user: User = ServiceProvider().userDefaultService.getUser() ?? User()
+    let user: User = ServiceProvider().userDefaultService.getUser()?.userInfo ?? User()
     
     let vc = TabBarViewController(with: TabBarViewReactor(ServiceProvider(), with: user))
     vc.modalPresentationStyle = .fullScreen

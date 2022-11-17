@@ -12,7 +12,7 @@ struct AuthResponse: Codable {
     var expiresIn: Int
     var token: String
     var message: String
-    var userInfo: UserInfo
+    var userInfo: User
     
     enum CodingKeys: String, CodingKey {
         case result

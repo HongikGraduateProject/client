@@ -59,7 +59,6 @@
 		27B471D328D22E6900805F79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D228D22E6900805F79 /* Constant.swift */; };
 		27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D428D236D900805F79 /* AuthCredentials.swift */; };
 		27B471D828D2CA2700805F79 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B471D728D2CA2700805F79 /* AuthService.swift */; };
-		27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFA928F6A78E009356E5 /* UserInfo.swift */; };
 		27C2DFAC28F6A927009356E5 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2DFAB28F6A927009356E5 /* AuthResponse.swift */; };
 		BBDC9DA579FF34EB084959EE /* Pods_HongikTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E53A09D2737E6978520E32E /* Pods_HongikTimer.framework */; };
 		C6FE9DF36F062C13AC44CB3F /* Pods_HongikTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E547649D65B5F515B8DE4 /* Pods_HongikTimerTests.framework */; };
@@ -103,6 +102,7 @@
 		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
 		EDF2F1F42926776500A59FA2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F32926776500A59FA2 /* APIRouter.swift */; };
 		EDF2F1F6292679E400A59FA2 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F5292679E400A59FA2 /* Path.swift */; };
+		EDF2F1F8292693C900A59FA2 /* EmailUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F7292693C900A59FA2 /* EmailUser.swift */; };
 		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
@@ -199,7 +199,6 @@
 		27B471D428D236D900805F79 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
 		27B471D728D2CA2700805F79 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		27B471D928D2DF4A00805F79 /* HongikTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HongikTimer.entitlements; sourceTree = "<group>"; };
-		27C2DFA928F6A78E009356E5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		27C2DFAB28F6A927009356E5 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		57C6F192BD0CB9B8275D4676 /* Pods-HongikTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.release.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		58038C9761BB30679E5DE303 /* Pods-HongikTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongikTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-HongikTimerTests/Pods-HongikTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +247,7 @@
 		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		EDF2F1F32926776500A59FA2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../../APIRouter.swift; sourceTree = "<group>"; };
 		EDF2F1F5292679E400A59FA2 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		EDF2F1F7292693C900A59FA2 /* EmailUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUser.swift; sourceTree = "<group>"; };
 		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -497,9 +497,9 @@
 				ED037A7029117E2F00D30F7A /* ItemCell.swift */,
 				27B471D428D236D900805F79 /* AuthCredentials.swift */,
 				278DE6B828D71A1200E38A1F /* SettingCellModel.swift */,
+				EDF2F1F7292693C900A59FA2 /* EmailUser.swift */,
 				27A977B228E3501A0076FF80 /* Task.swift */,
 				2793C11D28F47AF400FC7D13 /* User.swift */,
-				27C2DFA928F6A78E009356E5 /* UserInfo.swift */,
 				27C2DFAB28F6A927009356E5 /* AuthResponse.swift */,
 				ED052D4229142EA600E79BB6 /* BoardPost.swift */,
 				ED2402E92920ED03000DF54C /* TestGroup.swift */,
@@ -1037,6 +1037,7 @@
 				2755964928D5CE4500E103F6 /* KakaoAuthService.swift in Sources */,
 				ED0507F6291003560016455B /* BaseViewController.swift in Sources */,
 				ED3297CC291BDF660081F606 /* WriteViewController.swift in Sources */,
+				EDF2F1F8292693C900A59FA2 /* EmailUser.swift in Sources */,
 				ED037A792911994D00D30F7A /* ChickViewController.swift in Sources */,
 				ED052D3F29142D2000E79BB6 /* BoardViewReactor.swift in Sources */,
 				2750A45228D0386A000EE24D /* HomeViewController.swift in Sources */,
@@ -1067,7 +1068,6 @@
 				EDF3A89B29120F7C00A7C980 /* BoardViewController.swift in Sources */,
 				27B471D828D2CA2700805F79 /* AuthService.swift in Sources */,
 				2750A40528D02BE9000EE24D /* AppDelegate.swift in Sources */,
-				27C2DFAA28F6A78E009356E5 /* UserInfo.swift in Sources */,
 				ED3297CF291BE0220081F606 /* WriteViewReactor.swift in Sources */,
 				27A977B128E34E130076FF80 /* Identifier.swift in Sources */,
 				ED037A6529112B5500D30F7A /* BaseReactorType.swift in Sources */,

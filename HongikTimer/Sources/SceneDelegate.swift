@@ -50,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       let vc = RegisterViewController(with: RegisterViewReactor(self.provider))
       return UINavigationController(rootViewController: vc)
     } else {
-      let user = provider.userDefaultService.getUser()
+      let user = provider.userDefaultService.getUser()?.userInfo
       return TabBarViewController(with: TabBarViewReactor(self.provider, with: user!))
     }
   }

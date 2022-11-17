@@ -38,18 +38,18 @@ struct UserDefaultService {
   // MARK: - Auth
   
   /// 로그인 or 회원가입시 현재 유저 저장
-  func setUser(_ user: User) {
+  func setUser(_ user: EmailUser) {
     standard.setValue(
       try? JSONEncoder().encode(user),
       forKey: UserDefaultKeys.user.key)
   }
   
   /// 현재 유저 get
-  func getUser() -> User? {
+  func getUser() -> EmailUser? {
     guard let data = standard.data(forKey: UserDefaultKeys.user.key) else { return nil }
     
     return (
-      try? JSONDecoder().decode(User.self, from: data)
+      try? JSONDecoder().decode(EmailUser.self, from: data)
     )
   }
   

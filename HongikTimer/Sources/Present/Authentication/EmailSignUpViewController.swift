@@ -234,11 +234,16 @@ private extension EmailSignUpViewController {
         self?.view.hideToast()
         
         guard let provider = self?.reactor.provider else { return }
-        let user = self?.reactor.provider.userDefaultService.getUser()
+        let user = self?.reactor.provider.userDefaultService.getUser()?.userInfo
         print("DEBUG \(user!)로 회원 가입완료후 화면이동")
         let vc = TabBarViewController(with: TabBarViewReactor(provider, with: user!))
         vc.modalPresentationStyle = .fullScreen
         self?.present(vc, animated: true)
+      }
+    } completionAF: { error in
+      if let error = error {
+        print("DEBUG AF 이메일 회원가입 에러")
+        print(error)
       }
     }
   }
