@@ -302,9 +302,11 @@ extension TodoViewReactor {
       }
     }
     
+    let task = currentState.sections.first?.items[indexPath.item].currentState.task
+    
     return TaskEditViewReactor(
       provider: self.provider,
-      user: self.user, task: currentState.tasks[indexPath.item], mode: mode)
+      user: self.user, task: task!, mode: mode)
   }
   
   private func isToday(day: Date) -> Bool {

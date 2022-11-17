@@ -79,7 +79,6 @@ class TodoViewController: BaseViewController, View {
     $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: 12.0,
                                       bottom: 0, right: 0)
     $0.layer.cornerRadius = 4.0
-    
   }
   
   private lazy var leftButton = UIButton().then {
@@ -128,6 +127,11 @@ class TodoViewController: BaseViewController, View {
     
     configureLayout()
     configureCalendar()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    calendarView.select(Date())
+    self.selectedDay.accept(Date())
   }
   
   // MARK: - Initialize
@@ -199,7 +203,6 @@ class TodoViewController: BaseViewController, View {
           self.toggleButton.setImage(Icon.downIcon, for: .normal)
           self.headerLabel.text = self.headerDateFormatter.string(from: self.calendarView.currentPage)
           
-
         } else {
           self.calendarView.setScope(.month, animated: true)
 
@@ -414,30 +417,6 @@ extension TodoViewController {
       self.headerLabel.text = headerDateFormatter.string(from: calendarView.currentPage)
     }
   }
-  
-//  @objc func tapNextWeek() {
-//    print(calendarView.currentPage)
-//    print(getNextWeek(date: calendarView.currentPage))
-//    self.calendarView.setCurrentPage(getNextWeek(date: calendarView.currentPage), animated: true)
-//  }
-//
-//  @objc func tapBeforeWeek() {
-//    print(calendarView.currentPage)
-//    print(getPreviousWeek(date: calendarView.currentPage))
-//    self.calendarView.setCurrentPage(getPreviousWeek(date: calendarView.currentPage), animated: true)
-//  }
-//
-//  @objc func tapNextMonth() {
-//    print(calendarView.currentPage)
-//    print(getNextMonth(date: calendarView.currentPage))
-//    self.calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
-//  }
-//
-//  @objc func tapBeforeMonth() {
-//    print(calendarView.currentPage)
-//    print(getPreviousMonth(date: calendarView.currentPage))
-//    self.calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
-//  }
   
   @objc func tapLeftButton() {
     if self.reactor?.currentState.isWeekScope == true {

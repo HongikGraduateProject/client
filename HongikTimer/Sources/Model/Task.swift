@@ -10,7 +10,9 @@ import Foundation
 struct Task: Codable, Identifiable {
   
   var id = UUID().uuidString
-  var taskId: Int?
+  
+//  var taskId: Int?
+  // TODO: sever랑 통신
   var contents: String?
   var isChecked: Bool?
   let date: String

@@ -198,6 +198,8 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     
     req.responseJSON { response in
       
+      print(response)
+      
       guard let result = response.value as? [String: Any] else { return }
       guard let object = result["response"] as? [String: Any] else { return }
       guard let id = object["id"] as? String else { return }
@@ -316,6 +318,5 @@ extension RegisterViewController {
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: true)
     navigationController?.popToRootViewController(animated: false)
-    
   }
 }
