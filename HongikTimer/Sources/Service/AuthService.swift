@@ -33,40 +33,6 @@ final class AuthService: NSObject {
 
 extension AuthService {
   
-  func logInWithEmail(
-    email: String,
-    password: String,
-    completion: @escaping((AuthDataResult?, Error?) -> Void)
-  ) {
-    Auth.auth().signIn(
-      withEmail: email,
-      password: password,
-      completion: completion
-    )
-    
-    let param: Parameters = [
-      "email": email,
-      "password": password
-    ]
-    let headers: HTTPHeaders = [
-      "Accept": "application/json"
-    ]
-    AF.request(URLs.login.url,
-               method: .post,
-               parameters: param,
-               encoding: JSONEncoding.default,
-               headers: headers).responseString { response in
-      switch response.result {
-      case .failure(let error):
-        print("DEBUG email 로그인 후 post error")
-        print(error)
-      case .success:
-        // 이후에 로그인 성공 후 로직 실행
-        print("DEBUG email 로그인 post 성공")
-      }
-    }
-  }
-  
   func signUpWithEmail(
     credentials: AuthCredentials,
     completion: ((AuthDataResult?, Error?) -> Void)?
@@ -113,6 +79,40 @@ extension AuthService {
 #warning("dummy current user")
         let user = User()
         UserDefaultService.shared.setUser(user)
+      }
+    }
+  }
+  
+  func logInWithEmail(
+    email: String,
+    password: String,
+    completion: @escaping((AuthDataResult?, Error?) -> Void)
+  ) {
+    Auth.auth().signIn(
+      withEmail: email,
+      password: password,
+      completion: completion
+    )
+    
+    let param: Parameters = [
+      "email": email,
+      "password": password
+    ]
+    let headers: HTTPHeaders = [
+      "Accept": "application/json"
+    ]
+    AF.request(URLs.login.url,
+               method: .post,
+               parameters: param,
+               encoding: JSONEncoding.default,
+               headers: headers).responseString { response in
+      switch response.result {
+      case .failure(let error):
+        print("DEBUG email 로그인 후 post error")
+        print(error)
+      case .success:
+        // 이후에 로그인 성공 후 로직 실행
+        print("DEBUG email 로그인 post 성공")
       }
     }
   }

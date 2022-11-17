@@ -101,6 +101,8 @@
 		ED7D72B3291CD7B0006A3887 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D72B2291CD7B0006A3887 /* AlertService.swift */; };
 		ED7D72B8291E07CF006A3887 /* EnterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */; };
 		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
+		EDF2F1F42926776500A59FA2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F32926776500A59FA2 /* APIRouter.swift */; };
+		EDF2F1F6292679E400A59FA2 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F5292679E400A59FA2 /* Path.swift */; };
 		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
@@ -244,6 +246,8 @@
 		ED7D72B2291CD7B0006A3887 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertService.swift; path = ../../../../../AlertService.swift; sourceTree = "<group>"; };
 		ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewReactor.swift; sourceTree = "<group>"; };
 		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
+		EDF2F1F32926776500A59FA2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../../APIRouter.swift; sourceTree = "<group>"; };
+		EDF2F1F5292679E400A59FA2 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -617,12 +621,22 @@
 			children = (
 				2750A40428D02BE9000EE24D /* AppDelegate.swift */,
 				2750A40628D02BE9000EE24D /* SceneDelegate.swift */,
+				EDF2F1F22926772100A59FA2 /* API */,
 				27B471C328D19B1800805F79 /* Extensions */,
 				27B471D628D2C9F000805F79 /* Service */,
 				27B471BB28D0ACDC00805F79 /* Model */,
 				2750A43428D02F89000EE24D /* Present */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		EDF2F1F22926772100A59FA2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EDF2F1F32926776500A59FA2 /* APIRouter.swift */,
+				EDF2F1F5292679E400A59FA2 /* Path.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		EDF3A88529120F7C00A7C980 /* board */ = {
@@ -1044,6 +1058,7 @@
 				ED037A7729118CD000D30F7A /* WallpaperViewReactor.swift in Sources */,
 				ED2402EE29215FBC000DF54C /* Array+SectionModel.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
+				EDF2F1F6292679E400A59FA2 /* Path.swift in Sources */,
 				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
 				EDF3A8A02912454300A7C980 /* GroupViewController.swift in Sources */,
 				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
@@ -1104,6 +1119,7 @@
 				27B471CF28D20DAF00805F79 /* ButtonConfig.swift in Sources */,
 				27615A8928D4DB7D0099DB00 /* AuthNotificationService.swift in Sources */,
 				EDF3A8B6291259FF00A7C980 /* GroupDetailViewController.swift in Sources */,
+				EDF2F1F42926776500A59FA2 /* APIRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
