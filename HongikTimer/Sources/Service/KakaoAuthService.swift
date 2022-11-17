@@ -23,12 +23,14 @@ struct KakaoAuthService {
         } else {
           print("loginWithKakaoTalk() success.")
           
+          _ = oauthToken
+          
           UserApi.shared.me { user, error in
             if let error = error {
               print(error)
             } else {
               print("me() success")
-              print("User Id : \(user?.id)")  // User Id : Optional(2433247323)
+              print("User Id : \(user?.id ?? 0)")  // User Id : Optional(2433247323)
             }
           }
           
@@ -51,7 +53,7 @@ struct KakaoAuthService {
               print(error)
             } else {
               print("me() success")
-              print("User Id : \(user?.id)")  // User Id : Optional(2433247323)
+              print("User Id : \(user?.id ?? 0)")  // User Id : Optional(2433247323)
             }
           }
           
