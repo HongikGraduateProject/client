@@ -122,7 +122,7 @@ private extension SettingViewController {
   
   func configureModels() {
     let section = [
-      SettingCellModel(title: "로그아웃", handler: tapLogOut),
+      SettingCellModel(title: "로그아웃", handler: tapLogOut)
     ]
     settings.append(section)
     tableView.reloadData()
@@ -144,7 +144,10 @@ private extension SettingViewController {
             if success {
               
               print("DEBUG 로그아웃 시도")
+              
+              try? Auth.auth().signOut()
               ServiceProvider().userDefaultService.logoutUser()
+              
               let vc = RegisterViewController(with: RegisterViewReactor(ServiceProvider()))
               let nv = UINavigationController(rootViewController: vc)
               nv.modalPresentationStyle = .fullScreen

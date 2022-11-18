@@ -100,6 +100,12 @@ extension AuthService {
         case .failure(let error):
           
           print("DEBUG 이메일로 로그인 실패")
+          
+          print("DEBUG AF 더미 USER 생성")
+          let user = EmailUser()
+          UserDefaultService.shared.setUser(user)
+          
+          AuthNotificationManager.shared.postNotificationSignInSuccess()
         }
       }
   }

@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         instance?.appName = "HongikTimer"
         
         if let user = Auth.auth().currentUser {
-            print("You're sign in as \(user.uid), email: \(user.email ?? "")")
+            print("DEBUG 이메일 로그인 You're sign in as \(user.uid), email: \(user.email ?? "")")
         }
         
         return true

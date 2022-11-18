@@ -142,7 +142,7 @@ private extension EmailLoginViewController {
           self?.view.makeToast("이메일 / 비밀번호를 확인하세요")
           return }
         
-        AuthNotificationManager.shared.postNotificationSignInSuccess()
+//        AuthNotificationManager.shared.postNotificationSignInSuccess()
       }
   }
   

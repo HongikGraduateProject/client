@@ -164,18 +164,20 @@ private extension HomeViewController {
     chickImageView.image = reactor.provider.userDefaultService.getChickImage()
     wallpaperImageView.image = reactor.provider.userDefaultService.getWallImage()
     
-    let time = reactor.provider.userDefaultService.getStudyTime()
-    let hour = time / 3600
-    let miniute = (time % 3600) / 60
-    let second = (time % 3600) % 60
+    self.reactor.provider.apiService.getTodayTime { [weak self] second in
+      guard let self = self else { return }
+      let time = second
+      let hour = time / 3600
+      let miniute = (time % 3600) / 60
+      let second = (time % 3600) % 60
     
-    timeLabel.text = String(
-      format: "%02d:%02d:%02d",
-      hour,
-      miniute,
-      second
-    )
-    print("DEBUG Viewillappear에서 refresh 실행")
+      self.timeLabel.text = String(
+        format: "%02d:%02d:%02d",
+        hour,
+        miniute,
+        second
+      )
+    }
   }
   
   // MARK: - Selector

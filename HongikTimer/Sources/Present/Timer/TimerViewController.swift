@@ -63,7 +63,6 @@ class TimerViewController: BaseViewController {
       0
     )
   
-//    $0.font = UIFont(name: "NanumMyeongjo-Regular", size: 64.0)
     $0.font = UIFont(name: "NotoSansCJKkr-Medium", size: 52.0)
     $0.textColor = .label
     $0.textAlignment = .center
@@ -169,10 +168,6 @@ private extension TimerViewController {
       $0.width.equalTo(100.0)
       $0.centerX.equalToSuperview()
     }
-    
-//    toggleButton.imageView?.snp.makeConstraints {
-//      $0.width.height.equalTo(80.0)
-//    }
   }
   
   func startTimer() {
@@ -212,8 +207,11 @@ private extension TimerViewController {
         self.progressView.progress = Float(self.currnetSeconds) / Float(self.duration)
         
         if self.currnetSeconds <= 0 {
+          
           self.reactor.provider.userDefaultService.setStudyTime(Int(self.duration))
           print("DEBUG \(self.duration) 만큼 시간 저장")
+          
+          self.reactor.provider.apiService.saveTime(second: self.duration)
           self.stopTimer()
         }
         

@@ -197,9 +197,7 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
     
     req.responseJSON { response in
-      
-      print(response)
-      
+          
       guard let result = response.value as? [String: Any] else { return }
       guard let object = result["response"] as? [String: Any] else { return }
       guard let id = object["id"] as? String else { return }

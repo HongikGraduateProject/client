@@ -20,6 +20,7 @@ protocol ServiceProviderType: AnyObject {
   var boardService: BoardService { get }
   var alertService: AlertService { get }
   var todoService: TodoService { get }
+  var apiService: APIService { get }
 }
 
 final class ServiceProvider: ServiceProviderType {
@@ -35,4 +36,5 @@ final class ServiceProvider: ServiceProviderType {
   let boardService = BoardService()
   let alertService = AlertService()
   let todoService = TodoService()
+  let apiService = APIService()
 }

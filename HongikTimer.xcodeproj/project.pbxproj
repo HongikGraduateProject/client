@@ -101,8 +101,8 @@
 		ED7D72B8291E07CF006A3887 /* EnterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */; };
 		EDED357D291B5611003F3DEC /* EmailSignUpReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */; };
 		EDF2F1F42926776500A59FA2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F32926776500A59FA2 /* APIRouter.swift */; };
-		EDF2F1F6292679E400A59FA2 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F5292679E400A59FA2 /* Path.swift */; };
 		EDF2F1F8292693C900A59FA2 /* EmailUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F7292693C900A59FA2 /* EmailUser.swift */; };
+		EDF2F1FA2926ACE700A59FA2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F92926ACE700A59FA2 /* APIService.swift */; };
 		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
@@ -246,8 +246,8 @@
 		ED7D72B7291E07CF006A3887 /* EnterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewReactor.swift; sourceTree = "<group>"; };
 		EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpReactor.swift; sourceTree = "<group>"; };
 		EDF2F1F32926776500A59FA2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../../APIRouter.swift; sourceTree = "<group>"; };
-		EDF2F1F5292679E400A59FA2 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		EDF2F1F7292693C900A59FA2 /* EmailUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUser.swift; sourceTree = "<group>"; };
+		EDF2F1F92926ACE700A59FA2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -559,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				ED0507EF290FFE190016455B /* ServiceProvider.swift */,
+				EDF2F1F92926ACE700A59FA2 /* APIService.swift */,
 				27B471D728D2CA2700805F79 /* AuthService.swift */,
 				27615A8428D4B86A0099DB00 /* AppleAuthService.swift */,
 				27615A8628D4D9E80099DB00 /* GoogleAuthService.swift */,
@@ -634,7 +635,6 @@
 			isa = PBXGroup;
 			children = (
 				EDF2F1F32926776500A59FA2 /* APIRouter.swift */,
-				EDF2F1F5292679E400A59FA2 /* Path.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1026,6 +1026,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750A45628D051D3000EE24D /* SetPurposeViewController.swift in Sources */,
+				EDF2F1FA2926ACE700A59FA2 /* APIService.swift in Sources */,
 				EDF3A8A22912488D00A7C980 /* GroupViewCell.swift in Sources */,
 				ED13F2F5290E46CA00883D19 /* SettingViewController.swift in Sources */,
 				ED037A7129117E2F00D30F7A /* ItemCell.swift in Sources */,
@@ -1059,7 +1060,6 @@
 				ED037A7729118CD000D30F7A /* WallpaperViewReactor.swift in Sources */,
 				ED2402EE29215FBC000DF54C /* Array+SectionModel.swift in Sources */,
 				27615A8528D4B86A0099DB00 /* AppleAuthService.swift in Sources */,
-				EDF2F1F6292679E400A59FA2 /* Path.swift in Sources */,
 				2793C13028F58DB300FC7D13 /* TimerViewController.swift in Sources */,
 				EDF3A8A02912454300A7C980 /* GroupViewController.swift in Sources */,
 				ED037A7B2911995C00D30F7A /* ChickViewReactor.swift in Sources */,
