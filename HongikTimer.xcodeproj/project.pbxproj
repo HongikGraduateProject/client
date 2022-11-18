@@ -103,6 +103,8 @@
 		EDF2F1F42926776500A59FA2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F32926776500A59FA2 /* APIRouter.swift */; };
 		EDF2F1F8292693C900A59FA2 /* EmailUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F7292693C900A59FA2 /* EmailUser.swift */; };
 		EDF2F1FA2926ACE700A59FA2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1F92926ACE700A59FA2 /* APIService.swift */; };
+		EDF2F1FC29273C2300A59FA2 /* SNSSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1FB29273C2300A59FA2 /* SNSSignInViewController.swift */; };
+		EDF2F1FE29273CA800A59FA2 /* SNSSignInViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2F1FD29273CA800A59FA2 /* SNSSignInViewReactor.swift */; };
 		EDF3A89529120F7C00A7C980 /* BoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */; };
 		EDF3A89629120F7C00A7C980 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88D29120F7C00A7C980 /* CategoryView.swift */; };
 		EDF3A89729120F7C00A7C980 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */; };
@@ -248,6 +250,8 @@
 		EDF2F1F32926776500A59FA2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = ../../../../../../APIRouter.swift; sourceTree = "<group>"; };
 		EDF2F1F7292693C900A59FA2 /* EmailUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUser.swift; sourceTree = "<group>"; };
 		EDF2F1F92926ACE700A59FA2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EDF2F1FB29273C2300A59FA2 /* SNSSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSSignInViewController.swift; sourceTree = "<group>"; };
+		EDF2F1FD29273CA800A59FA2 /* SNSSignInViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSSignInViewReactor.swift; sourceTree = "<group>"; };
 		EDF3A88A29120F7C00A7C980 /* BoardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewCell.swift; sourceTree = "<group>"; };
 		EDF3A88D29120F7C00A7C980 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		EDF3A88E29120F7C00A7C980 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -512,6 +516,8 @@
 			children = (
 				27B471C628D1AF1700805F79 /* RegisterViewController.swift */,
 				ED0507F3291002F10016455B /* RegisterViewReactor.swift */,
+				EDF2F1FB29273C2300A59FA2 /* SNSSignInViewController.swift */,
+				EDF2F1FD29273CA800A59FA2 /* SNSSignInViewReactor.swift */,
 				27B471C828D1BAC300805F79 /* EmailSignUpViewController.swift */,
 				EDED357C291B5611003F3DEC /* EmailSignUpReactor.swift */,
 				27B471C128D19ADA00805F79 /* EmailLoginViewController.swift */,
@@ -1096,6 +1102,7 @@
 				2750A45428D04C95000EE24D /* PurposeView.swift in Sources */,
 				ED30DE34291E9CFC00E50AA1 /* TodoViewController.swift in Sources */,
 				27A977AB28E331D70076FF80 /* TaskCell.swift in Sources */,
+				EDF2F1FE29273CA800A59FA2 /* SNSSignInViewReactor.swift in Sources */,
 				27B471BD28D0ACF100805F79 /* Notification.swift in Sources */,
 				2793C12428F499DC00FC7D13 /* TaskEditPresentaionController.swift in Sources */,
 				27B471CB28D2070700805F79 /* TextFieldView.swift in Sources */,
@@ -1108,6 +1115,7 @@
 				27B471D528D236D900805F79 /* AuthCredentials.swift in Sources */,
 				2750A40728D02BE9000EE24D /* SceneDelegate.swift in Sources */,
 				EDF3A8B42912517B00A7C980 /* UIFont+Extension.swift in Sources */,
+				EDF2F1FC29273C2300A59FA2 /* SNSSignInViewController.swift in Sources */,
 				27B471C528D19B2400805F79 /* UIColor+Extension.swift in Sources */,
 				ED2A2E0C2917EEE500C38019 /* BoardViewCellReactor.swift in Sources */,
 				ED037A6B29116DAD00D30F7A /* ItemViewReactor.swift in Sources */,

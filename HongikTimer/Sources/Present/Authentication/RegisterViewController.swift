@@ -122,6 +122,13 @@ final class RegisterViewController: BaseViewController {
         with: self,
         completion: #selector(loginSuccessHandler)
       )
+    
+    AuthNotificationManager
+      .shared
+      .addObserverSnsSignInNeed(
+        with: self,
+        completion: #selector(snsSignInHandler)
+      )
     //        try? Auth.auth().signOut()
     //        KakaoAuthService.shared.kakaoLogout()
     //        naverAuthService.shared?.requestDeleteToken()
@@ -149,7 +156,8 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     
     self.naverLoginGetInfo()
     
-    AuthNotificationManager.shared.postNotificationSignInSuccess()
+//    AuthNotificationManager.shared.postNotificationSignInSuccess()
+    AuthNotificationManager.shared.postNotificationSnsSignInNeed()
     
   }
   
@@ -197,14 +205,11 @@ extension RegisterViewController: NaverThirdPartyLoginConnectionDelegate {
     let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
     
     req.responseJSON { response in
-          
       guard let result = response.value as? [String: Any] else { return }
       guard let object = result["response"] as? [String: Any] else { return }
       guard let id = object["id"] as? String else { return }
       
-      print("DEBUG naver login 후 get info")
       print("DEBUG naver login id: \(id)")
-      
     }
   }
 }
@@ -310,11 +315,18 @@ extension RegisterViewController {
   }
   
   @objc func loginSuccessHandler() {
-    #warning("더미 유저")
+    #warning("더미 유저") // 성공후 userdefaul에서 불러오기
     let vc = TabBarViewController(with: TabBarViewReactor(reactor.provider, with: User()))
     
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: true)
     navigationController?.popToRootViewController(animated: false)
+  }
+  
+  @objc func snsSignInHandler() {
+    let vc = SNSSignInViewController(
+      with: SNSSignInViewReactor(provider: self.reactor.provider)
+    )
+    navigationController?.pushViewController(vc, animated: true)
   }
 }

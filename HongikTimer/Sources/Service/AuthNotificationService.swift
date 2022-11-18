@@ -12,6 +12,7 @@ enum AuthentState: String {
   case signOutError
   case signInSuccess
   case signInError
+  case snsSignInNeed
   
   var notificationName: NSNotification.Name {
     return NSNotification.Name(rawValue: self.rawValue)
@@ -35,6 +36,13 @@ struct AuthNotificationManager {
     )
   }
   
+  func postNotificationSnsSignInNeed() {
+    NotificationCenter.default.post(
+      name: AuthentState.snsSignInNeed.notificationName,
+      object: nil
+    )
+  }
+  
   func postNotificationSignOutSuccess() {
     NotificationCenter.default.post(
       name: AuthentState.signOutSuccess.notificationName,
@@ -54,6 +62,15 @@ struct AuthNotificationManager {
       viewController,
       selector: completion,
       name: AuthentState.signInSuccess.notificationName,
+      object: nil
+    )
+  }
+  
+  func addObserverSnsSignInNeed(with viewController: UIViewController, completion: Selector) {
+    NotificationCenter.default.addObserver(
+      viewController,
+      selector: completion,
+      name: AuthentState.snsSignInNeed.notificationName,
       object: nil
     )
   }
